@@ -67,7 +67,7 @@
 
     <section>
     <div class="chart-description">
-        <h2>Section 2: Trennds in GDP per Capita (1990-2020)</h2>
+        <h2>Section 2: Trends in GDP per Capita (1990-2020)</h2>
     </p>The following chart shows changes in GDP per capita across time.</p>
  </div>
 <figure id="Location2"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
@@ -87,6 +87,7 @@
         let figure_1_spec = "https://raw.githubusercontent.com/EconomicsObservatory/ECOvisualisations/refs/heads/main/articles/2021-04-14-a-year-in-the-uk-labour-market-whats-happened-over-the-coronavirus-pandemic/visualisation/fig1a_unemployment.json"; // We're storing the URL of the graph we want to display in a variable
         let figure_2_spec = "wk1_chart2.json";
         let figure_3_spec = "https://raw.githubusercontent.com/EconomicsObservatory/ECOvisualisations/refs/heads/main/articles/2021-06-09-what-are-the-big-economic-challenges-facing-the-new-welsh-government/visualisation/fig2_output_indicators.json";
+        let figure_4_spec = "";
 
         vegaEmbed('#Location1', figure_1_spec) // We're using the vegaEmbed function to put a graph in the element with id figure_1
         vegaEmbed('#Location2', figure_2_spec) // We're using the vegaEmbed function to put a graph in the element with id figure_2
