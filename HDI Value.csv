@@ -1,6 +1,7 @@
-﻿Iceland,0.972
-Norway,0.970
-Switzerland,0.970
+﻿Country,HDI Value
+Iceland,0.972
+Norway,0.97
+Switzerland,0.97
 Denmark,0.962
 Germany,0.959
 Sweden,0.959
@@ -12,18 +13,18 @@ Ireland,0.949
 Finland,0.948
 Singapore,0.946
 United Kingdom,0.946
-United Arab Emirates,0.940
+United Arab Emirates,0.94
 Canada,0.939
 Liechtenstein,0.938
 New Zealand,0.938
 United States,0.938
 Korea (Republic of),0.937
 Slovenia,0.931
-Austria,0.930
+Austria,0.93
 Japan,0.925
 Malta,0.924
 Luxembourg,0.922
-France,0.920
+France,0.92
 Israel,0.919
 Spain,0.918
 Czechia,0.915
@@ -34,16 +35,16 @@ Cyprus,0.913
 Greece,0.908
 Poland,0.906
 Estonia,0.905
-Saudi Arabia,0.900
+Saudi Arabia,0.9
 Bahrain,0.899
 Lithuania,0.895
-Portugal,0.890
+Portugal,0.89
 Croatia,0.889
 Latvia,0.889
 Qatar,0.886
-Slovakia,0.880
+Slovakia,0.88
 Chile,0.878
-Hungary,0.870
+Hungary,0.87
 Argentina,0.865
 Montenegro,0.862
 Uruguay,0.862
@@ -55,7 +56,7 @@ Seychelles,0.848
 Bulgaria,0.845
 Romania,0.845
 Georgia,0.844
-Saint Kitts and Nevis,0.840
+Saint Kitts and Nevis,0.84
 Panama,0.839
 Brunei Darussalam,0.837
 Kazakhstan,0.837
@@ -63,12 +64,12 @@ Costa Rica,0.833
 Serbia,0.833
 Russian Federation,0.832
 Belarus,0.824
-Bahamas,0.820
+Bahamas,0.82
 Malaysia,0.819
 North Macedonia,0.815
 Armenia,0.811
 Barbados,0.811
-Albania,0.810
+Albania,0.81
 Trinidad and Tobago,0.807
 Mauritius,0.806
 Bosnia and Herzegovina,0.804
@@ -104,7 +105,7 @@ Saint Lucia,0.748
 Mongolia,0.747
 Tunisia,0.746
 South Africa,0.741
-Uzbekistan,0.740
+Uzbekistan,0.74
 Bolivia (Plurinational State of),0.733
 Gabon,0.733
 Marshall Islands,0.733
@@ -114,10 +115,10 @@ Indonesia,0.728
 Suriname,0.722
 Belize,0.721
 Libya,0.721
-Jamaica,0.720
-Kyrgyzstan,0.720
-Philippines,0.720
-Morocco,0.710
+Jamaica,0.72
+Kyrgyzstan,0.72
+Philippines,0.72
+Morocco,0.71
 Venezuela (Bolivarian Republic of),0.709
 Samoa,0.708
 Nicaragua,0.706
@@ -161,12 +162,12 @@ Papua New Guinea,0.576
 Togo,0.571
 Syrian Arab Republic,0.564
 Mauritania,0.563
-Nigeria,0.560
+Nigeria,0.56
 Tanzania (United Republic of),0.555
 Haiti,0.554
-Lesotho,0.550
+Lesotho,0.55
 Pakistan,0.544
-Senegal,0.530
+Senegal,0.53
 Gambia,0.524
 Congo (Democratic Republic of the),0.522
 Malawi,0.517
@@ -174,14 +175,14 @@ Benin,0.515
 Guinea-Bissau,0.514
 Djibouti,0.513
 Sudan,0.511
-Liberia,0.510
+Liberia,0.51
 Eritrea,0.503
-Guinea,0.500
+Guinea,0.5
 Ethiopia,0.497
 Afghanistan,0.496
 Mozambique,0.493
 Madagascar,0.487
-Yemen,0.470
+Yemen,0.47
 Sierra Leone,0.467
 Burkina Faso,0.459
 Burundi,0.439
