@@ -104,6 +104,14 @@
  </div>
 <figure id="Location6"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
 <section>
+
+     <section>
+<div class="chart-description">
+        <h2>Section 7: Fertility Rate</h2>
+    </p>The following chart shows historical change in fertility rate in selected countries.</p>
+ </div>
+<figure id="Location7"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+<section>
     
     <script>
         // This is a comment in JavaScript - it's a different language to HTML and CSS
@@ -114,6 +122,7 @@
         let figure_4_spec = "HDI Annual growth.json";
         let figure_5_spec = "GNI Per capita growth.json";
         let figure_6_spec = "wk3_pe_ratio_chart.json";
+        let figure_7_spec = "Fertility Rate World Bank>json";
 
         // Now we embed each chart into its figure tag
     vegaEmbed('#Location1', figure_1_spec)
@@ -136,7 +145,11 @@
         .then(console.log)
         .catch(console.warn);
 
-        vegaEmbed('#Location6', figure_6_spec)
+    vegaEmbed('#Location6', figure_6_spec)
+        .then(console.log)
+        .catch(console.warn);
+
+    vegaEmbed('#Location7', figure_7_spec)
         .then(console.log)
         .catch(console.warn);
     
