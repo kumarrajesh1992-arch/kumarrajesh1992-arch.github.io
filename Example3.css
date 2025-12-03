@@ -12,8 +12,8 @@ body { /* We can style any HTML element by using its name - here we're styling t
   line-height: 1.6;
   /* we want a white page, that's centered and not too wide */
   background-color: "#ffffff";
-  margin:0 auto;
-  max-width: 800px;
+  margin:20px auto;
+  max-width: 1200px;
   padding-top: 60px;
 }
 
