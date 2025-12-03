@@ -65,3 +65,18 @@ img {
   max-width: 100%;
   height: auto;
 }
+.chart-container {
+  display: flex;          /* put items side by side */
+  gap: 24px;              /* space between the two charts */
+  align-items: flex-start;
+  margin-top: 16px;
+}
+
+.chart-item {
+  flex: 1;                /* each chart takes up half the row */
+}
+
+/* Optional: make figures flush with headings */
+.chart-item figure {
+  margin: 0;
+}
