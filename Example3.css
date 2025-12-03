@@ -80,3 +80,20 @@ img {
 .chart-item figure {
   margin: 0;
 }
+/* Alternating section backgrounds */
+.section-light {
+  background-color: #ffffff;   /* white */
+  padding: 25px;
+  border-radius: 8px;
+}
+
+.section-grey {
+  background-color: #f5f5f5;   /* light grey */
+  padding: 25px;
+  border-radius: 8px;
+}
+
+/* optional: add spacing between sections */
+section {
+  margin-bottom: 30px;
+}
