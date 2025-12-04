@@ -18,7 +18,7 @@
             href="kumarrajesh1992-arch.github.io">GitHub</a>
     </p>
     <h2 class="small"> <!-- We have added a class to the header called "small" which we can use to style it in the CSS -->
-        I am a Public Policy researcher passionate about making complex governance and development issues in South Asia more accessible through clear, data-driven storytelling and visualization.  
+        This page showcases the coding challenges I completed for the course "PP434: Automated Data Visualization for Policymaking" as part of my Master of Public Policy programme (2025–26) at LSE.   
     </h2>
 
     <!-- We're organising the page into sections, with each section containing a chart, title and a description -->
@@ -64,11 +64,18 @@
 
                 
 <section>
-<div class="chart-description">
-        <h2>Section 3: Output Indicators</h2>
-    </p>The following chart shows changes in GDP per capita across time.</p>
+<div class="section-header">
+        <h2>CC3: The Poverty Debate in India</h2>
+    </p>Indian government claim that income poverty has fallen to five percent relies on an outdated $3.20 line. Using the appropriate LMIC threshold shows nearly one-quarter of Indians remain poor.</p>
  </div>
- <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+<div class="chart-container">
+    <div class="chart-item">
+        <h3>Percentage of BPL Population using Extreme Poverty Cut-Off</h3>
+        <figure id="Location5"></figure>
+        <p>There is no denying that India has made progress in extreme poverty reduction which is an achievement worth acknowledging. But experts have also argued that 5.3% figure rests on methodological changes, including the adoption of Modified Mixed Reference Period, which tend to lower poverty estimates. And the $3/day line itself reflects little more than bare survival.</p>
+    </div>
+
+
 <section>
 
 <section>
@@ -84,7 +91,7 @@
         <h2>Section 5: Annual GNI Per Capita Growth Rate (%)</h2>
     </p>The following chart shows annual growth rate in GNI Per Capita at 2021 $PPP for India between 1991-2023.</p>
  </div>
-<figure id="Location5"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+ <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
 <section>
 
     <section>
@@ -110,7 +117,7 @@
         let figure_2_spec = "CC1UKchildpoverty.json";
         let figure_3_spec = "CC2_UNEMPLOYMENTRATEFINAL.json";
         let figure_4_spec = "CC2_EMPLOYMENTPOPULATIONRATIO.json";
-        let figure_5_spec = "GNI Per capita growth.json";
+        let figure_5_spec = "CC3_Extremepoverty.json";
         let figure_6_spec = "wk3_pe_ratio_chart.json";
         let figure_7_spec = "Fertility Rate World Bank.json";
 
