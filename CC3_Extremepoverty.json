@@ -1,0 +1,30 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Share of Population Living in Extreme Poverty in India (< $3/day)",
+    "subtitle": "Source: World Bank Poverty and Inequality Platform",
+    "anchor": "start",
+    "fontSize": 16,
+    "subtitleFontSize": 12
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/kumarrajesh1992-arch/kumarrajesh1992-arch.github.io/refs/heads/main/IND_PovertyRate_20250930_2021_01_02_PROD_2025-12-03.csv",
+    "format": {"type": "csv"}
+  },
+  "mark": "line",
+  "width": 500,
+  "height": 300,
+  "encoding": {
+    "x": {
+      "field": "Years",
+      "type": "quantitative",
+      "axis": {"title": "Year", "format": "d"}
+    },
+    "y": {
+      "field": " Poverty rate (%)",
+      "type": "quantitative",
+      "axis": {"title": "Poverty rate (%)"}
+    }
+  },
+  "config": {}
+}

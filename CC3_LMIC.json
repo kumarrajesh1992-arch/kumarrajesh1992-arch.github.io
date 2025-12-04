@@ -1,0 +1,30 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Share of Population Living Below the LMIC Poverty Line in India (< $4.20/day)",
+    "subtitle": "Source: World Bank Poverty and Inequality Platform",
+    "anchor": "start",
+    "fontSize": 16,
+    "subtitleFontSize": 12
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/kumarrajesh1992-arch/kumarrajesh1992-arch.github.io/refs/heads/main/IND_LMIC_Data.csv",
+    "format": {"type": "csv"}
+  },
+  "mark": "line",
+  "width": 500,
+  "height": 300,
+  "encoding": {
+    "x": {
+      "field": "Year",
+      "type": "quantitative",
+      "axis": {"title": "Year", "format": "d"}
+    },
+    "y": {
+      "field": "Poverty rate (%)",
+      "type": "quantitative",
+      "axis": {"title": "Poverty rate (%)"}
+    }
+  },
+  "config": {}
+}
