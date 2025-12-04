@@ -1,0 +1,40 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Life Expectancy at Birth in India",
+    "subtitle": "Source: UN WPP via Our World in Data",
+    "anchor": "start",
+    "fontSize": 16,
+    "subtitleFontSize": 12
+  },
+  "data": {
+    "url": "https://ourworldindata.org/grapher/life-expectancy.csv",
+    "format": {"type": "csv"}
+  },
+  "transform": [{"filter": "datum.Entity == 'India'"}],
+  "mark": {"type": "line", "point": {"filled": true, "size": 40}},
+  "width": 600,
+  "height": 300,
+  "encoding": {
+    "x": {
+      "field": "Year",
+      "type": "quantitative",
+      "axis": {"title": "Year", "format": "d"}
+    },
+    "y": {
+      "field": "Period life expectancy at birth",
+      "type": "quantitative",
+      "axis": {"title": "Life expectancy at birth (years)"}
+    },
+    "tooltip": [
+      {"field": "Year", "type": "quantitative", "title": "Year"},
+      {
+        "field": "Period life expectancy at birth",
+        "type": "quantitative",
+        "title": "Life expectancy (years)",
+        "format": ".1f"
+      }
+    ]
+  },
+  "config": {}
+}
