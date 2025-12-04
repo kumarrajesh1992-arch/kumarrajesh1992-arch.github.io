@@ -105,3 +105,39 @@ section {
 section {
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
+.section-light,
+.section-grey {
+  padding: 24px;
+  border-radius: 12px;
+  box-sizing: border-box;
+  margin-bottom: 32px;
+}
+
+/* Alternate backgrounds */
+.section-light {
+  background-color: #ffffff;
+}
+
+.section-grey {
+  background-color: #f5f5f5;
+}
+
+/* Layout for charts */
+.chart-container {
+  display: flex;
+  flex-wrap: wrap;      /* allow wrapping on small screens */
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.chart-item {
+  flex: 1 1 0;
+  min-width: 0;         /* important: prevents overflow in flex items */
+}
+
+/* Keep charts inside their boxes */
+.chart-item figure,
+.chart-item .vega-embed {
+  max-width: 100%;
+  margin: 0;
+}
