@@ -1,0 +1,74 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": "#ffffff",
+  "title": {
+    "text": "Retail petrol price in Delhi (on selected dates)",
+    "subtitle": "INR per litre • Percentage change relative to previous price point",
+    "anchor": "start",
+    "fontSize": 18,
+    "subtitleFontSize": 12
+  },
+  "width": 500,
+  "height": 300,
+  "data": {
+    "values": [
+      {"date": "16 May 2004", "price": 33.71, "pct": ""},
+      {"date": "16 May 2009", "price": 40.62, "pct": "(+20.5%)"},
+      {"date": "16 May 2014", "price": 71.41, "pct": "(+75.8%)"},
+      {"date": "10 Sept 2018", "price": 80.73, "pct": "(+13%)"}
+    ]
+  },
+  "mark": {
+    "type": "bar",
+    "color": "#0072b2",
+    "cornerRadiusTopLeft": 4,
+    "cornerRadiusTopRight": 4
+  },
+  "encoding": {
+    "x": {
+      "field": "date",
+      "type": "ordinal",
+      "sort": null,
+      "axis": {"title": "Date", "labelAngle": 0}
+    },
+    "y": {
+      "field": "price",
+      "type": "quantitative",
+      "axis": {"title": "Petrol price (₹/litre)"}
+    }
+  },
+  "layer": [
+    {"mark": {"type": "bar", "color": "#0072b2"}},
+    {
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "bottom",
+        "dy": -4,
+        "fontSize": 12,
+        "color": "#000000"
+      },
+      "encoding": {
+        "text": {"field": "price", "format": ".2f"},
+        "x": {"field": "date"},
+        "y": {"field": "price"}
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "top",
+        "dy": 12,
+        "fontSize": 11,
+        "color": "#444444"
+      },
+      "encoding": {
+        "text": {"field": "pct"},
+        "x": {"field": "date"},
+        "y": {"field": "price"}
+      }
+    }
+  ],
+  "config": {}
+}
