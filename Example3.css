@@ -1,22 +1,15 @@
-/* This is an example CSS file. If you include it in your portfolio, it'll provide some clean and basic styling */
-/* for your page. Feel free to experiment with the values, or copy them into a new file and use that instead. */
-
-/* These are comments in CSS. Comments don't do anything except explain your working to make code easier to understand. */
-
-
-body { /* We can style any HTML element by using its name - here we're styling the body */
-  /* We want text that uses a clean sans-serif font, is usually 16px big and close to black */
+/* Base page styling */
+body {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 16px;
   color: #000;
   line-height: 1.6;
-  /* we want a white page, that's centered and not too wide */
-  background-color: "#ffffff";
-  margin:20px auto;
+  background-color: #ffffff;   /* no quotes */
   max-width: 1200px;
-  padding-top: 60px;
+  margin: 20px auto;
+  padding: 20px 20px 60px;
+  box-sizing: border-box;
 }
-
 
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
@@ -26,8 +19,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
 }
 
-/* We want the headings to be a little bigger than the paragraph text */
-.big { /* This is the class we created in the HTML file, you can use it to style any element */
+.big {
   font-size: 2.5em;
 }
 
@@ -39,81 +31,27 @@ h2 {
   font-size: 1.25em;
 }
 
-/* Paragraph */
+/* Paragraphs */
 p {
   margin-bottom: 1em;
   font-weight: 300;
 }
 
+/* Generic section spacing */
 section {
-  margin-bottom: 2.5em;  /* We want a little more space between sections */
+  margin-bottom: 32px;
 }
 
-/* Links */
-/* We want the links to be a little more visible  and a different color */
-a {
-  color: #065f46;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-  
-/* Images */
-img {
-  max-width: 100%;
-  height: auto;
-}
-.chart-container {
-  display: flex;          /* put items side by side */
-  gap: 24px;              /* space between the two charts */
-  align-items: flex-start;
-  margin-top: 16px;
-}
-
-.chart-item {
-  flex: 1;                /* each chart takes up half the row */
-}
-
-/* Optional: make figures flush with headings */
-.chart-item figure {
-  margin: 0;
-}
-/* Alternating section backgrounds */
-.section-light {
-  background-color: #ffffff;   /* white */
-  padding: 25px;
-  border-radius: 8px;
-}
-
-.section-grey {
-  background-color: #f5f5f5;   /* light grey */
-  padding: 25px;
-  border-radius: 8px;
-}
-
-/* optional: add spacing between sections */
-section {
-  margin-bottom: 30px;
-}
-section {
-  border: 1px solid #ddd;
-  padding: 20px;
-  border-radius: 8px;
-}
-section {
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-}
+/* Alternating section backgrounds and box styling */
 .section-light,
 .section-grey {
   padding: 24px;
   border-radius: 12px;
   box-sizing: border-box;
-  margin-bottom: 32px;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
-/* Alternate backgrounds */
 .section-light {
   background-color: #ffffff;
 }
@@ -122,22 +60,44 @@ section {
   background-color: #f5f5f5;
 }
 
-/* Layout for charts */
+/* Links */
+a {
+  color: #065f46;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Chart layout */
 .chart-container {
   display: flex;
-  flex-wrap: wrap;      /* allow wrapping on small screens */
+  flex-wrap: wrap;        /* allow wrapping on smaller screens */
   gap: 24px;
   align-items: flex-start;
 }
 
 .chart-item {
   flex: 1 1 0;
-  min-width: 0;         /* important: prevents overflow in flex items */
+  min-width: 280px;       /* prevents items becoming too narrow */
 }
 
 /* Keep charts inside their boxes */
-.chart-item figure,
-.chart-item .vega-embed {
-  max-width: 100%;
+.chart-item figure {
   margin: 0;
+}
+
+.chart-item .vega-embed,
+.chart-item svg,
+.chart-item canvas {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Images (if any) */
+img {
+  max-width: 100%;
+  height: auto;
 }
