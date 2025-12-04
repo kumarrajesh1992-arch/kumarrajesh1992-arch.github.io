@@ -108,9 +108,22 @@
 </div>
 </section>
 
-<section id="API" class="section-grey">
+<section id="API" class="section-light">
     <div class="section-header">
-        <h2>CC5: API</h2>
+        <h2>CC5: API & Data Scrapping</h2>
+    </div>
+    <p>In this section I use a live link to an API from our World in Data portal and also use a Google Colab python notebook, scrape a website </p>
+    <div class="chart-container">
+    <div class="chart-item">
+        <h3>API Chart: Life Expectancy in India</h3>
+        <figure id="api_lifeexp"></figure>
+  <p class="small-text">
+    This chart uses a live API from <em>Our World in Data</em>.  
+    API endpoint used:  
+    <code>https://ourworldindata.org/grapher/life-expectancy.csv</code>
+  </p>
+</section>
+        
                 
 <section>
 <div class="chart-description">
@@ -154,6 +167,7 @@
         let figure_5_spec = "CC3_Extremepoverty.json";
         let figure_6_spec = "CC3_LMIC.json";
         let figure_8_spec = "CC4_Improved.json";
+        let api_lifeexp_spec = "CC5_Lifeapi.json";
 
         // Now we embed each chart into its figure tag
     vegaEmbed('#Location1', figure_1_spec)
@@ -181,6 +195,10 @@
         .catch(console.warn);
 
     vegaEmbed('#Location8', figure_8_spec)
+        .then(console.log)
+        .catch(console.warn);
+
+    vegaEmbed('#api_lifeexp', api_lifeexp_spec)
         .then(console.log)
         .catch(console.warn);
     
