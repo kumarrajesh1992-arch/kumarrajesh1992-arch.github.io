@@ -87,7 +87,7 @@
         
 <section id="CC4" class="section-grey">
     <div class="section-header">
-        <h2>CC4: Busting the Politics around Pterol Price Hike</h2>
+        <h2>CC4: Busting the Politics around Petrol Price Hike</h2>
     </div>
     <p>I replaced the political infographic with a neutral bar chart, added clear labels and percentage changes, corrected misleading framing, and used proper scales and dates.</p>
 <div class="chart-container">
@@ -99,7 +99,15 @@
             </figure>
         <p>Found this chart on BJP X handle which misrepresents prices with distorted bar heights, inconsistent arrows, and distracting political imagery.</p>
        
-    </div>        
+    </div>  
+    <div class="chart-item">
+        <h3>Corrected Representation of Change in Petrol Prices</h3>
+        <figure id="Location8"></figure>
+        <p>The above bar chart shows petrol price changes over time using proper scaling, readable labels, and neutral design choices.</p>
+        </div>
+</div>
+</section>
+                
 <section>
 <div class="chart-description">
         <h2>Section 4: Annual HDI Growth Rate (%)</h2>
@@ -141,7 +149,7 @@
         let figure_4_spec = "CC2_EMPLOYMENTPOPULATIONRATIO.json";
         let figure_5_spec = "CC3_Extremepoverty.json";
         let figure_6_spec = "CC3_LMIC.json";
-        let figure_7_spec = "Fertility Rate World Bank.json";
+        let figure_8_spec = "CC4_Improved.json";
 
         // Now we embed each chart into its figure tag
     vegaEmbed('#Location1', figure_1_spec)
@@ -168,7 +176,7 @@
         .then(console.log)
         .catch(console.warn);
 
-    vegaEmbed('#Location7', figure_7_spec)
+    vegaEmbed('#Location8', figure_8_spec)
         .then(console.log)
         .catch(console.warn);
     
