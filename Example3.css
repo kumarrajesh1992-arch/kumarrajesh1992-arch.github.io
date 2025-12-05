@@ -105,4 +105,13 @@ img {
   font-size: 13px;   /* adjust as needed */
   line-height: 1.4;
 }
+.cc6-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);  /* 3 columns */
+  gap: 16px;
+  margin-top: 16px;
+}
 
+.cc6-grid figure {
+  margin: 0;
+}
