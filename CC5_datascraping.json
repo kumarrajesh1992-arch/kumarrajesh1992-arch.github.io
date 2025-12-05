@@ -1,0 +1,34 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Human Development Index Score of Indian States (2019)",
+    "subtitle": "Scraped from Wikipedia and tidied in Google Colab",
+    "anchor": "start"
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/kumarrajesh1992-arch/kumarrajesh1992-arch.github.io/refs/heads/main/data_scarping_india_hdi_states_tidy.csv",
+    "format": {"type": "csv"}
+  },
+  "mark": "bar",
+  "width": 500,
+  "height": 300,
+  "encoding": {
+    "x": {
+      "field": "State_UT",
+      "type": "nominal",
+      "sort": "-y",
+      "axis": {"title": "State / Union Territory", "labelAngle": -90}
+    },
+    "y": {
+      "field": "HDI",
+      "type": "quantitative",
+      "axis": {"title": "HDI Value"}
+    },
+    "tooltip": [
+      {"field": "State_UT", "type": "nominal"},
+      {"field": "Year", "type": "quantitative"},
+      {"field": "HDI", "type": "quantitative", "format": ".3f"}
+    ]
+  },
+  "config": {}
+}
