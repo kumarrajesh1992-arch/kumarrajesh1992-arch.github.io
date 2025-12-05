@@ -1,0 +1,37 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Share of Services in Employment, Total (15+)",
+    "anchor": "start",
+    "fontSize": 12
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/kumarrajesh1992-arch/kumarrajesh1992-arch.github.io/refs/heads/main/cc6_emp_services.json",
+    "format": {"type": "json"}
+  },
+  "mark": "bar",
+  "width": 230,
+  "height": 160,
+  "encoding": {
+    "x": {
+      "field": "date",
+      "type": "quantitative",
+      "axis": {"title": "Year", "format": "d"}
+    },
+    "y": {
+      "field": "value",
+      "type": "quantitative",
+      "axis": {"title": "Employed (%)", "tickCount": 5}
+    },
+    "tooltip": [
+      {"field": "date", "type": "quantitative", "title": "Year"},
+      {
+        "field": "value",
+        "type": "quantitative",
+        "title": "Percent",
+        "format": ".1f"
+      }
+    ]
+  },
+  "config": {}
+}

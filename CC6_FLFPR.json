@@ -1,0 +1,37 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Female Labour Force Participation Rate (15+)",
+    "anchor": "start",
+    "fontSize": 12
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/kumarrajesh1992-arch/kumarrajesh1992-arch.github.io/refs/heads/main/cc6_lfpr_female.json",
+    "format": {"type": "json"}
+  },
+  "mark": "line",
+  "width": 230,
+  "height": 160,
+  "encoding": {
+    "x": {
+      "field": "date",
+      "type": "quantitative",
+      "axis": {"title": "Year", "format": "d"}
+    },
+    "y": {
+      "field": "value",
+      "type": "quantitative",
+      "axis": {"title": "FLFPR (%)", "tickCount": 5}
+    },
+    "tooltip": [
+      {"field": "date", "type": "quantitative", "title": "Year"},
+      {
+        "field": "value",
+        "type": "quantitative",
+        "title": "Percent",
+        "format": ".1f"
+      }
+    ]
+  },
+  "config": {}
+}
