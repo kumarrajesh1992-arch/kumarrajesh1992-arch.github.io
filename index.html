@@ -181,7 +181,7 @@
         let figure_6_spec = "CC3_LMIC.json";
         let figure_8_spec = "CC4_Improved.json";
         let api_lifeexp_spec = "CC5_Lifeapi.json";
-        let scraper_spec = "
+        let scraper_spec = "CC5_datascraping.json";
 
         // Now we embed each chart into its figure tag
     vegaEmbed('#Location1', figure_1_spec)
@@ -215,6 +215,10 @@
     vegaEmbed('#api_lifeexp', api_lifeexp_spec)
         .then(console.log)
         .catch(console.warn);
+
+    vegaEmbed('#ScraperChart', scraper_spec)
+       .then(console.log)
+       .catch(console.warn);
     
     </script>
 
