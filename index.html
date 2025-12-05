@@ -122,6 +122,19 @@
     API endpoint used:  
     <code>https://ourworldindata.org/grapher/life-expectancy.csv</code>
   </p>
+    </div>
+    <div class="chart-item">
+        <h3>Scraper Task: HDI of Indian States</h3>
+
+        <p>Data scraped and tidied in this Google Colab notebook:
+        <a href="https://colab.research.google.com/drive/18W_lIItoV4wQ7Dj1Zt34y9PhWNGJjIXp?usp=sharing" target="_blank">View My Notebook<a>
+        </p>
+
+        <figure id="ScraperChart"></figure>
+
+        <p class="small-text">
+            I scraped a Wikipedia HDI table into pandas, cleaned and reshaped into tidy long form, then visualised state-level HDI values in Vega-Lite.
+        </p>
 </section>
         
                 
@@ -168,6 +181,7 @@
         let figure_6_spec = "CC3_LMIC.json";
         let figure_8_spec = "CC4_Improved.json";
         let api_lifeexp_spec = "CC5_Lifeapi.json";
+        let scraper_spec = "
 
         // Now we embed each chart into its figure tag
     vegaEmbed('#Location1', figure_1_spec)
