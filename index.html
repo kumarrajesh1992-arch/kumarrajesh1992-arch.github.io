@@ -156,10 +156,15 @@
     <figure id="cc6_chart_6"></figure>
   </div>
 
-  <p class="small-text">
-    Colab notebook (loops + World Bank API):
-    <a href="https://colab.research.google.com/drive/1mK5tAbQHqeckWwMOhM7-FPY8UoL3HgSF?usp=sharing" target="_blank">View My Notebook</a>
+    <p class="small-text">
+    I looped over World Bank APIs in Python to batch-download six labour series for India, saved them as JSON, and embedded all charts using a Javascript loop.
   </p>
+
+  <p class="small-text">
+    Colab notebook:
+    <a href="https://colab.research.google.com/drive/1mK5tAbQHqeckWwMOhM7-FPY8UoL3HgSF?usp=sharing" target="_blank">Open Notebook</a>
+  </p>
+</section>
 </section>
 
     
@@ -212,6 +217,21 @@
     vegaEmbed('#ScraperChart', scraper_spec)
        .then(console.log)
        .catch(console.warn);
+
+    const cc6Specs = [
+  { id: "cc6_chart_1", spec: "CC6_LFPR.json" },
+  { id: "cc6_chart_2", spec: "CC6_FLFPR.json" },
+  { id: "cc6_chart_3", spec: "CC6_UR.json" },
+  { id: "cc6_chart_4", spec: "CC6_AG.json" },
+  { id: "cc6_chart_5", spec: "CC6_Emp.json" },
+  { id: "cc6_chart_6", spec: "CC6_Serv.json" }
+];
+
+cc6Specs.forEach(item => {
+  vegaEmbed(`#${item.id}`, item.spec)
+    .then(console.log)
+    .catch(console.warn);
+});
     
     </script>
 
