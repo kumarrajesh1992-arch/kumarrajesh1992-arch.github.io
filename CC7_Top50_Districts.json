@@ -1,0 +1,54 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "India: MPI 'Hotspot' Districts (HCR ≥ 30%)",
+    "subtitle": "Location of the 50 districts with the highest MPI headcount ratios",
+    "anchor": "middle",
+    "fontSize": 16,
+    "subtitleFontSize": 11
+  },
+  "width": 500,
+  "height": 500,
+  "projection": {"type": "mercator", "center": [82, 22], "scale": 750},
+  "layer": [
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/kumarrajesh1992-arch/kumarrajesh1992-arch.github.io/main/india.geojson",
+        "format": {"type": "json", "property": "features"}
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "#f5f5f5",
+        "stroke": "#121212",
+        "strokeWidth": 0.3
+      }
+    },
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/kumarrajesh1992-arch/kumarrajesh1992-arch.github.io/refs/heads/main/CC7_Top_50_MPI_Districts.csv",
+        "format": {"type": "csv"}
+      },
+      "transform": [
+        {
+          "calculate": "toNumber(replace(datum.MPI_HCR, '%', ''))",
+          "as": "MPI_HCR_num"
+        }
+      ],
+      "mark": {
+        "type": "circle",
+        "size": 12,
+        "color": "#e74840",
+        "opacity": 0.85
+      },
+      "encoding": {
+        "longitude": {"field": "lon", "type": "quantitative"},
+        "latitude": {"field": "lat", "type": "quantitative"},
+        "tooltip": [
+          {"field": "District", "type": "nominal", "title": "District"},
+          {"field": "MPI_HCR", "type": "nominal", "title": "MPI headcount (%)"}
+        ]
+      }
+    }
+  ],
+  "config": {}
+}
