@@ -167,6 +167,27 @@
 
 </section>
 
+    <section id="CC7" class="section-light">
+  <div class="section-header">
+    <h2>CC7: Multidimensional Poverty in India</h2>
+  </div>
+
+  <p>
+    This choropleth map shows the Multidimensional Poverty Index (MPI) headcount ratio
+    by state/UT in India, using state-level MPI estimates from NITI Aayog and a
+    state boundary map from ISRO.
+  </p>
+
+  <figure id="CC7_MPI_state"></figure>
+
+  <p class="small-text">
+    I manually compiled state-wise MPI headcount ratios from the NITI Aayog
+    national MPI report into a CSV file, and used an India state boundary JSON
+    from ISRO. The matching of state names was handled directly in the Vega-Lite
+    spec so that each polygon is shaded by its MPI value.
+  </p>
+</section>
+
     
     <script>
         // This is a comment in JavaScript - it's a different language to HTML and CSS
