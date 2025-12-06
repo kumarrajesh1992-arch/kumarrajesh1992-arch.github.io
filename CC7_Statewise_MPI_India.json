@@ -1,0 +1,50 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Multidimensional Poverty by State/UT in India, 2023",
+    "subtitle": "Headcount Ratio (%) | Source: India National Multidimensional Poverty Index 2023",
+    "anchor": "start",
+    "fontSize": 16,
+    "subtitleFontSize": 10
+  },
+  "width": 500,
+  "height": 300,
+  "data": {
+    "url": "https://raw.githubusercontent.com/kumarrajesh1992-arch/kumarrajesh1992-arch.github.io/refs/heads/main/CC7_Indiastate.json",
+    "format": {"type": "json", "property": "features"}
+  },
+  "transform": [
+    {
+      "lookup": "properties.NAME_1",
+      "from": {
+        "data": {
+          "url": "https://raw.githubusercontent.com/kumarrajesh1992-arch/kumarrajesh1992-arch.github.io/refs/heads/main/MPI_HCR_STATE.csv",
+          "format": {"type": "csv"}
+        },
+        "key": "State",
+        "fields": ["MPI_HCR"]
+      }
+    },
+    {"calculate": "toNumber(datum.MPI_HCR)", "as": "MPI_HCR_num"}
+  ],
+  "projection": {"type": "mercator"},
+  "mark": {"type": "geoshape", "stroke": "white", "strokeWidth": 0.3},
+  "encoding": {
+    "color": {
+      "field": "MPI_HCR_num",
+      "type": "quantitative",
+      "title": "MPI Headcount Ratio (%)",
+      "scale": {"scheme": "reds"}
+    },
+    "tooltip": [
+      {"field": "properties.NAME_1", "type": "nominal", "title": "State/UT"},
+      {
+        "field": "MPI_HCR_num",
+        "type": "quantitative",
+        "title": "MPI HCR (%)",
+        "format": ".2f"
+      }
+    ]
+  },
+  "config": {}
+}
