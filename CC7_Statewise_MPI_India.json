@@ -34,7 +34,12 @@
       "field": "MPI_HCR_num",
       "type": "quantitative",
       "title": "MPI Headcount Ratio (%)",
-      "scale": {"scheme": "reds"}
+      "scale": {"scheme": "reds"},
+      "legend": {
+        "orient":"bottom-right",
+        "direction": "horizontal",
+        "gradientLength":150
+      }
     },
     "tooltip": [
       {"field": "properties.NAME_1", "type": "nominal", "title": "State/UT"},
