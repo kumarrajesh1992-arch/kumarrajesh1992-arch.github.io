@@ -115,3 +115,9 @@ img {
 .cc6-grid figure {
   margin: 0;
 }
+.small-text {
+  font-size: 13px;
+  line-height: 1.4;
+  color: #444;
+  margin-top: 4px;
+}
