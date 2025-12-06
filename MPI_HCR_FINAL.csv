@@ -1,0 +1,708 @@
+﻿District,MPI_HCR
+North & Middle Andaman,4.39
+Nicobars,3.4
+South Andaman,1.15
+Kurnool,12.84
+Vizianagaram,8.66
+Visakhapatnam,7.6
+Prakasam,6.28
+Srikakulam,5.2
+Anantapur,6.74
+Spsr Nellore,5.41
+Chittoor,5.66
+Y.S.R. Kadapa,3.34
+West Godavari,2.42
+Krishna,4.38
+East Godavari,6.13
+Guntur,4.36
+East Kameng,22.05
+Kurung Kumey,11.14
+Lohit,12.39
+Tawang,8.46
+Tirap,14.78
+Upper Subansiri,19.71
+Changlang,14.39
+Lower Dibang Valley,9.08
+Anjaw,13.09
+West Kameng,4.74
+Dibang Valley,10.11
+Lower Subansiri,6.39
+Upper Siang,8.74
+West Siang,13.85
+Papum Pare,13.76
+East Siang,8.11
+Kra Daadi,18.91
+Longding,20.97
+Namsai,22.11
+Siang,9.15
+Dhubri,26.02
+Hailakandi,36.22
+Karimganj,32.93
+Cachar,30.58
+Goalpara,18.34
+Tinsukia,17.66
+Darrang,23.65
+Barpeta,19.12
+Karbi Anglong,16.2
+Morigaon,22.46
+Chirang,16.79
+Dima Hasao,13.62
+Bongaigaon,17.39
+Kokrajhar,18.92
+Nagaon,20.84
+Dibrugarh,12.26
+Udalguri,19.16
+Sivasagar,10.28
+Dhemaji,13.73
+Kamrup,12.71
+Sonitpur,19.94
+Lakhimpur,14.06
+Baksa,15.6
+Golaghat,14.6
+Jorhat,11.49
+Nalbari,11.24
+Kamrup Metropolitan,5.63
+Biswanath,22.09
+Charaideo,20.1
+Hojai,14.13
+Majuli,14.41
+South Salmara Mancachar,28.24
+West Karbi Anglong,24.09
+Araria,52.07
+Madhepura,45.78
+Kishanganj,45.55
+Purnia,50.7
+Purba Champaran,36.39
+Saharsa,49
+Katihar,44.21
+Sitamarhi,42.82
+Supaul,50.64
+Jamui,41.94
+Khagaria,41.38
+Sheohar,33.8
+Pashchim Champaran,36.67
+Samastipur,37.36
+Darbhanga,35.07
+Banka,38.22
+Madhubani,33.91
+Gaya,35.43
+Nawada,32.13
+Sheikhpura,31.17
+Begusarai,28.28
+Arwal,31.72
+Muzaffarpur,27.61
+Bhagalpur,27.4
+Nalanda,30.02
+Vaishali,29.22
+Jehanabad,31.77
+Lakhisarai,31.46
+Kaimur,29.95
+Saran,27.74
+Aurangabad,26.8
+Gopalganj,23.23
+Munger,21.63
+Buxar,26
+Bhojpur,26.35
+Siwan,17.41
+Rohtas,21.93
+Patna,23.09
+Chandigarh,3.52
+Dantewada,29.53
+Narayanpur,36.65
+Bastar,34.69
+Surguja,24.33
+Jashpur,25.41
+Kabeerdham,13.78
+Bijapur,49.72
+Koriya,20.03
+Korba,18.11
+Raigarh,19.08
+Mahasamund,12.5
+Uttar Bastar Kanker,13.9
+Bilaspur,16.74
+Janjgir-Champa,11.68
+Raipur,8.73
+Rajnandgaon,10.77
+Durg,3.55
+Dhamtari,5.81
+Balod,5.77
+Baloda Bazar,15.61
+Balrampur,32.45
+Bemetara,17.26
+Gariyaband,17.14
+Kodagaon,26.79
+Mungeli,15.31
+Sukma,42.34
+Surajpur,22.41
+Dadra & Nagar Haveli,10.79
+Daman,6.57
+Diu,1.62
+North West,2.05
+North East,3.69
+South,1.29
+New Delhi,4.83
+East,2.79
+Central,3.88
+West,4.68
+North,6.26
+South West,3.45
+Shahdara,1.52
+South East,2.69
+South Goa,0.84
+North Goa,0.84
+Dang,26.61
+Dohad,38.27
+Panch Mahals,18.11
+Narmada,22.62
+Banas Kantha,23.83
+Kachchh,10.52
+Surendranagar,11.45
+Tapi,16.03
+Kheda,17.06
+Sabar Kantha,19.96
+Vadodara,6.53
+Valsad,8.11
+Patan,12.93
+Gandhinagar,5.66
+Bharuch,12.28
+Bhavnagar,12.12
+Anand,10.47
+Jamnagar,7.16
+Amreli,7.47
+Mahesana,9.11
+Junagadh,7.02
+Navsari,4.84
+Surat,5.29
+Rajkot,3.98
+Porbandar,4.07
+Ahmadabad,5.49
+Aravali,19.19
+Botad,9.77
+Chhota Udaipur,25.24
+Devbhumi Dwarka,17.93
+Gir Somnath,9.41
+Mahisagar,16.72
+Morbi,8.6
+Mewat,39.99
+Palwal,14.71
+Sirsa,7.16
+Rohtak,4.69
+Bhiwani,6.62
+Faridabad,7.42
+Fatehabad,7.51
+Gurgaon,3.29
+Rewari,2.91
+Hisar,5.62
+Jind,7.42
+Panipat,7.39
+Kaithal,3.62
+Karnal,3.43
+Kurukshetra,4.6
+Sonipat,4.01
+Mahendragarh,5.04
+Jhajjar,3.2
+Yamunanagar,4.7
+Panchkula,1.42
+Ambala,3.83
+Charkhi Dadri,2.85
+Sirmaur,5.84
+Chamba,9.99
+Solan,4.02
+Kullu,7.18
+Mandi,4.47
+Shimla,3.09
+Lahul & Spiti,7.71
+Bilaspur (HP),5.15
+Kangra,4.25
+Kinnaur,3.95
+Una,4.47
+Hamirpur,4.99
+Ramban,14.86
+Doda,7.71
+Rajouri,8.07
+Udhampur,10.23
+Kishtwar,10.59
+Punch,6.65
+Reasi,11.4
+Kupwara,4.97
+Kathua,2.7
+Bandipore,5.36
+Samba,2.3
+Anantnag,3.07
+Ganderbal,3.46
+Kulgam,3.97
+Baramula,6.68
+Jammu,0.49
+Badgam,5.2
+Shupiyan,1.54
+Pulwama,2.09
+Srinagar,1.34
+Pakur,49.87
+Pashchimi Singhbhum,47.81
+Chatra,37
+Sahibganj,48.45
+Latehar,41.68
+Garhwa,35.84
+Dumka,37.98
+Godda,36.36
+Jamtara,28.97
+Simdega,31.41
+Palamu,32.34
+Khunti,33.38
+Giridih,30.29
+Deoghar,37.04
+Gumla,30.76
+Lohardaga,22.71
+Saraikela-Kharsawan,23.16
+Hazaribagh,26.1
+Kodarma,28.21
+Ramgarh,18.06
+Bokaro,15.28
+Dhanbad,17.09
+Ranchi,15.8
+Purbi Singhbhum,15.1
+Yadgir,25.38
+Raichur,20.19
+Bellary,12.22
+Koppal,18.04
+Gulbarga,18.63
+Bijapur (KA),16.3
+Bagalkot,10.85
+Gadag,15.32
+Bidar,11.25
+Chamarajanagar,5.15
+Haveri,11.38
+Chitradurga,5.84
+Chikkaballapura,3.39
+Uttara Kannada,4.59
+Tumkur,4.69
+Shimoga,3.39
+Belgaum,9.41
+Davanagere,5.95
+Udupi,4.13
+Chikmagalur,3.74
+Dharwad,5.71
+Kolar,1.78
+Kodagu,4.67
+Ramanagara,0.88
+Mysore,2.3
+Bangalore Rural,0.99
+Mandya,2.47
+Dakshina Kannada,1.71
+Hassan,2.43
+Bangalore,1.47
+Wayanad,2.82
+Idukki,1.11
+Kasaragod,1.7
+Malappuram,0.85
+Thiruvananthapuram,0.52
+Pathanamthitta,0.42
+Kollam,0.04
+Alappuzha,0.1
+Palakkad,1.34
+Kannur,0.03
+Thrissur,0.03
+Kozhikode,0.68
+Ernakulam,0
+Kottayam,0.14
+Kargil,3.7
+Leh,3.35
+Lakshadweep,1.11
+Alirajpur,40.25
+Jhabua,49.62
+Barwani,33.52
+Dindori,34.57
+Singrauli,31.32
+Sidhi,33.07
+Sheopur,38
+Chhatarpur,27.23
+Vidisha,23.16
+Mandla,28.28
+Tikamgarh,21.19
+Guna,23.09
+Damoh,27.39
+Shivpuri,27.92
+Umaria,23.14
+Panna,32.43
+Khandwa (East Nimar),15.15
+Ashoknagar,27.29
+Shahdol,23.51
+Ratlam,20.68
+Dhar,18.31
+Burhanpur,18.6
+Rajgarh,24.04
+Seoni,22.37
+Anuppur,20.04
+Katni,21.84
+Sagar,22.26
+Khargone (West Nimar),17.99
+Balaghat,13.59
+Rewa,28.88
+Betul,21.18
+Raisen,13.78
+Harda,12.92
+Shajapur,14.7
+Datia,15.45
+Satna,19.01
+Mandsaur,18.38
+Bhind,17.61
+Morena,22.95
+Neemuch,9.88
+Chhindwara,14.37
+Dewas,12.9
+Narsimhapur,15.11
+Ujjain,14.38
+Sehore,12.28
+Hoshangabad,14.85
+Gwalior,9.75
+Jabalpur,14.78
+Bhopal,6.75
+Indore,5.83
+Agar Malwa,15.01
+Nandurbar,33.17
+Dhule,21.44
+Jalna,14.12
+Hingoli,12.26
+Nanded,12.33
+Yavatmal,10.48
+Bid (MH),13.06
+Parbhani,14.92
+Washim,14.54
+Gadchiroli,12.75
+Jalgaon,13.39
+Nashik,13.46
+Buldana,8.77
+Chandrapur (MH),5.7
+Ratnagiri,7.64
+Osmanabad,5.34
+Gondiya,8.49
+Latur,6.25
+Thane,5.62
+Ahmadnagar,7.19
+Sindhudurg,5.59
+Aurangabad (MH),9.45
+Solapur,7.16
+Akola,6.09
+Amravati,8.22
+Raigarh (MH),8.38
+Satara,4.73
+Sangli,2.14
+Kolhapur,4.48
+Wardha,2.39
+Bhandara,5.85
+Nagpur,1.25
+Pune,2.92
+Mumbai Suburban,1.15
+Mumbai,1.21
+Palghar,13.3
+Tamenglong,18.5
+Senapati,15.6
+Ukhrul,17.87
+Chandel,14.74
+Churachandpur,15.35
+Thoubal,7.46
+Imphal East,5.19
+Bishnupur,6.91
+Imphal West,2.12
+East Jantia Hills,43.79
+Ribhoi,31.67
+East Garo Hills,14.96
+West Khasi Hills,52.48
+West Garo Hills,8
+East Khasi Hills,24.1
+South Garo Hills,9.77
+North Garo Hills,13.26
+South West Garo Hills,18.27
+South West Khasi Hills,40.98
+West Jaintia Hills,52.08
+Lawngtlai,21.63
+Mamit,9.29
+Saiha,6.9
+Lunglei,5.15
+Kolasib,5.25
+Champhai,1.51
+Serchhip,3.3
+Aizawl,0.87
+Mon,22.95
+Tuensang,29.21
+Kiphire,28.19
+Longleng,26.9
+Phek,17.28
+Peren,17.46
+Zunheboto,20.31
+Dimapur,7.23
+Wokha,11.99
+Kohima,6.5
+Mokokchung,7.22
+Malkangiri,45.01
+Nabarangapur,33.45
+Koraput,33.54
+Rayagada,34.03
+Kalahandi,19.47
+Mayurbhanj,30.57
+Kandhamal,25.3
+Kendujhar,26.76
+Gajapati,28.14
+Debagarh,16.56
+Nuapada,20.19
+Baudh,16.27
+Dhenkanal,15.98
+Balangir,9.52
+Bhadrak,16.6
+Subarnapur,8.68
+Sundargarh,14.77
+Baleshwar,14.21
+Anugul,13.87
+Bargarh,11.51
+Sambalpur,10.05
+Ganjam,6.31
+Kendrapara,8.9
+Jajapur,14.1
+Nayagarh,6.63
+Jharsuguda,7.09
+Khordha,3.95
+Cuttack,6.31
+Jagatsinghapur,3.53
+Puri,3.29
+Yanam,3.95
+Karaikal,2.28
+Puducherry,0.3
+Mahe,0.19
+Mansa,7.8
+Firozpur,8.42
+Tarn Taran,7.83
+Muktsar,7.57
+Moga,5.65
+Amritsar,3.37
+Sangrur,3.53
+Barnala,5.49
+Bathinda,8.03
+Sahibzada Ajit Singh Nagar,3.35
+Kapurthala,5.02
+Gurdaspur,5.08
+Hoshiarpur,1.5
+Ludhiana,4.59
+Patiala,2.95
+Fatehgarh Sahib,3.1
+Shahid Bhagat Singh Nagar,1.31
+Jalandhar,3.58
+Faridkot,6.04
+Rupnagar,2.88
+Fazilka,8.45
+Pathankot,2.35
+Barmer,20.64
+Jaisalmer,22.36
+Pratapgarh (RJ),29.68
+Banswara,27.45
+Udaipur,14.45
+Dungarpur,17.44
+Sirohi,19.62
+Jalor,17.02
+Bharatpur,23.88
+Dhaulpur,26.65
+Karauli,26.25
+Jhalawar,16.07
+Bundi,18.88
+Sawai Madhopur,18.66
+Baran,16.29
+Alwar,20.93
+Rajsamand,12.96
+Chittaurgarh,13.11
+Jodhpur,17.02
+Bhilwara,14.93
+Dausa,14.32
+Pali,9.41
+Tonk,14.72
+Bikaner,17.7
+Churu,17.32
+Nagaur,13.08
+Hanumangarh,10.08
+Ajmer,9.87
+Ganganagar,9.43
+Jaipur,7.4
+Sikar,9.09
+Kota,5.59
+Jhunjhunun,9.32
+West District (SK),2.77
+North District (SK),5.17
+East District (SK),2.12
+South District (SK),2.9
+Pudukkottai,4.63
+Viluppuram,3.62
+Ariyalur,3.53
+Sivaganga,3.96
+Nagapattinam,3.31
+Thoothukkudi,2.69
+Virudhunagar,3.02
+Perambalur,1.78
+Salem,1.94
+Thanjavur,2.45
+Thiruvarur,2.76
+Ramanathapuram,2.47
+Cuddalore,3.75
+Tiruvannamalai,2.37
+Madurai,1.88
+Tirunelveli,1.96
+Dharmapuri,2.1
+Krishnagiri,2.19
+Theni,1.91
+Karur,3.11
+Dindigul,4.52
+Tiruchirappalli,2.92
+Tiruppur,1.94
+Vellore,1.09
+Erode,1.4
+Kancheepuram,1.23
+Namakkal,1.39
+Thiruvallur,1.18
+Coimbatore,0.96
+The Nilgiris,1.33
+Kanniyakumari,0.67
+Chennai,1.03
+Adilabad,14.24
+Mahabubnagar,10.27
+Nizamabad,6.76
+Medak,9.34
+Nalgonda,4.4
+Khammam,3.18
+Warangal Urban,2.41
+Karimnagar,2.5
+Ranga Reddy,3.83
+Hyderabad,2.52
+Bhadradri Kothagudem,4.33
+Jagitial,4.77
+Jangoan,2.91
+Jayashankar Bhupalapally,6.33
+Jogulamba Gadwal,15.37
+Kamareddy,11.9
+Komaram Bheem Asifabad,16.59
+Mahabubabad,6.45
+Mancherial,4.43
+Medchal-Malkajgiri,3.06
+Nagarkurnool,5.95
+Nirmal,7.14
+Peddapalli,2.17
+Rajanna Sircilla,3.68
+Sangareddy,7.09
+Siddipet,3.39
+Suryapet,3.89
+Vikarabad,12.5
+Wanaparthy,8.86
+Warangal Rural,6.45
+Yadadri Bhuvanagiri,4.24
+North Tripura,17.85
+Dhalai,21.89
+South Tripura,11.89
+West Tripura,6
+Gomati,9.06
+Khowai,17.27
+Sepahijala,12.27
+Unakoti,24.92
+Shrawasti,49.62
+Bahraich,54.44
+Balrampur (UP),41.55
+Kheri,34.73
+Gonda,29.71
+Budaun,40.37
+Kaushambi,30.31
+Siddharthnagar,37.67
+Sitapur,40.15
+Chitrakoot,31.41
+Shahjahanpur,32.57
+Hardoi,34.14
+Sonbhadra,30.55
+Kanshiram Nagar,31.43
+Mahrajganj,19.47
+Bara Banki,31.68
+Pilibhit,22.54
+Kannauj,28.9
+Sant Kabir Nagar,22.57
+Fatehpur,27.38
+Mirzapur,22
+Basti,19.89
+Kushinagar,20.54
+Rampur,23.03
+Unnao,22.96
+Sant Ravidas Nagar,22.04
+Bareilly,23.39
+Farrukhabad,25.44
+Banda,33.8
+Ghazipur,18.22
+Jaunpur,16.13
+Faizabad,17.79
+Moradabad,17.8
+Etah,25.63
+Aligarh,22
+Sultanpur,22.32
+Chandauli,25.41
+Jyotiba Phule Nagar,21.11
+Ballia,19.97
+Kanpur Dehat,20.68
+Pratapgarh (UP),21.29
+Rae Bareli,22.37
+Lalitpur,29.98
+Mahoba,23.81
+Agra,18.2
+Bulandshahr,17.44
+Allahabad,21.21
+Mathura,22.42
+Firozabad,19.06
+Ambedkar Nagar,21
+Mau,13.36
+Muzaffarnagar,12.91
+Deoria,16.09
+Mahamaya Nagar,22.39
+Azamgarh,17.14
+Saharanpur,17.86
+Mainpuri,18.03
+Hamirpur,17.29
+Bijnor,16.42
+Auraiya,19.28
+Jalaun,18.12
+Gorakhpur,15.83
+Varanasi,15.26
+Etawah,15.99
+Baghpat,13.64
+Meerut,13.24
+Jhansi,15.14
+Ghaziabad,6.93
+Gautam Buddha Nagar,12.16
+Kanpur Nagar,9.11
+Lucknow,8.48
+Amethi,28.96
+Hapur,12.6
+Sambhal,35.06
+Shamli,22.45
+Hardwar,16.29
+Uttarkashi,9.54
+Udham Singh Nagar,11.26
+Almora,9.47
+Champawat,9.59
+Bageshwar,7.5
+Tehri Garhwal,7.94
+Chamoli,6.81
+Nainital,10.09
+Pithoragarh,6.48
+Rudraprayag,5.14
+Garhwal,8.91
+Dehradun,3.02
+Puruliya,26.84
+Uttar Dinajpur,21.65
+Maldah,15.57
+South 24 Parganas,10.96
+Murshidabad,16.55
+Birbhum,18.27
+Bankura,18.49
+Paschim Medinipur,18.14
+Jalpaiguri,8.85
+Dakshin Dinajpur,13.37
+Koch Bihar,10.31
+Paschim Barddhaman,11.2
+Hugli,7.36
+Purba Medinipur,12.48
+Howrah,6.06
+Darjeeling,5.45
+Nadia,8.2
+North 24 Parganas,4.37
+Kolkata,2.56
+Purba Barddhaman,14.32
