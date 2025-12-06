@@ -189,77 +189,51 @@
 </section>
 
     
-    <script>
-        // This is a comment in JavaScript - it's a different language to HTML and CSS
+<script>
+  // Vega-Lite specs
+  let figure_1_spec = "CC1_Globalchildpoverty.json";
+  let figure_2_spec = "CC1UKchildpoverty.json";
+  let figure_3_spec = "CC2_UNEMPLOYMENTRATEFINAL.json";
+  let figure_4_spec = "CC2_EMPLOYMENTPOPULATIONRATIO.json";
+  let figure_5_spec = "CC3_Extremepoverty.json";
+  let figure_6_spec = "CC3_LMIC.json";
+  let figure_8_spec = "CC4_Improved.json";
+  let api_lifeexp_spec = "CC5_Lifeapi.json";
+  let scraper_spec = "CC5_datascraping.json";
+  let figure_9_spec = "CC7_Statewise_MPI_India.json";  // ✅ new MPI map spec
 
-        let figure_1_spec = "CC1_Globalchildpoverty.json"; // We're storing the URL of the graph we want to display in a variable
-        let figure_2_spec = "CC1UKchildpoverty.json";
-        let figure_3_spec = "CC2_UNEMPLOYMENTRATEFINAL.json";
-        let figure_4_spec = "CC2_EMPLOYMENTPOPULATIONRATIO.json";
-        let figure_5_spec = "CC3_Extremepoverty.json";
-        let figure_6_spec = "CC3_LMIC.json";
-        let figure_8_spec = "CC4_Improved.json";
-        let api_lifeexp_spec = "CC5_Lifeapi.json";
-        let scraper_spec = "CC5_datascraping.json";
-        Let figure_9_spec = "CC7_Statewise_MPI_India.json";
+  // CC1–CC5 charts
+  vegaEmbed('#Location1', figure_1_spec).then(console.log).catch(console.warn);
+  vegaEmbed('#Location2', figure_2_spec).then(console.log).catch(console.warn);
+  vegaEmbed('#Location3', figure_3_spec).then(console.log).catch(console.warn);
+  vegaEmbed('#Location4', figure_4_spec).then(console.log).catch(console.warn);
+  vegaEmbed('#Location5', figure_5_spec).then(console.log).catch(console.warn);
+  vegaEmbed('#Location6', figure_6_spec).then(console.log).catch(console.warn);
+  vegaEmbed('#Location8', figure_8_spec).then(console.log).catch(console.warn);
+  vegaEmbed('#api_lifeexp', api_lifeexp_spec).then(console.log).catch(console.warn);
+  vegaEmbed('#ScraperChart', scraper_spec).then(console.log).catch(console.warn);
 
-        // Now we embed each chart into its figure tag
-    vegaEmbed('#Location1', figure_1_spec)
-        .then(console.log)
-        .catch(console.warn);
+  // CC6 dashboard – loop over mini charts
+  const cc6Specs = [
+    { id: "cc6_chart_1", spec: "CC6_LFPR.json" },
+    { id: "cc6_chart_2", spec: "CC6_FLFPR.json" },
+    { id: "cc6_chart_3", spec: "CC6_UR.json" },
+    { id: "cc6_chart_4", spec: "CC6_AG.json" },
+    { id: "cc6_chart_5", spec: "CC6_Emp.json" },
+    { id: "cc6_chart_6", spec: "CC6_Serv.json" }
+  ];
 
-    vegaEmbed('#Location2', figure_2_spec)
-        .then(console.log)
-        .catch(console.warn);
+  cc6Specs.forEach(item => {
+    vegaEmbed(`#${item.id}`, item.spec)
+      .then(console.log)
+      .catch(console.warn);
+  });
 
-    vegaEmbed('#Location3', figure_3_spec)
-        .then(console.log)
-        .catch(console.warn);
-
-    vegaEmbed('#Location4', figure_4_spec)
-        .then(console.log)
-        .catch(console.warn);
-
-    vegaEmbed('#Location5', figure_5_spec)
-        .then(console.log)
-        .catch(console.warn);
-
-    vegaEmbed('#Location6', figure_6_spec)
-        .then(console.log)
-        .catch(console.warn);
-
-    vegaEmbed('#Location8', figure_8_spec)
-        .then(console.log)
-        .catch(console.warn);
-
-    vegaEmbed('#api_lifeexp', api_lifeexp_spec)
-        .then(console.log)
-        .catch(console.warn);
-
-    vegaEmbed('#ScraperChart', scraper_spec)
-       .then(console.log)
-       .catch(console.warn);
-
-    const cc6Specs = [
-  { id: "cc6_chart_1", spec: "CC6_LFPR.json" },
-  { id: "cc6_chart_2", spec: "CC6_FLFPR.json" },
-  { id: "cc6_chart_3", spec: "CC6_UR.json" },
-  { id: "cc6_chart_4", spec: "CC6_AG.json" },
-  { id: "cc6_chart_5", spec: "CC6_Emp.json" },
-  { id: "cc6_chart_6", spec: "CC6_Serv.json" }
-];
-
-cc6Specs.forEach(item => {
-  vegaEmbed(`#${item.id}`, item.spec)
+  // CC7: MPI state map
+  vegaEmbed('#Location9', figure_9_spec)
     .then(console.log)
     .catch(console.warn);
-   
-vegaEmbed('#Location9', figure_9_spec)
-        .then(console.log)
-        .catch(console.warn);
-});
-    
-    </script>
+</script>
 
 </body>
     
