@@ -1,0 +1,61 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Subnational HDI across Indian States",
+    "subtitle": "State-level Human Development Index with year slider | Source: GDL / own processing",
+    "anchor": "middle",
+    "fontSize": 16,
+    "subtitleFontSize": 11
+  },
+  "width": 600,
+  "height": 450,
+  "data": {
+    "url": "https://raw.githubusercontent.com/kumarrajesh1992-arch/kumarrajesh1992-arch.github.io/refs/heads/main/india_state_hdi_long.csv",
+    "format": {"type": "csv"}
+  },
+  "params": [
+    {
+      "name": "year_sel",
+      "value": 2019,
+      "bind": {
+        "input": "range",
+        "min": 1990,
+        "max": 2019,
+        "step": 1,
+        "name": "Year: "
+      }
+    }
+  ],
+  "transform": [
+    {"filter": "datum.Year == year_sel"},
+    {
+      "lookup": "State",
+      "from": {
+        "data": {
+          "url": "https://raw.githubusercontent.com/kumarrajesh1992-arch/kumarrajesh1992-arch.github.io/refs/heads/main/CC7_Indiastate.json",
+          "format": {"type": "json", "property": "features"}
+        },
+        "key": "properties.NAME_1",
+        "fields": ["geometry"]
+      }
+    }
+  ],
+  "projection": {"type": "mercator"},
+  "mark": {"type": "geoshape", "stroke": "white", "strokeWidth": 0.3},
+  "encoding": {
+    "shape": {"field": "geometry", "type": "geojson"},
+    "color": {
+      "field": "HDI",
+      "type": "quantitative",
+      "title": "HDI",
+      "scale": {"scheme": "blues", "domain": [0.3, 0.9]},
+      "legend": {"orient": "bottom"}
+    },
+    "tooltip": [
+      {"field": "State", "type": "nominal", "title": "State/UT"},
+      {"field": "Year", "type": "quantitative", "title": "Year"},
+      {"field": "HDI", "type": "quantitative", "title": "HDI", "format": ".3f"}
+    ]
+  },
+  "config": {}
+}
