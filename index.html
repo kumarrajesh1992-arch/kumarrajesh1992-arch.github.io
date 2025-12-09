@@ -237,7 +237,7 @@
   let scraper_spec = "CC5_datascraping.json";
   let figure_9_spec = "CC7_Statewise_MPI_India.json";
   let figure_10_spec= "CC7_Top50_Districts.json";
-  let cc9_hdi_slider_spec = "CC9_Sub_HDI_Slider.json";
+  
 
   // CC1–CC5 charts
   vegaEmbed('#Location1', figure_1_spec).then(console.log).catch(console.warn);
@@ -275,9 +275,6 @@
     .then(console.log)
     .catch(console.warn);
   
-    vegaEmbed('#CC9_HDI_Slider', cc9_hdi_slider_spec)
-    .then(console.log)
-    .catch(console.warn);
     
 </script>
     
