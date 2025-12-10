@@ -206,18 +206,16 @@
 
         <section id="CC9" class="section-light">
   <div class="section-header">
-    <h2>CC9: Interactive Subnational HDI Map of India</h2>
+    <h2>CC9: Interactive Human Development Index Trends for India</h2>
   </div>
 
   <div class="chart-container">
     <div class="chart-item">
-      <h3>Figure: State-level HDI with Year Slider</h3>
-      <figure id="CC9_HDI_Slider"></figure>
+      <h3>Figure: HDI and Constituent Indicators Over Time</h3>
+      <figure id="CC9_HDI"></figure>
 
       <p class="small-text">
-        This interactive choropleth links GDL’s subnational HDI data with an India
-        state boundary file. The year slider lets users explore how state-level
-        HDI has evolved from 1990 to 2019.
+        This interactive chart allows users to explore trends in India's HDI score and its constituent indicators value over time using a dropdown selector.
       </p>
     </div>
   </div>
@@ -237,6 +235,7 @@
   let scraper_spec = "CC5_datascraping.json";
   let figure_9_spec = "CC7_Statewise_MPI_India.json";
   let figure_10_spec= "CC7_Top50_Districts.json";
+  let cc9_hdi_spec = "CC9_HDI_Dropdown.json";
   
 
   // CC1–CC5 charts
@@ -274,6 +273,10 @@
  vegaEmbed('#Location10', figure_10_spec)
     .then(console.log)
     .catch(console.warn);
+
+    vegaEmbed('#CC9_HDI', cc9_hdi_spec)
+  .then(console.log)
+  .catch(console.warn);
   
     
 </script>
