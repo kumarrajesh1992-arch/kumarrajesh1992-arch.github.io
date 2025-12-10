@@ -1,0 +1,94 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Trend in India's Human Development Index Score between 1990-2023)",
+    "subtitle": "HDI and constituent indicators over time (select using dropdown) | Data Source: UNDP HDRO",
+    "anchor": "middle",
+    "fontSize": 16,
+    "subtitleFontSize": 11
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/kumarrajesh1992-arch/kumarrajesh1992-arch.github.io/refs/heads/main/CC9_India_HDI_tidy.csv",
+    "format": {"type": "csv"}
+  },
+  "params": [
+    {
+      "name": "indicator_sel",
+      "value": "HDI",
+      "bind": {
+        "input": "select",
+        "name": "Select Metric: ",
+        "options": [
+          "HDI",
+          "Life_expectancy",
+          "Mean_years_schooling",
+          "Expected_years_schooling",
+          "GNI_per_capita"
+        ],
+        "labels": [
+          "Human Development Index (HDI)",
+          "Life expectancy at birth (years)",
+          "Mean years of schooling (years)",
+          "Expected years of schooling (years)",
+          "GNI per capita (2021 PPP$)"
+        ]
+      }
+    }
+  ],
+  "transform": [
+    {
+      "fold": [
+        "HDI",
+        "Life_expectancy",
+        "Mean_years_schooling",
+        "Expected_years_schooling",
+        "GNI_per_capita"
+      ],
+      "as": ["Indicator", "Value"]
+    },
+    {"filter": "datum.Indicator == indicator_sel"}
+  ],
+  "mark": {
+    "type": "line",
+    "point": {"filled": true, "size": 60},
+    "strokeWidth": 2
+  },
+  "encoding": {
+    "x": {
+      "field": "Year",
+      "type": "quantitative",
+      "title": "Year",
+      "axis": {"format": "d", "tickMinStep": 1, "labelAngle": 0}
+    },
+    "y": {
+      "field": "Value",
+      "type": "quantitative",
+      "axis": {
+        "title": {
+          "expr": "indicator_sel == 'HDI' ? 'HDI score (0-1)' : indicator_sel == 'Life_expectancy' ? 'Years' : indicator_sel == 'Mean_years_schooling' ? 'Years' : indicator_sel == 'Expected_years_schooling' ? 'Years' : 'GNI per capita (2021 PPP$)'"
+        }
+      }
+    },
+    "tooltip": [
+      {"field": "Year", "type": "quantitative", "title": "Year", "format": "d"},
+      {"field": "Indicator", "type": "nominal", "title": "Indicator"},
+      {
+        "field": "Value",
+        "type": "quantitative",
+        "title": "Value",
+        "format": ".3f"
+      }
+    ]
+  },
+  "width": 650,
+  "height": 420,
+  "config": {
+    "axis": {
+      "grid": true,
+      "gridColor": "#e6e6e6",
+      "labelFontSize": 11,
+      "titleFontSize": 12
+    },
+    "view": {"stroke": "transparent"}
+  }
+}
