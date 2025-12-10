@@ -1,0 +1,289 @@
+state,year,hdi
+andaman and nicobar islands,1990,0.686
+andaman and nicobar islands,1996,0.684
+andaman and nicobar islands,1999,0.682
+andaman and nicobar islands,2004,0.705
+andaman and nicobar islands,2009,0.699
+andaman and nicobar islands,2014,0.708
+andaman and nicobar islands,2019,0.699
+andaman and nicobar islands,2022,0.706
+andhra pradesh,1990,0.428
+andhra pradesh,1996,0.45
+andhra pradesh,1999,0.464
+andhra pradesh,2004,0.513
+andhra pradesh,2009,0.56
+andhra pradesh,2014,0.614
+andhra pradesh,2019,0.635
+andhra pradesh,2022,0.642
+arunachal pradesh,1990,0.442
+arunachal pradesh,1996,0.474
+arunachal pradesh,1999,0.493
+arunachal pradesh,2004,0.521
+arunachal pradesh,2009,0.606
+arunachal pradesh,2014,0.666
+arunachal pradesh,2019,0.675
+arunachal pradesh,2022,0.683
+assam,1990,0.413
+assam,1996,0.45
+assam,1999,0.476
+assam,2004,0.515
+assam,2009,0.549
+assam,2014,0.586
+assam,2019,0.609
+assam,2022,0.615
+bihar,1990,0.38
+bihar,1996,0.408
+bihar,1999,0.425
+bihar,2004,0.455
+bihar,2009,0.495
+bihar,2014,0.543
+bihar,2019,0.571
+bihar,2022,0.577
+chandigarh,1990,0.636
+chandigarh,1996,0.631
+chandigarh,1999,0.627
+chandigarh,2004,0.649
+chandigarh,2009,0.642
+chandigarh,2014,0.697
+chandigarh,2019,0.745
+chandigarh,2022,0.751
+chhattisgarh,1990,0.563
+chhattisgarh,1996,0.557
+chhattisgarh,1999,0.552
+chhattisgarh,2004,0.573
+chhattisgarh,2009,0.566
+chhattisgarh,2014,0.578
+chhattisgarh,2019,0.618
+chhattisgarh,2022,0.625
+dadra and nagar haveli,1990,0.672
+dadra and nagar haveli,1996,0.672
+dadra and nagar haveli,1999,0.67
+dadra and nagar haveli,2004,0.693
+dadra and nagar haveli,2009,0.687
+dadra and nagar haveli,2014,0.665
+dadra and nagar haveli,2019,0.618
+dadra and nagar haveli,2022,0.624
+daman and diu,1990,0.651
+daman and diu,1996,0.651
+daman and diu,1999,0.651
+daman and diu,2004,0.673
+daman and diu,2009,0.668
+daman and diu,2014,0.677
+daman and diu,2019,0.668
+daman and diu,2022,0.674
+delhi,1990,0.581
+delhi,1996,0.624
+delhi,1999,0.653
+delhi,2004,0.677
+delhi,2009,0.695
+delhi,2014,0.719
+delhi,2019,0.728
+delhi,2022,0.734
+goa,1990,0.558
+goa,1996,0.583
+goa,1999,0.599
+goa,2004,0.653
+goa,2009,0.713
+goa,2014,0.751
+goa,2019,0.753
+goa,2022,0.76
+gujarat,1990,0.474
+gujarat,1996,0.498
+gujarat,1999,0.514
+gujarat,2004,0.556
+gujarat,2009,0.589
+gujarat,2014,0.634
+gujarat,2019,0.64
+gujarat,2022,0.646
+haryana,1990,0.471
+haryana,1996,0.51
+haryana,1999,0.537
+haryana,2004,0.575
+haryana,2009,0.615
+haryana,2014,0.669
+haryana,2019,0.689
+haryana,2022,0.696
+himachal pradesh,1990,0.485
+himachal pradesh,1996,0.538
+himachal pradesh,1999,0.575
+himachal pradesh,2004,0.626
+himachal pradesh,2009,0.653
+himachal pradesh,2014,0.688
+himachal pradesh,2019,0.709
+himachal pradesh,2022,0.715
+jammu and kashmir,1990,0.499
+jammu and kashmir,1996,0.509
+jammu and kashmir,1999,0.514
+jammu and kashmir,2004,0.568
+jammu and kashmir,2009,0.621
+jammu and kashmir,2014,0.665
+jammu and kashmir,2019,0.712
+jammu and kashmir,2022,0.72
+jharkhand,1990,0.563
+jharkhand,1996,0.557
+jharkhand,1999,0.553
+jharkhand,2004,0.573
+jharkhand,2009,0.566
+jharkhand,2014,0.572
+jharkhand,2019,0.593
+jharkhand,2022,0.6
+karnataka,1990,0.448
+karnataka,1996,0.482
+karnataka,1999,0.504
+karnataka,2004,0.549
+karnataka,2009,0.587
+karnataka,2014,0.641
+karnataka,2019,0.667
+karnataka,2022,0.673
+kerala,1990,0.551
+kerala,1996,0.569
+kerala,1999,0.579
+kerala,2004,0.656
+kerala,2009,0.699
+kerala,2014,0.741
+kerala,2019,0.751
+kerala,2022,0.758
+lakshadweep,1990,0.695
+lakshadweep,1996,0.693
+lakshadweep,1999,0.691
+lakshadweep,2004,0.715
+lakshadweep,2009,0.709
+lakshadweep,2014,0.718
+lakshadweep,2019,0.712
+lakshadweep,2022,0.719
+madhya pradesh,1990,0.408
+madhya pradesh,1996,0.432
+madhya pradesh,1999,0.446
+madhya pradesh,2004,0.484
+madhya pradesh,2009,0.52
+madhya pradesh,2014,0.567
+madhya pradesh,2019,0.605
+madhya pradesh,2022,0.611
+maharashtra,1990,0.498
+maharashtra,1996,0.527
+maharashtra,1999,0.545
+maharashtra,2004,0.586
+maharashtra,2009,0.626
+maharashtra,2014,0.668
+maharashtra,2019,0.689
+maharashtra,2022,0.695
+manipur,1990,0.5
+manipur,1996,0.528
+manipur,1999,0.547
+manipur,2004,0.582
+manipur,2009,0.652
+manipur,2014,0.695
+manipur,2019,0.676
+manipur,2022,0.683
+meghalaya,1990,0.461
+meghalaya,1996,0.464
+meghalaya,1999,0.461
+meghalaya,2004,0.514
+meghalaya,2009,0.591
+meghalaya,2014,0.645
+meghalaya,2019,0.643
+meghalaya,2022,0.65
+mizoram,1990,0.532
+mizoram,1996,0.546
+mizoram,1999,0.553
+mizoram,2004,0.611
+mizoram,2009,0.664
+mizoram,2014,0.694
+mizoram,2019,0.703
+mizoram,2022,0.709
+nagaland,1990,0.539
+nagaland,1996,0.526
+nagaland,1999,0.513
+nagaland,2004,0.543
+nagaland,2009,0.626
+nagaland,2014,0.682
+nagaland,2019,0.672
+nagaland,2022,0.679
+odisha,1990,0.403
+odisha,1996,0.43
+odisha,1999,0.447
+odisha,2004,0.479
+odisha,2009,0.517
+odisha,2014,0.568
+odisha,2019,0.603
+odisha,2022,0.61
+puducherry,1990,0.711
+puducherry,1996,0.718
+puducherry,1999,0.717
+puducherry,2004,0.741
+puducherry,2009,0.735
+puducherry,2014,0.726
+puducherry,2019,0.735
+puducherry,2022,0.741
+punjab,1990,0.502
+punjab,1996,0.541
+punjab,1999,0.568
+punjab,2004,0.6
+punjab,2009,0.638
+punjab,2014,0.687
+punjab,2019,0.691
+punjab,2022,0.698
+rajasthan,1990,0.406
+rajasthan,1996,0.438
+rajasthan,1999,0.457
+rajasthan,2004,0.494
+rajasthan,2009,0.53
+rajasthan,2014,0.585
+rajasthan,2019,0.645
+rajasthan,2022,0.652
+sikkim,1990,0.546
+sikkim,1996,0.541
+sikkim,1999,0.536
+sikkim,2004,0.576
+sikkim,2009,0.615
+sikkim,2014,0.672
+sikkim,2019,0.705
+sikkim,2022,0.712
+tamil nadu,1990,0.476
+tamil nadu,1996,0.507
+tamil nadu,1999,0.528
+tamil nadu,2004,0.581
+tamil nadu,2009,0.628
+tamil nadu,2014,0.676
+tamil nadu,2019,0.685
+tamil nadu,2022,0.692
+telangana,1990,0.624
+telangana,1996,0.619
+telangana,1999,0.615
+telangana,2004,0.637
+telangana,2009,0.63
+telangana,2014,0.638
+telangana,2019,0.653
+telangana,2022,0.66
+tripura,1990,0.45
+tripura,1996,0.493
+tripura,1999,0.521
+tripura,2004,0.548
+tripura,2009,0.588
+tripura,2014,0.633
+tripura,2019,0.617
+tripura,2022,0.624
+uttar pradesh,1990,0.398
+uttar pradesh,1996,0.43
+uttar pradesh,1999,0.45
+uttar pradesh,2004,0.487
+uttar pradesh,2009,0.519
+uttar pradesh,2014,0.56
+uttar pradesh,2019,0.604
+uttar pradesh,2022,0.609
+uttarakhand,1990,0.627
+uttarakhand,1996,0.624
+uttarakhand,1999,0.619
+uttarakhand,2004,0.641
+uttarakhand,2009,0.633
+uttarakhand,2014,0.647
+uttarakhand,2019,0.675
+uttarakhand,2022,0.681
+west bengal,1990,0.443
+west bengal,1996,0.475
+west bengal,1999,0.495
+west bengal,2004,0.525
+west bengal,2009,0.556
+west bengal,2014,0.603
+west bengal,2019,0.628
+west bengal,2022,0.635
