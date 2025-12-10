@@ -80,8 +80,8 @@
       }
     ]
   },
-  "width": 650,
-  "height": 420,
+  "width": 500,
+  "height": 350,
   "config": {
     "axis": {
       "grid": true,
