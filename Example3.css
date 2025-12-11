@@ -124,3 +124,7 @@ img {
   color: #444;
   margin-top: 4px;
 }
+/* For sections where charts should stack vertically */
+.chart-container.vertical {
+  flex-direction: column;
+}
