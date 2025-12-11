@@ -1,0 +1,80 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Trends in Statewise HDI Score in India 1990-2022",
+    "subtitle": "Bubble chart with year slider | Data Source: Global Data Lab",
+    "anchor": "middle",
+    "fontSize": 16,
+    "subtitleFontSize": 11
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/kumarrajesh1992-arch/kumarrajesh1992-arch.github.io/refs/heads/main/Kumar%20Main%20Project.csv",
+    "format": {
+      "type": "csv",
+      "parse": {"Year": "number", "SHDI": "number", "LGNIC": "number"}
+    }
+  },
+  "width": 800,
+  "height": 400,
+  "params": [
+    {
+      "name": "year_sel",
+      "value": 2022,
+      "bind": {
+        "input": "range",
+        "min": 1990,
+        "max": 2022,
+        "step": 1,
+        "name": "Year: "
+      }
+    }
+  ],
+  "transform": [{"filter": "datum.Year == year_sel"}],
+  "mark": {"type": "circle", "opacity": 0.9},
+  "encoding": {
+    "x": {
+      "field": "SHDI",
+      "type": "quantitative",
+      "title": "HDI score (0–1)",
+      "scale": {"domain": [0.3, 1], "clamp": true}
+    },
+    "y": {
+      "field": "LGNIC",
+      "type": "quantitative",
+      "title": "log GNI per capita (2021 PPP$)",
+      "scale": {"domain": [6, 12], "nice": false, "clamp": true},
+      "axis": {"format": ".2f"}
+    },
+    "color": {
+      "field": "HDI_category",
+      "type": "nominal",
+      "title": "HDI Category",
+      "scale": {
+        "domain": ["Very High", "High", "Medium", "Low"],
+        "range": ["#084081", "#2b8cbe", "#7bccc4", "#bae4bc"]
+      },
+      "legend": {
+        "labelExpr": "datum.value === 'Very High' ? 'Very High (≥ 0.800)' : datum.value === 'High' ? 'High (0.700–0.799)' : datum.value === 'Medium' ? 'Medium (0.550–0.699)' : 'Low (< 0.550)'"
+      }
+    },
+    "size": {"value": 320},
+    "tooltip": [
+      {"field": "State", "type": "nominal", "title": "State"},
+      {"field": "Year", "type": "quantitative", "title": "Year"},
+      {
+        "field": "SHDI",
+        "type": "quantitative",
+        "title": "HDI",
+        "format": ".3f"
+      },
+      {
+        "field": "LGNIC",
+        "type": "quantitative",
+        "title": "log GNI per capita",
+        "format": ".2f"
+      },
+      {"field": "HDI_category", "type": "nominal", "title": "HDI category"}
+    ]
+  },
+  "config": {}
+}
