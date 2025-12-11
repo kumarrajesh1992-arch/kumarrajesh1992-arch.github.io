@@ -193,7 +193,7 @@
     </P>
       <p>This choropleth map shows the Multidimensional Poverty Index (MPI) headcount ratio
     by state/UT in India, using state-level MPI estimates from NITI Aayog and a
-    state boundary map from ISRO. I manually compiled state-wise MPI headcount ratios from the NITI Aayog national MPI report into a CSV file, and used an India state boundary JSON
+    state boundary map of India. I manually compiled state-wise MPI headcount ratios from the NITI Aayog national MPI report into a CSV file, and used an India state boundary JSON
     from ISRO. The matching of state names was handled directly in the Vega-Lite spec so that each polygon is shaded by its MPI value.<p>
     </div>
 
@@ -221,6 +221,16 @@
         This interactive chart allows users to explore trends in India's HDI score and its constituent indicators value over time using a dropdown selector.
       </p>
     </div>
+
+       <div class="chart-item">
+    <h3>Figure: Trends in Statewise HDI Score and GNI per Capita (1990–2022)</h3>
+        <figure id="HDI_Bubble"></figure>
+
+        <p class="small-text">
+          This bubble chart uses a year slider to show how Indian states move jointly on two dimensions: HDI (x-axis) and log GNI per capita (y-axis). 
+          Bubble colour reflects HDI category (Very High, High, Medium, Low), highlighting how income growth and human development have evolved—and diverged—across states over time.
+        </p>
+      </div>
   </div>
 </section>
 
@@ -239,6 +249,7 @@
   let figure_9_spec = "CC7_Statewise_MPI_India.json";
   let figure_10_spec= "CC7_Top50_Districts.json";
   let cc9_hdi_spec = "CC9_HDI_Dropdown.json";
+  let hdi_bubble_spec = "CC9_Main Project_HDI_Slider.json";
   
 
   // CC1–CC5 charts
@@ -280,6 +291,11 @@
     vegaEmbed('#CC9_HDI', cc9_hdi_spec)
   .then(console.log)
   .catch(console.warn);
+
+// Project bubble chart
+    vegaEmbed('#HDI_Bubble', hdi_bubble_spec)
+      .then(console.log)
+      .catch(console.warn);
   
     
 </script>
