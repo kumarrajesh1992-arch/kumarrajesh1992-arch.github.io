@@ -21,7 +21,7 @@
             href="kumarrajesh1992-arch.github.io">GitHub</a>
     </p>
     <h2 class="small"> <!-- We have added a class to the header called "small" which we can use to style it in the CSS -->
-        This page showcases the coding challenges I completed for the course "PP434: Automated Data Visualization for Policymaking" as part of my Master of Public Policy programme (2025–26) at LSE.   
+        This page showcases the coding challenges I completed as a part of the Portfolio Tasks for the course "PP434: Automated Data Visualization for Policymaking" as part of my Master of Public Policy programme (2025–26) at LSE.   
     </h2>
 
     <!-- We're organising the page into sections, with each section containing a chart, title and a description -->
@@ -239,7 +239,7 @@
     <h2>CC10: De-trended Regression — HDI vs Income (Indian States, 2023)</h2>
   </div>
 <p class="small-text">
-<strong>Hypothesis:<strong> 
+<strong>Hypothesis:</strong> 
     After controlling for income, Indian states differ systematically in HDI outcomes, reflecting variation in social investment and policy effectiveness.
 </p>
   <div class="chart-container vertical">
@@ -259,13 +259,21 @@
       </p>
     </div>
   </div>
+
+    <p class="small-text">
+        <strong>Data Cleaning & Analysis (Google Colab)</strong>
+        I estimated an OLS regression of HDI on log GNI per capita in Python using <code>sklearn</code>.
+        Predicted HDI values and residuals were computed and exported for Vega-Lite visualisation.
+        <br>
+        <a href="https://colab.research.google.com/drive/1rdr_s0hrhpL9d3XxLFC4hnvcwvFsvrVg?usp=sharing" target="_blank>View Google Colab Notebook</a>
+            </p>
     <p class="small-text">
         <strong>Finding:</strong>
         Income strongly predicts HDI (figure 1), but large residual differences persist across states (figure 2), indicating that growth alone is insufficient to explain human development outcomes.
   </p>
     <p class="small-text">
     <strong>Method:</strong>
-    Ordinary Least Squares regression estimated in Python (sklearn). HDI regressed on log GNI per capita; fitted values and residuals exported for visualisation.
+    Supervised machine learning (linear regression). Input matrix X = log GNI per capita; target vector Y = HDI.
   </p>
 </section>
 </section>
