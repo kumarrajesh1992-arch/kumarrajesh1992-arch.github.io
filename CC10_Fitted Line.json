@@ -16,13 +16,13 @@
         "x": {
           "field": "log_GNI_pc",
           "type": "quantitative",
-          "title": "log GNI per capita",
+          "title": "log GNI per capita ($)",
           "scale": {"domain": [8.0, 10], "clamp": true}
         },
         "y": {
           "field": "HDI",
           "type": "quantitative",
-          "title": "Human Development Index",
+          "title": "Human Development Index Value",
           "scale": {"domain": [0.570, 0.8], "clamp": true}
         },
         "tooltip": [
