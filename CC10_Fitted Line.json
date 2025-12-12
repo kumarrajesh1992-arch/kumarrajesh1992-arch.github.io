@@ -1,0 +1,61 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "State-level HDI and Income in India (2023)",
+    "subtitle": "Observed HDI and fitted relationship with log GNI per capita | Data Source: Global Data Lab",
+    "anchor": "middle"
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/kumarrajesh1992-arch/kumarrajesh1992-arch.github.io/refs/heads/main/CC10_state_residuals_2023.csv",
+    "format": {"type": "csv"}
+  },
+  "layer": [
+    {
+      "mark": {"type": "circle", "opacity": 0.8, "size": 120, "clip": true},
+      "encoding": {
+        "x": {
+          "field": "log_GNI_pc",
+          "type": "quantitative",
+          "title": "log GNI per capita",
+          "scale": {"domain": [8.2, 10], "clamp": true}
+        },
+        "y": {
+          "field": "HDI",
+          "type": "quantitative",
+          "title": "Human Development Index",
+          "scale": {"domain": [0.575, 0.8], "clamp": true}
+        },
+        "tooltip": [
+          {"field": "State", "type": "nominal"},
+          {"field": "HDI", "type": "quantitative", "format": ".3f"},
+          {"field": "log_GNI_pc", "type": "quantitative", "format": ".2f"},
+          {"field": "HDI_pred", "type": "quantitative", "format": ".3f"},
+          {"field": "residual_HDI", "type": "quantitative", "format": ".3f"}
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "line",
+        "color": "black",
+        "strokeWidth": 2,
+        "clip": true
+      },
+      "encoding": {
+        "x": {
+          "field": "log_GNI_pc",
+          "type": "quantitative",
+          "scale": {"domain": [8.2, 10], "clamp": true}
+        },
+        "y": {
+          "field": "HDI_pred",
+          "type": "quantitative",
+          "scale": {"domain": [0.575, 0.8], "clamp": true}
+        }
+      }
+    }
+  ],
+  "width": 700,
+  "height": 400,
+  "config": {}
+}
