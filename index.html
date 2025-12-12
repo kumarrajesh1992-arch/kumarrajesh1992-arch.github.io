@@ -238,7 +238,9 @@
   <div class="section-header">
     <h2>CC10: De-trended Regression — HDI vs Income (India States, 2023)</h2>
   </div>
-
+            <p class="small-text">
+<strong>Hypothesis:<strong> 
+    After controlling for income, Indian states differ systematically in HDI outcomes, reflecting variation in social investment and policy effectiveness.</p>
   <div class="chart-container vertical">
     <div class="chart-item">
       <h3>Figure 1: HDI vs log GNI per capita (with fitted line)</h3>
@@ -256,6 +258,15 @@
       </p>
     </div>
   </div>
+    <p class="small-text">
+        <strong>:Finding:</strong>
+        Income strongly predicts HDI (figure 1), but large residual differences persist across states (figure 2), indicating that growth alone is insufficient to explain human development outcomes.
+  </p>
+    <p class="small-text">
+    <strong>Method:</strong>
+    Ordinary Least Squares regression estimated in Python (sklearn). HDI regressed on log GNI per capita; fitted values and residuals exported for visualisation.
+  </p>
+</section>
 </section>
 
     
