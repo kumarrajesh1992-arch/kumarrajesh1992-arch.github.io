@@ -234,6 +234,30 @@
   </div>
 </section>
 
+        <section id="CC10" class="section-grey">
+  <div class="section-header">
+    <h2>CC10: De-trended Regression — HDI vs Income (India States, 2023)</h2>
+  </div>
+
+  <div class="chart-container vertical">
+    <div class="chart-item">
+      <h3>Figure 1: HDI vs log GNI per capita (with fitted line)</h3>
+      <figure id="CC10_FIT"></figure>
+      <p class="small-text">
+        Scatter plot of observed HDI against log GNI per capita, with the fitted regression line (predicted HDI).
+      </p>
+    </div>
+
+    <div class="chart-item">
+      <h3>Figure 2: HDI residuals after accounting for income</h3>
+      <figure id="CC10_RESID"></figure>
+      <p class="small-text">
+        Residuals (actual HDI − predicted HDI). Positive = over-performance relative to income; negative = under-performance.
+      </p>
+    </div>
+  </div>
+</section>
+
     
 <script>
   // Vega-Lite specs
@@ -250,6 +274,8 @@
   let figure_10_spec= "CC7_Top50_Districts.json";
   let cc9_hdi_spec = "CC9_HDI_Dropdown.json";
   let hdi_bubble_spec = "CC9_Main Project_HDI_Slider.json";
+  let cc10_fit_spec = "CC10_Fitted Line.json";
+  let cc10_resid_spec = "CC10_State_Income_Residuals.json";
   
 
   // CC1–CC5 charts
@@ -279,7 +305,7 @@
       .catch(console.warn);
   });
 
-  // CC7: MPI state map
+ 
   vegaEmbed('#Location9', figure_9_spec)
     .then(console.log)
     .catch(console.warn);
@@ -292,12 +318,13 @@
   .then(console.log)
   .catch(console.warn);
 
-// Project bubble chart
+
     vegaEmbed('#HDI_Bubble', hdi_bubble_spec)
       .then(console.log)
       .catch(console.warn);
   
-    
+vegaEmbed('#CC10_FIT', cc10_fit_spec).then(console.log).catch(console.warn);
+vegaEmbed('#CC10_RESID', cc10_resid_spec).then(console.log).catch(console.warn);
 </script>
     
 </script>
