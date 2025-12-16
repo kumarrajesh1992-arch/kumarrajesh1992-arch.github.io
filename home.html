@@ -1,300 +1,552 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kumar Rajesh</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kumar Rajesh — Home</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <!-- Modern / industrial fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-<style>
-:root{
-  --bg:#f6f7f9;
-  --card:#ffffff;
-  --ink:#1f2937;
-  --muted:#6b7280;
-  --accent:#2f5aa6;
-  --border:#e5e7eb;
-}
+  <style>
+    :root{
+      --bg: #f6f7fb;
+      --panel: #ffffff;
+      --panel2: rgba(255,255,255,.72);
+      --ink: #0f172a;     /* slate-900 */
+      --muted: #475569;   /* slate-600 */
+      --muted2: #64748b;  /* slate-500 */
+      --border: rgba(15, 23, 42, .10);
+      --shadow: 0 18px 50px rgba(15, 23, 42, .10);
+      --shadow2: 0 10px 24px rgba(15, 23, 42, .08);
+      --radius: 20px;
 
-*{box-sizing:border-box}
+      --accent: #2b59c3;   /* calm modern blue */
+      --accent2:#0ea5e9;   /* sky */
+      --chip: rgba(43,89,195,.10);
+    }
 
-body{
-  margin:0;
-  font-family:'IBM Plex Sans', system-ui, sans-serif;
-  background:var(--bg);
-  color:var(--ink);
-  line-height:1.65;
-}
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: "IBM Plex Sans", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(900px 420px at 15% 0%, rgba(14,165,233,.18), transparent 60%),
+        radial-gradient(900px 420px at 85% 10%, rgba(43,89,195,.16), transparent 55%),
+        linear-gradient(180deg, var(--bg), #ffffff);
+    }
 
-.container{
-  max-width:1100px;
-  margin:0 auto;
-  padding:36px 20px 80px;
-}
+    .wrap{
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 26px 18px 70px;
+    }
 
-/* NAV */
-.nav{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  margin-bottom:60px;
-}
+    /* Top nav */
+    .topbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 16px;
+      padding: 10px 0 18px;
+    }
+    .brand{
+      font-family: "Space Grotesk", system-ui, sans-serif;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      font-size: 22px;
+      margin: 0;
+    }
+    .nav{
+      display:flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      align-items:center;
+    }
+    .nav a{
+      color: var(--muted);
+      text-decoration:none;
+      font-weight: 600;
+      font-size: 14px;
+      padding: 8px 10px;
+      border-radius: 999px;
+    }
+    .nav a:hover{
+      background: rgba(15,23,42,.06);
+      color: var(--ink);
+    }
 
-.nav .name{
-  font-size:20px;
-  font-weight:600;
-}
+    /* Main panel */
+    .panel{
+      background: var(--panel2);
+      border: 1px solid rgba(255,255,255,.55);
+      backdrop-filter: blur(10px);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
 
-.nav a{
-  margin-left:18px;
-  text-decoration:none;
-  color:var(--ink);
-  font-weight:500;
-}
+    /* Centered hero */
+    .hero{
+      padding: 58px 26px 36px;
+      text-align: center;
+      background:
+        radial-gradient(900px 260px at 50% 0%, rgba(43,89,195,.10), transparent 60%),
+        radial-gradient(700px 260px at 70% 30%, rgba(14,165,233,.10), transparent 60%),
+        rgba(255,255,255,.70);
+      border-bottom: 1px solid var(--border);
+    }
+    .hero h1{
+      font-family: "Space Grotesk", system-ui, sans-serif;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      margin: 0 0 12px;
+      font-size: clamp(34px, 4.3vw, 54px);
+      line-height: 1.05;
+    }
+    .hero .subtitle{
+      margin: 0 auto;
+      max-width: 86ch;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.7;
+    }
+    .hero .subtitle em{
+      font-style: normal;
+      color: var(--ink);
+      font-weight: 600;
+    }
 
-.nav a:hover{color:var(--accent)}
+    .chips{
+      display:flex;
+      justify-content:center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+    }
+    .chip{
+      background: var(--chip);
+      border: 1px solid rgba(43,89,195,.18);
+      color: rgba(15,23,42,.92);
+      padding: 8px 10px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 13px;
+    }
 
-/* HERO */
-.hero{
-  text-align:center;
-  max-width:850px;
-  margin:0 auto 70px;
-}
+    /* Sections */
+    .section{
+      padding: 34px 28px;
+      border-bottom: 1px solid var(--border);
+    }
+    .section:last-child{ border-bottom: none; }
+    .section h2{
+      font-family: "Space Grotesk", system-ui, sans-serif;
+      margin: 0 0 12px;
+      font-size: 26px;
+      letter-spacing: -0.02em;
+      text-align:center;
+    }
+    .section .lead{
+      margin: 0 auto;
+      max-width: 92ch;
+      color: var(--muted);
+      line-height: 1.85;
+      font-size: 16px;
+      text-align:center;
+    }
 
-.hero p{
-  font-size:18px;
-  color:var(--muted);
-}
+    .skills{
+      margin: 18px auto 0;
+      max-width: 92ch;
+      text-align:center;
+      color: var(--muted2);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+    .skills strong{ color: var(--ink); }
 
-/* SECTION */
-section{
-  margin-bottom:70px;
-}
+    /* Coursework cards centered */
+    .coursework-grid{
+      margin-top: 18px;
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 16px;
+    }
+    .card{
+      grid-column: span 6;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 18px 18px 16px;
+      box-shadow: var(--shadow2);
+    }
+    .card .tag{
+      display:inline-block;
+      font-family: "Space Grotesk", system-ui, sans-serif;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      font-size: 12px;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+    .card h3{
+      font-family: "Space Grotesk", system-ui, sans-serif;
+      margin: 0 0 8px;
+      font-size: 20px;
+      letter-spacing: -0.01em;
+    }
+    .card p{
+      margin: 0 0 14px;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 14.5px;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap: 10px;
+      text-decoration:none;
+      color: var(--panel);
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      padding: 10px 14px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 14px;
+      box-shadow: 0 12px 26px rgba(43,89,195,.20);
+    }
+    .btn:hover{ transform: translateY(-1px); }
 
-section h2{
-  text-align:center;
-  font-size:26px;
-  margin-bottom:24px;
-}
+    /* Two-column: Experience + Publications */
+    .two-col{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 18px;
+      align-items:start;
+    }
+    .box{
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 18px;
+      box-shadow: var(--shadow2);
+    }
+    .box h3{
+      font-family: "Space Grotesk", system-ui, sans-serif;
+      margin: 0 0 14px;
+      font-size: 18px;
+      letter-spacing: -0.01em;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 10px;
+    }
+    .box h3 span{
+      color: var(--muted2);
+      font-weight: 600;
+      font-size: 13px;
+      letter-spacing: 0;
+      font-family: "IBM Plex Sans", system-ui, sans-serif;
+    }
 
-/* ABOUT */
-.about{
-  max-width:820px;
-  margin:0 auto;
-  text-align:center;
-  font-size:17px;
-  color:var(--muted);
-}
+    .timeline{
+      display:grid;
+      gap: 12px;
+    }
+    .role{
+      border: 1px solid rgba(15,23,42,.08);
+      border-radius: 14px;
+      padding: 12px 12px;
+      background: rgba(246,247,251,.60);
+    }
+    .role .when{
+      font-weight: 700;
+      color: var(--accent);
+      font-size: 13px;
+      margin-bottom: 4px;
+    }
+    .role .title{
+      font-weight: 700;
+      margin: 0 0 4px;
+      line-height: 1.35;
+    }
+    .role .org{
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.6;
+    }
 
-.skills{
-  margin-top:18px;
-  font-weight:500;
-  color:var(--ink);
-}
+    .publist{
+      display:grid;
+      gap: 12px;
+    }
+    .pubitem{
+      border: 1px solid rgba(15,23,42,.08);
+      border-radius: 14px;
+      padding: 12px 12px;
+      background: rgba(246,247,251,.60);
+    }
+    .pubitem .pubtitle{
+      margin: 0 0 6px;
+      font-weight: 700;
+      line-height: 1.35;
+    }
+    .pubitem .pubmeta{
+      margin: 0;
+      color: var(--muted);
+      font-size: 13.5px;
+      line-height: 1.6;
+    }
 
-/* COURSEWORK */
-.cards{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:22px;
-  max-width:800px;
-  margin:0 auto;
-}
+    /* Highlights */
+    .highlights{
+      margin-top: 18px;
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 14px;
+    }
+    .hcard{
+      grid-column: span 4;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 16px;
+      box-shadow: var(--shadow2);
+    }
+    .hcard h4{
+      font-family: "Space Grotesk", system-ui, sans-serif;
+      margin: 0 0 8px;
+      font-size: 16px;
+      letter-spacing: -0.01em;
+    }
+    .hcard p{
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.7;
+    }
 
-.card{
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:14px;
-  padding:22px;
-}
+    /* Footer */
+    .footer{
+      padding: 18px 6px 0;
+      color: var(--muted2);
+      text-align:center;
+      font-size: 13px;
+    }
 
-.card h3{margin-top:0}
-
-.card a{
-  display:inline-block;
-  margin-top:12px;
-  color:var(--accent);
-  text-decoration:none;
-  font-weight:600;
-}
-
-/* TWO COLUMN */
-.twocol{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:26px;
-}
-
-/* EXPERIENCE */
-.exp-item{
-  margin-bottom:14px;
-}
-
-.exp-item span{
-  color:var(--muted);
-  font-size:14px;
-}
-
-/* PUBLICATIONS */
-.pub-item{
-  margin-bottom:14px;
-  font-size:14.5px;
-  color:var(--muted);
-}
-
-/* HIGHLIGHTS */
-.highlight{
-  background:var(--card);
-  border-left:4px solid var(--accent);
-  padding:18px 22px;
-  border-radius:10px;
-  margin-top:40px;
-}
-
-footer{
-  text-align:center;
-  color:var(--muted);
-  font-size:14px;
-  margin-top:80px;
-}
-</style>
+    /* Responsive */
+    @media (max-width: 900px){
+      .card{ grid-column: span 12; }
+      .two-col{ grid-template-columns: 1fr; }
+      .hcard{ grid-column: span 12; }
+      .hero{ padding: 44px 18px 30px; }
+      .section{ padding: 28px 18px; }
+    }
+  </style>
 </head>
 
 <body>
-<div class="container">
+  <div class="wrap">
+    <header class="topbar">
+      <p class="brand">Kumar Rajesh</p>
+      <nav class="nav" aria-label="Primary">
+        <a href="/home.html">Home</a>
+        <a href="/index.html">Portfolio</a>
+        <a href="/project.html">Project</a>
+        <a href="https://github.com/kumarrajesh1992-arch" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/kumarrajesh1992/" target="_blank" rel="noopener">LinkedIn</a>
+      </nav>
+    </header>
 
-  <!-- NAV -->
-  <div class="nav">
-    <div class="name">Kumar Rajesh</div>
-    <div>
-      <a href="/home.html">Home</a>
-      <a href="/index.html">Portfolio</a>
-      <a href="/project.html">Project</a>
-      <a href="https://github.com/kumarrajesh1992-arch" target="_blank">GitHub</a>
-      <a href="https://www.linkedin.com/in/kumarrajesh1992/" target="_blank">LinkedIn</a>
-    </div>
+    <main class="panel">
+
+      <!-- Centered website line -->
+      <section class="hero">
+        <h1>Policy analysis, made legible.</h1>
+        <p class="subtitle">
+          This site hosts my <em>portfolio</em> exercises and <em>main project</em> completed for
+          <em>PP434: Automated Data Visualisation for Policymaking</em>, as part of the
+          Master of Public Policy (MPP) programme at the School of Public Policy,
+          London School of Economics and Political Science.
+        </p>
+
+        <div class="chips">
+          <span class="chip">Vega-Lite</span>
+          <span class="chip">Python (pandas, sklearn)</span>
+          <span class="chip">Human development metrics</span>
+          <span class="chip">Evidence-informed policymaking</span>
+        </div>
+      </section>
+
+      <!-- About (center aligned) -->
+      <section class="section" id="about">
+        <h2>About me</h2>
+        <p class="lead">
+          I’m a policy technocrat with nearly a decade of experience across government institutions, multilateral organisations,
+          and civil society in India—working at the intersection of human development, state capacity, and data-driven policymaking.
+          My work has covered poverty measurement, SDG monitoring, labour markets, and evidence-to-policy translation.
+          I am a Chevening Scholar and currently pursuing the Master of Public Policy at LSE.
+        </p>
+        <p class="skills">
+          <strong>Skills:</strong> Python (pandas, sklearn), Vega-Lite, data cleaning & reproducible workflows, causal inference foundations,
+          public finance & budgeting, human development metrics (HDI/MPI), policy writing & government reporting.
+        </p>
+      </section>
+
+      <!-- Coursework (center aligned heading + cards) -->
+      <section class="section" id="coursework">
+        <h2>PP434 coursework</h2>
+        <p class="lead">
+          Two entry points: weekly portfolio challenges (APIs, scraping, dashboards, interactive charts) and the main project (data story + methods + findings).
+        </p>
+
+        <div class="coursework-grid">
+          <div class="card">
+            <div class="tag">Portfolio (20%)</div>
+            <h3>Weekly visualisations</h3>
+            <p>
+              A collection of charts demonstrating API integration, web scraping, mapping, dashboards, and interactive Vega-Lite designs.
+            </p>
+            <a class="btn" href="/index.html">View portfolio →</a>
+          </div>
+
+          <div class="card">
+            <div class="tag">Project (80%)</div>
+            <h3>Main project</h3>
+            <p>
+              A deeper data story with advanced analytics and machine-learning components, designed for clear policy interpretation.
+            </p>
+            <a class="btn" href="/project.html">View project →</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Highlights (optional but looks premium) -->
+      <section class="section" id="highlights">
+        <h2>Career highlights</h2>
+        <p class="lead">Selected work where analysis translated into policy documents, strategy, or recognised monitoring tools.</p>
+
+        <div class="highlights">
+          <div class="hcard">
+            <h4>Uttarakhand Employment Strategy (2023)</h4>
+            <p>Led drafting of a state strategy addressing skilling and employment needs of ~7 million working-age individuals.</p>
+          </div>
+          <div class="hcard">
+            <h4>Uttarakhand Women Policy (2023)</h4>
+            <p>Drafting committee member, contributing to a holistic framework for ~5.5 million women and girls.</p>
+          </div>
+          <div class="hcard">
+            <h4>SDG Monitoring (2019)</h4>
+            <p>Led a citizen-generated data initiative tracking SDGs among excluded communities; recognised and used in SDG review work.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Two columns: Experience + Publications -->
+      <section class="section" id="experience-publications">
+        <h2>Professional experience & selected publications</h2>
+        <p class="lead">
+          Chronological experience on the left; selected publications on the right (you can later link PDFs or external pages).
+        </p>
+
+        <div class="two-col">
+          <!-- Experience -->
+          <div class="box">
+            <h3>Professional experience <span>chronological</span></h3>
+            <div class="timeline">
+              <div class="role">
+                <div class="when">2024–2025</div>
+                <p class="title">Policy Consultant</p>
+                <p class="org">UN and Civil Society Organisations</p>
+              </div>
+
+              <div class="role">
+                <div class="when">2021–2024</div>
+                <p class="title">Policy Officer / Public Policy Expert</p>
+                <p class="org">UNDP India (incl. secondment to Uttarakhand Government)</p>
+              </div>
+
+              <div class="role">
+                <div class="when">2019–2021</div>
+                <p class="title">Policy Research Fellow</p>
+                <p class="org">Delhi Assembly Research Centre</p>
+              </div>
+
+              <div class="role">
+                <div class="when">2018–2019</div>
+                <p class="title">Research Coordinator — Citizen Data Project</p>
+                <p class="org">Wada Na Todo Abhiyan</p>
+              </div>
+
+              <div class="role">
+                <div class="when">Jan 2018–Aug 2018</div>
+                <p class="title">Policy Associate</p>
+                <p class="org">Oxfam India</p>
+              </div>
+
+              <div class="role">
+                <div class="when">2016–2017</div>
+                <p class="title">Research Assistant — Tribal Development Report (2 volumes)</p>
+                <p class="org">BRLF, Government of India</p>
+              </div>
+
+              <div class="role">
+                <div class="when">2015–2016</div>
+                <p class="title">Legislative Assistant to Member of Parliament (LAMP) Fellow</p>
+                <p class="org">PRS Legislative Research, New Delhi</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Publications -->
+          <div class="box">
+            <h3>Selected publications <span>highlights</span></h3>
+            <div class="publist">
+              <div class="pubitem">
+                <p class="pubtitle">Uttarakhand State Employment Generation Strategy (2023)</p>
+                <p class="pubmeta">Centre for Public Policy and Good Governance, Government of Uttarakhand.</p>
+              </div>
+              <div class="pubitem">
+                <p class="pubtitle">A Practical Toolkit for Policymaking in Uttarakhand (2023)</p>
+                <p class="pubmeta">Centre for Public Policy and Good Governance, Government of Uttarakhand.</p>
+              </div>
+              <div class="pubitem">
+                <p class="pubtitle">Declining Female LFPR in Uttarakhand: Issues and the Way Forward (2022)</p>
+                <p class="pubmeta">Policy Brief No. 01, CPPGG, Government of Uttarakhand.</p>
+              </div>
+              <div class="pubitem">
+                <p class="pubtitle">The 100 HotSpots (2019) — with Annie Namala</p>
+                <p class="pubmeta">Wada Na Todo Abhiyan: Snapshot of excluded groups & SDGs in India.</p>
+              </div>
+              <div class="pubitem">
+                <p class="pubtitle">Why More Women Are Needed in Parliament (Business Standard, 2018)</p>
+                <p class="pubmeta">Opinion article (print media).</p>
+              </div>
+              <div class="pubitem">
+                <p class="pubtitle">Contributions: Asia Pacific Regional HDR 2024; Tribal Development Report 2022; India Inequality Report 2019</p>
+                <p class="pubmeta">Flagship report contributions (UNDP / BRLF / Oxfam).</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      © <span id="year"></span> Kumar Rajesh • Built with HTML/CSS • Hosted on GitHub Pages
+    </footer>
   </div>
 
-  <!-- HERO -->
-  <section class="hero">
-    <p>
-      This website hosts my portfolio exercises and main project completed for
-      <strong>PP434: Automated Data Visualisation for Policymaking</strong>,
-      as part of the Master of Public Policy (MPP) programme at the
-      School of Public Policy, London School of Economics and Political Science.
-    </p>
-  </section>
-
-  <!-- ABOUT -->
-  <section>
-    <h2>About me</h2>
-    <div class="about">
-      I am a policy technocrat with over a decade of experience working at the intersection of
-      public policy, human development, and state capacity in India. My work spans government,
-      multilateral organisations, and civil society, with a focus on poverty measurement,
-      SDG implementation, labour markets, and evidence-based policymaking.
-      <br><br>
-      I am a Chevening Scholar (2025-26) and currently pursuing the Master of Public Policy at LSE,
-      where my academic focus includes causal inference, public management, political economy,
-      and data-driven policy design.
-      <div class="skills">
-        Skills: Python (pandas, sklearn), Vega-Lite, causal inference, public finance,
-        human development metrics, policy writing
-      </div>
-    </div>
-  </section>
-
-  <!-- COURSEWORK -->
-  <section>
-    <h2>PP434 coursework</h2>
-    <div class="cards">
-      <div class="card">
-        <h3>Data visualisation portfolio (20%)</h3>
-        <p>Weekly coding challenges and visualisation exercises covering APIs, scraping, dashboards,
-        and policy-oriented chart design.</p>
-        <a href="/index.html">View My Portfolio →</a>
-      </div>
-      <div class="card">
-        <h3>Main project (80%)</h3>
-        <p>Pathways to High Human Development in India by 2047: HDI Trajectory and Policy Scenarios (1990-2047).</p>
-        <a href="/project.html">View My Project →</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- EXPERIENCE + PUBLICATIONS -->
-  <section class="twocol">
-    <div class="card">
-      <h3>Professional experience</h3>
-
-      <div class="exp-item">
-        <strong>2024–2025</strong><br>
-        <span>Freelance Policy Consultancy — UN & Civil Society Organisations. I took a year break from full time roles to pursue my passion for cycling, meditation and reading.</span>
-      </div>
-
-      <div class="exp-item">
-        <strong>2021–2024</strong><br>
-        <span>Policy Officer / Public Policy Expert, UNDP India</span>
-      </div>
-
-      <div class="exp-item">
-        <strong>2019–2021</strong><br>
-        <span>Policy Research Fellow, Delhi Assembly Research Centre</span>
-      </div>
-
-      <div class="exp-item">
-        <strong>2018–2019</strong><br>
-        <span>Research Coordinator, Citizen-Data Project, Wada Na Todo Abhiyan</span>
-      </div>
-
-      <div class="exp-item">
-        <strong>2018</strong><br>
-        <span>Policy Associate, Oxfam India</span>
-      </div>
-
-      <div class="exp-item">
-        <strong>2016–2017</strong><br>
-        <span>Research Assistant, Tribal Development Report (GoI)</span>
-      </div>
-
-      <div class="exp-item">
-        <strong>2015–2016</strong><br>
-        <span>LAMP Fellow, PRS Legislative Research</span>
-      </div>
-    </div>
-
-    <div class="card">
-      <h3>Selected publications</h3>
-
-      <div class="pub-item">
-        Rajesh, K. et al. (2023). <em>Uttarakhand State Employment Generation Strategy</em>. Govt. of Uttarakhand.
-      </div>
-
-      <div class="pub-item">
-        Rajesh, K. (2022). <em>Declining Female Labour Force Participation in Uttarakhand</em>. Policy Brief.
-      </div>
-
-      <div class="pub-item">
-        Rajesh, K. & Namala, A. (2019). <em>The 100 HotSpots</em>. Wada Na Todo Abhiyan.
-      </div>
-
-      <div class="pub-item">
-        Contributions to <em>Asia-Pacific Human Development Report 2024</em>, UNDP.
-      </div>
-
-      <div class="pub-item">
-        Opinion pieces in <em>Business Standard</em> on gender, labour, and health.
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    © 2025 Kumar Rajesh • Built for PP434 • Deployed on GitHub Pages
-  </footer>
-
-</div>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
