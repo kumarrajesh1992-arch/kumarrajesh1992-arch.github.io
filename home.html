@@ -1,349 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
   <title>Kumar Rajesh</title>
 
-  <!-- Fonts: distinct from Inter -->
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=Fraunces:opsz,wght@9..144,500;9..144,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Source+Sans+3:wght@400;500&display=swap" rel="stylesheet">
 
   <style>
-    :root{
-      --bg: #5b6a3a;            /* olive */
-      --bg2:#4c5a2f;            /* deeper olive */
-      --paper:#f7f6f2;          /* warm off-white */
-      --ink:#1c1f16;            /* near-black olive */
-      --muted:#5b6150;
-      --card:#ffffff;
-      --border: rgba(28,31,22,.12);
-      --accent:#1f5f4a;         /* green-teal */
-      --accent2:#8a6f2d;        /* mustard accent */
-      --shadow: 0 18px 40px rgba(0,0,0,.18);
-      --radius: 20px;
-    }
-
-    *{ box-sizing:border-box; }
-    body{
-      margin:0;
-      font-family: "IBM Plex Sans", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      color: var(--ink);
-      background: radial-gradient(1200px 600px at 20% 0%, rgba(255,255,255,.18), transparent 55%),
-                  radial-gradient(1000px 500px at 85% 20%, rgba(0,0,0,.12), transparent 55%),
-                  linear-gradient(180deg, var(--bg), var(--bg2));
-    }
-
-    .wrap{
-      max-width: 1080px;
-      margin: 0 auto;
-      padding: 28px 18px 70px;
-    }
-
-    /* top bar */
-    .topbar{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap: 16px;
-      color: rgba(255,255,255,.92);
-    }
-    .brand{
-      font-family: "Fraunces", serif;
-      font-weight: 700;
-      letter-spacing: .2px;
-      font-size: 22px;
+    body {
       margin: 0;
-      line-height: 1;
-    }
-    .nav{
-      display:flex;
-      gap: 16px;
-      flex-wrap: wrap;
-      font-size: 14px;
-    }
-    .nav a{
-      color: rgba(255,255,255,.92);
-      text-decoration: none;
-      padding: 8px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,.18);
-      backdrop-filter: blur(6px);
-    }
-    .nav a:hover{
-      border-color: rgba(255,255,255,.35);
-      background: rgba(255,255,255,.10);
+      background: #f6f7f8;
+      color: #1f2933;
+      font-family: "Source Sans 3", sans-serif;
     }
 
-    /* main panel */
-    .panel{
-      margin-top: 22px;
-      background: var(--paper);
-      border: 1px solid rgba(255,255,255,.35);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      overflow: hidden;
+    .container {
+      max-width: 960px;
+      margin: 70px auto;
+      padding: 0 24px;
     }
 
-    .hero{
-      padding: 42px 34px 30px;
-      display:grid;
-      gap: 14px;
-      border-bottom: 1px solid var(--border);
-      background:
-        radial-gradient(900px 220px at 10% 0%, rgba(31,95,74,.16), transparent 60%),
-        radial-gradient(700px 260px at 92% 30%, rgba(138,111,45,.14), transparent 60%),
-        var(--paper);
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 80px;
     }
 
-    .hero h1{
-      margin: 0;
-      font-family: "Fraunces", serif;
-      font-size: clamp(34px, 4vw, 52px);
-      letter-spacing: .2px;
-    }
-    .hero p{
-      margin: 0;
-      color: var(--muted);
-      font-size: 16px;
-      line-height: 1.7;
-      max-width: 72ch;
-    }
-
-    .chips{
-      display:flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-top: 8px;
-    }
-    .chip{
-      font-size: 13px;
-      padding: 7px 10px;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      background: #fff;
-    }
-
-    .section{
-      padding: 30px 34px;
-      border-bottom: 1px solid var(--border);
-    }
-    .section:last-child{ border-bottom: none; }
-
-    .section h2{
-      font-family: "Fraunces", serif;
-      margin: 0 0 14px;
+    header h1 {
+      font-family: Inter, sans-serif;
       font-size: 26px;
-    }
-    .section p{
       margin: 0;
-      color: var(--muted);
-      line-height: 1.8;
-      font-size: 15px;
-      max-width: 85ch;
     }
 
-    /* tiles */
-    .grid{
-      display:grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap: 16px;
-      margin-top: 18px;
-    }
-    .card{
-      grid-column: span 6;
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 18px 18px 16px;
-      box-shadow: 0 10px 25px rgba(0,0,0,.06);
-    }
-    .card small{
-      display:inline-block;
-      font-weight: 600;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      font-size: 12px;
-      color: var(--accent);
-      margin-bottom: 8px;
-    }
-    .card h3{
-      margin: 0 0 8px;
-      font-family: "Fraunces", serif;
-      font-size: 20px;
-    }
-    .card p{
-      margin: 0 0 12px;
-      color: var(--muted);
-      line-height: 1.6;
-      font-size: 14px;
-    }
-    .card a{
-      display:inline-flex;
-      align-items:center;
-      gap: 8px;
-      text-decoration:none;
-      font-weight: 600;
-      color: var(--ink);
-      padding: 10px 12px;
-      border-radius: 12px;
-      border: 1px solid var(--border);
-      background: #fff;
-    }
-    .card a:hover{
-      border-color: rgba(31,95,74,.35);
-      box-shadow: 0 10px 18px rgba(31,95,74,.10);
-    }
-
-    /* publications */
-    .pub{
-      display:grid;
-      gap: 12px;
-      margin-top: 16px;
-    }
-    .pubitem{
-      padding: 14px 14px;
-      border-radius: 16px;
-      border: 1px solid var(--border);
-      background: #fff;
-    }
-    .pubitem .title{
-      font-weight: 600;
-      margin: 0 0 6px;
-      line-height: 1.35;
-    }
-    .pubitem .meta{
-      margin: 0 0 6px;
-      color: var(--muted);
-      font-size: 13px;
-    }
-    .pubitem a{
-      color: var(--accent);
+    nav a {
+      margin-left: 18px;
       text-decoration: none;
+      font-weight: 500;
+      color: #2f5d8a;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    h2 {
+      font-family: Inter, sans-serif;
+      font-size: 34px;
+      margin-bottom: 16px;
+    }
+
+    h3 {
+      font-family: Inter, sans-serif;
+      font-size: 22px;
+      margin-bottom: 12px;
+    }
+
+    p {
+      font-size: 17px;
+      line-height: 1.65;
+      max-width: 780px;
+    }
+
+    .section {
+      margin-bottom: 90px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-top: 30px;
+    }
+
+    .card {
+      background: white;
+      border: 1px solid #d9dde3;
+      border-radius: 8px;
+      padding: 28px;
+    }
+
+    .card span {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      color: #2f5d8a;
+    }
+
+    .card h4 {
+      font-family: Inter, sans-serif;
+      font-size: 20px;
+      margin: 10px 0;
+    }
+
+    .card p {
+      font-size: 15px;
+    }
+
+    .card a {
+      display: inline-block;
+      margin-top: 12px;
       font-weight: 600;
-    }
-    .pubitem a:hover{ text-decoration: underline; }
-
-    .footer{
-      padding: 18px 34px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap: 12px;
-      color: rgba(255,255,255,.92);
+      color: #2f5d8a;
+      text-decoration: none;
     }
 
-    /* responsive */
-    @media (max-width: 760px){
-      .card{ grid-column: span 12; }
-      .hero{ padding: 34px 20px 26px; }
-      .section{ padding: 26px 20px; }
-      .footer{ padding: 18px 20px; flex-direction: column; align-items: flex-start; }
+    .card a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      border-top: 1px solid #d9dde3;
+      padding-top: 30px;
+      font-size: 14px;
+      color: #555;
     }
   </style>
 </head>
 
 <body>
-  <div class="wrap">
-    <div class="topbar">
-      <p class="brand">Kumar Rajesh</p>
-      <nav class="nav">
+  <div class="container">
+
+    <!-- Header -->
+    <header>
+      <h1>Kumar Rajesh</h1>
+      <nav>
         <a href="/home.html">Home</a>
         <a href="/index.html">Portfolio</a>
         <a href="/project.html">Project</a>
-        <a href="https://github.com/kumarrajesh1992-arch" target="_blank" rel="noopener">GitHub</a>
-        <a href="https://www.linkedin.com/in/kumarrajesh1992/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/kumarrajesh1992-arch" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/kumarrajesh1992/" target="_blank">LinkedIn</a>
       </nav>
-    </div>
+    </header>
 
-    <main class="panel">
-      <header class="hero">
-        <h1>Policy + Data, built for decisions.</h1>
-        <p>
-          I’m Kumar Rajesh, an MPP student at LSE. My work sits at the intersection of
-          human development, state capacity, and evidence-informed policymaking—using
-          reproducible analysis and clear visual communication.
-        </p>
+    <!-- Intro -->
+    <section class="section">
+      <h2>Public Policy, Human Development & Data</h2>
+      <p>
+        I am a Chevening Scholar pursuing the Master of Public Policy at the London School of Economics.
+        My work sits at the intersection of human development measurement, state capacity, and data-driven policymaking,
+        with a focus on India and the Global South.
+      </p>
+    </section>
 
-        <div class="chips">
-          <span class="chip">Vega-Lite</span>
-          <span class="chip">Python (pandas, sklearn)</span>
-          <span class="chip">Applied public policy</span>
-          <span class="chip">Human Development & poverty</span>
+    <!-- About -->
+    <section class="section">
+      <h3>About</h3>
+      <p>
+        Kumar Rajesh is a public policy professional with over a decade of experience across India’s
+        development ecosystem, including UNDP India, government departments, and legislative institutions.
+        His work spans poverty measurement, Human Development Reports, digital public infrastructure,
+        and inclusive growth strategies. He has contributed to national and regional policy reports and
+        continues to combine applied data analysis with institutional perspectives on development.
+      </p>
+    </section>
+
+    <!-- Coursework -->
+    <section class="section">
+      <h3>PP434 Coursework</h3>
+
+      <div class="cards">
+        <div class="card">
+          <span>PORTFOLIO (20%)</span>
+          <h4>Data Visualisation Portfolio</h4>
+          <p>
+            Weekly coding challenges showcasing API integration, data scraping,
+            Vega-Lite visualisation, and policy-oriented storytelling.
+          </p>
+          <a href="/index.html">View portfolio →</a>
         </div>
-      </header>
 
-      <section class="section">
-        <h2>About</h2>
-        <p>
-          I build policy-relevant analysis that is transparent, explainable, and easy to interrogate.
-          This site hosts (i) my PP434 portfolio exercises and (ii) my main project outputs and code.
-        </p>
-
-        <div class="grid">
-          <div class="card">
-            <small>Portfolio</small>
-            <h3>PP434 weekly visualisations</h3>
-            <p>APIs, scraping, dashboards, and interactive Vega-Lite charts — designed for policymaking use-cases.</p>
-            <a href="/index.html">Open portfolio →</a>
-          </div>
-
-          <div class="card">
-            <small>Main Project</small>
-            <h3>Project page (80% assessment)</h3>
-            <p>Data story, methods, charts, and findings — including advanced analytics and ML components.</p>
-            <a href="/project.html">Open project →</a>
-          </div>
+        <div class="card">
+          <span>MAIN PROJECT (80%)</span>
+          <h4>Human Development & State Capacity</h4>
+          <p>
+            A data-driven policy project analysing income-adjusted HDI performance across Indian states,
+            combining regression, residual analysis, and institutional indicators.
+          </p>
+          <a href="/project.html">View project →</a>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="section">
-        <h2>Casework & policy writing</h2>
-        <p>
-          Add 3–6 links here (policy memos, case analyses, blog posts). Keep each entry to one sentence.
-          If you want, share your titles and I’ll format them tightly.
-        </p>
+    <!-- Publications -->
+    <section class="section">
+      <h3>Publications & Research</h3>
+      <p>
+        Contributions to Human Development Reports, Multidimensional Poverty Index analysis,
+        and policy research on inclusive growth and digital public infrastructure.
+      </p>
+    </section>
 
-        <div class="pub">
-          <div class="pubitem">
-            <p class="title">Example: Interpreting evidence on mask effectiveness (policy memo)</p>
-            <p class="meta">Short one-line description of what you did and why it matters.</p>
-            <a href="#" target="_blank" rel="noopener">Read →</a>
-          </div>
+    <footer>
+      © 2025 Kumar Rajesh
+    </footer>
 
-          <div class="pubitem">
-            <p class="title">Example: State capacity after institutional redesign (case analysis)</p>
-            <p class="meta">One line on puzzle, method, and takeaway.</p>
-            <a href="#" target="_blank" rel="noopener">Read →</a>
-          </div>
-        </div>
-      </section>
-
-      <section class="section">
-        <h2>Publications & research</h2>
-        <p>
-          Put your working papers / reports / articles here. If you don’t have public links, you can link PDFs in the repo.
-        </p>
-
-        <div class="pub">
-          <div class="pubitem">
-            <p class="title">Example: India MPI / human development work</p>
-            <p class="meta">UNDP / GDL / state-level metrics — add your preferred citation line.</p>
-            <a href="#" target="_blank" rel="noopener">View →</a>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <div class="footer">
-      <div>© <span id="year"></span> Kumar Rajesh</div>
-      <div style="opacity:.9;">Built with HTML/CSS • Deployed on GitHub Pages</div>
-    </div>
   </div>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
