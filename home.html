@@ -12,19 +12,20 @@
 
   <style>
     :root{
+      /* --- Light olive theme --- */
       --bg: #f6f7f4;
       --panel: #ffffff;
       --panel2: rgba(255,255,255,.78);
-      --ink: #0f172a;     /* slate-900 */
-      --muted: #475569;   /* slate-600 */
-      --muted2: #64748b;  /* slate-500 */
+      --ink: #0f172a;        /* slate-900 */
+      --muted: #475569;      /* slate-600 */
+      --muted2: #64748b;     /* slate-500 */
       --border: rgba(15, 23, 42, .10);
       --shadow: 0 18px 50px rgba(15, 23, 42, .10);
       --shadow2: 0 10px 24px rgba(15, 23, 42, .08);
       --radius: 20px;
 
-      --accent: #4f6b3a;  
-      --accent2:#8aa06a;   
+      --accent: #4f6b3a;     /* olive green */
+      --accent2:#8aa06a;     /* lighter olive */
       --chip: rgba(79,107,58,.12);
     }
 
@@ -35,8 +36,8 @@
       font-family: "IBM Plex Sans", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       color: var(--ink);
       background:
-        radial-gradient(900px 420px at 15% 0%, rgba(14,165,233,.18), transparent 60%),
-        radial-gradient(900px 420px at 85% 10%, rgba(43,89,195,.16), transparent 55%),
+        radial-gradient(900px 420px at 15% 0%, rgba(138,160,106,.22), transparent 60%),
+        radial-gradient(900px 420px at 85% 10%, rgba(79,107,58,.16), transparent 55%),
         linear-gradient(180deg, var(--bg), #ffffff);
     }
 
@@ -95,19 +96,32 @@
       padding: 58px 26px 36px;
       text-align: center;
       background:
-        radial-gradient(900px 260px at 50% 0%, rgba(43,89,195,.10), transparent 60%),
-        radial-gradient(700px 260px at 70% 30%, rgba(14,165,233,.10), transparent 60%),
-        rgba(255,255,255,.70);
+        radial-gradient(900px 260px at 50% 0%, rgba(79,107,58,.10), transparent 60%),
+        radial-gradient(700px 260px at 70% 30%, rgba(138,160,106,.10), transparent 60%),
+        rgba(255,255,255,.72);
       border-bottom: 1px solid var(--border);
     }
+
+    /* Main headline */
     .hero h1{
       font-family: "Space Grotesk", system-ui, sans-serif;
       font-weight: 700;
       letter-spacing: -0.03em;
-      margin: 0 0 12px;
+      margin: 0 0 8px;
       font-size: clamp(34px, 4.3vw, 54px);
       line-height: 1.05;
     }
+
+    /* SMALLER “policy analysis made legible” line (you can adjust font-size here) */
+    .hero .kicker{
+      margin: 0 auto 14px;
+      font-family: "Space Grotesk", system-ui, sans-serif;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      font-size: 16px;              /* <-- make smaller/larger here */
+      color: var(--muted);
+    }
+
     .hero .subtitle{
       margin: 0 auto;
       max-width: 86ch;
@@ -130,7 +144,7 @@
     }
     .chip{
       background: var(--chip);
-      border: 1px solid rgba(43,89,195,.18);
+      border: 1px solid rgba(79,107,58,.20);
       color: rgba(15,23,42,.92);
       padding: 8px 10px;
       border-radius: 999px;
@@ -212,13 +226,13 @@
       align-items:center;
       gap: 10px;
       text-decoration:none;
-      color: var(--panel);
+      color: #ffffff;
       background: linear-gradient(90deg, var(--accent), var(--accent2));
       padding: 10px 14px;
       border-radius: 12px;
       font-weight: 700;
       font-size: 14px;
-      box-shadow: 0 12px 26px rgba(43,89,195,.20);
+      box-shadow: 0 12px 26px rgba(79,107,58,.22);
     }
     .btn:hover{ transform: translateY(-1px); }
 
@@ -263,7 +277,7 @@
       border: 1px solid rgba(15,23,42,.08);
       border-radius: 14px;
       padding: 12px 12px;
-      background: rgba(246,247,251,.60);
+      background: rgba(246,247,244,.65);
     }
     .role .when{
       font-weight: 700;
@@ -291,7 +305,7 @@
       border: 1px solid rgba(15,23,42,.08);
       border-radius: 14px;
       padding: 12px 12px;
-      background: rgba(246,247,251,.60);
+      background: rgba(246,247,244,.65);
     }
     .pubitem .pubtitle{
       margin: 0 0 6px;
@@ -367,19 +381,27 @@
 
     <main class="panel">
 
-      <!-- Centered website line -->
       <section class="hero">
-        <h1>Public Policy, Explained with Data .</h1>
+        <h1>Public Policy, Explained with Data.</h1>
+
+        <!-- smaller line -->
+        <p class="kicker">Policy analysis, made legible.</p>
+
         <p class="subtitle">
           This site hosts my portfolio exercises and main project completed for
-          PP434: Automated Data Visualisation for Policymaking, as part of the
+          <em>PP434: Automated Data Visualisation for Policymaking</em>, as part of the
           Master of Public Policy (MPP) programme at the School of Public Policy,
           London School of Economics and Political Science.
         </p>
 
+        <div class="chips">
+          <span class="chip">Vega-Lite</span>
+          <span class="chip">Python (pandas, sklearn)</span>
+          <span class="chip">Human development</span>
+          <span class="chip">State capacity</span>
+        </div>
       </section>
 
-      <!-- About (center aligned) -->
       <section class="section" id="about">
         <h2>About me</h2>
         <p class="lead">
@@ -394,7 +416,6 @@
         </p>
       </section>
 
-      <!-- Coursework (center aligned heading + cards) -->
       <section class="section" id="coursework">
         <h2>PP434 coursework</h2>
         <p class="lead">
@@ -406,7 +427,7 @@
             <div class="tag">Portfolio (20%)</div>
             <h3>Weekly visualisations</h3>
             <p>
-              A collection of weekly coding challenges and visusalisation tasks covering API integration, web scraping, mapping, dashboards, and interactive Vega-Lite designs.
+              A collection of weekly coding challenges and visualisation tasks covering API integration, web scraping, mapping, dashboards, and interactive Vega-Lite designs.
             </p>
             <a class="btn" href="/index.html">View portfolio →</a>
           </div>
@@ -415,17 +436,16 @@
             <div class="tag">Project (80%)</div>
             <h3>Main project</h3>
             <p>
-              HDI trajectory and Policy Scenarios for India (1990-2047): Policy pathways to make India a very high human development country.
+              HDI trajectory and policy scenarios for India (1990–2047): pathways to very high human development.
             </p>
             <a class="btn" href="/project.html">View project →</a>
           </div>
         </div>
       </section>
 
-      <!-- Highlights (optional but looks premium) -->
       <section class="section" id="highlights">
         <h2>Career highlights</h2>
-        <p class="lead">Selected Policy Imapct.</p>
+        <p class="lead">Selected policy impact.</p>
 
         <div class="highlights">
           <div class="hcard">
@@ -438,20 +458,16 @@
           </div>
           <div class="hcard">
             <h4>SDG Monitoring (2019)</h4>
-            <p>Pioneered a citizen-generated data initiative tracking SDGs among India's most excluded communities; recognised by UN-DESA as a "SDG Good Practice" and used by NITI Aayog in India's official VNR reporting on SDGs.</p>
+            <p>Led citizen-generated SDG tracking among excluded communities; recognised as an SDG good practice and fed into national review processes.</p>
           </div>
         </div>
       </section>
 
-      <!-- Two columns: Experience + Publications -->
       <section class="section" id="experience-publications">
         <h2>Professional experience & selected publications</h2>
-        <p class="lead">
-          Chronological experience on the left; selected publications on the right.
-        </p>
+        <p class="lead">Chronological experience on the left; selected publication highlights on the right.</p>
 
         <div class="two-col">
-          <!-- Experience -->
           <div class="box">
             <h3>Professional experience <span>chronological</span></h3>
             <div class="timeline">
@@ -460,46 +476,39 @@
                 <p class="title">Policy Consultant</p>
                 <p class="org">UN and Civil Society Organisations</p>
               </div>
-
               <div class="role">
                 <div class="when">2021–2024</div>
                 <p class="title">Policy Officer / Public Policy Expert</p>
                 <p class="org">UNDP India (incl. secondment to Uttarakhand Government)</p>
               </div>
-
               <div class="role">
                 <div class="when">2019–2021</div>
                 <p class="title">Policy Research Fellow</p>
                 <p class="org">Delhi Assembly Research Centre</p>
               </div>
-
               <div class="role">
                 <div class="when">2018–2019</div>
                 <p class="title">Research Coordinator — Citizen Data Project</p>
                 <p class="org">Wada Na Todo Abhiyan</p>
               </div>
-
               <div class="role">
                 <div class="when">Jan 2018–Aug 2018</div>
                 <p class="title">Policy Associate</p>
                 <p class="org">Oxfam India</p>
               </div>
-
               <div class="role">
                 <div class="when">2016–2017</div>
                 <p class="title">Research Assistant — Tribal Development Report (2 volumes)</p>
                 <p class="org">BRLF, Government of India</p>
               </div>
-
               <div class="role">
                 <div class="when">2015–2016</div>
-                <p class="title">Legislative Assistant to Member of Parliament (LAMP) Fellow</p>
+                <p class="title">LAMP Fellow</p>
                 <p class="org">PRS Legislative Research, New Delhi</p>
               </div>
             </div>
           </div>
 
-          <!-- Publications -->
           <div class="box">
             <h3>Selected publications <span>highlights</span></h3>
             <div class="publist">
@@ -512,20 +521,12 @@
                 <p class="pubmeta">Centre for Public Policy and Good Governance, Government of Uttarakhand.</p>
               </div>
               <div class="pubitem">
-                <p class="pubtitle">Declining Female LFPR in Uttarakhand: Issues and the Way Forward (2022)</p>
-                <p class="pubmeta">Policy Brief No. 01, CPPGG, Government of Uttarakhand.</p>
-              </div>
-              <div class="pubitem">
                 <p class="pubtitle">The 100 HotSpots (2019) — with Annie Namala</p>
-                <p class="pubmeta">Wada Na Todo Abhiyan: Snapshot of excluded groups & SDGs in India.</p>
+                <p class="pubmeta">Wada Na Todo Abhiyan: excluded groups & SDGs in India.</p>
               </div>
               <div class="pubitem">
                 <p class="pubtitle">Why More Women Are Needed in Parliament (Business Standard, 2018)</p>
                 <p class="pubmeta">Opinion article (print media).</p>
-              </div>
-              <div class="pubitem">
-                <p class="pubtitle">Contributions: Asia Pacific Regional HDR 2024; Tribal Development Report 2022; India Inequality Report 2019</p>
-                <p class="pubmeta">Flagship report contributions (UNDP / BRLF / Oxfam).</p>
               </div>
             </div>
           </div>
