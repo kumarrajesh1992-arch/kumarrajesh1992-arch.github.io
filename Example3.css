@@ -4,7 +4,7 @@ body {
   font-size: 16px;
   color: #000;
   line-height: 1.6;
-  background-color: #ffffff;
+  background-color: #eef2ea;
   max-width: 1200px;
   margin: 20px auto;
   padding: 20px 20px 60px;
@@ -59,7 +59,7 @@ section {
 }
 
 .section-grey {
-  background-color: #eef2ea;
+  background-color: #eef2ec;
 }
 
 /* Links */
