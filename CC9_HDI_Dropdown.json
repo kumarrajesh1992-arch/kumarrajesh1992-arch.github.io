@@ -1,16 +1,19 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
   "title": {
-    "text": "Trend in India's Human Development Index Score between 1990-2023)",
-    "subtitle": "HDI and constituent indicators over time (select using dropdown) | Data Source: UNDP HDRO",
+    "text": "Trend in India's Human Development Index Score (1990–2023)",
+    "subtitle": "HDI and constituent indicators over time (select using dropdown) | Source: UNDP HDRO",
     "anchor": "middle",
     "fontSize": 16,
     "subtitleFontSize": 11
   },
+
   "data": {
     "url": "https://raw.githubusercontent.com/kumarrajesh1992-arch/kumarrajesh1992-arch.github.io/refs/heads/main/CC9_India_HDI_tidy.csv",
-    "format": {"type": "csv"}
+    "format": { "type": "csv" }
   },
+
   "params": [
     {
       "name": "indicator_sel",
@@ -35,6 +38,7 @@
       }
     }
   ],
+
   "transform": [
     {
       "fold": [
@@ -46,42 +50,54 @@
       ],
       "as": ["Indicator", "Value"]
     },
-    {"filter": "datum.Indicator == indicator_sel"}
+    { "filter": "datum.Indicator == indicator_sel" }
   ],
+
   "mark": {
     "type": "line",
-    "point": {"filled": true, "size": 60},
+    "point": { "filled": true, "size": 60 },
     "strokeWidth": 2
   },
+
   "encoding": {
     "x": {
       "field": "Year",
       "type": "quantitative",
       "title": "Year",
-      "axis": {"format": "d", "tickMinStep": 1, "labelAngle": 0}
+      "axis": {
+        "format": "d",
+        "tickMinStep": 1,
+        "labelAngle": 0
+      }
     },
     "y": {
       "field": "Value",
       "type": "quantitative",
       "axis": {
+        "titlePadding": 14,
         "title": {
-          "expr": "indicator_sel == 'HDI' ? 'HDI score (0-1)' : indicator_sel == 'Life_expectancy' ? 'Years' : indicator_sel == 'Mean_years_schooling' ? 'Years' : indicator_sel == 'Expected_years_schooling' ? 'Years' : 'GNI per capita (2021 PPP$)'"
+          "expr": "indicator_sel == 'HDI' ? 'HDI score (0–1)' : indicator_sel == 'Life_expectancy' ? 'Years' : indicator_sel == 'Mean_years_schooling' ? 'Years' : indicator_sel == 'Expected_years_schooling' ? 'Years' : 'GNI per capita (2021 PPP$)'"
         }
       }
     },
+
     "tooltip": [
-      {"field": "Year", "type": "quantitative", "title": "Year", "format": "d"},
-      {"field": "Indicator", "type": "nominal", "title": "Indicator"},
-      {
-        "field": "Value",
-        "type": "quantitative",
-        "title": "Value",
-        "format": ".3f"
-      }
+      { "field": "Year", "type": "quantitative", "title": "Year", "format": "d" },
+      { "field": "Indicator", "type": "nominal", "title": "Indicator" },
+      { "field": "Value", "type": "quantitative", "title": "Value", "format": ".3f" }
     ]
   },
+
   "width": 1000,
   "height": 400,
+
+  "padding": {
+    "left": 90,
+    "top": 20,
+    "right": 20,
+    "bottom": 40
+  },
+
   "config": {
     "axis": {
       "grid": true,
@@ -89,6 +105,6 @@
       "labelFontSize": 11,
       "titleFontSize": 12
     },
-    "view": {"stroke": "transparent"}
+    "view": { "stroke": "transparent" }
   }
 }
