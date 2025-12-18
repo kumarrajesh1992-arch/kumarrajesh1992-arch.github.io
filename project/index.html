@@ -116,7 +116,7 @@
     .hero h2{
       margin: 0 0 10px;
       font-family: "Source Serif 4", serif;
-      font-size: 38px;
+      font-size: 34px;
       line-height: 1.15;
       letter-spacing: .2px;
     }
@@ -150,23 +150,15 @@
     }
 
     .section ul{
-      margin: 10px auto 0;
-      padding-left: 18px;
-      max-width: 78ch;
-      color: var(--muted);
-      text-align: left;
-    }
-    .section li{ margin: 6px 0; }
+  list-style: none;
+  padding-left: 0;
+}
 
-    /* Findings / viz blocks */
-    .viz{
-      margin-top: 14px;
-      padding: 16px;
-      border: 1px solid rgba(17,24,39,.08);
-      border-radius: 12px;
-      background: rgba(244,246,242,.60);
-      text-align: left;
-    }
+.section li::before{
+  content: "– ";
+  color: var(--accent);
+  font-weight: 600;
+}
 
     .viz h4{
       margin: 0 0 10px;
@@ -224,7 +216,7 @@
     <!-- HERO BOX -->
     <section class="hero card">
       <div class="kicker">PP434 Project</div>
-      <h2>Pathways to High Human Development in India</h2>
+      <h2>Pathways to High Human Development in India by 2047</h2>
       <p>(An empirical exploration of India’s human development trajectory in the context of Vision 2047)</p>
     </section>
 
@@ -233,7 +225,7 @@
       <div class="card">
         <h3>Aims</h3>
         <p>
-          This project examines India’s long-run human development trajectory in the context of the Government of India’s ambition to achieve high-income status by 2047 under the Vision 2047 agenda. Although India’s Human Development Index (HDI) has improved steadily since 1990, progress in human development has not kept pace with rapid income growth, raising concerns that India could become a high-income economy without attaining high human development. This project has two objectives. First, it documents India’s HDI progress over time and highlights the persistent divergence between economic expansion and improvements in health, education, and living standards. Second, it examines whether differences in policy priorities and state-level characteristics help explain why some Indian states achieve higher human development outcomes than would be predicted by income alone. Empirically, the analysis moves beyond simple income–HDI correlations and adopts a residual framework to assess income-adjusted human development performance across states.
+          This project examines India’s long-run human development trajectory in the context of the Government of India’s ambition to achieve high-income status by 2047 under the Vision 2047 agenda. Although India’s Human Development Index (HDI) score has improved steadily since 1990, progress in human development has not kept pace with rapid income growth, raising concerns that India could become a high-income economy without attaining high human development. This project has two objectives. First, it documents India’s HDI progress over time and highlights the persistent divergence between economic expansion and improvements in health, education, and living standards. Second, it examines whether differences in policy priorities and state-level characteristics help explain why some Indian states achieve higher human development outcomes than would be predicted by income alone. Empirically, the analysis moves beyond simple income–HDI correlations and adopts a residual framework to assess income-adjusted human development performance across states.
         </p>
       </div>
     </section>
