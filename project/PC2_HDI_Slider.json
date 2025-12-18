@@ -14,7 +14,7 @@
       "parse": {"Year": "number", "SHDI": "number", "LGNIC": "number"}
     }
   },
-  "width": 800,
+  "width": 700,
   "height": 400,
   "params": [
     {
