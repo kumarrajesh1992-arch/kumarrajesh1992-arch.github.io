@@ -4,34 +4,269 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Kumar Rajesh — PP434 Project</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+
   <style>
-    body{font-family:Inter,system-ui,Arial,sans-serif;max-width:900px;margin:40px auto;padding:0 16px;line-height:1.6}
-    a{color:#065f46;text-decoration:none} a:hover{text-decoration:underline}
-    .card{border:1px solid #e5e7eb;border-radius:14px;padding:18px;margin:14px 0}
-    h1{margin:0 0 8px} .muted{color:#4b5563}
+    :root{
+      --bg:#f4f6f2;
+      --panel:#ffffff;
+      --ink:#1f2933;
+      --muted:#52606d;
+      --border:#dde3da;
+      --accent:#2f4f2f;
+      --max: 980px;
+      --radius: 14px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: Inter, system-ui, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.65;
+    }
+    header{
+      max-width: var(--max);
+      margin: 46px auto 14px;
+      padding: 0 18px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap: 14px;
+    }
+    header h1{ margin:0; font-size: 22px; letter-spacing: -0.02em; }
+    nav a{
+      margin-left: 14px;
+      text-decoration:none;
+      color: var(--accent);
+      font-weight:600;
+      font-size: 14px;
+    }
+    nav a:hover{ text-decoration: underline; }
+
+    main{
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 18px 70px;
+    }
+
+    .hero{
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 26px 22px;
+      margin-top: 18px;
+      text-align: center;
+    }
+    .hero h2{
+      margin: 0 0 10px;
+      font-size: 38px;
+      letter-spacing: -0.03em;
+    }
+    .hero p{
+      margin: 0 auto;
+      max-width: 82ch;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .section{
+      margin-top: 18px;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px;
+    }
+    .section h3{
+      margin: 0 0 10px;
+      font-size: 18px;
+      letter-spacing: -0.01em;
+    }
+    .section p, .section li{ color: var(--muted); font-size: 15px; }
+    .section ul{ margin: 8px 0 0 18px; }
+
+    .viz{
+      margin-top: 14px;
+      padding-top: 14px;
+      border-top: 1px solid rgba(0,0,0,.06);
+    }
+    .viz h4{
+      margin: 0 0 8px;
+      font-size: 16px;
+      color: var(--ink);
+    }
+    .caption{
+      margin: 8px 0 0;
+      font-size: 14px;
+      color: var(--muted);
+    }
+    figure{
+      margin: 10px 0 0;
+      padding: 0;
+    }
+
+    .two-col{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    @media (max-width: 900px){
+      .two-col{ grid-template-columns: 1fr; }
+      .hero h2{ font-size: 32px; }
+    }
   </style>
 </head>
+
 <body>
-  <h1>PP434 Project</h1>
-  <p class="muted">Kumar Rajesh • LSE MPP (2025–26)</p>
+  <header>
+    <h1>Kumar Rajesh</h1>
+    <nav>
+      <a href="/home.html">Home</a>
+      <a href="/index.html">Portfolio</a>
+      <a href="/project.html">Project</a>
+      <a href="https://github.com/kumarrajesh1992-arch" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/kumarrajesh1992/" target="_blank" rel="noopener">LinkedIn</a>
+    </nav>
+  </header>
 
-  <div class="card">
-    <p><strong>About</strong><br>
-    This page hosts my main PP434 project (80% assessment).</p>
-  </div>
+  <main>
+    <section class="hero">
+      <h2>Pathways to High Human Development</h2>
+      <p>
+        PP434 (80%) project. I document India’s long-run HDI progress and test why income growth
+        does not translate proportionately into human development—using an income-adjusted “residual HDI”
+        approach across Indian states.
+      </p>
+    </section>
 
-  <div class="card">
-    <p><strong>Links</strong><br>
-      <a href="https://www.linkedin.com/in/kumarrajesh1992/" target="_blank" rel="noopener">LinkedIn</a><br>
-      <a href="../index.html">Portfolio (coding challenges page)</a>
-    </p>
-  </div>
+    <section class="section" id="aims">
+      <h3>Aims</h3>
+      <p>
+        Write 120–160 words here: the puzzle (growth vs HDI), why it matters for Vision 2047,
+        and what you test (spending priorities, state capacity proxies, labour/consumption channels).
+      </p>
+    </section>
 
-  <div class="card">
-    <p class="muted">Next: embed your project charts + write-up here.</p>
-  </div>
+    <section class="section" id="data">
+      <h3>Data</h3>
+      <ul>
+        <li><strong>National HDI (1990–present):</strong> UNDP HDRO API (automated).</li>
+        <li><strong>State HDI (1990–2023):</strong> Global Data Lab (processed into tidy CSV).</li>
+        <li><strong>Health & education spending shares:</strong> RBI State Finances (compiled).</li>
+        <li><strong>State capacity proxies:</strong> NITI Aayog Health Index; School Education Quality Index.</li>
+        <li><strong>Labour/households:</strong> Workers–Population Ratio (WPR) and MPCE (where available).</li>
+      </ul>
+    </section>
+
+    <section class="section" id="charts">
+      <h3>Findings</h3>
+
+      <div class="viz">
+        <h4>PC1. India’s HDI trajectory since 1990 (HDRO API)</h4>
+        <figure id="PC1"></figure>
+        <p class="caption">What this chart shows + 1 key takeaway.</p>
+      </div>
+
+      <div class="viz">
+        <h4>PC2. State HDI trajectories (interactive bubble with year slider)</h4>
+        <figure id="PC2"></figure>
+        <p class="caption">What this chart shows + 1 key takeaway.</p>
+      </div>
+
+      <div class="viz">
+        <h4>PC3. HDI vs log(GNI per capita), 2023 (fitted line)</h4>
+        <figure id="PC3"></figure>
+        <p class="caption">Income explains a lot—but not everything.</p>
+      </div>
+
+      <div class="viz">
+        <h4>PC4. Residual HDI (actual − predicted) by state</h4>
+        <figure id="PC4"></figure>
+        <p class="caption">Over-performers vs under-performers after accounting for income.</p>
+      </div>
+
+      <div class="viz">
+        <h4>PC5. Do spending priorities explain residual HDI?</h4>
+        <figure id="PC5"></figure>
+        <p class="caption">
+          Keep this strictly associational: “states prioritising social sectors tend to…” (if at all).
+        </p>
+      </div>
+
+      <div class="viz">
+        <h4>PC6. Do state capacity proxies explain residual HDI?</h4>
+        <figure id="PC6"></figure>
+        <p class="caption">
+          If coefficients/R² are small, say: “these proxies explain little variation in this cross-section.”
+        </p>
+      </div>
+
+      <div class="viz">
+        <h4>PC7. Labour market / household transmission (WPR or MPCE)</h4>
+        <figure id="PC7"></figure>
+        <p class="caption">
+          Use this to motivate “broad-based employment + household consumption” as a pathway.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" id="tools">
+      <h3>Tools & methods</h3>
+
+      <div class="two-col">
+        <div>
+          <p><strong>Workflow</strong></p>
+          <ul>
+            <li>Python (pandas/sklearn) for cleaning + regressions.</li>
+            <li>Residual approach: predict HDI from log(GNI), then analyse residuals.</li>
+            <li>Standardised betas (z-scores) for comparability across variables.</li>
+          </ul>
+        </div>
+
+        <div>
+          <p><strong>Challenges</strong></p>
+          <ul>
+            <li>Non-aligned years across indices (documented; treated as proxies).</li>
+            <li>Missing UT budget data (UTs dropped for spending models).</li>
+            <li>Interpretation kept non-causal (cross-sectional associations).</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="conclusions">
+      <h3>Conclusions</h3>
+      <ul>
+        <li>1–2 bullets on what the income benchmark shows.</li>
+        <li>1 bullet on spending: what you found (even if “weak relationship”).</li>
+        <li>1 bullet on capacity proxies: what you found.</li>
+        <li>1–2 bullets translating this into Vision 2047 policy implications.</li>
+      </ul>
+    </section>
+  </main>
+
+  <script>
+    // Put your Vega-Lite JSON inside /project/ (recommended)
+    const specs = {
+      PC1: "/project/PC1_India_HDI_API.json",
+      PC2: "/project/PC2_State_Bubble.json",
+      PC3: "/project/PC3_HDI_vs_Income_Fit.json",
+      PC4: "/project/PC4_Residual_Bars.json",
+      PC5: "/project/PC5_Residual_vs_Spending.json",
+      PC6: "/project/PC6_Residual_vs_Capacity.json",
+      PC7: "/project/PC7_Residual_vs_WPR_or_MPCE.json"
+    };
+
+    Object.entries(specs).forEach(([id, spec]) => {
+      vegaEmbed(`#${id}`, spec, { actions: false }).catch(console.warn);
+    });
+  </script>
 </body>
 </html>
