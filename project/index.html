@@ -275,11 +275,38 @@
         </div>
 
         <div class="viz">
-          <h4>PC5. Do spending priorities explain residual HDI?</h4>
-          <figure id="PC5"></figure>
-          <p class="caption">Chart 5 examines whether differences in social sector spending priorities help explain income-adjusted human development performance across Indian states. The fitted relationship between predicted residual HDI (based on health and education budget shares) and actual residual HDI is weak, with substantial dispersion around the trend. While a few states with higher social sector emphasis perform modestly better than income alone would predict, many states cluster near zero or diverge sharply. This suggests that budget allocation shares, by themselves, are insufficient to explain variation in income-adjusted HDI outcomes, pointing to the importance of implementation quality, institutional capacity, and labour-market transmission mechanisms..</p>
-        </div>
+  <h4>PC5. Do spending priorities explain residual HDI?</h4>
+  <figure id="PC5"></figure>
 
+  <p class="caption">
+    This chart examines whether overall social sector spending priorities help explain income-adjusted
+    human development performance across Indian states. Formally, the relationship is estimated using
+    the following linear specification:
+  </p>
+
+  <p class="caption">
+    <strong>
+      <code>
+        Residual HDIᵢ = α + β × (Social sector expenditure shareᵢ) + εᵢ
+      </code>
+    </strong>
+  </p>
+
+  <p class="caption">
+    where the social sector share combines health and education spending as a proportion of total state
+    expenditure.
+  </p>
+
+  <p class="caption">
+    The estimated association is weak and highly dispersed. States such as Kerala and Sikkim achieve
+    positive HDI residuals despite moderate social sector shares, while others, including Gujarat and
+    Andhra Pradesh, record negative residuals despite comparable or higher allocations. The model
+    explains only a small share of cross-state variation, suggesting that spending levels alone are
+    insufficient. These results point to the importance of implementation capacity, service delivery
+    quality, and labour-market and household transmission mechanisms in converting public spending into
+    human development outcomes.
+  </p>
+</div>
         <div class="viz">
           <h4>PC6. Do state capacity proxies explain residual HDI?</h4>
           <figure id="PC6"></figure>
