@@ -1,0 +1,37 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "HDI Residuals after Accounting for Income (2023)",
+    "subtitle": "Positive values indicate HDI overperformance relative to income | Data Source: Global Data Lab",
+    "anchor": "middle"
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/kumarrajesh1992-arch/kumarrajesh1992-arch.github.io/refs/heads/main/CC10_state_residuals_2023.csv",
+    "format": {"type": "csv"}
+  },
+  "mark": {"type": "bar"},
+  "encoding": {
+    "y": {"field": "State", "type": "nominal", "sort": "-x", "title": "State"},
+    "x": {
+      "field": "residual_HDI",
+      "type": "quantitative",
+      "title": "HDI residual (actual − predicted)"
+    },
+    "color": {
+      "condition": {"test": "datum.residual_HDI < 0", "value": "#d73027"},
+      "value": "#2b8cbe"
+    },
+    "tooltip": [
+      {"field": "State", "type": "nominal"},
+      {
+        "field": "residual_HDI",
+        "type": "quantitative",
+        "title": "HDI residual",
+        "format": ".3f"
+      }
+    ]
+  },
+  "width": 700,
+  "height": 500,
+  "config": {}
+}
