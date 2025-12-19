@@ -1,0 +1,88 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Explaining income-adjusted HDI with budget shares (India States, 2023)",
+    "subtitle": "Actual residual HDI vs predicted residual from health/education spending shares",
+    "anchor": "middle"
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/kumarrajesh1992-arch/kumarrajesh1992-arch.github.io/refs/heads/main/CC10_Block1_Residuals_Explained.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "residual_HDI": "number",
+        "health_share": "number",
+        "education_share": "number",
+        "residual_pred": "number"
+      }
+    }
+  },
+  "width": 750,
+  "height": 420,
+  "layer": [
+    {
+      "mark": {"type": "circle", "opacity": 0.85, "size": 110},
+      "encoding": {
+        "x": {
+          "field": "residual_pred",
+          "type": "quantitative",
+          "title": "Predicted residual HDI (from spending shares)"
+        },
+        "y": {
+          "field": "residual_HDI",
+          "type": "quantitative",
+          "title": "Actual residual HDI (income-adjusted)"
+        },
+        "tooltip": [
+          {"field": "State", "type": "nominal"},
+          {
+            "field": "residual_HDI",
+            "type": "quantitative",
+            "format": ".3f",
+            "title": "Actual residual"
+          },
+          {
+            "field": "residual_pred",
+            "type": "quantitative",
+            "format": ".3f",
+            "title": "Predicted residual"
+          },
+          {
+            "field": "health_share",
+            "type": "quantitative",
+            "format": ".2f",
+            "title": "Health share (%)"
+          },
+          {
+            "field": "education_share",
+            "type": "quantitative",
+            "format": ".2f",
+            "title": "Education share (%)"
+          }
+        ]
+      }
+    },
+    {
+      "data": {"values": [{"x": -0.08, "y": -0.08}, {"x": 0.08, "y": 0.08}]},
+      "mark": {
+        "type": "line",
+        "strokeWidth": 2,
+        "strokeDash": [6, 4],
+        "color": "black"
+      },
+      "encoding": {
+        "x": {"field": "x", "type": "quantitative"},
+        "y": {"field": "y", "type": "quantitative"}
+      }
+    },
+    {
+      "mark": {"type": "rule", "color": "black", "opacity": 0.3},
+      "encoding": {"y": {"datum": 0}}
+    },
+    {
+      "mark": {"type": "rule", "color": "black", "opacity": 0.3},
+      "encoding": {"x": {"datum": 0}}
+    }
+  ],
+  "config": {}
+}
