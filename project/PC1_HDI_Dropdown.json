@@ -1,139 +1,89 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
-    "text": "Trends in Statewise HDI Score in India (1990–2022)",
-    "subtitle": "Bubble chart with year slider + state filter | Data Source: Global Data Lab",
+    "text": "Trend in India's Human Development Index Score (1990–2023)",
+    "subtitle": "HDI and constituent indicators over time (select using dropdown) | Source: UNDP HDRO",
     "anchor": "middle",
     "fontSize": 16,
     "subtitleFontSize": 11
   },
   "data": {
-    "url": "https://raw.githubusercontent.com/kumarrajesh1992-arch/kumarrajesh1992-arch.github.io/refs/heads/main/Kumar%20Main%20Project.csv",
-    "format": {
-      "type": "csv",
-      "parse": {
-        "Year": "number",
-        "SHDI": "number",
-        "LGNIC": "number"
-      }
-    }
+    "url": "https://raw.githubusercontent.com/kumarrajesh1992-arch/kumarrajesh1992-arch.github.io/refs/heads/main/CC9_India_HDI_tidy.csv",
+    "format": {"type": "csv"}
   },
-  "width": 700,
-  "height": 420,
-
   "params": [
     {
-      "name": "year_sel",
-      "value": 2022,
-      "bind": {
-        "input": "range",
-        "min": 1990,
-        "max": 2022,
-        "step": 1,
-        "name": "Year: "
-      }
-    },
-    {
-      "name": "state_sel",
-      "value": "All",
+      "name": "indicator_sel",
+      "value": "HDI",
       "bind": {
         "input": "select",
-        "name": "State: ",
+        "name": "Select Metric: ",
         "options": [
-          "All",
-
-          "Andhra Pradesh",
-          "Arunachal Pradesh",
-          "Assam",
-          "Bihar",
-          "Chhattisgarh",
-          "Goa",
-          "Gujarat",
-          "Haryana",
-          "Himachal Pradesh",
-          "Jharkhand",
-          "Karnataka",
-          "Kerala",
-          "Madhya Pradesh",
-          "Maharashtra",
-          "Manipur",
-          "Meghalaya",
-          "Mizoram",
-          "Nagaland",
-          "Odisha",
-          "Punjab",
-          "Rajasthan",
-          "Sikkim",
-          "Tamil Nadu",
-          "Telangana",
-          "Tripura",
-          "Uttar Pradesh",
-          "Uttarakhand",
-          "West Bengal",
-
-          "Andaman and Nicobar Islands",
-          "Chandigarh",
-          "Dadra and Nagar Haveli",
-          "Daman and Diu",
-          "Delhi",
-          "Jammu and Kashmir",
-          "Ladakh",
-          "Lakshadweep",
-          "Puducherry"
+          "HDI",
+          "Life_expectancy",
+          "Mean_years_schooling",
+          "Expected_years_schooling",
+          "GNI_per_capita"
+        ],
+        "labels": [
+          "Human Development Index (HDI)",
+          "Life expectancy at birth (years)",
+          "Mean years of schooling (years)",
+          "Expected years of schooling (years)",
+          "GNI per capita (2021 PPP$)"
         ]
       }
     }
   ],
-
   "transform": [
-    { "filter": "datum.Year == year_sel" },
     {
-      "filter": "state_sel == 'All' || datum.State == state_sel"
-    }
+      "fold": [
+        "HDI",
+        "Life_expectancy",
+        "Mean_years_schooling",
+        "Expected_years_schooling",
+        "GNI_per_capita"
+      ],
+      "as": ["Indicator", "Value"]
+    },
+    {"filter": "datum.Indicator == indicator_sel"}
   ],
-
   "mark": {
-    "type": "circle",
-    "opacity": 0.9
+    "type": "line",
+    "point": {"filled": true, "size": 60},
+    "strokeWidth": 2
   },
-
   "encoding": {
     "x": {
-      "field": "SHDI",
+      "field": "Year",
       "type": "quantitative",
-      "title": "HDI score (0–1)",
-      "scale": { "domain": [0.3, 1], "clamp": true },
-      "axis": { "titlePadding": 12 }
+      "title": "Year",
+      "axis": {"format": "d", "tickMinStep": 1, "labelAngle": 0}
     },
     "y": {
-      "field": "LGNIC",
+      "field": "Value",
       "type": "quantitative",
-      "title": "log GNI per capita (2021 PPP$)",
-      "scale": { "domain": [6, 12], "nice": false, "clamp": true },
-      "axis": { "format": ".2f", "titlePadding": 12 }
-    },
-    "color": {
-      "field": "HDI_category",
-      "type": "nominal",
-      "title": "HDI Category",
-      "scale": {
-        "domain": ["Very High", "High", "Medium", "Low"],
-        "range": ["#084081", "#2b8cbe", "#7bccc4", "#bae4bc"]
-      },
-      "legend": {
-        "labelExpr": "datum.value === 'Very High' ? 'Very High (≥ 0.800)' : datum.value === 'High' ? 'High (0.700–0.799)' : datum.value === 'Medium' ? 'Medium (0.550–0.699)' : 'Low (< 0.550)'"
+      "axis": {
+        "titlePadding": 12,
+        "title": {
+          "expr": "indicator_sel == 'HDI' ? 'HDI score (0–1)' : indicator_sel == 'Life_expectancy' ? 'Years' : indicator_sel == 'Mean_years_schooling' ? 'Years' : indicator_sel == 'Expected_years_schooling' ? 'Years' : 'GNI per capita (2021 PPP$)'"
+        }
       }
     },
-    "size": { "value": 320 },
     "tooltip": [
-      { "field": "State", "type": "nominal", "title": "State" },
-      { "field": "Year", "type": "quantitative", "title": "Year" },
-      { "field": "SHDI", "type": "quantitative", "title": "HDI", "format": ".3f" },
-      { "field": "LGNIC", "type": "quantitative", "title": "log GNI per capita", "format": ".2f" },
-      { "field": "HDI_category", "type": "nominal", "title": "HDI category" }
+      {"field": "Year", "type": "quantitative", "title": "Year", "format": "d"},
+      {"field": "Indicator", "type": "nominal", "title": "Indicator"},
+      {
+        "field": "Value",
+        "type": "quantitative",
+        "title": "Value",
+        "format": ".3f"
+      }
     ]
   },
-
+  "width": 700,
+  "height": 400,
+  "padding": {"left": 60, "top": 20, "right": 20, "bottom": 40},
   "config": {
     "axis": {
       "grid": true,
@@ -141,6 +91,6 @@
       "labelFontSize": 11,
       "titleFontSize": 12
     },
-    "view": { "stroke": "transparent" }
+    "view": {"stroke": "transparent"}
   }
 }
