@@ -69,7 +69,7 @@
       }
     }
   ],
-  "width": 900,
+  "width": 600,
   "height": 400,
   "config": {
     "axis": {"labelFontSize": 11, "titleFontSize": 12},
