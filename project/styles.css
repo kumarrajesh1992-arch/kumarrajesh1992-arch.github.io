@@ -17,9 +17,7 @@
 /* =========================
    GLOBAL RESET
 ========================= */
-*{
-  box-sizing: border-box;
-}
+*{ box-sizing: border-box; }
 
 body{
   margin: 0;
@@ -39,10 +37,7 @@ a{
   text-decoration-thickness: 1px;
   text-underline-offset: 3px;
 }
-
-a:hover{
-  text-decoration-thickness: 2px;
-}
+a:hover{ text-decoration-thickness: 2px; }
 
 /* =========================
    HEADER & NAV
@@ -79,10 +74,7 @@ nav a{
   border-radius: 999px;
   text-decoration: none;
 }
-
-nav a:hover{
-  background: var(--accent-soft);
-}
+nav a:hover{ background: var(--accent-soft); }
 
 /* =========================
    LAYOUT
@@ -140,13 +132,9 @@ main{
 /* =========================
    SECTIONS
 ========================= */
-.section{
-  margin-top: 18px;
-}
+.section{ margin-top: 18px; }
 
-.section .card{
-  padding: 22px;
-}
+.section .card{ padding: 22px; }
 
 .section h3{
   margin: 0 0 12px;
@@ -168,47 +156,56 @@ main{
   padding-left: 0;
   margin: 8px 0 0;
 }
-
 .section li{
   margin-bottom: 14px;
   font-size: 15px;
   color: var(--muted);
 }
-
 .section li strong{
   color: var(--ink);
   font-weight: 600;
 }
 
 /* =========================
-   VISUALISATIONS (FIXED)
+   VISUALISATIONS
+   Goal:
+   - Text left-aligned
+   - Charts centered
+   - Vega controls inside box (no overflow)
 ========================= */
-.viz{
-  margin-top: 26px;
-}
+.viz{ margin-top: 26px; }
 
-/* Keep text LEFT aligned */
-.viz h4,
-.viz .caption{
+.viz h4{
+  margin: 0 0 10px;
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--ink);
   text-align: left;
 }
 
-/* IMPORTANT: do NOT make figure flex */
-.viz figure{
-  margin: 12px 0;
-  display: block;          /* <-- this fixes the bindings jumping */
-  width: 100%;
+.viz .caption{
+  margin-top: 10px;
+  font-size: 14px;
+  color: var(--muted);
+  text-align: left;
 }
 
-/* Vega container */
-.viz .vega-embed{
+/* The <figure> should NOT be flex — let Vega manage layout */
+.viz figure{
+  margin: 10px 0 0;
   width: 100%;
-  max-width: 100%;
-  overflow-x: auto;        /* allow scroll if chart is wider */
   display: block;
 }
 
-/* Bindings (dropdown/slider): keep them inside, left aligned */
+/* Vega wrapper: keep inside card; allow horizontal scroll only if needed */
+.viz .vega-embed{
+  width: 100%;
+  max-width: 100%;
+  display: block;
+  overflow-x: auto;
+}
+
+/* Controls (dropdown/slider): left-aligned, wrapped, contained */
 .viz .vega-embed .vega-bindings{
   display: flex;
   flex-wrap: wrap;
@@ -220,34 +217,20 @@ main{
   max-width: 100%;
   font-size: 13px;
 }
-
 .viz .vega-embed .vega-bindings label{
-  white-space: normal;
   max-width: 100%;
+  white-space: normal;
 }
-
 .viz .vega-embed .vega-bindings select,
 .viz .vega-embed .vega-bindings input[type="range"]{
   max-width: 100%;
 }
 
-/* Center ONLY the rendered chart view */
+/* Center the rendered chart canvas/SVG inside the wrapper */
 .viz .vega-embed .vega-view{
   display: block;
-  margin: 0 auto;          /* centers the SVG/canvas */
+  margin: 0 auto;
   max-width: 100%;
-}
-
-.viz h4{
-  margin: 0 0 10px;
-  font-size: 15px;
-  font-weight: 800;
-}
-
-.caption{
-  margin-top: 10px;
-  font-size: 14px;
-  color: var(--muted);
 }
 
 /* =========================
@@ -259,7 +242,6 @@ main{
   gap: 18px;
   margin-top: 10px;
 }
-
 .two-col p{
   margin: 0 0 8px;
   font-weight: 700;
@@ -282,70 +264,7 @@ footer{
    RESPONSIVE
 ========================= */
 @media (max-width: 820px){
-  .hero h2{
-    font-size: 26px;
-  }
-
-  .two-col{
-    grid-template-columns: 1fr;
-  }
-
-  header{
-    margin-top: 28px;
-  }
-}
-/* --- FIX VEGA-EMBED OVERFLOW + ALIGNMENT --- */
-
-/* Each chart block */
-.viz{
-  margin-top: 22px;
-}
-
-/* Keep charts centered, but keep text left-aligned */
-.viz figure{
-  margin: 0;
-  display: flex;
-  justify-content: center;  /* centers the rendered chart */
-}
-
-/* Vega embed wrapper: keep everything inside the card */
-.viz .vega-embed{
-  width: 100%;
-  max-width: 100%;
-  overflow-x: auto;         /* prevents overflow on smaller screens */
-}
-
-/* Make the internal SVG/canvas responsive within the wrapper */
-.viz .vega-embed .vega-view{
-  width: 100%;
-  max-width: 100%;
-}
-
-/* Bind controls (dropdown/slider): keep them inside, left-aligned */
-.viz .vega-bindings{
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px 14px;
-  justify-content: flex-start;
-  align-items: center;
-  margin: 0 0 10px 0;
-  max-width: 100%;
-}
-
-/* Prevent long labels from pushing controls out */
-.viz .vega-bindings label{
-  max-width: 100%;
-  white-space: normal;
-}
-
-/* Make inputs behave on narrow screens */
-.viz .vega-bindings select,
-.viz .vega-bindings input[type="range"]{
-  max-width: 100%;
-}
-
-/* Optional: slightly smaller control text so it fits */
-.viz .vega-bindings,
-.viz .vega-bindings label{
-  font-size: 13px;
+  .hero h2{ font-size: 26px; }
+  .two-col{ grid-template-columns: 1fr; }
+  header{ margin-top: 28px; }
 }
