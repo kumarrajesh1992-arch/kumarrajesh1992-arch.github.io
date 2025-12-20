@@ -1,0 +1,95 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Do state capacity proxies explain income-adjusted HDI performance?",
+    "subtitle": "Residual HDI vs health-system inputs/processes and education governance (associational) | Source: NITI Aayog indices + GDL/own processing",
+    "anchor": "middle",
+    "fontSize": 16,
+    "subtitleFontSize": 11
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/kumarrajesh1992-arch/kumarrajesh1992-arch.github.io/refs/heads/main/project/PC6_State_Capacity.csv",
+    "format": {"type": "csv"}
+  },
+  "transform": [
+    {
+      "fold": ["health_index", "education_index"],
+      "as": ["CapacityProxy", "CapacityScore"]
+    },
+    {
+      "calculate": "datum.CapacityProxy == 'health_index' ? 'Health capacity (inputs & processes)' : 'Education capacity (governance)'",
+      "as": "ProxyLabel"
+    }
+  ],
+  "facet": {
+    "column": {
+      "field": "ProxyLabel",
+      "type": "nominal",
+      "header": {"labelFontSize": 13, "labelFontWeight": "bold", "title": null}
+    }
+  },
+  "spec": {
+    "width": 420,
+    "height": 320,
+    "layer": [
+      {
+        "mark": {"type": "circle", "opacity": 0.85, "size": 90},
+        "encoding": {
+          "x": {
+            "field": "CapacityScore",
+            "type": "quantitative",
+            "title": null
+          },
+          "y": {
+            "field": "residual_HDI",
+            "type": "quantitative",
+            "title": "Residual HDI (actual − income-predicted)",
+            "axis": {"format": ".3f"}
+          },
+          "tooltip": [
+            {"field": "State", "type": "nominal", "title": "State"},
+            {
+              "field": "residual_HDI",
+              "type": "quantitative",
+              "title": "Residual HDI",
+              "format": ".3f"
+            },
+            {
+              "field": "CapacityScore",
+              "type": "quantitative",
+              "title": "Capacity score",
+              "format": ".2f"
+            }
+          ]
+        }
+      },
+      {
+        "transform": [
+          {
+            "regression": "residual_HDI",
+            "on": "CapacityScore",
+            "groupby": ["CapacityProxy"]
+          }
+        ],
+        "mark": {"type": "line", "strokeWidth": 2},
+        "encoding": {
+          "x": {"field": "CapacityScore", "type": "quantitative"},
+          "y": {"field": "residual_HDI", "type": "quantitative"}
+        }
+      },
+      {
+        "mark": {"type": "rule", "strokeWidth": 1, "opacity": 0.7},
+        "encoding": {"y": {"datum": 0}}
+      }
+    ]
+  },
+  "config": {
+    "view": {"stroke": "transparent"},
+    "axis": {
+      "grid": true,
+      "gridColor": "#e6e6e6",
+      "labelFontSize": 11,
+      "titleFontSize": 12
+    }
+  }
+}
