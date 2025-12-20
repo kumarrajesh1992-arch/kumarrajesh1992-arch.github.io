@@ -1,0 +1,99 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Per-capita Social Sector Spending and Income-adjusted HDI Performance",
+    "subtitle": "Residual HDI vs per-capita social sector expenditure (2021–22) | Points coloured by residual sign",
+    "anchor": "middle",
+    "fontSize": 16,
+    "subtitleFontSize": 11
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/kumarrajesh1992-arch/kumarrajesh1992-arch.github.io/refs/heads/main/project/PC5_Percapita_social_Sector.csv",
+    "format": {
+      "type": "csv",
+      "parse": {"Per_Capita_Exp": "number", "residual_HDI": "number"}
+    }
+  },
+  "transform": [
+    {
+      "calculate": "datum.residual_HDI >= 0 ? 'Positive residual (outperformer)' : 'Negative residual (underperformer)'",
+      "as": "ResidualSign"
+    }
+  ],
+  "layer": [
+    {
+      "mark": {"type": "circle", "size": 120, "opacity": 0.85, "clip": true},
+      "encoding": {
+        "x": {
+          "field": "Per_Capita_Exp",
+          "type": "quantitative",
+          "title": "Per-capita social sector expenditure (INR per person)",
+          "axis": {"format": ",.0f"}
+        },
+        "y": {
+          "field": "residual_HDI",
+          "type": "quantitative",
+          "title": "Residual HDI (actual − income-predicted)",
+          "axis": {"format": ".3f"}
+        },
+        "color": {
+          "field": "ResidualSign",
+          "type": "nominal",
+          "title": "Income-adjusted performance"
+        },
+        "tooltip": [
+          {"field": "State", "type": "nominal", "title": "State"},
+          {
+            "field": "Per_Capita_Exp",
+            "type": "quantitative",
+            "title": "Per-capita spending (INR)",
+            "format": ",.0f"
+          },
+          {
+            "field": "residual_HDI",
+            "type": "quantitative",
+            "title": "Residual HDI",
+            "format": ".3f"
+          },
+          {
+            "field": "pc_social_inr_z",
+            "type": "quantitative",
+            "title": "Per-capita spending (z)",
+            "format": ".2f"
+          }
+        ]
+      }
+    },
+    {
+      "transform": [
+        {
+          "regression": "residual_HDI",
+          "on": "Per_Capita_Exp",
+          "method": "linear"
+        }
+      ],
+      "mark": {"type": "line", "strokeWidth": 2, "clip": true},
+      "encoding": {
+        "x": {"field": "Per_Capita_Exp", "type": "quantitative"},
+        "y": {"field": "residual_HDI", "type": "quantitative"}
+      }
+    },
+    {
+      "mark": {"type": "rule", "strokeDash": [6, 6], "opacity": 0.7},
+      "encoding": {"y": {"datum": 0}}
+    }
+  ],
+  "width": 820,
+  "height": 420,
+  "padding": {"left": 70, "right": 20, "top": 15, "bottom": 50},
+  "config": {
+    "axis": {
+      "grid": true,
+      "gridColor": "#e6e6e6",
+      "labelFontSize": 11,
+      "titleFontSize": 12
+    },
+    "view": {"stroke": "transparent"},
+    "legend": {"labelFontSize": 11, "titleFontSize": 12}
+  }
+}
