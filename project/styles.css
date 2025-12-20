@@ -256,3 +256,58 @@ footer{
     margin-top: 28px;
   }
 }
+/* --- FIX VEGA-EMBED OVERFLOW + ALIGNMENT --- */
+
+/* Each chart block */
+.viz{
+  margin-top: 22px;
+}
+
+/* Keep charts centered, but keep text left-aligned */
+.viz figure{
+  margin: 0;
+  display: flex;
+  justify-content: center;  /* centers the rendered chart */
+}
+
+/* Vega embed wrapper: keep everything inside the card */
+.viz .vega-embed{
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;         /* prevents overflow on smaller screens */
+}
+
+/* Make the internal SVG/canvas responsive within the wrapper */
+.viz .vega-embed .vega-view{
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Bind controls (dropdown/slider): keep them inside, left-aligned */
+.viz .vega-bindings{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 14px;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0 0 10px 0;
+  max-width: 100%;
+}
+
+/* Prevent long labels from pushing controls out */
+.viz .vega-bindings label{
+  max-width: 100%;
+  white-space: normal;
+}
+
+/* Make inputs behave on narrow screens */
+.viz .vega-bindings select,
+.viz .vega-bindings input[type="range"]{
+  max-width: 100%;
+}
+
+/* Optional: slightly smaller control text so it fits */
+.viz .vega-bindings,
+.viz .vega-bindings label{
+  font-size: 13px;
+}
