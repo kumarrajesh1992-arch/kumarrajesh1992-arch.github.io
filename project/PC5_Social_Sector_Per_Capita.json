@@ -83,8 +83,8 @@
       "encoding": {"y": {"datum": 0}}
     }
   ],
-  "width": 820,
-  "height": 420,
+  "width": 700,
+  "height": 400,
   "padding": {"left": 70, "right": 20, "top": 15, "bottom": 50},
   "config": {
     "axis": {
