@@ -181,7 +181,7 @@ main{
 }
 
 /* =========================
-   VISUALISATIONS
+   VISUALISATIONS (FIXED)
 ========================= */
 .viz{
   margin-top: 26px;
@@ -193,11 +193,49 @@ main{
   text-align: left;
 }
 
-/* Center charts only */
+/* IMPORTANT: do NOT make figure flex */
 .viz figure{
-  display: flex;
-  justify-content: center;
   margin: 12px 0;
+  display: block;          /* <-- this fixes the bindings jumping */
+  width: 100%;
+}
+
+/* Vega container */
+.viz .vega-embed{
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;        /* allow scroll if chart is wider */
+  display: block;
+}
+
+/* Bindings (dropdown/slider): keep them inside, left aligned */
+.viz .vega-embed .vega-bindings{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 14px;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0 0 10px 0;
+  width: 100%;
+  max-width: 100%;
+  font-size: 13px;
+}
+
+.viz .vega-embed .vega-bindings label{
+  white-space: normal;
+  max-width: 100%;
+}
+
+.viz .vega-embed .vega-bindings select,
+.viz .vega-embed .vega-bindings input[type="range"]{
+  max-width: 100%;
+}
+
+/* Center ONLY the rendered chart view */
+.viz .vega-embed .vega-view{
+  display: block;
+  margin: 0 auto;          /* centers the SVG/canvas */
+  max-width: 100%;
 }
 
 .viz h4{
