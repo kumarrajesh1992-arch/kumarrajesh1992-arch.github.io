@@ -96,30 +96,21 @@
   <figure id="PC5"></figure>
 
   <p class="caption">
-This faceted visualisation examines whether social sector spending priorities help explain income-adjusted human
-development performance across Indian states. The relationship is estimated using a simple linear
-specification linking residual HDI to state expenditure shares on health and education:
+Chart 5 examines whether per-capita social sector expenditure is associated with income-adjusted human development outcomes across Indian states. The analysis focuses on per-capita social sector spending as a policy-relevant measure of fiscal effort, capturing the real resources available to citizens after accounting for population size. The relationship is estimated using the following specification:
 </p>
 
 <p class="caption">
 <strong>
-Residual HDI<sub>i</sub> = α + β<sub>1</sub>·HealthShare<sub>i</sub> + β<sub>2</sub>·EducationShare<sub>i</sub> + ε<sub>i</sub>
+Residual HDI<sub>i</sub> = α + β<sub>1</sub>·Per-Capita Social Sector Expenditure<sub>i</sub> + ε<sub>i</sub>
 </strong>
 </p>
 
 <p class="caption">
-The estimated associations are weak and highly dispersed. Even when health and education spending
-shares are considered jointly, the model explains only around 10 percent of cross-state variation in
-income-adjusted HDI (R² ≈ 0.10). Health spending shows a modest positive association with residual HDI
-(β ≈ 0.35 in standardized terms), while education spending displays no systematic relationship.
-States such as Kerala and Sikkim outperform income benchmarks despite moderate allocations, while
-Gujarat and Andhra Pradesh underperform despite comparable or higher spending shares.
+The estimated association is positive and statistically significant at the 5 percent level (β ≈ 0.0069; p ≈ 0.05), but modest in magnitude, explaining approximately 12.6 percent of cross-state variation in residual HDI. States such as Kerala, Manipur, Nagaland, and Meghalaya combine relatively higher per-capita social sector spending with positive income-adjusted HDI performance. However, states with comparable spending levels exhibit divergent outcomes: Assam records a positive residual, while Gujarat underperforms substantially relative to its income.
 </p>
 
 <p class="caption">
-These results suggest that spending levels alone are insufficient. How resources are translated into
-outcomes—through implementation capacity, service delivery quality, and labour-market and household
-transmission mechanisms—matters more than budget shares per se.
+Overall, the limited explanatory power of the model underscores that fiscal resources alone are insufficient; differences in implementation quality and transmission mechanisms remain critical determinants of human development performance, examined next.
 </p>
 </div>
 <div class="viz">
@@ -209,7 +200,7 @@ transmission mechanisms—matters more than budget shares per se.
       PC2: "/project/PC2_HDI_Slider.json",
       PC3: "/project/PC3_SHDI_GNI.json",
       PC4: "/project/PC4_State_Income_Residuals.json",
-      PC5: "/project/PC5_Budget_SHDI.json",
+      PC5: "/project/PC5_Social_Sector_Per_Capita.json",
       PC6: "/project/PC6_State_Capacity.json",
       PC7: "/project/PC7_Residual_vs_WPR_or_MPCE.json"
     };
