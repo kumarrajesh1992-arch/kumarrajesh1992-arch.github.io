@@ -206,7 +206,7 @@ Overall, the limited explanatory power of the model underscores that fiscal reso
     };
 
     Object.entries(specs).forEach(([id, spec]) => {
-      vegaEmbed(`#${id}`, spec, { actions: false }).catch(console.warn);
+      vegaEmbed(`#${id}`, spec, { actions: true }).catch(console.warn);
     });
   </script>
 </body>
