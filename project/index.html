@@ -48,30 +48,31 @@
 
     <!-- DATA BOX -->
    <section class="section" id="data">
-  <div class="card">
-    <h3>Data</h3>
-    <ul class="data-source-list">
-      <li>
-        <strong>National HDI (1990–2023):</strong> Sourced from the <a href="https://hdr.undp.org/data-center/specific-country-data#/countries/IND" target="_blank" rel="noopener">UNDP HDRO Data Centre</a> and processed into a tidy time-series format.
-      </li>
-      <li>
-        <strong>State HDI (1990–2023):</strong> Compiled from the <a href="https://globaldatalab.org/shdi/download/2022/shdi+lgnic/IND/?levels=4" target="_blank" rel="noopener">Global Data Lab</a> at Radboud University.
-      </li>
-      <li>
-        <strong>Social Spending:</strong> Education and health expenditure shares were compiled from the <a href="https://rbidocs.rbi.org.in/rdocs/Publications/PDFs/0STATEFINANCES202324E45F66372EEC4743AE4E9BED92EB85FF.PDF" target="_blank" rel="noopener">RBI State Finances: A Study of Budgets of 2023-24</a>.
-      </li>
-      <li>
-        <strong>State Capacity Proxies:</strong> Health capacity is proxied using <a href="https://niti.gov.in/sites/default/files/2021-12/NITI-WB_Health_Index_Report_24-12-21.pdf" target="_blank" rel="noopener">NITI Aayog’s Health Index 2021</a> (Key Inputs & Processes domain). Education capacity uses <a href="https://niti.gov.in/sites/default/files/2019-09/seqi_document_0.pdf" target="_blank" rel="noopener">NITI Aayog’s School Education Quality Index 2019</a> (Governance & Processes domain).
-      </li>
-      <li>
-        <strong>Workers–Population Ratio:</strong> Sourced from the <strong>Periodic Labour Force Survey 2022-23</strong>.
-      </li>
-      <li>
-        <strong>Social Stratification:</strong> Scheduled Caste & Tribe population shares sourced from the <a href="https://www.data.gov.in/catalog/state-and-district-wise-scheduled-caste-and-schedule-tribe-population-each-caste-and-tribe?title&file_short_format" target="_blank" rel="noopener">Census of India, 2011</a>.
-      </li>
-    </ul>
-  </div>
-</section>
+      <div class="card">
+        <h3>Data</h3>
+        <ul class="data-source-list">
+          <li>
+            <strong>National HDI (1990–2023):</strong> Sourced from the <a href="https://hdr.undp.org/data-center/specific-country-data#/countries/IND" target="_blank" rel="noopener">UNDP HDRO Data Centre</a> and processed into a tidy time-series format.
+          </li>
+          <li>
+            <strong>State HDI (1990–2023):</strong> Compiled from the <a href="https://globaldatalab.org/shdi/download/2022/shdi+lgnic/IND/?levels=4" target="_blank" rel="noopener">Global Data Lab</a> at Radboud University.
+          </li>
+          <li>
+            <strong>Per-Capita Social Sector Spending:</strong> Estimated by dividing state-level social sector expenditure from <a href="https://rbidocs.rbi.org.in/rdocs/Publications/PDFs/0STATEFINANCES202324E45F66372EEC4743AE4E9BED92EB85FF.PDF" target="_blank" rel="noopener">RBI State Finances: A Study of Budgets</a> by state population figures from the <a href="https://mohfw.gov.in/sites/default/files/Population%20Projection%20Report%202011-2036%20-%20upload_compressed_0.pdf">MoHFW</a>.
+          </li>
+          <li>
+            <strong>State Capacity Proxies:</strong> Health capacity is proxied using <a href="https://niti.gov.in/sites/default/files/2021-12/NITI-WB_Health_Index_Report_24-12-21.pdf" target="_blank" rel="noopener">NITI Aayog’s Health Index 2021</a> (Key Inputs & Processes domain). Education capacity uses <a href="https://niti.gov.in/sites/default/files/2019-09/seqi_document_0.pdf" target="_blank" rel="noopener">NITI Aayog’s School Education Quality Index 2019</a> (Governance & Processes domain).
+          </li>
+          <li>
+            <strong>Workers–Population Ratio:</strong> Sourced from the <strong>Periodic Labour Force Survey 2022-23</strong>.
+          </li>
+          <li>
+            <strong>Social Structure Data:</strong> Scheduled Caste and Scheduled Tribe population shares from <a href="https://www.data.gov.in/catalog/state-and-district-wise-scheduled-caste-and-schedule-tribe-population-each-caste-and-tribe?title&file_short_format" target="_blank" rel="noopener">Census of India 2011</a>.
+          </li>
+        </ul>
+      </div>
+    </section>
+
 
     <!-- FINDINGS BOX -->
     <section class="section" id="charts">
@@ -94,14 +95,7 @@
   <h4>Chart 3: The Income Gradient- HDI vs log(GNI per capita)</h4>
   <figure id="PC3"></figure>
   <p class="caption">
-    This scatter plot quantifies the relationship between economic capacity and human development.
-    A linear regression of HDI on log GNI per capita yields a strong positive association
-    (<span class="stat">R<sup>2</sup> ≈ 0.85</span>), indicating that income explains the
-    majority of cross-state variation in HDI outcomes. However, the dispersion around the
-    fitted line is instructive. States such as Manipur and Kerala achieve HDI levels well above
-    their income-predicted benchmarks, while Gujarat and Andhra Pradesh fall substantially below,
-    underscoring that income is a necessary but insufficient condition for translating growth
-    into human development.
+    This scatter plot quantifies the relationship between economic capacity and human development. A linear regression of HDI on log GNI per capita yields a strong positive association(<span class="stat">R<sup>2</sup> ≈ 0.85</span>), indicating that income explains the majority of cross-state variation in HDI outcomes. However, the dispersion around the fitted line is instructive. States such as Manipur and Kerala achieve HDI levels well above their income-predicted benchmarks, while Gujarat and Andhra Pradesh fall substantially below, underscoring that income is a necessary but insufficient condition for translating growth into human development.
   </p>
 </div>
 
@@ -117,12 +111,7 @@
 
   <p class="caption">
     This scatter plot tests the relationship between per-capita social sector expenditure and income-adjusted HDI performance. The association is positive and statistically significant
-    (<em>p</em> &#8776; 0.05), yet fiscal intensity explains only 12.6% of cross-state variation.
-    The contrast between Assam and Gujarat is instructive: despite nearly identical per-capita
-    spending (&#8377;11,600–&#8377;11,800), Assam records a positive development surplus
-    (+0.015), while Gujarat exhibits a substantial deficit (−0.035).
-    This suggests that while fiscal effort is necessary, institutional effectiveness conditions how
-    spending translates into human development outcomes.
+    (<em>p</em> &#8776; 0.05), yet fiscal intensity explains only 12.6% of cross-state variation. The contrast between Assam and Gujarat is instructive: despite nearly identical per-capita spending (&#8377;11,600–&#8377;11,800), Assam records a positive development surplus (+0.015), while Gujarat exhibits a substantial deficit (−0.035). This suggests that while fiscal effort is necessary, institutional effectiveness conditions how spending translates into human development outcomes.
   </p>
 </div>
 <div class="viz">
@@ -130,14 +119,8 @@
   <figure id="PC6"></figure>
 
   <p class="caption">
-    The answer is no. This scatter plot examines whether state capacity—proxied by standardized
-    NITI Aayog Health and Education Index scores—predicts income-adjusted HDI performance.
-    The relationship is statistically indistinguishable from zero
-    (<em>R</em><sup>2</sup> &lt; 0.10).
-    High-capacity states do not systematically outperform their income benchmarks, nor do
-    low-capacity states consistently underperform. This capacity paradox suggests that commonly
-    used bureaucratic indices may capture formal inputs and compliance rather than the
-    implementation quality required to deliver effective last-mile development outcomes.
+    The answer is no. This scatter plot examines whether state capacity—proxied by standardized NITI Aayog Health and Education Index scores—predicts income-adjusted HDI performance.
+    The relationship is statistically indistinguishable from zero (<em>R</em><sup>2</sup> &lt; 0.10). High-capacity states do not systematically outperform their income benchmarks, nor do low-capacity states consistently underperform. This capacity paradox suggests that commonly used bureaucratic indices may capture formal inputs and compliance rather than the implementation quality required to deliver effective last-mile development outcomes.
   </p>
 </div>
 <div class="viz">
@@ -145,14 +128,7 @@
   <figure id="PC7"></figure>
 
   <p class="caption">
-    This chart ranks states by their Worker–Population Ratio (WPR), with bars representing their
-    development efficiency (residual HDI). The visual pattern—or distinct lack of one—is telling.
-    If higher employment drove better development, we would observe a clear concentration of
-    positive residuals among high-WPR states. Instead, the chart shows a near-random distribution
-    of over- and under-performers. High-employment states such as Himachal Pradesh (77%) and
-    Chhattisgarh (73%) display sharply divergent outcomes. With an R<sup>2</sup> below 1 percent,
-    the evidence suggests that the quantity of employment alone matters far less than its quality
-    in shaping human development outcomes.
+    This chart ranks states by their Worker–Population Ratio (WPR), with bars representing their development efficiency (residual HDI). The visual pattern—or distinct lack of one—is telling. If higher employment drove better development, we would observe a clear concentration of positive residuals among high-WPR states. Instead, the chart shows a near-random distribution of over- and under-performers. High-employment states such as Himachal Pradesh (77%) and Chhattisgarh (73%) display sharply divergent outcomes. With an R<sup>2</sup> below 1 percent, the evidence suggests that the quantity of employment alone matters far less than its quality in shaping human development outcomes.
   </p>
 </div>
         <div class="viz">
