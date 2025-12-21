@@ -1,140 +1,87 @@
 {
-  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
-    "text": "Social structure and income-adjusted HDI performance",
-    "subtitle": "Residual HDI vs standardized SC/ST population shares (state level)",
-    "anchor": "middle",
+    "text": "Structural Constraints: Social Identity vs. Efficiency",
+    "subtitle": "Impact of SC and ST population shares on income-adjusted HDI",
     "fontSize": 16,
-    "subtitleFontSize": 11
+    "subtitleFontSize": 12,
+    "anchor": "middle",
+    "offset": 20
   },
   "data": {
-    "url": "https://raw.githubusercontent.com/kumarrajesh1992-arch/kumarrajesh1992-arch.github.io/refs/heads/main/project/PC8_SC_ST_ResidualHDI_StateLevel.csv",
-    "format": { "type": "csv" }
+    "url": "https://raw.githubusercontent.com/kumarrajesh1992-arch/kumarrajesh1992-arch.github.io/refs/heads/main/project/PC8_SC_ST_ResidualHDI_StateLevel.csv"
   },
   "transform": [
     {
-      "calculate": "datum.residual_HDI >= 0 ? 'Positive residual' : 'Negative residual'",
-      "as": "ResidualSign"
+      "fold": ["SC_share", "ST_share"],
+      "as": ["Social_Group", "Percentage"]
     },
     {
-      "fold": ["SC_share_z", "ST_share_z"],
-      "as": ["Channel", "Channel_z"]
-    },
-    {
-      "calculate": "datum.Channel == 'SC_share_z' ? 'Scheduled Caste share (z)' : 'Scheduled Tribe share (z)'",
-      "as": "ChannelLabel"
+      "calculate": "datum.Social_Group == 'SC_share' ? 'Scheduled Caste Share (%)' : 'Scheduled Tribe Share (%)'",
+      "as": "Group_Label"
     }
   ],
   "facet": {
-    "field": "ChannelLabel",
-    "type": "nominal",
-    "header": {
-      "title": null,
-      "labelFontSize": 13,
-      "labelFontWeight": 700
+    "column": {
+      "field": "Group_Label",
+      "header": {"title": null, "labelFontSize": 13, "labelFontWeight": "bold"}
     }
   },
   "spec": {
-    "width": 380,
-    "height": 350,
+    "width": 300,
+    "height": 300,
     "layer": [
       {
         "mark": {
           "type": "point",
           "filled": true,
-          "size": 90,
-          "opacity": 0.85
+          "size": 80,
+          "opacity": 0.7
         },
         "encoding": {
           "x": {
-            "field": "Channel_z",
+            "field": "Percentage",
             "type": "quantitative",
-            "title": "Social composition (standardized z-score)",
-            "axis": { "format": ".1f" }
+            "title": "Population Share (%)"
           },
           "y": {
             "field": "residual_HDI",
             "type": "quantitative",
-            "title": "Residual HDI (actual − income-predicted)",
-            "axis": { "format": ".3f" }
+            "title": "Residual HDI"
           },
           "color": {
-            "field": "ResidualSign",
-            "type": "nominal",
-            "title": "Income-adjusted performance"
+            "field": "Social_Group",
+            "scale": {"range": ["#d62728", "#1f77b4"]},
+            "legend": null
           },
           "tooltip": [
-            { "field": "State", "type": "nominal", "title": "State" },
-            {
-              "field": "residual_HDI",
-              "type": "quantitative",
-              "title": "Residual HDI",
-              "format": ".3f"
-            },
-            {
-              "field": "SC_share",
-              "type": "quantitative",
-              "title": "SC share",
-              "format": ".2f"
-            },
-            {
-              "field": "ST_share",
-              "type": "quantitative",
-              "title": "ST share",
-              "format": ".2f"
-            }
+            {"field": "State", "type": "nominal"},
+            {"field": "Percentage", "type": "quantitative", "format": ".1f"},
+            {"field": "residual_HDI", "type": "quantitative", "format": ".3f"}
           ]
         }
       },
       {
+        "mark": {
+          "type": "line",
+          "color": "black",
+          "strokeDash": [4, 4],
+          "opacity": 0.6
+        },
         "transform": [
           {
             "regression": "residual_HDI",
-            "on": "Channel_z",
-            "method": "linear"
+            "on": "Percentage"
           }
         ],
-        "mark": {
-          "type": "line",
-          "strokeWidth": 2,
-          "opacity": 0.9
-        },
         "encoding": {
-          "x": { "field": "Channel_z", "type": "quantitative" },
-          "y": { "field": "residual_HDI", "type": "quantitative" }
+          "x": {"field": "Percentage", "type": "quantitative"},
+          "y": {"field": "residual_HDI", "type": "quantitative"}
         }
-      },
-      {
-        "mark": {
-          "type": "rule",
-          "strokeDash": [6, 6],
-          "opacity": 0.6
-        },
-        "encoding": { "y": { "datum": 0 } }
-      },
-      {
-        "mark": {
-          "type": "rule",
-          "strokeDash": [6, 6],
-          "opacity": 0.4
-        },
-        "encoding": { "x": { "datum": 0 } }
       }
     ]
   },
   "resolve": {
-    "scale": { "x": "independent", "y": "shared" }
-  },
-  "config": {
-    "axis": {
-      "grid": true,
-      "labelFontSize": 11,
-      "titleFontSize": 12
-    },
-    "legend": {
-      "labelFontSize": 11,
-      "titleFontSize": 12
-    },
-    "view": { "stroke": "transparent" }
+    "scale": {"x": "independent"}
   }
 }
