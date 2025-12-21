@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
-    "text": "State-level HDI and Income in India (2023)",
+    "text": "State-level HDI and Income in India (2022)",
     "subtitle": "Observed HDI and fitted relationship with log GNI per capita | Data Source: Global Data Lab",
     "anchor": "middle"
   },
