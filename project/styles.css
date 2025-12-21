@@ -166,6 +166,26 @@ main{
   font-weight: 600;
 }
 
+/* Specific styling for the Data Sources list */
+.data-source-list li {
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+/* Link Styling for Data: Underlined but NOT Bold */
+.data-source-list a {
+  font-weight: normal;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  color: var(--accent);
+}
+
+.data-source-list a:hover {
+  color: var(--ink);
+  text-decoration-thickness: 2px;
+}
+
 /* =========================
    VISUALISATIONS
 ========================= */
@@ -207,21 +227,21 @@ main{
   display: flex;
   flex-wrap: wrap;
   gap: 10px 14px;
-  justify-content: center; /* Centers the controls */
+  justify-content: center;
   align-items: center;
   margin: 0 0 10px 0;
   width: 100%;
 }
 
 /* CHARTS: Force the canvas/SVG to center */
-/* We target canvas and svg directly to catch all chart types */
 .viz .vega-embed canvas,
 .viz .vega-embed svg,
 .viz .vega-embed .vega-view {
   display: block;
-  margin: 0 auto; /* This pushes the chart to the middle */
+  margin: 0 auto;
   max-width: 100%;
 }
+
 /* =========================
    TWO COLUMN BLOCK
 ========================= */
