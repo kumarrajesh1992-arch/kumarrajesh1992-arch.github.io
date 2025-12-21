@@ -9,14 +9,17 @@
   },
   "data": {
     "url": "https://raw.githubusercontent.com/kumarrajesh1992-arch/kumarrajesh1992-arch.github.io/refs/heads/main/project/PC8_SC_ST_ResidualHDI_StateLevel.csv",
-    "format": {"type": "csv"}
+    "format": { "type": "csv" }
   },
   "transform": [
     {
       "calculate": "datum.residual_HDI >= 0 ? 'Positive residual' : 'Negative residual'",
       "as": "ResidualSign"
     },
-    {"fold": ["SC_share_z", "ST_share_z"], "as": ["Channel", "Channel_z"]},
+    {
+      "fold": ["SC_share_z", "ST_share_z"],
+      "as": ["Channel", "Channel_z"]
+    },
     {
       "calculate": "datum.Channel == 'SC_share_z' ? 'Scheduled Caste share (z)' : 'Scheduled Tribe share (z)'",
       "as": "ChannelLabel"
@@ -25,26 +28,35 @@
   "facet": {
     "field": "ChannelLabel",
     "type": "nominal",
-    "header": {"title": null, "labelFontSize": 13, "labelFontWeight": 700}
+    "header": {
+      "title": null,
+      "labelFontSize": 13,
+      "labelFontWeight": 700
+    }
   },
   "spec": {
-    "width": "container",
-    "height": 300,
+    "width": 380,
+    "height": 350,
     "layer": [
       {
-        "mark": {"type": "point", "filled": true, "size": 90, "opacity": 0.85},
+        "mark": {
+          "type": "point",
+          "filled": true,
+          "size": 90,
+          "opacity": 0.85
+        },
         "encoding": {
           "x": {
             "field": "Channel_z",
             "type": "quantitative",
             "title": "Social composition (standardized z-score)",
-            "axis": {"format": ".1f"}
+            "axis": { "format": ".1f" }
           },
           "y": {
             "field": "residual_HDI",
             "type": "quantitative",
             "title": "Residual HDI (actual − income-predicted)",
-            "axis": {"format": ".3f"}
+            "axis": { "format": ".3f" }
           },
           "color": {
             "field": "ResidualSign",
@@ -52,7 +64,7 @@
             "title": "Income-adjusted performance"
           },
           "tooltip": [
-            {"field": "State", "type": "nominal", "title": "State"},
+            { "field": "State", "type": "nominal", "title": "State" },
             {
               "field": "residual_HDI",
               "type": "quantitative",
@@ -76,28 +88,53 @@
       },
       {
         "transform": [
-          {"regression": "residual_HDI", "on": "Channel_z", "method": "linear"}
+          {
+            "regression": "residual_HDI",
+            "on": "Channel_z",
+            "method": "linear"
+          }
         ],
-        "mark": {"type": "line", "strokeWidth": 2, "opacity": 0.9},
+        "mark": {
+          "type": "line",
+          "strokeWidth": 2,
+          "opacity": 0.9
+        },
         "encoding": {
-          "x": {"field": "Channel_z", "type": "quantitative"},
-          "y": {"field": "residual_HDI", "type": "quantitative"}
+          "x": { "field": "Channel_z", "type": "quantitative" },
+          "y": { "field": "residual_HDI", "type": "quantitative" }
         }
       },
       {
-        "mark": {"type": "rule", "strokeDash": [6, 6], "opacity": 0.6},
-        "encoding": {"y": {"datum": 0}}
+        "mark": {
+          "type": "rule",
+          "strokeDash": [6, 6],
+          "opacity": 0.6
+        },
+        "encoding": { "y": { "datum": 0 } }
       },
       {
-        "mark": {"type": "rule", "strokeDash": [6, 6], "opacity": 0.4},
-        "encoding": {"x": {"datum": 0}}
+        "mark": {
+          "type": "rule",
+          "strokeDash": [6, 6],
+          "opacity": 0.4
+        },
+        "encoding": { "x": { "datum": 0 } }
       }
     ]
   },
-  "resolve": {"scale": {"x": "independent", "y": "shared"}},
+  "resolve": {
+    "scale": { "x": "independent", "y": "shared" }
+  },
   "config": {
-    "axis": {"grid": true, "labelFontSize": 11, "titleFontSize": 12},
-    "legend": {"labelFontSize": 11, "titleFontSize": 12},
-    "view": {"stroke": "transparent"}
+    "axis": {
+      "grid": true,
+      "labelFontSize": 11,
+      "titleFontSize": 12
+    },
+    "legend": {
+      "labelFontSize": 11,
+      "titleFontSize": 12
+    },
+    "view": { "stroke": "transparent" }
   }
 }
