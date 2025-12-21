@@ -28,7 +28,7 @@
     "header": {"title": null, "labelFontSize": 13, "labelFontWeight": 700}
   },
   "spec": {
-    "width": 300,
+    "width": 400,
     "height": 280,
     "layer": [
       {
@@ -49,7 +49,8 @@
           "color": {
             "field": "ResidualSign",
             "type": "nominal",
-            "title": "Income-adjusted performance"
+            "title": "Income-adjusted performance",
+            "legend": {"orient": "bottom", "direction": "horizontal"}
           },
           "tooltip": [
             {"field": "State", "type": "nominal", "title": "State"},
