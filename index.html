@@ -1,45 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head> 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Kumar Rajesh - PP434 Portfolio</title>
-
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
+    
+    <title>Kumar Rajesh - PP434 Portfolio</title> 
 
     <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 
     <style>
+        /* 1. THEME VARIABLES (Copied from Home Page) */
         :root{
-            --bg:#f4f6f2;
-            --ink:#1f2933;
-            --muted:#52606d;
-            --accent:#2f4f2f;
-            --border:#dde3da;
+            --bg: #f4f6f2;
+            --ink: #1f2933;
+            --muted: #52606d;
+            --accent: #2f4f2f;
+            --border: #dde3da;
             --card-bg: #fbfcfa;
         }
 
-        * { box-sizing:border-box; }
+        * { box-sizing: border-box; }
 
         body {
             margin: 0;
             font-family: 'Inter', sans-serif;
             background-color: var(--bg);
             color: var(--ink);
-            line-height: 1.6;
         }
 
-        .container {
-            max-width: 1080px; /* Slightly wider to fit charts */
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Header (Matches Home Page) */
+        /* 2. HEADER & NAV (Matches Home Page) */
         header {
+            max-width: 980px;
             margin: 56px auto 35px;
+            padding: 0 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -51,8 +48,8 @@
             font-weight: 600;
             font-size: 27px;
             margin: 0;
-            white-space: nowrap;
             color: var(--ink);
+            white-space: nowrap;
         }
 
         nav {
@@ -67,7 +64,6 @@
             font-weight: 500;
             padding: 6px 8px;
             border-radius: 8px;
-            font-size: 16px;
         }
 
         nav a:hover {
@@ -75,91 +71,103 @@
             background: rgba(47,79,47,.06);
         }
 
-        /* Main Content Styling */
-        main {
-            padding-bottom: 50px;
-        }
-
-        .intro-text {
-            font-size: 17px;
-            line-height: 1.7;
-            max-width: 800px;
-            margin: 0 auto 50px;
-            color: var(--muted);
+        /* 3. MAIN CONTAINER & TEXT */
+        body > p, body > h2.small {
+            max-width: 980px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 20px;
             text-align: center;
         }
+        
+        /* Styling the intro text to look like the Home page "lead" */
+        h2.small {
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            font-size: 17px;
+            line-height: 1.7;
+            color: var(--muted);
+            margin-top: 20px;
+            margin-bottom: 40px;
+            max-width: 760px;
+        }
 
-        /* Section Styling */
+        /* Links in the sub-header */
+        p a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        p a:hover { text-decoration: underline; }
+
+        /* 4. SECTIONS */
         section {
-            margin-bottom: 60px;
-            border-top: 1px solid var(--border);
-            padding-top: 40px;
+            padding: 40px 20px;
+            border-top: 1px solid var(--border); /* Divider line like Home page skills section */
+            max-width: 980px;
+            margin: 0 auto;
         }
 
         .section-header h2 {
             font-family: 'Source Serif 4', serif;
             font-size: 24px;
-            margin-bottom: 20px;
             color: var(--ink);
+            margin-top: 0;
         }
 
-        /* Chart Grid System */
+        /* 5. CARDS (Applying Home Page .card style to your .chart-item) */
         .chart-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
             gap: 24px;
-            margin-top: 20px;
-        }
-        
-        /* For vertical layout specific charts */
-        .chart-container.vertical {
-            grid-template-columns: 1fr;
-            max-width: 800px;
-            margin: 20px auto;
+            margin-top: 25px;
         }
 
-        /* Chart Card Styling (Matches Home Page Cards) */
+        /* Vertical layout override for specific sections */
+        .chart-container.vertical {
+            grid-template-columns: 1fr;
+        }
+
         .chart-item {
-            background: var(--card-bg);
-            border-radius: 12px;
-            padding: 26px;
-            border: 1px solid #d7dfd3;
+            background: var(--card-bg); /* Matches Home Page Card Color */
+            border: 1px solid #d7dfd3;  /* Matches Home Page Border */
+            border-radius: 12px;        /* Matches Home Page Radius */
+            padding: 26px;              /* Matches Home Page Padding */
         }
 
         .chart-item h3, .chart-item h4 {
             font-family: 'Source Serif 4', serif;
-            margin-top: 0;
             font-size: 18px;
-            color: var(--accent);
+            margin-top: 0;
+            color: var(--ink);
         }
 
         .chart-item p {
             font-size: 14px;
-            color: var(--muted);
-            margin-top: 15px;
-        }
-
-        .small-text {
-            font-size: 13px;
+            line-height: 1.6;
             color: var(--muted);
         }
 
-        /* Images inside charts */
-        img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 4px;
-        }
-
-        /* CC6 Grid Override */
+        /* CC6 Grid specifically */
         .cc6-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 15px;
             background: var(--card-bg);
-            padding: 20px;
-            border-radius: 12px;
             border: 1px solid #d7dfd3;
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        /* Images and Charts */
+        figure { width: 100%; margin: 0; }
+        img { max-width: 100%; height: auto; border-radius: 4px; }
+        
+        code {
+            background: #eef1ed;
+            padding: 2px 5px;
+            border-radius: 4px;
+            color: var(--accent);
         }
 
         /* Footer */
@@ -168,288 +176,359 @@
             font-size: 12px;
             color: #666;
             margin: 70px 0 34px;
-            border-top: 1px solid var(--border);
-            padding-top: 20px;
         }
 
-        /* Vega-Lite Width Fix */
-        figure {
-            width: 100%;
-            margin: 0;
-        }
-
-        @media (max-width: 768px){
+        /* Responsive */
+        @media (max-width: 860px){
             header{ flex-direction: column; align-items: flex-start; }
             nav{ justify-content:flex-start; }
             .chart-container { grid-template-columns: 1fr; }
+            body > p, body > h2.small { text-align: left; }
         }
     </style>
 </head>
 
-<body>
-    <div class="container">
-        <header>
-            <h1>Kumar Rajesh</h1>
-            <nav>
-                <a href="/home.html">Home</a>
-                <a href="/index.html">Portfolio</a>
-                <a href="/project.html">Project</a>
-                <a href="https://github.com/kumarrajesh1992-arch" target="_blank" rel="noopener">GitHub</a>
-                <a href="https://www.linkedin.com/in/kumarrajesh1992/" target="_blank" rel="noopener">LinkedIn</a>
-            </nav>
-        </header>
+<body> 
+    <header>
+        <h1 class="big">Kumar Rajesh</h1>
+        <nav>
+            <a href="/home.html">Home</a>
+            <a href="/index.html">Portfolio</a>
+            <a href="/project/">Project</a>
+            <a href="https://github.com/kumarrajesh1992-arch" target="_blank">GitHub</a>
+            <a href="https://www.linkedin.com/in/kumarrajesh1992/" target="_blank">LinkedIn</a>
+        </nav>
+    </header>
+    
+    <p style="margin-top: 0px; text-align:center;">
+        <a href="https://www.linkedin.com/in/kumarrajesh1992/" target="_blank">LinkedIn</a> | 
+        <a href="https://github.com/kumarrajesh1992-arch" target="_blank">GitHub</a>
+    </p>
 
-        <main>
-            <p class="intro-text">
-                This page showcases the coding challenges I completed as a part of the Portfolio Tasks for the course "PP434: Automated Data Visualization for Policymaking" as part of my Master of Public Policy programme (2025–26) at LSE.
+    <h2 class="small"> 
+        This page showcases the coding challenges I completed as a part of the Portfolio Tasks for the course "PP434: Automated Data Visualization for Policymaking" as part of my Master of Public Policy programme (2025–26) at LSE.    
+    </h2>
+
+    <section id="CC1">
+        <div class="section-header">
+            <h2>CC1: Child Poverty in the Developing Countries vis-a-vis the UK</h2>
+        </div>
+        
+        <div class="chart-container">
+            <div class="chart-item">
+                <h4> Figure 1: Child Poverty in Developing Countries</h4>
+                 <figure id="Location1"></figure>
+                <p>Figure 1 highlights that in most of the sub-Saharan Africa countries over 50 percent children lives in households with income below the national poverty line. In countries like South Sudan and Zimbabwe, over 70% of the child population is classified as poor. <p>
+            </div>
+            
+            <div class="chart-item">
+                <h4> Figure 2: Child Poverty Rates by Ethnic Groups in the UK</h4>
+                <figure id="Location2"></figure>
+                <p> Figure 2 shows how poverty across different ethnic groups in the UK evolved between 2002/03 and the outbreak of the Covid-19 pandemic. While rates for Bangladeshi, black African and Pakistani children remained high, there were dramatic reductions during the decade from 2002/03, when there was substantial investment in financial support for families with children. <p>
+            </div>
+        </div>
+    </section>
+            
+    <section id="CC2">
+        <div class="section-header">
+            <h2>CC2: Labour Market Indicators of India</h2>
+        </div>
+            
+        <div class="chart-container">
+            <div class="chart-item">
+                <h3> Figure 1: Unemployment Rate in India (15-64 years)</h3>
+                <figure id="Location3"></figure>
+                <p>Figure 1 highlights that the unemployment rate in India rose to an all time high in 2020 in the last 45 years-crossing the 10% mark. </p>
+            </div>
+            
+            <div class="chart-item">
+                <h3>Figure 2: Employment to Population Ratio (15-64 years)</h3>
+                <figure id="Location4"></figure>
+                <p>Figure 2 highlights that the Employment to Population Ratio also known as Workers Population Ratio in India dipped during 2020 likely due to Covid-19. The WPR of around 47 percent means that less than half of India’s working-age population is employed, indicating low utilisation of the country’s labour potential.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="CC3">
+        <div class="section-header">
+            <h2>CC3: The Poverty Debate in India</h2>
+        </div>
+        <p>The Indian government’s claim that poverty fell to 5.3% relies on a $3/day line unsuitable for an LMIC and survey methodology changes; the LMIC cut-off shows nearly one-quarter remain poor.</p>
+
+        <div class="chart-container">
+            <div class="chart-item">
+                <h3>Figure 1: Extreme Poverty Cut-Off</h3>
+                <figure id="Location5"></figure>
+                <p>While the reduction in extreme poverty level is an achievement worth acknowledging, experts have argued that 5.3% figure rests on methodological changes, including the adoption of Modified Mixed Reference Period, which tend to lower poverty estimates. And the $3/day line itself reflects little more than bare survival.</p>
+            </div>
+
+            <div class="chart-item">
+                <h3>Figure 2: LMIC Cut-Off</h3>
+                <figure id="Location6"></figure>
+                <p>India is a lower-middle-income country, and at the world bank $4.20/day LMIC threshold its poverty rate remains 23.9%.</p>
+            </div>
+        </div>
+    </section>
+        
+    <section id="CC4">
+        <div class="section-header">
+            <h2>CC4: Busting the Politics around Petrol Price Hike</h2>
+        </div>
+        <p>I replaced the political infographic (Figure 1) with a neutral bar chart (Figure 2), added clear labels and percentage changes, corrected misleading framing, and used proper scales and dates.</p>
+        <div class="chart-container">
+            <div class="chart-item">
+                <h3>Figure 1: BJP's Social Media Post on Petrol Price Hike in India</h3>
+                <figure id="Location7">
+                    <img src="CC4_badchart.jpeg">
+                    <p class="small-text"> Source: https://x.com/BJP4India/status/1039110521549512707</p>
+                </figure>
+                <p>Found this chart on BJP X handle which misrepresents prices with distorted bar heights, inconsistent arrows, and distracting political imagery.</p>
+            </div>  
+            <div class="chart-item">
+                <h3>Figure 2: Corrected Representation of Change in Petrol Prices</h3>
+                <figure id="Location8"></figure>
+                <p>The above bar chart shows petrol price changes over time using proper scaling, readable labels, and neutral design choices.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="API">
+        <div class="section-header">
+            <h2>CC5: API & Data Scrapping</h2>
+        </div>
+        <p>In this section I use a live link to an API from our World in Data Portal (Figure 1) and have used a Google Colab python notebook to scrape wikipedia HDI table (Figure 2) </p>
+        <div class="chart-container">
+            <div class="chart-item">
+                <h3>Figure 1: (API Chart) Life Expectancy in India</h3>
+                <figure id="api_lifeexp"></figure>
+                <p class="small-text">
+                    This chart uses a live API from <em>Our World in Data</em>.  
+                    API endpoint used:  
+                    <code>https://ourworldindata.org/grapher/life-expectancy.csv</code>
+                </p>
+            </div>
+            <div class="chart-item">
+                <h3>Figure 2 (Scraper Task): HDI of Indian States</h3>
+
+                <figure id="ScraperChart"></figure>
+
+                <p class="small-text">
+                    I scraped a Wikipedia HDI table into pandas, cleaned and reshaped into tidy long form, then visualised state-level HDI values in Vega-Lite.
+                </p>
+                <p>Data scraped and tidied in this Google Colab notebook:
+                <a href="https://colab.research.google.com/drive/18W_lIItoV4wQ7Dj1Zt34y9PhWNGJjIXp?usp=sharing" target="_blank">My Notebook</a>
+                </p>
+            </div>
+        </div>
+    </section>
+        
+    <section id="CC6">
+        <div class="section-header">
+            <h2>CC6: India's Labour Market Dashboard (World Bank API)</h2>
+        </div>
+
+        <p>
+            Six mini time-series charts built from World Bank World Development Indicators for India,
+            batch downloaded via a Python loop and embedded using a Javascript loop.
+        </p>
+
+        <div class="cc6-grid">
+            <figure id="cc6_chart_1"></figure>
+            <figure id="cc6_chart_2"></figure>
+            <figure id="cc6_chart_3"></figure>
+            <figure id="cc6_chart_4"></figure>
+            <figure id="cc6_chart_5"></figure>
+            <figure id="cc6_chart_6"></figure>
+        </div>
+
+        <p class="small-text">
+            I looped over World Bank APIs in Python to batch-download six labour series for India,
+            saved them as JSON, and embedded all charts using a Javascript loop.
+        </p>
+
+        <p class="small-text">
+            Colab notebook:
+            <a href="https://colab.research.google.com/drive/1mK5tAbQHqeckWwMOhM7-FPY8UoL3HgSF?usp=sharing" target="_blank">
+            My Notebook
+            </a>
+        </p>
+    </section>
+
+
+    <section id="CC7">
+        <div class="section-header">
+            <h2>CC7: Multidimensional Poverty in India at State and District Level</h2>
+        </div>
+
+        <p>
+            In this coding challenge I produced two maps to showcase the MPI HCR state wise (Figure 1) and location of top 50 multidimensionally poorest districts of India (Figure 2).   
+        </p>
+        <p class="small-text">
+            <em>Note:</em> With permission from the grading team, I mapped India for this coding challenge.
+        </p>
+        <div class="chart-container">
+            <div class="chart-item">
+                <h3>Figure 1: Incidence of Multidimensional Poverty in India, HCR (%), 2023</h3>
+                <figure id="Location9"></figure>
+                <p>This choropleth map shows the Multidimensional Poverty Index (MPI) headcount ratio by state/UT in India, using state-level MPI estimates from NITI Aayog and a state boundary map of India. I manually compiled state-wise MPI headcount ratios from the NITI Aayog national MPI report into a CSV file, and used an India state boundary JSON. The matching of state names was handled directly in the Vega-Lite spec so that each polygon is shaded by its MPI value.<p>
+            </div>
+
+            <div class="chart-item">
+                <h3>Figure 2: Location of Top 50 Multidimensionally Poorest Districts of India</h3>
+                <figure id="Location10"></figure>
+                <p>This coordinate map displays India’s 50 poorest districts (Red Dots). District-level MPI data were compiled from the NITI Aayog report and geocoded in Google Colab to obtain latitude–longitude coordinates. 
+                <a href="https://colab.research.google.com/drive/1vsPYuT7Xjwudbk43Kbft5ISIcf18hgfN?usp=sharing">My Notebook</a>. 
+                The coordinate map reveals strong spatial clustering of multidimensional poverty. 41 out of the 50 districts with the highest MPI headcount ratios are concentrated in just four states i.e., Bihar, Jharkhand, Uttar Pradesh, and Madhya Pradesh which shows that the regional concentration of multidimensional poverty in eastern and central India.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="CC9">
+        <div class="section-header">
+            <h2>CC9: Interactive Human Development Index Trends for India</h2>
+        </div>
+
+        <div class="chart-container vertical">
+            <div class="chart-item">
+                <h3>Figure 1: HDI and Constituent Indicators Over Time</h3>
+                <figure id="CC9_HDI"></figure>
+
+                <p class="small-text">
+                    This interactive chart allows users to explore trends in India's HDI score and its constituent indicators value over time using a dropdown selector.
+                </p>
+            </div>
+
+            <div class="chart-item">
+                <h3>Figure 2: Trends in Statewise HDI Score and GNI per Capita (1990–2022)</h3>
+                <figure id="HDI_Bubble"></figure>
+
+                <p class="small-text">
+                    This bubble chart uses a year slider to show how Indian states move jointly on two dimensions: HDI (x-axis) and log GNI per capita (y-axis). 
+                    Bubble colour reflects HDI category (Very High, High, Medium, Low), highlighting how income growth and human development have evolved and diverged across states over time.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="CC10">
+        <div class="section-header">
+            <h2>CC10: De-trended Regression — HDI vs Income (Indian States, 2023)</h2>
+        </div>
+        <p class="small-text">
+        <strong>Hypothesis:</strong> 
+            After controlling for income, Indian states differ systematically in HDI outcomes, reflecting variation in social investment and policy effectiveness.
+        </p>
+        <div class="chart-container vertical">
+            <div class="chart-item">
+                <h3>Figure 1: HDI vs log GNI per capita (with fitted line)</h3>
+                <figure id="CC10_FIT"></figure>
+                <p class="small-text">
+                    Scatter plot of observed HDI against log GNI per capita, with the fitted regression line (predicted HDI).
+                </p>
+            </div>
+
+            <div class="chart-item">
+                <h3>Figure 2: HDI residuals after accounting for income</h3>
+                <figure id="CC10_RESID"></figure>
+                <p class="small-text">
+                    Residuals (actual HDI − predicted HDI). Positive = over-performance relative to income; negative = under-performance.
+                </p>
+            </div>
+        </div>
+
+        <div style="margin-top: 20px;">
+            <p class="small-text">
+                <strong>Data Cleaning & Analysis:</strong><br>
+                I estimated an OLS regression of HDI on log GNI per capita in Python using <code>sklearn</code>.
+                Predicted HDI values and residuals were computed and exported for Vega-Lite visualisation.
+                <br>
+                <a href="https://colab.research.google.com/drive/1rdr_s0hrhpL9d3XxLFC4hnvcwvFsvrVg?usp=sharing" target="_blank">
+                    View Google Colab Notebook
+                </a>
             </p>
 
-            <section id="CC1">
-                <div class="section-header">
-                    <h2>CC1: Child Poverty in the Developing Countries vis-a-vis the UK</h2>
-                </div>
-                <div class="chart-container">
-                    <div class="chart-item">
-                        <h4>Figure 1: Child Poverty in Developing Countries</h4>
-                        <figure id="Location1"></figure>
-                        <p>Figure 1 highlights that in most of the sub-Saharan Africa countries over 50 percent children lives in households with income below the national poverty line. In countries like South Sudan and Zimbabwe, over 70% of the child population is classified as poor.</p>
-                    </div>
-                    <div class="chart-item">
-                        <h4>Figure 2: Child Poverty Rates by Ethnic Groups in the UK</h4>
-                        <figure id="Location2"></figure>
-                        <p>Figure 2 shows how poverty across different ethnic groups in the UK evolved between 2002/03 and the outbreak of the Covid-19 pandemic. While rates for Bangladeshi, black African and Pakistani children remained high, there were dramatic reductions during the decade from 2002/03.</p>
-                    </div>
-                </div>
-            </section>
+            <p class="small-text">
+                <strong>Finding:</strong>
+                While income explains a significant share of HDI variation (Figure 1), the residual distribution (Figure 2) highlights persistent state-level differences, pointing to the role of non-income policy driver.
+            </p>
 
-            <section id="CC2">
-                <div class="section-header">
-                    <h2>CC2: Labour Market Indicators of India</h2>
-                </div>
-                <div class="chart-container">
-                    <div class="chart-item">
-                        <h3>Figure 1: Unemployment Rate in India (15-64 years)</h3>
-                        <figure id="Location3"></figure>
-                        <p>Figure 1 highlights that the unemployment rate in India rose to an all time high in 2020 in the last 45 years-crossing the 10% mark.</p>
-                    </div>
-                    <div class="chart-item">
-                        <h3>Figure 2: Employment to Population Ratio (15-64 years)</h3>
-                        <figure id="Location4"></figure>
-                        <p>Figure 2 highlights that the Employment to Population Ratio also known as Workers Population Ratio in India dipped during 2020 likely due to Covid-19. The WPR of around 47 percent means that less than half of India’s working-age population is employed.</p>
-                    </div>
-                </div>
-            </section>
-
-            <section id="CC3">
-                <div class="section-header">
-                    <h2>CC3: The Poverty Debate in India</h2>
-                </div>
-                <p>The Indian government’s claim that poverty fell to 5.3% relies on a $3/day line unsuitable for an LMIC and survey methodology changes; the LMIC cut-off shows nearly one-quarter remain poor.</p>
-                <div class="chart-container">
-                    <div class="chart-item">
-                        <h3>Figure 1: Extreme Poverty Cut-Off</h3>
-                        <figure id="Location5"></figure>
-                        <p>While the reduction in extreme poverty level is an achievement worth acknowledging, experts have argued that 5.3% figure rests on methodological changes, including the adoption of Modified Mixed Reference Period.</p>
-                    </div>
-                    <div class="chart-item">
-                        <h3>Figure 2: LMIC Cut-Off</h3>
-                        <figure id="Location6"></figure>
-                        <p>India is a lower-middle-income country, and at the world bank $4.20/day LMIC threshold its poverty rate remains 23.9%.</p>
-                    </div>
-                </div>
-            </section>
-
-            <section id="CC4">
-                <div class="section-header">
-                    <h2>CC4: Busting the Politics around Petrol Price Hike</h2>
-                </div>
-                <p>I replaced the political infographic (Figure 1) with a neutral bar chart (Figure 2), added clear labels and percentage changes, corrected misleading framing, and used proper scales and dates.</p>
-                <div class="chart-container">
-                    <div class="chart-item">
-                        <h3>Figure 1: BJP's Social Media Post</h3>
-                        <figure id="Location7">
-                            <img src="CC4_badchart.jpeg" alt="Bad Chart Example">
-                            <p class="small-text">Source: https://x.com/BJP4India/status/1039110521549512707</p>
-                        </figure>
-                        <p>Found this chart on BJP X handle which misrepresents prices with distorted bar heights, inconsistent arrows, and distracting political imagery.</p>
-                    </div>
-                    <div class="chart-item">
-                        <h3>Figure 2: Corrected Representation</h3>
-                        <figure id="Location8"></figure>
-                        <p>The above bar chart shows petrol price changes over time using proper scaling, readable labels, and neutral design choices.</p>
-                    </div>
-                </div>
-            </section>
-
-            <section id="API">
-                <div class="section-header">
-                    <h2>CC5: API & Data Scrapping</h2>
-                </div>
-                <p>In this section I use a live link to an API from our World in Data Portal (Figure 1) and have used a Google Colab python notebook to scrape wikipedia HDI table (Figure 2).</p>
-                <div class="chart-container">
-                    <div class="chart-item">
-                        <h3>Figure 1: (API Chart) Life Expectancy in India</h3>
-                        <figure id="api_lifeexp"></figure>
-                        <p class="small-text">
-                            This chart uses a live API from <em>Our World in Data</em>. API endpoint used: <code>https://ourworldindata.org/grapher/life-expectancy.csv</code>
-                        </p>
-                    </div>
-                    <div class="chart-item">
-                        <h3>Figure 2 (Scraper Task): HDI of Indian States</h3>
-                        <figure id="ScraperChart"></figure>
-                        <p class="small-text">
-                            I scraped a Wikipedia HDI table into pandas, cleaned and reshaped into tidy long form, then visualised state-level HDI values in Vega-Lite.
-                        </p>
-                        <p class="small-text">Data scraped and tidied in this Google Colab notebook: <a href="https://colab.research.google.com/drive/18W_lIItoV4wQ7Dj1Zt34y9PhWNGJjIXp?usp=sharing" target="_blank">My Notebook</a></p>
-                    </div>
-                </div>
-            </section>
-
-            <section id="CC6">
-                <div class="section-header">
-                    <h2>CC6: India's Labour Market Dashboard (World Bank API)</h2>
-                </div>
-                <p>
-                    Six mini time-series charts built from World Bank World Development Indicators for India, batch downloaded via a Python loop and embedded using a Javascript loop.
-                </p>
-                <div class="cc6-grid">
-                    <figure id="cc6_chart_1"></figure>
-                    <figure id="cc6_chart_2"></figure>
-                    <figure id="cc6_chart_3"></figure>
-                    <figure id="cc6_chart_4"></figure>
-                    <figure id="cc6_chart_5"></figure>
-                    <figure id="cc6_chart_6"></figure>
-                </div>
-                <p class="small-text">
-                    Colab notebook: <a href="https://colab.research.google.com/drive/1mK5tAbQHqeckWwMOhM7-FPY8UoL3HgSF?usp=sharing" target="_blank">My Notebook</a>
-                </p>
-            </section>
-
-            <section id="CC7">
-                <div class="section-header">
-                    <h2>CC7: Multidimensional Poverty in India</h2>
-                </div>
-                <p>In this coding challenge I produced two maps to showcase the MPI HCR state wise (Figure 1) and location of top 50 multidimensionally poorest districts of India (Figure 2).</p>
-                <div class="chart-container">
-                    <div class="chart-item">
-                        <h3>Figure 1: Incidence of Multidimensional Poverty in India, HCR (%), 2023</h3>
-                        <figure id="Location9"></figure>
-                        <p>This choropleth map shows the Multidimensional Poverty Index (MPI) headcount ratio by state/UT in India.</p>
-                    </div>
-                    <div class="chart-item">
-                        <h3>Figure 2: Location of Top 50 Poorest Districts</h3>
-                        <figure id="Location10"></figure>
-                        <p>This coordinate map displays India’s 50 poorest districts (Red Dots). The coordinate map reveals strong spatial clustering of multidimensional poverty in eastern and central India.</p>
-                        <p class="small-text"><a href="https://colab.research.google.com/drive/1vsPYuT7Xjwudbk43Kbft5ISIcf18hgfN?usp=sharing">My Notebook</a></p>
-                    </div>
-                </div>
-            </section>
-
-            <section id="CC9">
-                <div class="section-header">
-                    <h2>CC9: Interactive Human Development Index Trends</h2>
-                </div>
-                <div class="chart-container vertical">
-                    <div class="chart-item">
-                        <h3>Figure 1: HDI and Constituent Indicators Over Time</h3>
-                        <figure id="CC9_HDI"></figure>
-                        <p class="small-text">This interactive chart allows users to explore trends in India's HDI score and its constituent indicators value over time using a dropdown selector.</p>
-                    </div>
-                    <div class="chart-item">
-                        <h3>Figure 2: Trends in Statewise HDI Score and GNI per Capita</h3>
-                        <figure id="HDI_Bubble"></figure>
-                        <p class="small-text">This bubble chart uses a year slider to show how Indian states move jointly on two dimensions: HDI (x-axis) and log GNI per capita (y-axis).</p>
-                    </div>
-                </div>
-            </section>
-
-            <section id="CC10">
-                <div class="section-header">
-                    <h2>CC10: De-trended Regression — HDI vs Income</h2>
-                </div>
-                <p class="small-text">
-                    <strong>Hypothesis:</strong> After controlling for income, Indian states differ systematically in HDI outcomes, reflecting variation in social investment and policy effectiveness.
-                </p>
-                <div class="chart-container vertical">
-                    <div class="chart-item">
-                        <h3>Figure 1: HDI vs log GNI per capita (with fitted line)</h3>
-                        <figure id="CC10_FIT"></figure>
-                        <p class="small-text">Scatter plot of observed HDI against log GNI per capita, with the fitted regression line (predicted HDI).</p>
-                    </div>
-                    <div class="chart-item">
-                        <h3>Figure 2: HDI residuals after accounting for income</h3>
-                        <figure id="CC10_RESID"></figure>
-                        <p class="small-text">Residuals (actual HDI − predicted HDI). Positive = over-performance relative to income; negative = under-performance.</p>
-                    </div>
-                </div>
-                <div style="margin-top: 20px;">
-                    <p class="small-text">
-                        <strong>Data Cleaning & Analysis:</strong> I estimated an OLS regression of HDI on log GNI per capita in Python using <code>sklearn</code>.
-                        <a href="https://colab.research.google.com/drive/1rdr_s0hrhpL9d3XxLFC4hnvcwvFsvrVg?usp=sharing" target="_blank">View Google Colab Notebook</a>
-                    </p>
-                    <p class="small-text">
-                        <strong>Finding:</strong> While income explains a significant share of HDI variation (Figure 1), the residual distribution (Figure 2) highlights persistent state-level differences, pointing to the role of non-income policy driver.
-                    </p>
-                </div>
-            </section>
-        </main>
-
-        <footer>
-            © 2025 Kumar Rajesh
-        </footer>
-    </div>
+            <p class="small-text">
+                <strong>Method:</strong>
+                Supervised machine learning (linear regression). Input matrix X = log GNI per capita; target vector Y = HDI.
+            </p>
+        </div>
+    </section>
+    
+    <footer>
+         © 2025 Kumar Rajesh
+    </footer>
 
     <script>
-        // Vega-Lite specs
-        let figure_1_spec = "CC1_Globalchildpoverty.json";
-        let figure_2_spec = "CC1UKchildpoverty.json";
-        let figure_3_spec = "CC2_UNEMPLOYMENTRATEFINAL.json";
-        let figure_4_spec = "CC2_EMPLOYMENTPOPULATIONRATIO.json";
-        let figure_5_spec = "CC3_Extremepoverty.json";
-        let figure_6_spec = "CC3_LMIC.json";
-        let figure_8_spec = "CC4_Improved.json";
-        let api_lifeexp_spec = "CC5_Lifeapi.json";
-        let scraper_spec = "CC5_datascraping.json";
-        let figure_9_spec = "CC7_Statewise_MPI_India.json";
-        let figure_10_spec= "CC7_Top50_Districts.json";
-        let cc9_hdi_spec = "CC9_HDI_Dropdown.json";
-        let hdi_bubble_spec = "CC9_Main Project_HDI_Slider.json";
-        let cc10_fit_spec = "CC10_Fitted Line.json";
-        let cc10_resid_spec = "CC10_State_Income_Residuals.json";
+    // Vega-Lite specs
+    let figure_1_spec = "CC1_Globalchildpoverty.json";
+    let figure_2_spec = "CC1UKchildpoverty.json";
+    let figure_3_spec = "CC2_UNEMPLOYMENTRATEFINAL.json";
+    let figure_4_spec = "CC2_EMPLOYMENTPOPULATIONRATIO.json";
+    let figure_5_spec = "CC3_Extremepoverty.json";
+    let figure_6_spec = "CC3_LMIC.json";
+    let figure_8_spec = "CC4_Improved.json";
+    let api_lifeexp_spec = "CC5_Lifeapi.json";
+    let scraper_spec = "CC5_datascraping.json";
+    let figure_9_spec = "CC7_Statewise_MPI_India.json";
+    let figure_10_spec= "CC7_Top50_Districts.json";
+    let cc9_hdi_spec = "CC9_HDI_Dropdown.json";
+    let hdi_bubble_spec = "CC9_Main Project_HDI_Slider.json";
+    let cc10_fit_spec = "CC10_Fitted Line.json";
+    let cc10_resid_spec = "CC10_State_Income_Residuals.json";
+    
 
-        // CC1–CC5 charts
-        vegaEmbed('#Location1', figure_1_spec).then(console.log).catch(console.warn);
-        vegaEmbed('#Location2', figure_2_spec).then(console.log).catch(console.warn);
-        vegaEmbed('#Location3', figure_3_spec).then(console.log).catch(console.warn);
-        vegaEmbed('#Location4', figure_4_spec).then(console.log).catch(console.warn);
-        vegaEmbed('#Location5', figure_5_spec).then(console.log).catch(console.warn);
-        vegaEmbed('#Location6', figure_6_spec).then(console.log).catch(console.warn);
-        vegaEmbed('#Location8', figure_8_spec).then(console.log).catch(console.warn);
-        vegaEmbed('#api_lifeexp', api_lifeexp_spec).then(console.log).catch(console.warn);
-        vegaEmbed('#ScraperChart', scraper_spec).then(console.log).catch(console.warn);
+    // CC1–CC5 charts
+    vegaEmbed('#Location1', figure_1_spec).then(console.log).catch(console.warn);
+    vegaEmbed('#Location2', figure_2_spec).then(console.log).catch(console.warn);
+    vegaEmbed('#Location3', figure_3_spec).then(console.log).catch(console.warn);
+    vegaEmbed('#Location4', figure_4_spec).then(console.log).catch(console.warn);
+    vegaEmbed('#Location5', figure_5_spec).then(console.log).catch(console.warn);
+    vegaEmbed('#Location6', figure_6_spec).then(console.log).catch(console.warn);
+    vegaEmbed('#Location8', figure_8_spec).then(console.log).catch(console.warn);
+    vegaEmbed('#api_lifeexp', api_lifeexp_spec).then(console.log).catch(console.warn);
+    vegaEmbed('#ScraperChart', scraper_spec).then(console.log).catch(console.warn);
 
-        // CC6 dashboard – loop over mini charts
-        const cc6Specs = [
-            { id: "cc6_chart_1", spec: "CC6_LFPR.json" },
-            { id: "cc6_chart_2", spec: "CC6_FLFPR.json" },
-            { id: "cc6_chart_3", spec: "CC6_UR.json" },
-            { id: "cc6_chart_4", spec: "CC6_AG.json" },
-            { id: "cc6_chart_5", spec: "CC6_Emp.json" },
-            { id: "cc6_chart_6", spec: "CC6_Serv.json" }
-        ];
+    // CC6 dashboard – loop over mini charts
+    const cc6Specs = [
+        { id: "cc6_chart_1", spec: "CC6_LFPR.json" },
+        { id: "cc6_chart_2", spec: "CC6_FLFPR.json" },
+        { id: "cc6_chart_3", spec: "CC6_UR.json" },
+        { id: "cc6_chart_4", spec: "CC6_AG.json" },
+        { id: "cc6_chart_5", spec: "CC6_Emp.json" },
+        { id: "cc6_chart_6", spec: "CC6_Serv.json" }
+    ];
 
-        cc6Specs.forEach(item => {
-            vegaEmbed(`#${item.id}`, item.spec)
-                .then(console.log)
-                .catch(console.warn);
-        });
+    cc6Specs.forEach(item => {
+        vegaEmbed(`#${item.id}`, item.spec)
+        .then(console.log)
+        .catch(console.warn);
+    });
 
-        vegaEmbed('#Location9', figure_9_spec).then(console.log).catch(console.warn);
-        vegaEmbed('#Location10', figure_10_spec).then(console.log).catch(console.warn);
-        vegaEmbed('#CC9_HDI', cc9_hdi_spec).then(console.log).catch(console.warn);
-        vegaEmbed('#HDI_Bubble', hdi_bubble_spec).then(console.log).catch(console.warn);
-        vegaEmbed('#CC10_FIT', cc10_fit_spec).then(console.log).catch(console.warn);
-        vegaEmbed('#CC10_RESID', cc10_resid_spec).then(console.log).catch(console.warn);
+    
+    vegaEmbed('#Location9', figure_9_spec)
+        .then(console.log)
+        .catch(console.warn);
+
+    vegaEmbed('#Location10', figure_10_spec)
+        .then(console.log)
+        .catch(console.warn);
+
+        vegaEmbed('#CC9_HDI', cc9_hdi_spec)
+    .then(console.log)
+    .catch(console.warn);
+
+
+        vegaEmbed('#HDI_Bubble', hdi_bubble_spec)
+        .then(console.log)
+        .catch(console.warn);
+    
+    vegaEmbed('#CC10_FIT', cc10_fit_spec).then(console.log).catch(console.warn);
+    vegaEmbed('#CC10_RESID', cc10_resid_spec).then(console.log).catch(console.warn);
     </script>
-</body>
+</body> 
 </html>
