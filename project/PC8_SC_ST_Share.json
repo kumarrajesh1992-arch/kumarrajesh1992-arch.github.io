@@ -28,8 +28,8 @@
     "header": {"title": null, "labelFontSize": 13, "labelFontWeight": 700}
   },
   "spec": {
-    "width": "container",
-    "height": 280,
+    "width": "700",
+    "height": 300,
     "layer": [
       {
         "mark": {"type": "point", "filled": true, "size": 90, "opacity": 0.85},
