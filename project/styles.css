@@ -207,7 +207,7 @@ main{
   display: flex;
   flex-wrap: wrap;
   gap: 10px 14px;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   margin: 0 0 10px 0;
   width: 100%;
