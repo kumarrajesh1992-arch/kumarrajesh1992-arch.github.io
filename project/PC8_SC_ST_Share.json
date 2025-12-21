@@ -28,7 +28,7 @@
     "header": {"title": null, "labelFontSize": 13, "labelFontWeight": 700}
   },
   "spec": {
-    "width": "700",
+    "width": "container",
     "height": 300,
     "layer": [
       {
