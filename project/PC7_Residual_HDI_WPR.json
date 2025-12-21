@@ -1,0 +1,55 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Employment Intensity vs. Efficiency Outcomes",
+    "subtitle": "States sorted by Worker-Population Ratio (WPR). Does working more lead to better HDI residuals?",
+    "anchor": "middle",
+    "fontSize": 16
+  },
+  "width": 600,
+  "height": {"step": 20},
+  "data": {
+    "url": "https://raw.githubusercontent.com/kumarrajesh1992-arch/kumarrajesh1992-arch.github.io/refs/heads/main/project/PC7_Data.csv"
+  },
+  "transform": [
+    {
+      "calculate": "datum.residual_HDI >= 0 ? 'Over-Performer' : 'Under-Performer'",
+      "as": "Performance"
+    }
+  ],
+  "encoding": {
+    "y": {
+      "field": "State",
+      "type": "nominal",
+      "sort": {"field": "WPR", "order": "descending"},
+      "axis": {"title": null, "labelFontSize": 11}
+    }
+  },
+  "layer": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "residual_HDI",
+          "type": "quantitative",
+          "title": "Residual HDI (Efficiency)",
+          "axis": {"format": ".2f"}
+        },
+        "color": {
+          "field": "Performance",
+          "scale": {"range": ["#2ca02c", "#d62728"]},
+          "legend": null
+        }
+      }
+    },
+    {
+      "mark": {"type": "text", "align": "left", "dx": 5, "dy": 1},
+      "encoding": {
+        "x": {"datum": 0},
+        "text": {"field": "WPR", "type": "quantitative", "format": ".1f"},
+        "color": {"value": "black"}
+      }
+    }
+  ],
+  "config": {}
+}
