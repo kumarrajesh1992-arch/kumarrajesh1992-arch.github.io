@@ -168,10 +168,6 @@ main{
 
 /* =========================
    VISUALISATIONS
-   Goal:
-   - Text left-aligned
-   - Charts centered
-   - Vega controls inside box (no overflow)
 ========================= */
 .viz{ margin-top: 26px; }
 
@@ -180,21 +176,22 @@ main{
   font-size: 15px;
   font-weight: 800;
   color: var(--ink);
-  text-align: left;
+  text-align: left; /* Ensures title stays left */
 }
 
 .viz .caption{
   margin-top: 10px;
   font-size: 14px;
   color: var(--muted);
-  text-align: left;
+  text-align: left; /* Ensures caption stays left */
 }
 
-/* The <figure> should NOT be flex — let Vega manage layout */
+/* UPDATED: Center the chart container */
 .viz figure{
+  display: flex;             /* Enable flexbox */
+  justify-content: center;   /* Horizontally center the content */
   margin: 10px 0 0;
   width: 100%;
-  display: block;
 }
 
 /* Vega wrapper: keep inside card; allow horizontal scroll only if needed */
