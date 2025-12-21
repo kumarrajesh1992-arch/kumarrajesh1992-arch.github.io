@@ -176,25 +176,25 @@ main{
   font-size: 15px;
   font-weight: 800;
   color: var(--ink);
-  text-align: left; /* Ensures title stays left */
+  text-align: left;
 }
 
 .viz .caption{
   margin-top: 10px;
   font-size: 14px;
   color: var(--muted);
-  text-align: left; /* Ensures caption stays left */
+  text-align: left;
 }
 
-/* UPDATED: Center the chart container */
+/* Center the chart container */
 .viz figure{
-  display: flex;             /* Enable flexbox */
-  justify-content: center;   /* Horizontally center the content */
+  display: flex;
+  justify-content: center;
   margin: 10px 0 0;
   width: 100%;
 }
 
-/* Vega wrapper: keep inside card; allow horizontal scroll only if needed */
+/* Vega wrapper: full width to allow internal centering */
 .viz .vega-embed{
   width: 100%;
   max-width: 100%;
@@ -202,34 +202,26 @@ main{
   overflow-x: auto;
 }
 
-/* Controls (dropdown/slider): left-aligned, wrapped, contained */
+/* CONTROLS: Center the dropdowns/sliders */
 .viz .vega-embed .vega-bindings{
   display: flex;
   flex-wrap: wrap;
   gap: 10px 14px;
-  justify-content: center;
+  justify-content: center; /* Centers the controls */
   align-items: center;
   margin: 0 0 10px 0;
   width: 100%;
-  max-width: 100%;
-  font-size: 13px;
-}
-.viz .vega-embed .vega-bindings label{
-  max-width: 100%;
-  white-space: normal;
-}
-.viz .vega-embed .vega-bindings select,
-.viz .vega-embed .vega-bindings input[type="range"]{
-  max-width: 100%;
 }
 
-/* Center the rendered chart canvas/SVG inside the wrapper */
-.viz .vega-embed .vega-view{
+/* CHARTS: Force the canvas/SVG to center */
+/* We target canvas and svg directly to catch all chart types */
+.viz .vega-embed canvas,
+.viz .vega-embed svg,
+.viz .vega-embed .vega-view {
   display: block;
-  margin: 0 auto;
+  margin: 0 auto; /* This pushes the chart to the middle */
   max-width: 100%;
 }
-
 /* =========================
    TWO COLUMN BLOCK
 ========================= */
