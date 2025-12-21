@@ -32,8 +32,8 @@
     <!-- HERO BOX -->
     <section class="hero card">
       <div class="kicker">PP434 Project</div>
-      <h2>Pathways to High Human Development in India by 2047</h2>
-      <p>(An empirical exploration of India’s human development trajectory in the context of Vision 2047)</p>
+      <h2>High Income, High Human Development? The Structural Prerequisites for India’s 2047 Vision.</h2>
+      <p>An empirical exploration of India’s human development trajectory (1990–2022)</p>
     </section>
 
     <!-- AIMS BOX -->
@@ -41,7 +41,7 @@
       <div class="card">
         <h3>Aim</h3>
         <p>
-          This project examines India’s long-run human development trajectory in the context of the Government of India’s ambition to achieve high-income status by 2047 under the Vision 2047 agenda. Although India’s Human Development Index (HDI) score has improved steadily since 1990, progress in human development has not kept pace with rapid income growth, raising concerns that India could become a high-income economy without attaining high human development. This project has two objectives. First, it documents India’s HDI progress over time and highlights the persistent divergence between economic expansion and improvements in health, education, and living standards. Second, it examines whether differences in policy priorities and state-level characteristics help explain why some Indian states achieve higher human development outcomes than would be predicted by income alone. Empirically, the analysis moves beyond simple income–HDI correlations and adopts a residual framework to assess income-adjusted human development performance across states.
+          This project investigates the structural prerequisites required to ensure India’s trajectory toward a 'High Income' nation by 2047 is matched by 'High Human Development.' Analyzing the period from 1990–2022, it explores the 'structural decoupling' between economic growth and human development outcomes measured through Human Development Index (HDI). By employing a residual analysis framework to measure state-level 'conversion efficiency', the project identifies how deep-seated constraints, specifically social stratification, act as impediments to human development. The goal is to define the structural corrections necessary to align economic capacity with multidimensional well-being.
         </p>
       </div>
     </section>
@@ -70,20 +70,29 @@
         <div class="viz">
           <h4>Chart 1: India’s HDI trajectory since 1990</h4>
           <figure id="PC1"></figure>
-          <p class="caption">Chart 1 shows that India’s Human Development Index has improved steadily since 1990. However, the pace of HDI improvement has been gradual relative to the acceleration in economic growth since the early 2000s. However, when viewed alongside the well-documented acceleration of economic growth since the early 2000s, HDI improvements appear comparatively gradual. This descriptive divergence motivates the subsequent analysis, which formally examines whether income growth translates proportionately into human development outcomes.</p>
+          <p class="caption">This interactive time-series tracks India’s national performance across HDI and its constituent indicators. Using the dropdown menu to isolate Income (GNI per capita) versus Health (Life Expectancy) reveals a structural break: while income has followed an exponential trajectory since the early 2000s, gains in health and education remain linear and gradual. This divergence motivates the project’s central inquiry: is income growth alone sufficient to drive human development?</p>
         </div>
 
         <div class="viz">
           <h4>Chart 2: State HDI trajectories</h4>
           <figure id="PC2"></figure>
-          <p class="caption">Chart 2 highlights pronounced divergence in human development trajectories across Indian states beneath the national average. While most states exhibit gradual improvement over time, the pace, consistency, and eventual levels of HDI achievement vary substantially. States such as Kerala and Goa sustain relatively high HDI outcomes across decades, whereas Bihar, Jharkhand, and Uttar Pradesh remain persistently at lower levels despite comparable starting points. This dispersion raises a central policy question: to what extent do these differences simply reflect income disparities, and to what extent do they point to deeper structural and institutional factors? The following analysis first benchmarks HDI against income, before examining spending, state capacity, labour-market, and social-structure channels.</p>
+          <p class="caption">Beneath the national average lies profound inequality. This bubble chart situates each state by its Human Development (X-axis) and Income (Y-axis). Using the Year Slider to animate the trajectory from 1990 to 2022 reveals a "fanning out" effect. While "Leader" states like Kerala and Goa sustain high-equilibrium outcomes, "Laggard" states like Bihar and Uttar Pradesh remain trapped at lower levels. This dispersion illustrates that states with similar incomes can exhibit vastly different levels of human capability.</p>
         </div>
 
         <div class="viz">
-          <h4>Chart 3: HDI vs log(GNI per capita), 2023 </h4>
-          <figure id="PC3"></figure>
-          <p class="caption"> Chart 3 highlights that Income explains a substantial share of variation in human development outcomes across Indian states, underscoring the importance of economic resources. However, the dispersion around the fitted relationship is meaningful. Some states, such as Kerala and Sikkim, achieve HDI levels above those predicted by income alone, while others, including Gujarat and Andhra Pradesh, lie below the fitted line. This pattern indicates that income is a necessary but insufficient condition for human development, motivating closer examination of income-adjusted performance.</p>
-        </div>
+  <h4>Chart 3: The Income Gradient — HDI vs log(GNI per capita)</h4>
+  <figure id="PC3"></figure>
+  <p class="caption">
+    This scatter plot quantifies the relationship between economic capacity and human development.
+    A linear regression of HDI on log GNI per capita yields a strong positive association
+    (<span class="stat">R<sup>2</sup> ≈ 0.85</span>), indicating that income explains the
+    majority of cross-state variation in HDI outcomes. However, the dispersion around the
+    fitted line is instructive. States such as Manipur and Kerala achieve HDI levels well above
+    their income-predicted benchmarks, while Gujarat and Andhra Pradesh fall substantially below,
+    underscoring that income is a necessary but insufficient condition for translating growth
+    into human development.
+  </p>
+</div>
 
         <div class="viz">
           <h4>Chart 4: Residual HDI (actual − predicted) by state</h4>
