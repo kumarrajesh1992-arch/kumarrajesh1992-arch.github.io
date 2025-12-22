@@ -200,14 +200,14 @@ main{
   font-size: 15px;
   font-weight: 800;
   color: var(--ink);
-  text-align: left;
+  text-align: middle;
 }
 
 .viz .caption{
   margin-top: 10px;
   font-size: 14px;
   color: var(--muted);
-  text-align: left;
+  text-align: middle;
 }
 
 /* Center the chart container */
