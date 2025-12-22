@@ -49,7 +49,7 @@
     <h3>Data</h3>
     <ul class="data-source-list">
       <li>
-        <strong>National HDI (1990–2023):</strong> Sourced from the <a href="https://hdr.undp.org/data-center/specific-country-data#/countries/IND" target="_blank" rel="noopener">UNDP HDRO Data Centre</a> and processed into a tidy time-series format.
+        <strong>National HDI (1990–2023):</strong> Sourced from the <a href="https://hdr.undp.org/data-center/specific-country-data#/countries/IND" target="_blank" rel="noopener">UNDP HDRO Data Centre</a>.
       </li>
       <li>
         <strong>State HDI (1990–2023):</strong> Compiled from the <a href="https://globaldatalab.org/shdi/download/2022/shdi+lgnic/IND/?levels=4" target="_blank" rel="noopener">Global Data Lab</a> at Radboud University.
@@ -147,12 +147,27 @@
   <div class="card">
     <h3>Tools</h3>
        <p style="margin-bottom: 15px;">
-    <p>
-      All data cleaning, merging, and analysis were conducted in Python using <em>pandas</em>, <em>NumPy</em>, <em>scikit-learn</em>, and <em>statsmodels</em>. National and state-level HDI series were reshaped into tidy time-series and cross-sectional formats. Income-adjusted HDI performance was estimated using OLS regressions of HDI on log GNI per capita, with residuals used as the core analytical metric. Visualisations were implemented in Vega-Lite and embedded via HTML.
-    </p>
-    <p>
-      Key challenges included non-aligned years across data sources, most notably NITI Aayog’s Health Index (2021) and School Education Quality Index (2019) relative to 2022 state HDI estimates. These were treated as slow-moving structural proxies, appropriate for cross-state comparison. Union Territories were dropped from spending models due to missing budget data. All results are descriptive and cross-sectional, with no causal claims.
-    </p>
+   <p>
+  All data cleaning, merging, and analysis were conducted in Python using
+  <em>pandas</em>, <em>NumPy</em>, <em>scikit-learn</em>, and <em>statsmodels</em>.
+  National and state-level HDI series were reshaped into tidy time-series and
+  cross-sectional formats. Income-adjusted HDI performance was estimated using
+  linear regression models of HDI on log GNI per capita, implemented in
+  <em>statsmodels</em> for statistical inference and <em>scikit-learn</em> for
+  prediction and residual construction. Independent variables were standardised
+  (z-scores) using <em>scikit-learn</em> to enable coefficient comparability
+  across models. Visualisations were built in Vega-Lite and embedded via HTML
+  and JavaScript.
+</p>
+
+<p>
+  A key challenge was non-aligned years across data sources, particularly
+  NITI Aayog’s Health Index (2021) and School Education Quality Index (2019)
+  relative to 2022 HDI estimates. These indices were treated as slow-moving
+  structural proxies, appropriate for cross-state comparison. Union Territories
+  were excluded from spending models due to missing budget data. All findings
+  are cross-sectional and descriptive, with no causal claims.
+</p>
   </div>
 </section>
 
