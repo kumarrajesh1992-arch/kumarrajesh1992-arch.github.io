@@ -209,7 +209,7 @@ main {
 
 .viz h4 {
   margin: 0 0 12px;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 700;
   color: var(--ink);
   text-align: left; /* FIXED: 'middle' was invalid CSS */
