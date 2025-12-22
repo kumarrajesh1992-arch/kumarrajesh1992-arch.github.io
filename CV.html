@@ -30,6 +30,7 @@
       background-color: var(--bg);
       color: var(--ink);
       line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
     }
 
     /* =========================
@@ -38,7 +39,7 @@
     header {
       max-width: var(--max);
       margin: 48px auto 32px;
-      padding: 0 20px;
+      padding: 0 30px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -46,18 +47,18 @@
 
     header h1 {
       font-family: 'Source Serif 4', serif;
-      font-weight: 600;
-      font-size: 24px;
+      font-weight: 700;
+      font-size: 26px;
       margin: 0;
       color: var(--ink);
     }
 
-    nav { display: flex; gap: 16px; }
+    nav { display: flex; gap: 20px; }
     nav a {
       text-decoration: none;
       color: var(--accent);
       font-weight: 600;
-      font-size: 14px;
+      font-size: 15px;
     }
     nav a:hover { text-decoration: underline; }
 
@@ -86,9 +87,10 @@
 
     .cv-name h2 {
       font-family: 'Source Serif 4', serif;
-      font-size: 36px;
+      font-size: 38px;
       margin: 0 0 8px;
       color: var(--ink);
+      line-height: 1.1;
     }
 
     .cv-role {
@@ -109,131 +111,174 @@
         color: var(--ink);
         text-decoration: none;
         border-bottom: 1px solid var(--border);
+        transition: color 0.2s;
     }
+    .cv-contact a:hover { color: var(--accent); }
 
     /* CV Sections */
     .cv-section {
-      margin-bottom: 40px;
+      margin-bottom: 45px;
     }
 
     .cv-section h3 {
       font-family: 'Source Serif 4', serif;
-      font-size: 20px;
+      font-size: 22px;
       color: var(--accent);
       text-transform: uppercase;
       letter-spacing: 0.05em;
       border-bottom: 1px solid var(--border);
-      padding-bottom: 8px;
-      margin: 0 0 20px;
+      padding-bottom: 10px;
+      margin: 0 0 25px;
     }
 
-    /* Job Item */
+    /* Summary Text */
+    .summary-text {
+        font-size: 16px;
+        color: var(--ink);
+        max-width: 95%;
+    }
+
+    /* Job Item (Grid Layout) */
     .job-item {
       display: grid;
-      grid-template-columns: 140px 1fr; /* Adjusted for tighter date column */
+      grid-template-columns: 140px 1fr;
       gap: 24px;
-      margin-bottom: 32px;
+      margin-bottom: 35px;
     }
 
     .job-date {
       font-size: 14px;
       color: var(--muted);
-      font-weight: 500;
+      font-weight: 600;
       text-align: right;
-      padding-top: 4px; 
+      padding-top: 4px; /* Align with title */
+      font-variant-numeric: tabular-nums;
     }
 
     .job-details h4 {
       margin: 0 0 4px;
-      font-size: 17px;
+      font-size: 18px;
       color: var(--ink);
+      font-weight: 700;
     }
 
     .job-details .company {
       font-weight: 600;
       color: var(--accent);
-      margin-bottom: 8px;
+      margin-bottom: 10px;
       display: block;
       font-size: 15px;
     }
 
     .job-details ul {
-      margin: 8px 0 0;
+      margin: 10px 0 0;
       padding-left: 18px;
-      color: var(--muted);
+      color: var(--ink); /* Darker text for readability */
       font-size: 15px;
     }
     
     .job-details li { margin-bottom: 8px; }
 
-    /* Written Work List */
+    /* Written Work Styles */
     .pub-category {
-        margin-bottom: 24px;
+        margin-bottom: 25px;
     }
     .pub-category h4 {
         font-size: 15px;
-        color: var(--ink);
-        margin: 0 0 10px;
+        color: var(--accent);
+        margin: 0 0 12px;
         text-transform: uppercase;
         font-weight: 700;
+        letter-spacing: 0.03em;
     }
     .pub-list { list-style: none; padding: 0; margin: 0; }
     .pub-list li { 
-        margin-bottom: 12px; 
+        margin-bottom: 14px; 
         font-size: 15px; 
-        color: var(--muted);
+        color: var(--ink);
         padding-left: 16px;
         border-left: 3px solid var(--border);
+        line-height: 1.5;
     }
+    /* Italics for publication titles */
+    .pub-list em { color: var(--accent); font-style: italic; }
 
-    /* Skills Grid */
+    /* Education & Skills */
     .skills-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 16px;
+      gap: 20px;
     }
     
+    .skill-category {
+        background: var(--bg);
+        padding: 15px;
+        border-radius: 8px;
+    }
+
     .skill-category strong {
         display: block;
-        color: var(--ink);
+        color: var(--accent);
         margin-bottom: 6px;
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
     }
     
     .skill-category span {
-        color: var(--muted);
+        color: var(--ink);
         font-size: 15px;
+        display: block;
+        line-height: 1.4;
     }
 
     /* Print Button */
     .print-btn {
         display: inline-block;
-        margin-top: 20px;
-        padding: 10px 24px;
+        margin-top: 10px;
+        padding: 12px 28px;
         background: var(--accent);
         color: white;
         text-decoration: none;
         border-radius: 6px;
-        font-size: 14px;
+        font-size: 15px;
         font-weight: 600;
         cursor: pointer;
+        transition: background 0.2s;
     }
     .print-btn:hover { background: #1f3f1f; }
 
-    /* Responsive */
-    @media (max-width: 700px) {
-      .cv-paper { padding: 30px 20px; }
+    /* =========================
+       RESPONSIVE DESIGN
+    ========================= */
+    @media (max-width: 768px) {
+      .cv-paper { padding: 30px 20px; margin-bottom: 30px; }
       .cv-header { flex-direction: column; gap: 20px; }
       .cv-contact { text-align: left; }
-      .job-item { grid-template-columns: 1fr; gap: 8px; }
-      .job-date { text-align: left; color: var(--accent); margin-bottom: 4px;}
+      
+      /* Stack the grid on mobile */
+      .job-item { grid-template-columns: 1fr; gap: 6px; margin-bottom: 30px; }
+      .job-date { text-align: left; color: var(--accent); margin-bottom: 4px; }
+      
+      header { flex-direction: column; gap: 15px; margin-top: 30px; }
     }
     
-    /* Print Styles */
+    /* =========================
+       PRINT STYLES
+    ========================= */
     @media print {
         header, .print-btn { display: none; }
         body { background: white; }
-        .cv-paper { box-shadow: none; border: none; margin: 0; padding: 0; width: 100%; max-width: 100%; }
+        .cv-paper { 
+            box-shadow: none; 
+            border: none; 
+            margin: 0; 
+            padding: 0; 
+            width: 100%; 
+            max-width: 100%; 
+        }
         a { text-decoration: none; color: black; }
+        .job-item { break-inside: avoid; } /* Prevents splitting jobs across pages */
     }
   </style>
 </head>
@@ -264,8 +309,8 @@
 
     <section class="cv-section">
       <h3>Summary</h3>
-      <p style="color: var(--muted);">
-        [cite_start]Public policy specialist with 10 years of experience in policy research, analysis, and advisory across inclusive growth, poverty reduction, and governance reforms[cite: 815]. [cite_start]Extensive experience supporting senior leadership in state-level planning and strengthening institutional frameworks through multi-stakeholder engagement in partnership with national governments, UNDP, and multilateral partners[cite: 816, 817].
+      <p class="summary-text">
+        Public policy specialist with 10 years of experience in policy research, analysis, and advisory across inclusive growth, poverty reduction, and governance reforms[cite: 815]. Proven record of supporting senior leadership in state-level planning, designing gender-inclusive policies, and strengthening institutional frameworks through multi-stakeholder engagement in partnership with national governments, UNDP, and multilateral partners[cite: 816, 817].
       </p>
     </section>
 
@@ -278,9 +323,10 @@
           <h4>Policy Officer</h4>
           <span class="company">United Nations Development Programme (UNDP) | India</span>
           <ul>
-            [cite_start]<li><strong>Strategy & Inclusion:</strong> Led policy research and programme implementation for employment generation and inclusive growth initiatives under the UNSDF 2023-27[cite: 821].</li>
-            [cite_start]<li><strong>Flagship Reports:</strong> Provided technical backstopping for India's 2023 Multidimensional Poverty Index (with Oxford PHI & NITI Aayog) and drafted the India section of the Asia-Pacific Human Development Report 2023[cite: 824, 825].</li>
-            [cite_start]<li><strong>Policy Advocacy:</strong> Coordinated the 'Economic Policy for Women-Led Development' network with the GATES Foundation and ICRIER, facilitating high-level discussions with PM-EAC[cite: 823].</li>
+            <li><strong>Strategy & Inclusion:</strong> Led policy research and programme implementation for employment generation and inclusive growth initiatives under the UNSDF 2023-27[cite: 821].</li>
+            <li><strong>Flagship Reports:</strong> Provided technical backstopping for India's 2023 Multidimensional Poverty Index (with Oxford PHI & NITI Aayog) and drafted the India section of the Asia-Pacific Human Development Report 2023[cite: 824, 825].</li>
+            <li><strong>Policy Advocacy:</strong> Coordinated the 'Economic Policy for Women-Led Development' network with the GATES Foundation and ICRIER, facilitating high-level discussions with PM-EAC[cite: 823].</li>
+            <li><strong>Capacity Building:</strong> Led knowledge-building sessions for UNDP staff on employment, HDR 2023-24, and election analysis[cite: 828].</li>
           </ul>
         </div>
       </div>
@@ -291,10 +337,10 @@
           <h4>Public Policy Expert (Secondment)</h4>
           <span class="company">Uttarakhand State Government | Dept. of Planning</span>
           <ul>
-            [cite_start]<li><strong>State Employment Strategy (2023):</strong> Co-authored the final strategy document, conducting labor market analysis (LFPR, NEET) and designing a state-wide Youth Aspiration Survey[cite: 833, 834, 837].</li>
-            [cite_start]<li><strong>State Women's Policy (2024):</strong> Served on the drafting committee and authored the white paper on women's human development status[cite: 841, 843].</li>
-            [cite_start]<li><strong>Institutional Reform:</strong> Conceptualized the organizational structure of SETU Aayog (State Planning Commission) and drafted the state's first Monitoring and Evaluation Policy[cite: 856, 847].</li>
-            [cite_start]<li><strong>Legislative Reform:</strong> Managed the rationalization and repeal of legacy laws, liaising with the Vidhan Sabha Secretariat[cite: 860, 864].</li>
+            <li><strong>State Employment Strategy (2023):</strong> Co-authored the final strategy document, conducting labor market analysis (LFPR, NEET) and designing a state-wide Youth Aspiration Survey[cite: 833, 834, 837].</li>
+            <li><strong>State Women's Policy (2024):</strong> Served on the drafting committee and authored the white paper on women's human development status[cite: 841, 843].</li>
+            <li><strong>Institutional Reform:</strong> Conceptualized the organizational structure of SETU Aayog (State Planning Commission) and drafted the state's first Monitoring and Evaluation Policy[cite: 847, 856].</li>
+            <li><strong>Legislative Reform:</strong> Managed the rationalization and repeal of legacy laws, liaising with the Vidhan Sabha Secretariat[cite: 860, 864].</li>
           </ul>
         </div>
       </div>
@@ -305,8 +351,8 @@
           <h4>Fellow, Speaker’s Office</h4>
           <span class="company">Delhi Legislative Assembly</span>
           <ul>
-            [cite_start]<li>Provided policy research support to ad hoc and standing committees on legislative matters[cite: 882].</li>
-            [cite_start]<li>Drafted six committee reports and tracked departmental budgets for Health, Education, and Social Justice to ensure procedural compliance[cite: 883, 885].</li>
+            <li>Provided policy research support to ad hoc and standing committees on legislative matters[cite: 882].</li>
+            <li>Drafted six committee reports and tracked departmental budgets for Health, Education, and Social Justice to ensure procedural compliance[cite: 883, 885].</li>
           </ul>
         </div>
       </div>
@@ -317,8 +363,8 @@
           <h4>Research Project Coordinator</h4>
           <span class="company">Wada Na Todo Abhiyan</span>
           <ul>
-            [cite_start]<li>Led the "100 Hotspots" project (funded by GIZ/BfDW), developing tools to gather citizen-generated data on 24 SDG indicators across 10 states[cite: 889, 891].</li>
-            [cite_start]<li>Co-authored India's first SDG review report on marginalized groups, earning 'SDG Good Practice' recognition from UN-DESA[cite: 893].</li>
+            <li>Led the "100 Hotspots" project (funded by GIZ/BfDW), developing tools to gather citizen-generated data on 24 SDG indicators across 10 states[cite: 889, 891].</li>
+            <li>Co-authored India's first SDG review report on marginalized groups, earning 'SDG Good Practice' recognition from UN-DESA[cite: 893].</li>
           </ul>
         </div>
       </div>
@@ -327,9 +373,9 @@
         <div class="job-date">Earlier Roles</div>
         <div class="job-details">
           <ul>
-            [cite_start]<li><strong>Policy Consultant, Oxfam India (2018):</strong> Conducted background research for the India Inequality Report 2019 and authored briefs on gender and education[cite: 897, 898].</li>
-            [cite_start]<li><strong>Research Consultant, Bharat Rural Livelihoods Foundation (2017):</strong> Conducted fieldwork for the Tribal Development Report and impact assessments of MGNREGS in Rajasthan[cite: 902, 903].</li>
-            <li><strong>Legislative Assistant (LAMP Fellow), PRS Legislative Research (2015-16):</strong> Assisted MP Mr. P.L. [cite_start]Punia with parliamentary questions and legislative briefs[cite: 905].</li>
+            <li><strong>Policy Consultant, Oxfam India (Jan–Aug 2018):</strong> Conducted background research for the India Inequality Report 2019 and authored briefs on gender and education[cite: 896, 897].</li>
+            <li><strong>Research Consultant, Bharat Rural Livelihoods Foundation (2017):</strong> Conducted fieldwork for the Tribal Development Report and impact assessments of MGNREGS in Rajasthan[cite: 900, 902].</li>
+            <li><strong>Legislative Assistant (LAMP Fellow), PRS Legislative Research (2015-16):</strong> Assisted MP Mr. P.L. Punia with parliamentary questions and legislative briefs[cite: 905].</li>
           </ul>
         </div>
       </div>
@@ -341,31 +387,31 @@
       <div class="pub-category">
         <h4>Government Reports & Policy Briefs</h4>
         <ul class="pub-list">
-          <li>Rajesh, K., Sundaram, R.M., & Pant, M.K. (2023). <em>Uttarakhand State Employment Generation Strategy</em>. [cite_start]Centre for Public Policy and Good Governance, Govt of Uttarakhand[cite: 916].</li>
-          <li>Rajesh, K. (2022). <em>Declining Female Labour Force Participation Rate in Uttarakhand: Issues and the Way Forward</em>. [cite_start]Policy Brief No. 01. CPPGG, Govt of Uttarakhand[cite: 918].</li>
-          <li>Rajesh, K. (2022). "Labour Market Situation in Uttarakhand". In <em>Uttarakhand Economic Survey 2021-22</em>. [cite_start]Directorate of Economics & Statistics, Govt of Uttarakhand[cite: 919].</li>
-          <li>Rajesh, K. (2021). <em>Examining the Issue of Certain Entries in the Central List of Other Backward Classes Pertaining to NCT of Delhi</em>. [cite_start]Committee on Welfare of OBCs, Delhi Legislative Assembly[cite: 921].</li>
-          <li>Rajesh, K. (2021). <em>Recommendations for Improved and Effective Functioning of the Commission for Other Backward Classes</em>. [cite_start]Committee on Welfare of OBCs, Delhi Legislative Assembly[cite: 923].</li>
-          <li>Rajesh, K. (2019). <em>Alleged Non-Compliance of Free Treatment for EWS Patients in Private Hospitals of Delhi</em>. [cite_start]Committee on Petitions, Delhi Legislative Assembly[cite: 925].</li>
+          <li>Rajesh, K., Sundaram, R.M., & Pant, M.K. (2023). <em>Uttarakhand State Employment Generation Strategy</em>. Centre for Public Policy and Good Governance, Govt of Uttarakhand[cite: 916].</li>
+          <li>Rajesh, K. (2022). <em>Declining Female Labour Force Participation Rate in Uttarakhand: Issues and the Way Forward</em>. Policy Brief No. 01. CPPGG, Govt of Uttarakhand[cite: 918].</li>
+          <li>Rajesh, K. (2022). "Labour Market Situation in Uttarakhand". In <em>Uttarakhand Economic Survey 2021-22</em>. Directorate of Economics & Statistics, Govt of Uttarakhand[cite: 920].</li>
+          <li>Rajesh, K. (2021). <em>Examining the Issue of Certain Entries in the Central List of Other Backward Classes Pertaining to NCT of Delhi</em>. Committee on Welfare of OBCs, Delhi Legislative Assembly[cite: 921].</li>
+          <li>Rajesh, K. (2021). <em>Recommendations for Improved and Effective Functioning of the Commission for Other Backward Classes</em>. Committee on Welfare of OBCs, Delhi Legislative Assembly[cite: 923].</li>
+          <li>Rajesh, K. (2019). <em>Alleged Non-Compliance of Free Treatment for EWS Patients in Private Hospitals of Delhi</em>. Committee on Petitions, Delhi Legislative Assembly[cite: 925].</li>
         </ul>
       </div>
 
       <div class="pub-category">
         <h4>Policy & Research Publications</h4>
         <ul class="pub-list">
-          <li>Rajesh, K., & Namala, A. (2019). <em>The 100 HotSpots: Snapshot of Socially Excluded and Vulnerable Population Groups & SDGs in India</em>. [cite_start]New Delhi: Wada Na Todo Abhiyan[cite: 928].</li>
-          <li>Rajesh, K. (2018). <em>Towards Gender-Inclusive Development in Odisha, India: Some Policy Prescriptions</em>. [cite_start]Policy Brief No. 34, Oxfam India[cite: 930].</li>
-          <li>Golder, S., & Rajesh, K. (2018). <em>District Mineral Foundation: Some Issues and Recommendations</em>. [cite_start]Policy Brief No. 33, Oxfam India[cite: 931].</li>
-          <li>Rajesh, K. (2018). <em>Public Provisioning of Elementary Education in India: Issues Around Public Financing</em>. [cite_start]Policy Brief No. 32, Oxfam India[cite: 932].</li>
-          <li>Rajesh, K. (2018). <em>Making Development Gender-Inclusive in Jharkhand, India</em>. [cite_start]Policy Brief No. 31, Oxfam India[cite: 934].</li>
+          <li>Rajesh, K., & Namala, A. (2019). <em>The 100 HotSpots: Snapshot of Socially Excluded and Vulnerable Population Groups & SDGs in India</em>. New Delhi: Wada Na Todo Abhiyan[cite: 928].</li>
+          <li>Rajesh, K. (2018). <em>Towards Gender-Inclusive Development in Odisha, India: Some Policy Prescriptions</em>. Policy Brief No. 34, Oxfam India[cite: 930].</li>
+          <li>Golder, S., & Rajesh, K. (2018). <em>District Mineral Foundation: Some Issues and Recommendations</em>. Policy Brief No. 33, Oxfam India[cite: 931].</li>
+          <li>Rajesh, K. (2018). <em>Public Provisioning of Elementary Education in India: Issues Around Public Financing</em>. Policy Brief No. 32, Oxfam India[cite: 932].</li>
+          <li>Rajesh, K. (2018). <em>Making Development Gender-Inclusive in Jharkhand, India</em>. Policy Brief No. 31, Oxfam India[cite: 934].</li>
         </ul>
       </div>
 
       <div class="pub-category">
         <h4>Opinion Articles</h4>
         <ul class="pub-list">
-          <li>Rajesh, K. (2018, Aug 18). "Why More Women Are Needed in Parliament". [cite_start]<em>Business Standard</em>[cite: 936].</li>
-          <li>Rajesh, K. (2018, July 28). "Reducing Maternal Mortality: Miles to Go". [cite_start]<em>Business Standard</em>[cite: 937].</li>
+          <li>Rajesh, K. (2018, Aug 18). "Why More Women Are Needed in Parliament". <em>Business Standard</em>[cite: 936].</li>
+          <li>Rajesh, K. (2018, July 28). "Reducing Maternal Mortality: Miles to Go". <em>Business Standard</em>[cite: 937].</li>
         </ul>
       </div>
     </section>
@@ -378,7 +424,7 @@
         <div class="job-details">
           <h4>Certificate in Public Policy Analysis</h4>
           <span class="company">London School of Economics & Political Science (LSE)</span>
-          [cite_start]<ul><li>Online Certificate[cite: 907].</li></ul>
+          <ul><li>Online Certificate[cite: 907].</li></ul>
         </div>
       </div>
       
@@ -387,7 +433,7 @@
         <div class="job-details">
           <h4>M.A. Development Studies</h4>
           <span class="company">Jawaharlal Nehru University (JNU), New Delhi</span>
-          [cite_start]<ul><li>[cite: 908]</li></ul>
+          <ul><li>Focus: Development and Labour Studies[cite: 908].</li></ul>
         </div>
       </div>
 
@@ -396,7 +442,7 @@
         <div class="job-details">
           <h4>B. Com (Honours)</h4>
           <span class="company">Banaras Hindu University (BHU), Varanasi</span>
-          [cite_start]<ul><li>[cite: 909]</li></ul>
+          <ul><li>First Division[cite: 909].</li></ul>
         </div>
       </div>
     </section>
@@ -406,15 +452,15 @@
       <div class="skills-grid">
         <div class="skill-category">
             <strong>Certifications</strong>
-            [cite_start]<span>Results-Based Project Management (Univ. of Witwatersrand, 2021) [cite: 912]</span>
+            <span>Results-Based Project Management (Univ. of Witwatersrand, 2021) [cite: 912]</span>
         </div>
         <div class="skill-category">
             <strong>Tools</strong>
-            [cite_start]<span>MS Office Suite, Policy Analysis Frameworks [cite: 913]</span>
+            <span>MS Office Suite, Policy Analysis Frameworks [cite: 913]</span>
         </div>
         <div class="skill-category">
             <strong>Languages</strong>
-            [cite_start]<span>English (Fluent), Hindi (Native) [cite: 911]</span>
+            <span>English (Fluent), Hindi (Native) [cite: 911]</span>
         </div>
       </div>
     </section>
