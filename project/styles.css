@@ -214,16 +214,16 @@ main {
   color: var(--ink);
   text-align: left; /* FIXED: 'middle' was invalid CSS */
 }
-
 .viz .caption {
   margin-top: 12px;
   font-size: 14px;
   color: var(--muted);
-  text-align: left; /* FIXED: 'middle' was invalid CSS */
-  max-width: 640px;
-  margin-left: auto;
-  margin-right: auto;
+  text-align: left;    /* Ensures text flows left */
+  max-width: 100%;     /* WAS 640px. Allow it to fill the width */
+  margin-left: 0;      /* WAS auto. Snap to left */
+  margin-right: 0;     /* WAS auto. Snap to right */
 }
+
 
 /* Center the chart container */
 .viz figure {
