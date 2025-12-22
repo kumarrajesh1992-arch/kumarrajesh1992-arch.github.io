@@ -39,18 +39,12 @@
     header {
       max-width: var(--max);
       margin: 48px auto 32px;
-      padding: 0 30px;
+      /* 60px padding ensures nav aligns with the right edge of the CV paper */
+      padding: 0 60px; 
       display: flex;
-      justify-content: space-between;
+      /* CHANGE: flex-end pushes items to the Right */
+      justify-content: flex-end; 
       align-items: center;
-    }
-
-    header h1 {
-      font-family: 'Source Serif 4', serif;
-      font-weight: 700;
-      font-size: 26px;
-      margin: 0;
-      color: var(--ink);
     }
 
     nav { display: flex; gap: 20px; }
@@ -256,7 +250,13 @@
       .job-item { grid-template-columns: 1fr; gap: 6px; margin-bottom: 30px; }
       .job-date { text-align: left; color: var(--accent); margin-bottom: 4px; }
       
-      header { flex-direction: column; gap: 15px; margin-top: 30px; }
+      header { 
+        flex-direction: column; 
+        gap: 15px; 
+        margin-top: 30px; 
+        padding: 0 20px; 
+        align-items: flex-end; /* Align right on mobile too */
+      }
     }
     
     @media print {
