@@ -4,7 +4,7 @@
     "text": "Trends in Statewise HDI Score in India (1990–2022)",
     "subtitle": "Bubble chart with year slider + state filter | Data Source: Global Data Lab",
     "anchor": "middle",
-    "fontSize": 16,
+    "fontSize": 14,
     "subtitleFontSize": 11
   },
   "data": {
