@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CV - Kumar Rajesh</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* =========================
+       THEME VARIABLES
+    ========================= */
+    :root {
+      --bg: #f4f6f2;
+      --panel: #ffffff;
+      --ink: #1f2933;
+      --muted: #5b6770;
+      --border: #dde3da;
+      --accent: #2f4f2f;
+      --radius: 12px;
+      --max: 900px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg);
+      color: var(--ink);
+      line-height: 1.6;
+    }
+
+    /* =========================
+       HEADER & NAV
+    ========================= */
+    header {
+      max-width: var(--max);
+      margin: 48px auto 32px;
+      padding: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      font-family: 'Source Serif 4', serif;
+      font-weight: 600;
+      font-size: 24px;
+      margin: 0;
+      color: var(--ink);
+    }
+
+    nav { display: flex; gap: 16px; }
+    nav a {
+      text-decoration: none;
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 14px;
+    }
+    nav a:hover { text-decoration: underline; }
+
+    /* =========================
+       CV CONTAINER
+    ========================= */
+    .cv-paper {
+      max-width: var(--max);
+      margin: 0 auto 60px;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 60px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    }
+
+    /* CV Header */
+    .cv-header {
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 30px;
+      margin-bottom: 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .cv-name h2 {
+      font-family: 'Source Serif 4', serif;
+      font-size: 36px;
+      margin: 0 0 8px;
+      color: var(--ink);
+    }
+
+    .cv-role {
+      font-size: 18px;
+      color: var(--accent);
+      font-weight: 500;
+      margin: 0;
+    }
+
+    .cv-contact {
+      text-align: right;
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+    
+    .cv-contact a {
+        color: var(--ink);
+        text-decoration: none;
+        border-bottom: 1px solid var(--border);
+    }
+
+    /* CV Sections */
+    .cv-section {
+      margin-bottom: 40px;
+    }
+
+    .cv-section h3 {
+      font-family: 'Source Serif 4', serif;
+      font-size: 20px;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 8px;
+      margin: 0 0 20px;
+    }
+
+    /* Job Item */
+    .job-item {
+      display: grid;
+      grid-template-columns: 140px 1fr; /* Adjusted for tighter date column */
+      gap: 24px;
+      margin-bottom: 32px;
+    }
+
+    .job-date {
+      font-size: 14px;
+      color: var(--muted);
+      font-weight: 500;
+      text-align: right;
+      padding-top: 4px; 
+    }
+
+    .job-details h4 {
+      margin: 0 0 4px;
+      font-size: 17px;
+      color: var(--ink);
+    }
+
+    .job-details .company {
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 8px;
+      display: block;
+      font-size: 15px;
+    }
+
+    .job-details ul {
+      margin: 8px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+    
+    .job-details li { margin-bottom: 8px; }
+
+    /* Written Work List */
+    .pub-category {
+        margin-bottom: 24px;
+    }
+    .pub-category h4 {
+        font-size: 15px;
+        color: var(--ink);
+        margin: 0 0 10px;
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+    .pub-list { list-style: none; padding: 0; margin: 0; }
+    .pub-list li { 
+        margin-bottom: 12px; 
+        font-size: 15px; 
+        color: var(--muted);
+        padding-left: 16px;
+        border-left: 3px solid var(--border);
+    }
+
+    /* Skills Grid */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    
+    .skill-category strong {
+        display: block;
+        color: var(--ink);
+        margin-bottom: 6px;
+    }
+    
+    .skill-category span {
+        color: var(--muted);
+        font-size: 15px;
+    }
+
+    /* Print Button */
+    .print-btn {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 10px 24px;
+        background: var(--accent);
+        color: white;
+        text-decoration: none;
+        border-radius: 6px;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+    }
+    .print-btn:hover { background: #1f3f1f; }
+
+    /* Responsive */
+    @media (max-width: 700px) {
+      .cv-paper { padding: 30px 20px; }
+      .cv-header { flex-direction: column; gap: 20px; }
+      .cv-contact { text-align: left; }
+      .job-item { grid-template-columns: 1fr; gap: 8px; }
+      .job-date { text-align: left; color: var(--accent); margin-bottom: 4px;}
+    }
+    
+    /* Print Styles */
+    @media print {
+        header, .print-btn { display: none; }
+        body { background: white; }
+        .cv-paper { box-shadow: none; border: none; margin: 0; padding: 0; width: 100%; max-width: 100%; }
+        a { text-decoration: none; color: black; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Kumar Rajesh</h1>
+    <nav>
+      <a href="/home.html">Home</a>
+      <a href="/index.html">Portfolio</a>
+      <a href="https://linkedin.com/in/kumarrajesh1992" target="_blank">LinkedIn</a>
+    </nav>
+  </header>
+
+  <main class="cv-paper">
+    
+    <div class="cv-header">
+      <div class="cv-name">
+        <h2>Kumar Rajesh</h2>
+        <p class="cv-role">Public Policy & Governance Specialist</p>
+      </div>
+      <div class="cv-contact">
+        <a href="mailto:kumarrajesh1992@gmail.com">kumarrajesh1992@gmail.com</a><br>
+        <a href="https://linkedin.com/in/kumarrajesh1992" target="_blank">linkedin.com/in/kumarrajesh1992</a>
+      </div>
+    </div>
+
+    <section class="cv-section">
+      <h3>Summary</h3>
+      <p style="color: var(--muted);">
+        [cite_start]Public policy specialist with 10 years of experience in policy research, analysis, and advisory across inclusive growth, poverty reduction, and governance reforms[cite: 815]. [cite_start]Extensive experience supporting senior leadership in state-level planning and strengthening institutional frameworks through multi-stakeholder engagement in partnership with national governments, UNDP, and multilateral partners[cite: 816, 817].
+      </p>
+    </section>
+
+    <section class="cv-section">
+      <h3>Professional Experience</h3>
+
+      <div class="job-item">
+        <div class="job-date">June 2023 – Present</div>
+        <div class="job-details">
+          <h4>Policy Officer</h4>
+          <span class="company">United Nations Development Programme (UNDP) | India</span>
+          <ul>
+            [cite_start]<li><strong>Strategy & Inclusion:</strong> Led policy research and programme implementation for employment generation and inclusive growth initiatives under the UNSDF 2023-27[cite: 821].</li>
+            [cite_start]<li><strong>Flagship Reports:</strong> Provided technical backstopping for India's 2023 Multidimensional Poverty Index (with Oxford PHI & NITI Aayog) and drafted the India section of the Asia-Pacific Human Development Report 2023[cite: 824, 825].</li>
+            [cite_start]<li><strong>Policy Advocacy:</strong> Coordinated the 'Economic Policy for Women-Led Development' network with the GATES Foundation and ICRIER, facilitating high-level discussions with PM-EAC[cite: 823].</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="job-item">
+        <div class="job-date">July 2021 – June 2023</div>
+        <div class="job-details">
+          <h4>Public Policy Expert (Secondment)</h4>
+          <span class="company">Uttarakhand State Government | Dept. of Planning</span>
+          <ul>
+            [cite_start]<li><strong>State Employment Strategy (2023):</strong> Co-authored the final strategy document, conducting labor market analysis (LFPR, NEET) and designing a state-wide Youth Aspiration Survey[cite: 833, 834, 837].</li>
+            [cite_start]<li><strong>State Women's Policy (2024):</strong> Served on the drafting committee and authored the white paper on women's human development status[cite: 841, 843].</li>
+            [cite_start]<li><strong>Institutional Reform:</strong> Conceptualized the organizational structure of SETU Aayog (State Planning Commission) and drafted the state's first Monitoring and Evaluation Policy[cite: 856, 847].</li>
+            [cite_start]<li><strong>Legislative Reform:</strong> Managed the rationalization and repeal of legacy laws, liaising with the Vidhan Sabha Secretariat[cite: 860, 864].</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="job-item">
+        <div class="job-date">Sep 2019 – July 2021</div>
+        <div class="job-details">
+          <h4>Fellow, Speaker’s Office</h4>
+          <span class="company">Delhi Legislative Assembly</span>
+          <ul>
+            [cite_start]<li>Provided policy research support to ad hoc and standing committees on legislative matters[cite: 882].</li>
+            [cite_start]<li>Drafted six committee reports and tracked departmental budgets for Health, Education, and Social Justice to ensure procedural compliance[cite: 883, 885].</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="job-item">
+        <div class="job-date">Aug 2018 – Aug 2019</div>
+        <div class="job-details">
+          <h4>Research Project Coordinator</h4>
+          <span class="company">Wada Na Todo Abhiyan</span>
+          <ul>
+            [cite_start]<li>Led the "100 Hotspots" project (funded by GIZ/BfDW), developing tools to gather citizen-generated data on 24 SDG indicators across 10 states[cite: 889, 891].</li>
+            [cite_start]<li>Co-authored India's first SDG review report on marginalized groups, earning 'SDG Good Practice' recognition from UN-DESA[cite: 893].</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="job-item">
+        <div class="job-date">Earlier Roles</div>
+        <div class="job-details">
+          <ul>
+            [cite_start]<li><strong>Policy Consultant, Oxfam India (2018):</strong> Conducted background research for the India Inequality Report 2019 and authored briefs on gender and education[cite: 897, 898].</li>
+            [cite_start]<li><strong>Research Consultant, Bharat Rural Livelihoods Foundation (2017):</strong> Conducted fieldwork for the Tribal Development Report and impact assessments of MGNREGS in Rajasthan[cite: 902, 903].</li>
+            <li><strong>Legislative Assistant (LAMP Fellow), PRS Legislative Research (2015-16):</strong> Assisted MP Mr. P.L. [cite_start]Punia with parliamentary questions and legislative briefs[cite: 905].</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="cv-section">
+      <h3>Written Work</h3>
+      
+      <div class="pub-category">
+        <h4>Government Reports & Policy Briefs</h4>
+        <ul class="pub-list">
+          <li>Rajesh, K., Sundaram, R.M., & Pant, M.K. (2023). <em>Uttarakhand State Employment Generation Strategy</em>. [cite_start]Centre for Public Policy and Good Governance, Govt of Uttarakhand[cite: 916].</li>
+          <li>Rajesh, K. (2022). <em>Declining Female Labour Force Participation Rate in Uttarakhand: Issues and the Way Forward</em>. [cite_start]Policy Brief No. 01. CPPGG, Govt of Uttarakhand[cite: 918].</li>
+          <li>Rajesh, K. (2022). "Labour Market Situation in Uttarakhand". In <em>Uttarakhand Economic Survey 2021-22</em>. [cite_start]Directorate of Economics & Statistics, Govt of Uttarakhand[cite: 919].</li>
+          <li>Rajesh, K. (2021). <em>Examining the Issue of Certain Entries in the Central List of Other Backward Classes Pertaining to NCT of Delhi</em>. [cite_start]Committee on Welfare of OBCs, Delhi Legislative Assembly[cite: 921].</li>
+          <li>Rajesh, K. (2021). <em>Recommendations for Improved and Effective Functioning of the Commission for Other Backward Classes</em>. [cite_start]Committee on Welfare of OBCs, Delhi Legislative Assembly[cite: 923].</li>
+          <li>Rajesh, K. (2019). <em>Alleged Non-Compliance of Free Treatment for EWS Patients in Private Hospitals of Delhi</em>. [cite_start]Committee on Petitions, Delhi Legislative Assembly[cite: 925].</li>
+        </ul>
+      </div>
+
+      <div class="pub-category">
+        <h4>Policy & Research Publications</h4>
+        <ul class="pub-list">
+          <li>Rajesh, K., & Namala, A. (2019). <em>The 100 HotSpots: Snapshot of Socially Excluded and Vulnerable Population Groups & SDGs in India</em>. [cite_start]New Delhi: Wada Na Todo Abhiyan[cite: 928].</li>
+          <li>Rajesh, K. (2018). <em>Towards Gender-Inclusive Development in Odisha, India: Some Policy Prescriptions</em>. [cite_start]Policy Brief No. 34, Oxfam India[cite: 930].</li>
+          <li>Golder, S., & Rajesh, K. (2018). <em>District Mineral Foundation: Some Issues and Recommendations</em>. [cite_start]Policy Brief No. 33, Oxfam India[cite: 931].</li>
+          <li>Rajesh, K. (2018). <em>Public Provisioning of Elementary Education in India: Issues Around Public Financing</em>. [cite_start]Policy Brief No. 32, Oxfam India[cite: 932].</li>
+          <li>Rajesh, K. (2018). <em>Making Development Gender-Inclusive in Jharkhand, India</em>. [cite_start]Policy Brief No. 31, Oxfam India[cite: 934].</li>
+        </ul>
+      </div>
+
+      <div class="pub-category">
+        <h4>Opinion Articles</h4>
+        <ul class="pub-list">
+          <li>Rajesh, K. (2018, Aug 18). "Why More Women Are Needed in Parliament". [cite_start]<em>Business Standard</em>[cite: 936].</li>
+          <li>Rajesh, K. (2018, July 28). "Reducing Maternal Mortality: Miles to Go". [cite_start]<em>Business Standard</em>[cite: 937].</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="cv-section">
+      <h3>Education</h3>
+      
+      <div class="job-item">
+        <div class="job-date">Completed</div>
+        <div class="job-details">
+          <h4>Certificate in Public Policy Analysis</h4>
+          <span class="company">London School of Economics & Political Science (LSE)</span>
+          [cite_start]<ul><li>Online Certificate[cite: 907].</li></ul>
+        </div>
+      </div>
+      
+      <div class="job-item">
+        <div class="job-date">2016 – 2018</div>
+        <div class="job-details">
+          <h4>M.A. Development Studies</h4>
+          <span class="company">Jawaharlal Nehru University (JNU), New Delhi</span>
+          [cite_start]<ul><li>[cite: 908]</li></ul>
+        </div>
+      </div>
+
+      <div class="job-item">
+        <div class="job-date">2011 – 2014</div>
+        <div class="job-details">
+          <h4>B. Com (Honours)</h4>
+          <span class="company">Banaras Hindu University (BHU), Varanasi</span>
+          [cite_start]<ul><li>[cite: 909]</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="cv-section" style="margin-bottom:0;">
+      <h3>Skills & Training</h3>
+      <div class="skills-grid">
+        <div class="skill-category">
+            <strong>Certifications</strong>
+            [cite_start]<span>Results-Based Project Management (Univ. of Witwatersrand, 2021) [cite: 912]</span>
+        </div>
+        <div class="skill-category">
+            <strong>Tools</strong>
+            [cite_start]<span>MS Office Suite, Policy Analysis Frameworks [cite: 913]</span>
+        </div>
+        <div class="skill-category">
+            <strong>Languages</strong>
+            [cite_start]<span>English (Fluent), Hindi (Native) [cite: 911]</span>
+        </div>
+      </div>
+    </section>
+
+    <div style="text-align: center;">
+        <a href="javascript:window.print()" class="print-btn">Download / Print CV</a>
+    </div>
+
+  </main>
+
+</body>
+</html>
