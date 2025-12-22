@@ -30,14 +30,18 @@ body{
 /* =========================
    LINKS
 ========================= */
-a{
+a {
   color: var(--accent);
-  font-weight: 600;
+  font-weight: inherit; /* WAS 600. Now matches surrounding text weight */
+  font-size: inherit;   /* Ensures it strictly follows the parent text size */
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 3px;
 }
-a:hover{ text-decoration-thickness: 2px; }
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
 
 /* =========================
    HEADER & NAV
