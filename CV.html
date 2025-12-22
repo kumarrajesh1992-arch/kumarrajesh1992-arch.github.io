@@ -131,11 +131,23 @@
       margin: 0 0 25px;
     }
 
-    /* Summary Text */
-    .summary-text {
-        font-size: 16px;
+    /* Highlights Section */
+    .highlights-list {
+        list-style: none;
+        padding: 0;
+    }
+    .highlights-list li {
+        margin-bottom: 12px;
+        position: relative;
+        padding-left: 18px;
         color: var(--ink);
-        max-width: 95%;
+    }
+    .highlights-list li::before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        color: var(--accent);
+        font-weight: bold;
     }
 
     /* Job Item (Grid Layout) */
@@ -151,7 +163,7 @@
       color: var(--muted);
       font-weight: 600;
       text-align: right;
-      padding-top: 4px; /* Align with title */
+      padding-top: 4px;
       font-variant-numeric: tabular-nums;
     }
 
@@ -173,7 +185,7 @@
     .job-details ul {
       margin: 10px 0 0;
       padding-left: 18px;
-      color: var(--ink); /* Darker text for readability */
+      color: var(--ink);
       font-size: 15px;
     }
     
@@ -203,33 +215,18 @@
     /* Italics for publication titles */
     .pub-list em { color: var(--accent); font-style: italic; }
 
-    /* Education & Skills */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 20px;
+    /* Education Simple List */
+    .education-item {
+        margin-bottom: 16px;
     }
-    
-    .skill-category {
-        background: var(--bg);
-        padding: 15px;
-        border-radius: 8px;
-    }
-
-    .skill-category strong {
-        display: block;
-        color: var(--accent);
-        margin-bottom: 6px;
-        font-size: 14px;
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
-    }
-    
-    .skill-category span {
+    .education-item h4 {
+        margin: 0 0 4px;
+        font-size: 17px;
         color: var(--ink);
+    }
+    .education-item span {
+        color: var(--muted);
         font-size: 15px;
-        display: block;
-        line-height: 1.4;
     }
 
     /* Print Button */
@@ -256,16 +253,12 @@
       .cv-header { flex-direction: column; gap: 20px; }
       .cv-contact { text-align: left; }
       
-      /* Stack the grid on mobile */
       .job-item { grid-template-columns: 1fr; gap: 6px; margin-bottom: 30px; }
       .job-date { text-align: left; color: var(--accent); margin-bottom: 4px; }
       
       header { flex-direction: column; gap: 15px; margin-top: 30px; }
     }
     
-    /* =========================
-       PRINT STYLES
-    ========================= */
     @media print {
         header, .print-btn { display: none; }
         body { background: white; }
@@ -278,7 +271,7 @@
             max-width: 100%; 
         }
         a { text-decoration: none; color: black; }
-        .job-item { break-inside: avoid; } /* Prevents splitting jobs across pages */
+        .job-item { break-inside: avoid; }
     }
   </style>
 </head>
@@ -308,10 +301,13 @@
     </div>
 
     <section class="cv-section">
-      <h3>Summary</h3>
-      <p class="summary-text">
-        Public policy specialist with 10 years of experience in policy research, analysis, and advisory across inclusive growth, poverty reduction, and governance reforms[cite: 815]. Proven record of supporting senior leadership in state-level planning, designing gender-inclusive policies, and strengthening institutional frameworks through multi-stakeholder engagement in partnership with national governments, UNDP, and multilateral partners[cite: 816, 817].
-      </p>
+      <h3>Public Policy Highlights</h3>
+      <ul class="highlights-list">
+        <li><strong>Uttarakhand Employment Generation Strategy (2023):</strong> Led the drafting of the strategy document, addressing the skill development and employment needs of over 7 million working-age individuals in the state.</li>
+        <li><strong>Uttarakhand Women Policy (2023):</strong> Contributed as a drafting committee member, focusing on the holistic development of 5.5 million women and girls in the state.</li>
+        <li><strong>COVID-19 Relief Volunteer (Apr-Jun ’20):</strong> Managed Delhi Government’s 3 hunger relief centres catering to over 7,000 people daily; coordinated the dignified cremation of COVID-19 victims following safety protocols.</li>
+        <li><strong>SDG Monitoring (2019):</strong> Led a citizen-generated data project highlighting the status of India’s marginalised groups on Sustainable Development Goals (SDGs) earlier excluded from official SDG frameworks.</li>
+      </ul>
     </section>
 
     <section class="cv-section">
@@ -321,26 +317,24 @@
         <div class="job-date">June 2023 – Present</div>
         <div class="job-details">
           <h4>Policy Officer</h4>
-          <span class="company">United Nations Development Programme (UNDP) | India</span>
+          <span class="company">United Nations Development Programme (UNDP), India Country Office</span>
           <ul>
-            <li><strong>Strategy & Inclusion:</strong> Led policy research and programme implementation for employment generation and inclusive growth initiatives under the UNSDF 2023-27[cite: 821].</li>
-            <li><strong>Flagship Reports:</strong> Provided technical backstopping for India's 2023 Multidimensional Poverty Index (with Oxford PHI & NITI Aayog) and drafted the India section of the Asia-Pacific Human Development Report 2023[cite: 824, 825].</li>
-            <li><strong>Policy Advocacy:</strong> Coordinated the 'Economic Policy for Women-Led Development' network with the GATES Foundation and ICRIER, facilitating high-level discussions with PM-EAC[cite: 823].</li>
-            <li><strong>Capacity Building:</strong> Led knowledge-building sessions for UNDP staff on employment, HDR 2023-24, and election analysis[cite: 828].</li>
+            <li>Provided policy research support for knowledge products and evidence-based programming on multidimensional poverty, care economy, access to justice, human development, and SDGs.</li>
+            <li>Organised policy dialogues with think tanks, government bodies, and civil society organisations on flagship policy products, including India’s MPI, Asia-Pacific HDR, Global HDR and SDG India Index.</li>
+            <li>Prepared monthly political-economy briefs and drafted talking points and press releases to support the senior leadership team in decision-making and external engagements.</li>
+            <li>Led four knowledge-building sessions for UNDP India staff on employment, HDR 2023-24, general election results 2024, and diversity, equity and inclusion.</li>
           </ul>
         </div>
       </div>
 
       <div class="job-item">
-        <div class="job-date">July 2021 – June 2023</div>
+        <div class="job-date">Aug 2021 – June 2023</div>
         <div class="job-details">
           <h4>Public Policy Expert (Secondment)</h4>
-          <span class="company">Uttarakhand State Government | Dept. of Planning</span>
+          <span class="company">Uttarakhand State Government</span>
           <ul>
-            <li><strong>State Employment Strategy (2023):</strong> Co-authored the final strategy document, conducting labor market analysis (LFPR, NEET) and designing a state-wide Youth Aspiration Survey[cite: 833, 834, 837].</li>
-            <li><strong>State Women's Policy (2024):</strong> Served on the drafting committee and authored the white paper on women's human development status[cite: 841, 843].</li>
-            <li><strong>Institutional Reform:</strong> Conceptualized the organizational structure of SETU Aayog (State Planning Commission) and drafted the state's first Monitoring and Evaluation Policy[cite: 847, 856].</li>
-            <li><strong>Legislative Reform:</strong> Managed the rationalization and repeal of legacy laws, liaising with the Vidhan Sabha Secretariat[cite: 860, 864].</li>
+            <li>Led the background work and drafting of i) Uttarakhand M & E Policy 2024, ii) Uttarakhand Employment Generation Strategy 2023, iii) Uttarakhand Women Policy 2022, iv) Uttarakhand Policymaking Toolkit.</li>
+            <li>Collaborated with departmental secretaries to organise training programmes, visioning workshops, conferences, and knowledge-sharing initiatives to strengthen public policy processes in the state.</li>
           </ul>
         </div>
       </div>
@@ -349,10 +343,10 @@
         <div class="job-date">Sep 2019 – July 2021</div>
         <div class="job-details">
           <h4>Fellow, Speaker’s Office</h4>
-          <span class="company">Delhi Legislative Assembly</span>
+          <span class="company">Delhi Assembly Research Centre</span>
           <ul>
-            <li>Provided policy research support to ad hoc and standing committees on legislative matters[cite: 882].</li>
-            <li>Drafted six committee reports and tracked departmental budgets for Health, Education, and Social Justice to ensure procedural compliance[cite: 883, 885].</li>
+            <li>Provided policy research support to ad hoc and standing committees to examine and prepare recommendations on legislative matters referred by the Speaker of the Delhi Legislative Assembly.</li>
+            <li>Drafted notices, letters, minutes of committee proceedings, and six committee reports.</li>
           </ul>
         </div>
       </div>
@@ -363,22 +357,49 @@
           <h4>Research Project Coordinator</h4>
           <span class="company">Wada Na Todo Abhiyan</span>
           <ul>
-            <li>Led the "100 Hotspots" project (funded by GIZ/BfDW), developing tools to gather citizen-generated data on 24 SDG indicators across 10 states[cite: 889, 891].</li>
-            <li>Co-authored India's first SDG review report on marginalized groups, earning 'SDG Good Practice' recognition from UN-DESA[cite: 893].</li>
+            <li>Led the “100 Hotspots” project: Developed a conceptual framework and tool for gathering citizen-generated data on 24 SDG indicators from 10 marginalised groups, including urban poor and tribal communities.</li>
+            <li>Trained and managed a team of 30 volunteers collecting quantitative and qualitative data across 10 states.</li>
+            <li>Co-authored India’s first-ever SDG review report on marginalised groups and presented it at the 2019 UN High Level Political Forum, earning SDG Good Practice recognition from UN-DESA.</li>
+            <li>Successfully advocated for the Indian government to incorporate the community-specific insights from the project into India’s 2020 Voluntary National Report on SDGs.</li>
           </ul>
         </div>
       </div>
 
       <div class="job-item">
-        <div class="job-date">Earlier Roles</div>
+        <div class="job-date">Jan 2018 – Aug 2018</div>
         <div class="job-details">
+          <h4>Policy Consultant (Part-Time)</h4>
+          <span class="company">OXFAM India</span>
           <ul>
-            <li><strong>Policy Consultant, Oxfam India (Jan–Aug 2018):</strong> Conducted background research for the India Inequality Report 2019 and authored briefs on gender and education[cite: 896, 897].</li>
-            <li><strong>Research Consultant, Bharat Rural Livelihoods Foundation (2017):</strong> Conducted fieldwork for the Tribal Development Report and impact assessments of MGNREGS in Rajasthan[cite: 900, 902].</li>
-            <li><strong>Legislative Assistant (LAMP Fellow), PRS Legislative Research (2015-16):</strong> Assisted MP Mr. P.L. Punia with parliamentary questions and legislative briefs[cite: 905].</li>
+            <li>India Inequality Report 2019: Conducted background research, including identifying authors, literature review, data analysis, and fieldwork for data collection.</li>
+            <li>Authored four policy briefs and six opinion articles to advance Oxfam India's thought leadership on policy areas such as inequality, gender, education, health, and climate change issues.</li>
           </ul>
         </div>
       </div>
+
+      <div class="job-item">
+        <div class="job-date">Jan 2017 – Nov 2017</div>
+        <div class="job-details">
+          <h4>Research Consultant (Part-Time)</h4>
+          <span class="company">Bharat Rural Livelihoods Foundation</span>
+          <ul>
+            <li>Tribal Development Report (Routledge 2022): Conducted literature reviews, data analysis, and fieldwork across 10 states to document human development issues among tribal communities.</li>
+            <li>Impact Assessment of National Rural Employment Guarantee Scheme in Rajasthan: Collected and analysed primary data on the scheme’s performance and co-authored the report.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="job-item">
+        <div class="job-date">Jun 2015 – May 2016</div>
+        <div class="job-details">
+          <h4>Legislative Assistant (LAMP Fellow)</h4>
+          <span class="company">PRS Legislative Research</span>
+          <ul>
+            <li>Assisted Mr P. L. Punia, MP (Rajya Sabha), with listed parliament business by preparing analytical briefs, drafting parliamentary questions, and notices to raise critical issues affecting disadvantaged groups.</li>
+          </ul>
+        </div>
+      </div>
+
     </section>
 
     <section class="cv-section">
@@ -387,31 +408,31 @@
       <div class="pub-category">
         <h4>Government Reports & Policy Briefs</h4>
         <ul class="pub-list">
-          <li>Rajesh, K., Sundaram, R.M., & Pant, M.K. (2023). <em>Uttarakhand State Employment Generation Strategy</em>. Centre for Public Policy and Good Governance, Govt of Uttarakhand[cite: 916].</li>
-          <li>Rajesh, K. (2022). <em>Declining Female Labour Force Participation Rate in Uttarakhand: Issues and the Way Forward</em>. Policy Brief No. 01. CPPGG, Govt of Uttarakhand[cite: 918].</li>
-          <li>Rajesh, K. (2022). "Labour Market Situation in Uttarakhand". In <em>Uttarakhand Economic Survey 2021-22</em>. Directorate of Economics & Statistics, Govt of Uttarakhand[cite: 920].</li>
-          <li>Rajesh, K. (2021). <em>Examining the Issue of Certain Entries in the Central List of Other Backward Classes Pertaining to NCT of Delhi</em>. Committee on Welfare of OBCs, Delhi Legislative Assembly[cite: 921].</li>
-          <li>Rajesh, K. (2021). <em>Recommendations for Improved and Effective Functioning of the Commission for Other Backward Classes</em>. Committee on Welfare of OBCs, Delhi Legislative Assembly[cite: 923].</li>
-          <li>Rajesh, K. (2019). <em>Alleged Non-Compliance of Free Treatment for EWS Patients in Private Hospitals of Delhi</em>. Committee on Petitions, Delhi Legislative Assembly[cite: 925].</li>
+          <li>Rajesh, K., Sundaram, R.M., & Pant, M.K. (2023). <em>Uttarakhand State Employment Generation Strategy</em>. Centre for Public Policy and Good Governance, Govt of Uttarakhand.</li>
+          <li>Rajesh, K. (2022). <em>Declining Female Labour Force Participation Rate in Uttarakhand: Issues and the Way Forward</em>. Policy Brief No. 01. CPPGG, Govt of Uttarakhand.</li>
+          <li>Rajesh, K. (2022). "Labour Market Situation in Uttarakhand". In <em>Uttarakhand Economic Survey 2021-22</em>. Directorate of Economics & Statistics, Govt of Uttarakhand.</li>
+          <li>Rajesh, K. (2021). <em>Examining the Issue of Certain Entries in the Central List of Other Backward Classes Pertaining to NCT of Delhi</em>. Committee on Welfare of OBCs, Delhi Legislative Assembly.</li>
+          <li>Rajesh, K. (2021). <em>Recommendations for Improved and Effective Functioning of the Commission for Other Backward Classes</em>. Committee on Welfare of OBCs, Delhi Legislative Assembly.</li>
+          <li>Rajesh, K. (2019). <em>Alleged Non-Compliance of Free Treatment for EWS Patients in Private Hospitals of Delhi</em>. Committee on Petitions, Delhi Legislative Assembly.</li>
         </ul>
       </div>
 
       <div class="pub-category">
         <h4>Policy & Research Publications</h4>
         <ul class="pub-list">
-          <li>Rajesh, K., & Namala, A. (2019). <em>The 100 HotSpots: Snapshot of Socially Excluded and Vulnerable Population Groups & SDGs in India</em>. New Delhi: Wada Na Todo Abhiyan[cite: 928].</li>
-          <li>Rajesh, K. (2018). <em>Towards Gender-Inclusive Development in Odisha, India: Some Policy Prescriptions</em>. Policy Brief No. 34, Oxfam India[cite: 930].</li>
-          <li>Golder, S., & Rajesh, K. (2018). <em>District Mineral Foundation: Some Issues and Recommendations</em>. Policy Brief No. 33, Oxfam India[cite: 931].</li>
-          <li>Rajesh, K. (2018). <em>Public Provisioning of Elementary Education in India: Issues Around Public Financing</em>. Policy Brief No. 32, Oxfam India[cite: 932].</li>
-          <li>Rajesh, K. (2018). <em>Making Development Gender-Inclusive in Jharkhand, India</em>. Policy Brief No. 31, Oxfam India[cite: 934].</li>
+          <li>Rajesh, K., & Namala, A. (2019). <em>The 100 HotSpots: Snapshot of Socially Excluded and Vulnerable Population Groups & SDGs in India</em>. New Delhi: Wada Na Todo Abhiyan.</li>
+          <li>Rajesh, K. (2018). <em>Towards Gender-Inclusive Development in Odisha, India: Some Policy Prescriptions</em>. Policy Brief No. 34, Oxfam India.</li>
+          <li>Golder, S., & Rajesh, K. (2018). <em>District Mineral Foundation: Some Issues and Recommendations</em>. Policy Brief No. 33, Oxfam India.</li>
+          <li>Rajesh, K. (2018). <em>Public Provisioning of Elementary Education in India: Issues Around Public Financing</em>. Policy Brief No. 32, Oxfam India.</li>
+          <li>Rajesh, K. (2018). <em>Making Development Gender-Inclusive in Jharkhand, India</em>. Policy Brief No. 31, Oxfam India.</li>
         </ul>
       </div>
 
       <div class="pub-category">
         <h4>Opinion Articles</h4>
         <ul class="pub-list">
-          <li>Rajesh, K. (2018, Aug 18). "Why More Women Are Needed in Parliament". <em>Business Standard</em>[cite: 936].</li>
-          <li>Rajesh, K. (2018, July 28). "Reducing Maternal Mortality: Miles to Go". <em>Business Standard</em>[cite: 937].</li>
+          <li>Rajesh, K. (2018, Aug 18). "Why More Women Are Needed in Parliament". <em>Business Standard</em>.</li>
+          <li>Rajesh, K. (2018, July 28). "Reducing Maternal Mortality: Miles to Go". <em>Business Standard</em>.</li>
         </ul>
       </div>
     </section>
@@ -419,49 +440,14 @@
     <section class="cv-section">
       <h3>Education</h3>
       
-      <div class="job-item">
-        <div class="job-date">Completed</div>
-        <div class="job-details">
-          <h4>Certificate in Public Policy Analysis</h4>
-          <span class="company">London School of Economics & Political Science (LSE)</span>
-          <ul><li>Online Certificate[cite: 907].</li></ul>
-        </div>
+      <div class="education-item">
+        <h4>M.A. Development and Labour Studies</h4>
+        <span>Jawaharlal Nehru University, New Delhi</span>
       </div>
       
-      <div class="job-item">
-        <div class="job-date">2016 – 2018</div>
-        <div class="job-details">
-          <h4>M.A. Development Studies</h4>
-          <span class="company">Jawaharlal Nehru University (JNU), New Delhi</span>
-          <ul><li>Focus: Development and Labour Studies[cite: 908].</li></ul>
-        </div>
-      </div>
-
-      <div class="job-item">
-        <div class="job-date">2011 – 2014</div>
-        <div class="job-details">
-          <h4>B. Com (Honours)</h4>
-          <span class="company">Banaras Hindu University (BHU), Varanasi</span>
-          <ul><li>First Division[cite: 909].</li></ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="cv-section" style="margin-bottom:0;">
-      <h3>Skills & Training</h3>
-      <div class="skills-grid">
-        <div class="skill-category">
-            <strong>Certifications</strong>
-            <span>Results-Based Project Management (Univ. of Witwatersrand, 2021) [cite: 912]</span>
-        </div>
-        <div class="skill-category">
-            <strong>Tools</strong>
-            <span>MS Office Suite, Policy Analysis Frameworks [cite: 913]</span>
-        </div>
-        <div class="skill-category">
-            <strong>Languages</strong>
-            <span>English (Fluent), Hindi (Native) [cite: 911]</span>
-        </div>
+      <div class="education-item">
+        <h4>B. Com (Honours)</h4>
+        <span>Banaras Hindu University, Varanasi</span>
       </div>
     </section>
 
