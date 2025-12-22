@@ -3,8 +3,8 @@
   "title": {
     "text": "The Capacity Paradox: Index Scores vs. Residual HDI",
     "subtitle": "Comparing State Capacity Inputs against Income-Adjusted Outcomes",
-    "fontSize": 16,
-    "subtitleFontSize": 12,
+    "fontSize": 14,
+    "subtitleFontSize": 11,
     "anchor": "middle"
   },
   "width": 600,
