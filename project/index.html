@@ -143,29 +143,17 @@
     </section>
 
     <!-- TOOLS BOX -->
-    <section class="section" id="tools">
-      <div class="card">
-        <h3>Tools & methods</h3>
-        <div class="two-col">
-          <div>
-            <p>Workflow</p>
-            <ul>
-              <li>Python (pandas/sklearn) for cleaning + regressions.</li>
-              <li>Residual approach: predict HDI from log(GNI), then analyse residuals.</li>
-              <li>Standardised betas (z-scores) for comparability across variables.</li>
-            </ul>
-          </div>
-          <div>
-            <p>Challenges</p>
-            <ul>
-              <li>Non-aligned years across indices (treated as proxies; noted).</li>
-              <li>Missing UT budget data (UTs dropped for spending models).</li>
-              <li>Cross-sectional associations only (no causal claims).</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
+   <section class="section" id="tools">
+  <div class="card">
+    <h3>Tools</h3>
+    <p>
+      All data cleaning, merging, and analysis were conducted in Python using <em>pandas</em>, <em>NumPy</em>, <em>scikit-learn</em>, and <em>statsmodels</em>. National and state-level HDI series were reshaped into tidy time-series and cross-sectional formats. Income-adjusted HDI performance was estimated using OLS regressions of HDI on log GNI per capita, with residuals used as the core analytical metric. Visualisations were implemented in Vega-Lite and embedded via HTML.
+    </p>
+    <p>
+      Key challenges included non-aligned years across data sources, most notably NITI Aayog’s Health Index (2021) and School Education Quality Index (2019) relative to 2022 state HDI estimates. These were treated as slow-moving structural proxies, appropriate for cross-state comparison. Union Territories were dropped from spending models due to missing budget data. All results are descriptive and cross-sectional, with no causal claims.
+    </p>
+  </div>
+</section>
 
 
 <section class="section" id="conclusions">
