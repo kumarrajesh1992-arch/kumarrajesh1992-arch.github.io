@@ -4,7 +4,8 @@
     "text": "Employment Intensity vs. Efficiency Outcomes",
     "subtitle": "States sorted by Worker-Population Ratio (WPR). Does working more lead to better HDI residuals?",
     "anchor": "middle",
-    "fontSize": 16
+    "fontSize": 14,
+    "subtitleFontSize": 11
   },
   "width": 600,
   "height": {"step": 20},
