@@ -3,7 +3,9 @@
   "title": {
     "text": "HDI Residuals after Accounting for Income (2022)",
     "subtitle": "Positive values indicate HDI overperformance relative to income | Data Source: Global Data Lab",
-    "anchor": "middle"
+    "anchor": "middle",
+    "fontSize": 14,
+    "subtitleFontSize": 11
   },
   "data": {
     "url": "https://raw.githubusercontent.com/kumarrajesh1992-arch/kumarrajesh1992-arch.github.io/refs/heads/main/CC10_state_residuals_2023.csv",
