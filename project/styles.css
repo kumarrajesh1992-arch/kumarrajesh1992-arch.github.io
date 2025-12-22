@@ -212,7 +212,7 @@ main {
   font-size: 18px;
   font-weight: 700;
   color: var(--ink);
-  text-align: center; /* FIXED: 'middle' was invalid CSS */
+  text-align: left; /* FIXED: 'middle' was invalid CSS */
 }
 
 .viz .caption {
