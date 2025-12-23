@@ -120,12 +120,12 @@
     },
     {
       "description": "LAYER 2: HDI Threshold Line (Vertical)",
-      "mark": {"type": "rule", "strokeDash": [4, 4], "color": "#555", "size": 2},
+      "mark": {"type": "rule", "strokeDash": [4, 4], "color": "#bfbbbb", "size": 2},
       "encoding": {"x": {"datum": 0.7}}
     },
     {
       "description": "LAYER 3: Economic Threshold Line (Horizontal)",
-      "mark": {"type": "rule", "strokeDash": [4, 4], "color": "#555", "size": 2},
+      "mark": {"type": "rule", "strokeDash": [4, 4], "color": "#bfbbbb", "size": 2},
       "encoding": {"y": {"datum": 9.5}}
     },
     {
