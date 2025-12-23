@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
-    "text": "Trends in Statewise HDI Score in India (1990–2022)",
-    "subtitle": "Bubble chart with year slider + state filter | Data Source: Global Data Lab",
+    "text": "Trends in Statewise HDI Score in India",
+    "subtitle": "Quadrants: HDI Split at 0.700 (High Dev) | GNI Split at 9.5 as per WB 2024 HIC Classification",
     "anchor": "middle",
     "fontSize": 14,
     "subtitleFontSize": 11
@@ -11,16 +11,11 @@
     "url": "https://raw.githubusercontent.com/kumarrajesh1992-arch/kumarrajesh1992-arch.github.io/refs/heads/main/Kumar%20Main%20Project.csv",
     "format": {
       "type": "csv",
-      "parse": {
-        "Year": "number",
-        "SHDI": "number",
-        "LGNIC": "number"
-      }
+      "parse": {"Year": "number", "SHDI": "number", "LGNIC": "number"}
     }
   },
   "width": 700,
   "height": 400,
-
   "params": [
     {
       "name": "year_sel",
@@ -41,7 +36,6 @@
         "name": "State: ",
         "options": [
           "All",
-
           "Andhra Pradesh",
           "Arunachal Pradesh",
           "Assam",
@@ -70,7 +64,6 @@
           "Uttar Pradesh",
           "Uttarakhand",
           "West Bengal",
-
           "Andaman and Nicobar Islands",
           "Chandigarh",
           "Dadra and Nagar Haveli",
@@ -84,56 +77,107 @@
       }
     }
   ],
-
   "transform": [
-    { "filter": "datum.Year == year_sel" },
-    {
-      "filter": "state_sel == 'All' || datum.State == state_sel"
-    }
+    {"filter": "datum.Year == year_sel"},
+    {"filter": "state_sel == 'All' || datum.State == state_sel"}
   ],
-
-  "mark": {
-    "type": "circle",
-    "opacity": 0.9
-  },
-
-  "encoding": {
-    "x": {
-      "field": "SHDI",
-      "type": "quantitative",
-      "title": "HDI score (0–1)",
-      "scale": { "domain": [0.3, 1], "clamp": true },
-      "axis": { "titlePadding": 12 }
-    },
-    "y": {
-      "field": "LGNIC",
-      "type": "quantitative",
-      "title": "log GNI per capita (2021 PPP$)",
-      "scale": { "domain": [6, 12], "nice": false, "clamp": true },
-      "axis": { "format": ".2f", "titlePadding": 14 }
-    },
-    "color": {
-      "field": "HDI_category",
-      "type": "nominal",
-      "title": "HDI Category",
-      "scale": {
-        "domain": ["Very High", "High", "Medium", "Low"],
-        "range": ["#084081", "#2b8cbe", "#7bccc4", "#bae4bc"]
-      },
-      "legend": {
-        "labelExpr": "datum.value === 'Very High' ? 'Very High (≥ 0.800)' : datum.value === 'High' ? 'High (0.700–0.799)' : datum.value === 'Medium' ? 'Medium (0.550–0.699)' : 'Low (< 0.550)'"
+  "layer": [
+    {
+      "description": "LAYER 1: Main Bubble Chart",
+      "mark": {"type": "circle", "opacity": 0.9},
+      "encoding": {
+        "x": {
+          "field": "SHDI",
+          "type": "quantitative",
+          "title": "HDI score (0–1)",
+          "scale": {"domain": [0.3, 1], "clamp": true}
+        },
+        "y": {
+          "field": "LGNIC",
+          "type": "quantitative",
+          "title": "log GNI per capita (2021 PPP$)",
+          "scale": {"domain": [6, 12], "nice": false, "clamp": true}
+        },
+        "color": {
+          "field": "HDI_category",
+          "type": "nominal",
+          "title": "HDI Category",
+          "scale": {
+            "domain": ["Very High", "High", "Medium", "Low"],
+            "range": ["#084081", "#2b8cbe", "#7bccc4", "#bae4bc"]
+          },
+          "legend": {
+            "labelExpr": "datum.value === 'Very High' ? 'Very High (≥ 0.800)' : datum.value === 'High' ? 'High (0.700–0.799)' : datum.value === 'Medium' ? 'Medium (0.550–0.699)' : 'Low (< 0.550)'"
+          }
+        },
+        "size": {"value": 320},
+        "tooltip": [
+          {"field": "State", "title": "State"},
+          {"field": "SHDI", "title": "HDI", "format": ".3f"},
+          {"field": "LGNIC", "title": "Log GNI", "format": ".2f"},
+          {"field": "HDI_category", "title": "Category"}
+        ]
       }
     },
-    "size": { "value": 320 },
-    "tooltip": [
-      { "field": "State", "type": "nominal", "title": "State" },
-      { "field": "Year", "type": "quantitative", "title": "Year" },
-      { "field": "SHDI", "type": "quantitative", "title": "HDI", "format": ".3f" },
-      { "field": "LGNIC", "type": "quantitative", "title": "log GNI per capita", "format": ".2f" },
-      { "field": "HDI_category", "type": "nominal", "title": "HDI category" }
-    ]
-  },
-
+    {
+      "description": "LAYER 2: HDI Threshold Line (Vertical)",
+      "mark": {"type": "rule", "strokeDash": [4, 4], "color": "#555", "size": 2},
+      "encoding": {"x": {"datum": 0.7}}
+    },
+    {
+      "description": "LAYER 3: Economic Threshold Line (Horizontal)",
+      "mark": {"type": "rule", "strokeDash": [4, 4], "color": "#555", "size": 2},
+      "encoding": {"y": {"datum": 9.5}}
+    },
+    {
+      "description": "LAYER 4: Quadrant Labels",
+      "data": {
+        "values": [
+          {
+            "x": 0.85,
+            "y": 11.8,
+            "text": "High GNI PC + High HDI",
+            "align": "right",
+            "baseline": "top"
+          },
+          {
+            "x": 0.50,
+            "y": 11.8,
+            "text": "High GNI PC + Low HDI",
+            "align": "left",
+            "baseline": "top"
+          },
+          {
+            "x": 0.85,
+            "y": 6.2,
+            "text": "Low GNI PC + High HDI",
+            "align": "right",
+            "baseline": "bottom"
+          },
+          {
+            "x": 0.50,
+            "y": 6.2,
+            "text": "Low GNI PC + Low HDI",
+            "align": "left",
+            "baseline": "bottom"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text", 
+        "fontSize": 10, 
+        "fontWeight": "normal", 
+        "color": "#666"
+      },
+      "encoding": {
+        "x": {"field": "x", "type": "quantitative"},
+        "y": {"field": "y", "type": "quantitative"},
+        "text": {"field": "text"},
+        "align": {"field": "align"},
+        "baseline": {"field": "baseline"}
+      }
+    }
+  ],
   "config": {
     "axis": {
       "grid": true,
@@ -141,6 +185,6 @@
       "labelFontSize": 11,
       "titleFontSize": 12
     },
-    "view": { "stroke": "transparent" }
+    "view": {"stroke": "transparent"}
   }
 }
