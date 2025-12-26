@@ -1,0 +1,15 @@
+store_id,price_type,price
+1,mean_price,2.9976338658146964
+2,mean_price,3.046484771573604
+3,mean_price,2.6862993469872367
+4,mean_price,2.832593831289483
+5,mean_price,1.730338517840805
+8,mean_price,3.1878268520147808
+9,mean_price,3.15202850877193
+1,median_price,3.3
+2,median_price,3.3
+3,median_price,2.69
+4,median_price,2.99
+5,median_price,1.75
+8,median_price,3.2
+9,median_price,3.25
