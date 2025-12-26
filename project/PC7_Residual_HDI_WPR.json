@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
     "text": "Employment Intensity vs. Efficiency Outcomes",
-    "subtitle": "States sorted by Worker-Population Ratio (WPR). Does working more lead to better HDI residuals?",
+    "subtitle": "States sorted by Worker-Population Ratio (WPR). Does working more lead to better HDI residuals? ",
     "anchor": "middle",
     "fontSize": 14,
     "subtitleFontSize": 11
@@ -22,7 +22,7 @@
     "y": {
       "field": "State",
       "type": "nominal",
-      "sort": {"field": "WPR", "order": "descending"},
+      "sort": {"field": "WPR", "op": "max", "order": "descending"},
       "axis": {"title": null, "labelFontSize": 11}
     }
   },
@@ -38,8 +38,16 @@
         },
         "color": {
           "field": "Performance",
-          "scale": {"range": ["#2ca02c", "#d62728"]},
-          "legend": null
+          "type": "nominal",
+          "scale": {
+            "domain": ["Over-Performer", "Under-Performer"],
+            "range": ["#2ca02c", "#d62728"]
+          },
+          "legend": {
+            "title": "Performance Status",
+            "orient": "bottom",
+            "direction": "horizontal"
+          }
         }
       }
     },
