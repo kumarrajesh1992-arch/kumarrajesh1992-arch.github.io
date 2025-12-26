@@ -4,12 +4,12 @@
     "text": "Trend in India's Human Development Index Score (1990–2023)",
     "subtitle": "HDI and constituent indicators over time (select using dropdown) | Source: UNDP HDRO",
     "anchor": "middle",
-    "fontSize": 14,
+    "fontSize": 16,
     "subtitleFontSize": 11
   },
   "data": {
     "url": "https://raw.githubusercontent.com/kumarrajesh1992-arch/kumarrajesh1992-arch.github.io/refs/heads/main/CC9_India_HDI_tidy.csv",
-    "format": {"type": "csv"}
+    "format": { "type": "csv" }
   },
   "params": [
     {
@@ -46,44 +46,87 @@
       ],
       "as": ["Indicator", "Value"]
     },
-    {"filter": "datum.Indicator == indicator_sel"}
+    { "filter": "datum.Indicator == indicator_sel" }
   ],
-  "mark": {
-    "type": "line",
-    "point": {"filled": true, "size": 60},
-    "strokeWidth": 2
-  },
-  "encoding": {
-    "x": {
-      "field": "Year",
-      "type": "quantitative",
-      "title": "Year",
-      "axis": {"format": "d", "tickMinStep": 1, "labelAngle": 0}
+  "layer": [
+    {
+      "mark": {
+        "type": "line",
+        "point": { "filled": true, "size": 60 },
+        "strokeWidth": 2
+      },
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "quantitative",
+          "title": "Year",
+          "axis": { "format": "d", "tickMinStep": 1, "labelAngle": 0 }
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "axis": {
+            "titlePadding": 12,
+            "title": {
+              "expr": "indicator_sel == 'HDI' ? 'HDI score (0–1)' : indicator_sel == 'Life_expectancy' ? 'Years' : indicator_sel == 'Mean_years_schooling' ? 'Years' : indicator_sel == 'Expected_years_schooling' ? 'Years' : 'GNI per capita (2021 PPP$)'"
+            }
+          }
+        },
+        "tooltip": [
+          { "field": "Year", "type": "quantitative", "title": "Year", "format": "d" },
+          { "field": "Indicator", "type": "nominal", "title": "Indicator" },
+          { "field": "Value", "type": "quantitative", "title": "Value", "format": ".3f" }
+        ]
+      }
     },
-    "y": {
-      "field": "Value",
-      "type": "quantitative",
-      "axis": {
-        "titlePadding": 12,
-        "title": {
-          "expr": "indicator_sel == 'HDI' ? 'HDI score (0–1)' : indicator_sel == 'Life_expectancy' ? 'Years' : indicator_sel == 'Mean_years_schooling' ? 'Years' : indicator_sel == 'Expected_years_schooling' ? 'Years' : 'GNI per capita (2021 PPP$)'"
+
+    {
+      "transform": [
+        { "filter": "indicator_sel == 'GNI_per_capita'" }
+      ],
+      "mark": {
+        "type": "rule",
+        "strokeDash": [6, 4],
+        "strokeWidth": 1
+      },
+      "encoding": {
+        "x": {
+          "datum": 2003,
+          "type": "quantitative"
         }
       }
     },
-    "tooltip": [
-      {"field": "Year", "type": "quantitative", "title": "Year", "format": "d"},
-      {"field": "Indicator", "type": "nominal", "title": "Indicator"},
-      {
-        "field": "Value",
-        "type": "quantitative",
-        "title": "Value",
-        "format": ".3f"
+
+    {
+      "transform": [
+        { "filter": "indicator_sel == 'GNI_per_capita'" }
+      ],
+      "data": {
+        "values": [
+          {
+            "Year": 2003,
+            "Label": "Early-2000s inflection: income growth accelerates faster than health & education gains"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "top",
+        "dx": 6,
+        "dy": 6,
+        "fontSize": 11
+      },
+      "encoding": {
+        "x": { "field": "Year", "type": "quantitative" },
+        "y": { "value": 10 },
+        "text": { "field": "Label" }
       }
-    ]
-  },
+    }
+  ],
   "width": 700,
   "height": 400,
-  "padding": {"left": 60, "top": 20, "right": 20, "bottom": 40},
+  "padding": { "left": 60, "top": 20, "right": 20, "bottom": 40 },
   "config": {
     "axis": {
       "grid": true,
@@ -91,6 +134,6 @@
       "labelFontSize": 11,
       "titleFontSize": 12
     },
-    "view": {"stroke": "transparent"}
+    "view": { "stroke": "transparent" }
   }
 }
