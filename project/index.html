@@ -75,6 +75,33 @@
     </ul>
   </div>
 </section>
+<section class="section" id="tools">
+  <div class="card">
+    <h3>Tools & Methodological Notes</h3>
+       <p style="margin-bottom: 15px;">
+   <p>
+  All data cleaning, merging, and analysis were conducted in Python using
+  <em>pandas</em>, <em>NumPy</em>, <em>scikit-learn</em>, and <em>statsmodels</em>.
+  National and state-level HDI series were reshaped into tidy time-series and
+  cross-sectional formats. Income-adjusted HDI performance was estimated using
+  linear regression models of HDI on log GNI per capita, implemented in
+  <em>statsmodels</em> for statistical inference and <em>scikit-learn</em> for
+  prediction and residual construction. Independent variables were standardised
+  (z-scores) using <em>scikit-learn</em> to enable coefficient comparability
+  across models. Visualisations were built in Vega-Lite and embedded via HTML
+  and JavaScript.
+</p>
+
+<p>
+  A key challenge was non-aligned years across data sources, particularly
+  NITI Aayog’s Health Index (2021) and School Education Quality Index (2019)
+  relative to 2022 HDI estimates. These indices were treated as slow-moving
+  structural proxies, appropriate for cross-state comparison. Union Territories
+  were excluded from spending models due to missing budget data. Social structure data is from Census 2011 as census 2021 has not been conducted yet. All findings
+  are cross-sectional and descriptive, with no causal claims.
+</p>
+  </div>
+</section>
 
        <section class="section" id="charts">
       <div class="card">
@@ -83,20 +110,20 @@
         <div class="viz">
           <h4>Chart 1: India’s HDI trajectory since 1990</h4>
           <figure id="PC1"></figure>
-          <p class="caption">This interactive time-series tracks India’s national performance across HDI and its constituent indicators. Disaggregating income, health, and education (through the dropdown menu) reveals a structural divergence: while log GNI per capita accelerates sharply from the early 2000s, improvements in life expectancy and schooling progress more gradually. This divergence motivates the project’s core question: is income growth alone sufficient to deliver broad-based human development?</p>
+          <p class="caption">This interactive time-series visualisation shows that, India’s national HDI has improved steadily since 1990, but disaggregating its components (through the dropdown menu) reveals a structural divergence. While log GNI per capita accelerates sharply from the early 2000s, gains in health and education progress more gradually. This raises the core policy question of whether income growth alone is sufficient to deliver broad-based human development.</p>
         </div>
 
         <div class="viz">
           <h4>Chart 2: State HDI trajectories</h4>
           <figure id="PC2"></figure>
-          <p class="caption">Animating state trajectories from 1990 to 2022 reveals parallel upward movement along a common income–HDI gradient rather than dispersion. While states broadly improve together, persistent gaps remain in absolute income and HDI levels. Only Goa, Delhi, and Chandigarh enter the “High Income–High HDI” quadrant, while Kerala achieves high human development without high income, indicating that non-income factors shape development ceilings. Gujarat and Rajasthan remain trapped in the bottom-left, indicating that growth alone has not closed India's absolute human development divide.</p>
+          <p class="caption">Animating state trajectories from 1990 to 2022 exhibit largely parallel upward movement along a common income–HDI gradient rather than dispersion. While states broadly improve together, persistent gaps remain in absolute income and HDI levels. Only Goa, Delhi, and Chandigarh enter the “High Income–High HDI” quadrant by 2022. Kerala achieves high human development without high income, while several states, including Gujarat and Rajasthan, remian persistently in the lower-left quadrant, suggesting that growth alone has not closed India's absolute human development divide.</p>
         </div>
 
         <div class="viz">
   <h4>Chart 3: The Income Gradient- HDI vs log(GNI per capita)</h4>
   <figure id="PC3"></figure>
   <p class="caption">
-   A cross-sectional regression of HDI on GNI per capita shows a strong positive association (<span class="stat">R<sup>2</sup> ≈ 0.85</span>), confirming that income explains a substantial share of variation in HDI acorss states. However, the dispersion around the fitted line is policy-relevant. Manipur and Kerala outperform income-predicted benchmarks, while Gujarat and Andhra Pradesh underperform, underscoring that income is a necessary but insufficient condition for human development.
+   A cross-sectional regression of HDI on GNI per capita shows a strong positive association (<span class="stat">R<sup>2</sup> ≈ 0.85</span>), confirming that income explains a substantial share of variation in HDI acorss states. However, the dispersion around the fitted line is policy-relevant. Kerala and Manipur outperform income-predicted benchmarks, while Gujarat and Andhra Pradesh underperform, indicating that income is a necessary but insufficient condition for human development.
     <a href="https://colab.research.google.com/drive/1rdr_s0hrhpL9d3XxLFC4hnvcwvFsvrVg?usp=sharing"> View Google Colab Notebook</a>
   </p>
 </div>
@@ -104,7 +131,7 @@
         <div class="viz">
           <h4>Chart 4: The Efficiency Ranking- Residual HDI (actual − predicted) by state</h4>
           <figure id="PC4"></figure>
-          <p class="caption">Residual HDI ranks states by income-adjusted performance. Positive residuals indicate states that convert income into human development more effectively than predicted, while negative residuals reflect under-performance. Kerala, Sikkim, and Manipur consistently register positive residuals, whereas Gujarat and Andhra Pradesh exhibit large negative deviations. This distribution reframes the policy question on conversion effieciency- what factors enable some states to convert income into human development more effectively than others?
+          <p class="caption">To assess relative performance, the analysis constructs income-adjusted HDI residuals as a diagnostic measure of conversion efficiency. States such as Kerala, Sikkim, and Manipur consistently register positive residuals, while Gujarat and Andhra Pradesh exhibit large negative deviations. This reframes the policy question from whether income matters to why states differ in their ability to translate income into human development.
           <a href="https://colab.research.google.com/drive/1rdr_s0hrhpL9d3XxLFC4hnvcwvFsvrVg?usp=sharing"> View Google Colab Notebook</a>
           </p>
         </div>
@@ -133,47 +160,19 @@
   <figure id="PC7"></figure>
 
   <p class="caption">
-    This chart ranks states by their WPR, with bars representing their development efficiency (residual HDI). The visual pattern, or distinct lack of one, is telling. If higher employment drove better development, we would observe a clear concentration of positive residuals among high-WPR states.Instead, the chart shows a near-random distribution of over- and under-performers. High-employment states such as Himachal Pradesh (77%) and Chhattisgarh (73%) display sharply divergent outcomes. With a negligible <strong>R<sup>2</sup> &approx; 0.01</strong>, the evidence suggests that the quantity of employment alone matters far less than its quality in shaping human development outcomes.
+    This chart ranks states by their WPR, with bars representing their development efficiency (residual HDI). If higher employment drove better development, we would observe a clear concentration of positive residuals among high-WPR states.Instead, the chart shows a near-random distribution of over- and under-performers. High-employment states such as Himachal Pradesh (77%) and Chhattisgarh (73%) display sharply divergent outcomes. With a negligible <strong>R<sup>2</sup> &approx; 0.01</strong>, the evidence suggests that the quantity of employment alone matters far less than its quality in shaping human development outcomes.
   <a href="https://colab.research.google.com/drive/1ZS-PbL5KMhytC6fcKIKjF0w9eDOIdh0S?usp=sharing"> View Google Colab Notebook</a>
   </p>
 </div>
         <div class="viz">
           <h4>Chart 8: Do social structure and historical disadvantage shape income-adjusted HDI?</h4>
           <figure id="PC8"></figure>
-           <p class="caption">A statistically significant negative association (<i>p</i> &lt; 0.05) emerges between SC population share and income-adjusted HDI (see left panel). States with higher SC concentrations are more likely to underperform relative to income benchmarks, indicating that caste stratification functions as a unique "structural drag," impeding the conversion of economic growth into human development. However, no comparable relationship is observed for ST shares.
+           <p class="caption">A statistically significant negative association (<i>p</i> &lt; 0.05) is observed between SC population share and income-adjusted HDI (see left panel), indicating that caste-based disadvantage function as a structural drag on human development. No comparable relationship is observed for ST shares.
             <a href="https://colab.research.google.com/drive/1UJuXmvjzwM4CA662_xngteJsy2y7rFz6?usp=sharing"> View Google Colab Notebook</a>
            </p>
         </div>
       </div>
     </section>
-
-   <section class="section" id="tools">
-  <div class="card">
-    <h3>Tools</h3>
-       <p style="margin-bottom: 15px;">
-   <p>
-  All data cleaning, merging, and analysis were conducted in Python using
-  <em>pandas</em>, <em>NumPy</em>, <em>scikit-learn</em>, and <em>statsmodels</em>.
-  National and state-level HDI series were reshaped into tidy time-series and
-  cross-sectional formats. Income-adjusted HDI performance was estimated using
-  linear regression models of HDI on log GNI per capita, implemented in
-  <em>statsmodels</em> for statistical inference and <em>scikit-learn</em> for
-  prediction and residual construction. Independent variables were standardised
-  (z-scores) using <em>scikit-learn</em> to enable coefficient comparability
-  across models. Visualisations were built in Vega-Lite and embedded via HTML
-  and JavaScript.
-</p>
-
-<p>
-  A key challenge was non-aligned years across data sources, particularly
-  NITI Aayog’s Health Index (2021) and School Education Quality Index (2019)
-  relative to 2022 HDI estimates. These indices were treated as slow-moving
-  structural proxies, appropriate for cross-state comparison. Union Territories
-  were excluded from spending models due to missing budget data. Social structure data is from Census 2011 as census 2021 has not been conducted yet. All findings
-  are cross-sectional and descriptive, with no causal claims.
-</p>
-  </div>
-</section>
 
 
 <section class="section" id="conclusions">
