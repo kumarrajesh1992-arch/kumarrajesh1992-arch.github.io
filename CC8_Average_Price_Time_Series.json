@@ -1,0 +1,57 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "title": {
+    "text": "Average Weekly Price of Breakfast Cereals (July 2023 - November 2025) in the UK ",
+    "subtitle": "Data Source - Davies, R, and McEvoy, F (2024)"
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/kumarrajesh1992-arch/kumarrajesh1992-arch.github.io/refs/heads/main/CC8_Time_Line.csv",
+    "format": {"type": "csv"}
+  },
+  "transform": [
+    {"calculate": "toDate(datum.date)", "as": "date_parsed"},
+    {"timeUnit": "yearweek", "field": "date_parsed", "as": "yearweek"},
+    {
+      "aggregate": [{"op": "mean", "field": "price", "as": "avg_price"}],
+      "groupby": ["yearweek"]
+    }
+  ],
+  "layer": [
+    {
+      "mark": {"type": "line", "interpolate": "monotone"},
+      "encoding": {
+        "x": {
+          "field": "yearweek",
+          "type": "temporal",
+          "title": "Year",
+          "axis": {"format": "%Y", "tickCount": 10}
+        },
+        "y": {
+          "field": "avg_price",
+          "type": "quantitative",
+          "title": "Average price (£)",
+          "scale": {"domainMin": 2}
+        }
+      }
+    },
+    {
+      "mark": {"type": "point", "opacity": 0, "size": 80},
+      "encoding": {
+        "x": {"field": "yearweek", "type": "temporal"},
+        "y": {"field": "avg_price", "type": "quantitative"},
+        "tooltip": [
+          {"field": "yearweek", "type": "temporal", "title": "Week"},
+          {
+            "field": "avg_price",
+            "type": "quantitative",
+            "title": "Average price (£)",
+            "format": ".2f"
+          }
+        ]
+      }
+    }
+  ],
+  "width": 900,
+  "height": 350,
+  "config": {}
+}

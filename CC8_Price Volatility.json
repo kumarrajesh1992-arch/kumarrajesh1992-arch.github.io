@@ -1,0 +1,41 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "title": {
+    "text": "Price volatility in Breakfast Cereals Prices by Retailer, July 2023 - Nov 2025",
+    "subtitle": "Standard deviation of prices | Data Source: Davies, R, and McEvoy, F (2024)"
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/kumarrajesh1992-arch/kumarrajesh1992-arch.github.io/refs/heads/main/CC8_BF_Cereals_Volatility.csv",
+    "format": {"type": "csv"}
+  },
+  "transform": [
+    {"calculate": "toNumber(datum.price_sd)", "as": "price_sd_num"}
+  ],
+  "mark": "bar",
+  "encoding": {
+    "x": {
+      "field": "store_id",
+      "type": "nominal",
+      "title": "Retailer",
+      "axis": {"labelAngle": 0}
+    },
+    "y": {
+      "field": "price_sd_num",
+      "type": "quantitative",
+      "title": "Price volatility (standard deviation)",
+      "axis": {"tickCount": 5}
+    },
+    "tooltip": [
+      {"field": "store_id", "type": "nominal", "title": "Retailer"},
+      {
+        "field": "price_sd_num",
+        "type": "quantitative",
+        "title": "Volatility",
+        "format": ".2f"
+      }
+    ]
+  },
+  "width": 700,
+  "height": 350,
+  "config": {}
+}
