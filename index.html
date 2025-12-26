@@ -213,6 +213,32 @@
   </p>
 </section>
 
+      <section id="CC8" class="section-light">
+  <div class="section-header">
+    <h2>CC8: Trends in Breakfast Cereal Prices in the UK, 2023 - 2025</h2>
+  </div>
+
+  <p>
+    In this coding challenge, I produced two visualisations: the first presents a time-series of weekly average breakfast cereal prices to illustrate price dynamics over time (Figure&nbsp;1), while the second compares price volatility across retailers to highlight differences in pricing strategies over the full sample period (Figure&nbsp;2).
+  </p>
+
+  <div class="chart-container">
+    <div class="chart-item">
+      <h3>Figure 1: Average Weekly Prices of Breakfast Cereals in the UK (£), 2023–25</h3>
+      <figure id="Location11"></figure>
+    </div>
+
+    <div class="chart-item">
+      <h3>Figure 2: Price Volatility in Breakfast Cereal Prices by Retailer, 2023-25</h3>
+      <figure id="Location12"></figure>
+    </div>
+  </div>
+
+  <p>
+    Using <a href="https://colab.research.google.com/drive/17n3vmgkmpSKC4VguEIENw2kqefEd1WRz?usp=sharing">Google Colab</a>, I cleaned and merged AutoCPI price and item datasets, filtered observations to breakfast cereals, and reduced millions of daily prices through aggregation. Weekly average prices and store-level price volatility were computed, saved as CSV files, and subsequently visualised using Vega-Lite to illustrate temporal dynamics and retailer pricing behaviour.
+  </p>
+</section>
+
         <section id="CC9" class="section-light">
   <div class="section-header">
     <h2>CC9: Interactive Human Development Index Trends for India</h2>
@@ -302,6 +328,7 @@
   let scraper_spec = "CC5_datascraping.json";
   let figure_9_spec = "CC7_Statewise_MPI_India.json";
   let figure_10_spec= "CC7_Top50_Districts.json";
+  let figure_11_spec="CC8_Time_Line
   let cc9_hdi_spec = "CC9_HDI_Dropdown.json";
   let hdi_bubble_spec = "CC9_Main Project_HDI_Slider.json";
   let cc10_fit_spec = "CC10_Fitted Line.json";
