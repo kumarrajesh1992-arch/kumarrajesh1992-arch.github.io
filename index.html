@@ -329,7 +329,7 @@
   let figure_9_spec = "CC7_Statewise_MPI_India.json";
   let figure_10_spec= "CC7_Top50_Districts.json";
   let figure_11_spec="CC8_Average_Price_Time_Series.json";
-  let figure_12_spec="
+  let figure_12_spec="CC8_Price_Volatility.json";
   let cc9_hdi_spec = "CC9_HDI_Dropdown.json";
   let hdi_bubble_spec = "CC9_Main Project_HDI_Slider.json";
   let cc10_fit_spec = "CC10_Fitted Line.json";
@@ -383,6 +383,9 @@
   
 vegaEmbed('#CC10_FIT', cc10_fit_spec).then(console.log).catch(console.warn);
 vegaEmbed('#CC10_RESID', cc10_resid_spec).then(console.log).catch(console.warn);
+
+     vegaEmbed('#Location11', figure_11_spec).then(console.log).catch(console.warn);
+  vegaEmbed('#Location12', figure_12_spec).then(console.log).catch(console.warn);
 </script>
     
 </script>
