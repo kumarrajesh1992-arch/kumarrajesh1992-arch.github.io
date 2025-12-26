@@ -9,28 +9,49 @@
   },
   "data": {
     "url": "https://raw.githubusercontent.com/kumarrajesh1992-arch/kumarrajesh1992-arch.github.io/refs/heads/main/project/PC3_PC4_stateHDI_residuals_2023.csv",
-    "format": {"type": "csv"}
+    "format": { "type": "csv" }
   },
-  "mark": {"type": "bar"},
+  "transform": [
+    {
+      "calculate": "datum.residual_HDI >= 0 ? 'Outperformer' : 'Underperformer'",
+      "as": "Performance"
+    }
+  ],
+  "mark": { "type": "bar" },
   "encoding": {
-    "y": {"field": "State", "type": "nominal", "sort": "-x", "title": "State"},
+    "y": {
+      "field": "State",
+      "type": "nominal",
+      "sort": "-x",
+      "title": "State"
+    },
     "x": {
       "field": "residual_HDI",
       "type": "quantitative",
       "title": "HDI residual (actual − predicted)"
     },
     "color": {
-      "condition": {"test": "datum.residual_HDI < 0", "value": "#d73027"},
-      "value": "#2b8cbe"
+      "field": "Performance",
+      "type": "nominal",
+      "scale": {
+        "domain": ["Outperformer", "Underperformer"],
+        "range": ["#2b8cbe", "#d73027"]
+      },
+      "legend": {
+        "title": "Performance relative to income",
+        "labelFontSize": 11,
+        "titleFontSize": 12
+      }
     },
     "tooltip": [
-      {"field": "State", "type": "nominal"},
+      { "field": "State", "type": "nominal" },
       {
         "field": "residual_HDI",
         "type": "quantitative",
         "title": "HDI residual",
         "format": ".3f"
-      }
+      },
+      { "field": "Performance", "type": "nominal", "title": "Classification" }
     ]
   },
   "width": 700,
