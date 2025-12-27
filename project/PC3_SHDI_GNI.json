@@ -69,12 +69,36 @@
           "scale": {"domain": [0.575, 0.8], "clamp": true}
         }
       }
+    },
+    {
+      "transform": [
+        {
+          "filter": {
+            "field": "State",
+            "oneOf": ["Kerala", "Manipur", "Gujarat", "Andhra Pradesh"]
+          }
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "middle",
+        "dx": 8,
+        "fontSize": 9,
+        "fontWeight": "normal",
+        "color": "#333"
+      },
+      "encoding": {
+        "x": {"field": "log_GNI_pc", "type": "quantitative"},
+        "y": {"field": "HDI", "type": "quantitative"},
+        "text": {"field": "State", "type": "nominal"}
+      }
     }
   ],
-  "width": 600,
+  "width": 700,
   "height": 400,
   "config": {
-    "axis": {"labelFontSize": 11, "titleFontSize": 12}, 
+    "axis": {"labelFontSize": 11, "titleFontSize": 12},
     "view": {"stroke": "transparent"}
   }
 }
