@@ -18,23 +18,22 @@
       "as": "Performance"
     }
   ],
-  "encoding": {
-    "y": {
-      "field": "State",
-      "type": "nominal",
-      "sort": {"field": "WPR", "op": "max", "order": "descending"},
-      "axis": {"title": null, "labelFontSize": 11}
-    }
-  },
   "layer": [
     {
       "mark": "bar",
       "encoding": {
+        "y": {
+          "field": "State",
+          "type": "nominal",
+          "sort": {"field": "WPR", "op": "max", "order": "descending"},
+          "axis": {"title": null, "labelFontSize": 11}
+        },
         "x": {
           "field": "residual_HDI",
           "type": "quantitative",
           "title": "Residual HDI (Efficiency)",
-          "axis": {"format": ".2f"}
+          "axis": {"format": ".2f"},
+          "scale": { "domain": { "unionWith": [0] } }
         },
         "color": {
           "field": "Performance",
@@ -45,15 +44,34 @@
           },
           "legend": {
             "title": "Performance Status",
-            "orient": "bottom",
-            "direction": "horizontal"
+            "orient": "top-right",
+            "direction": "vertical"
           }
         }
       }
     },
+
+    {
+      "mark": {
+        "type": "rule",
+        "stroke": "#111",
+        "strokeWidth": 2,
+        "strokeDash": [2, 2]
+      },
+      "encoding": {
+        "x": { "datum": 0, "type": "quantitative" }
+      }
+    },
+
     {
       "mark": {"type": "text", "align": "left", "dx": 5, "dy": 1},
       "encoding": {
+        "y": {
+          "field": "State",
+          "type": "nominal",
+          "sort": {"field": "WPR", "op": "max", "order": "descending"},
+          "axis": {"title": null, "labelFontSize": 11}
+        },
         "x": {"datum": 0},
         "text": {"field": "WPR", "type": "quantitative", "format": ".1f"},
         "color": {"value": "black"}
