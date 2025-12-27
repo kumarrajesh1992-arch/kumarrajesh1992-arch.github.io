@@ -81,9 +81,33 @@
     {
       "mark": {"type": "rule", "strokeDash": [6, 6], "opacity": 0.7},
       "encoding": {"y": {"datum": 0}}
+    },
+    {
+      "transform": [
+        {
+          "filter": {
+            "field": "State",
+            "oneOf": ["Assam", "Gujarat"]
+          }
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "middle",
+        "dx": 8,
+        "fontSize": 9,
+        "fontWeight": "normal",
+        "color": "black"
+      },
+      "encoding": {
+        "x": {"field": "Per_Capita_Exp", "type": "quantitative"},
+        "y": {"field": "residual_HDI", "type": "quantitative"},
+        "text": {"field": "State", "type": "nominal"}
+      }
     }
   ],
-  "width": 580,
+  "width": 650,
   "height": 400,
   "padding": {"left": 70, "right": 20, "top": 15, "bottom": 50},
   "config": {
