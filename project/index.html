@@ -90,11 +90,6 @@
   (z-scores) using <em>scikit-learn</em> to enable coefficient comparability
   across models. Visualisations were built in Vega-Lite and embedded via HTML
   and JavaScript. </p>
-     <p>
-     All data ingestion, cleaning, residual estimation, and visualisation 
-  steps are fully scripted in the linked Google Colab notebooks and Vega-Lite specifications, 
-     allowing the analysis to be re-run or updated by replacing input data files or API endpoints.
-</p>
 
 <p>
   A key challenge was non-aligned years across data sources, particularly
@@ -103,6 +98,11 @@
   structural proxies, appropriate for cross-state comparison. Union Territories
   were excluded from spending models due to missing budget data. Social structure data is from Census 2011 as census 2021 has not been conducted yet. All findings
   are cross-sectional and descriptive, with no causal claims; endogeneity may remain. 
+</p>
+     <p>
+     All data ingestion, cleaning, residual estimation, and visualisation 
+  steps are fully scripted in the linked Google Colab notebooks and Vega-Lite specifications, 
+     allowing the analysis to be re-run or updated by replacing input data files.
 </p>
   </div>
 </section>
@@ -114,13 +114,13 @@
         <div class="viz">
           <h4>Chart 1: India’s HDI trajectory since 1990</h4>
           <figure id="PC1"></figure>
-          <p class="caption">This interactive time-series visualisation shows that India’s national HDI has improved steadily since 1990, but disaggregating its components (through the dropdown menu) reveals a structural divergence. While log GNI per capita accelerates sharply from the early 2000s, gains in health and education progress more gradually. This raises the core policy question of whether income growth alone is sufficient to deliver broad-based human development.To investigate this, I next examine whether individual states have successfully converted rising incomes into human development in Chart 2.</p>
+          <p class="caption">This interactive time-series visualisation shows that India’s national HDI has improved steadily since 1990, but disaggregating its components (through the dropdown menu) reveals a structural divergence. While log GNI per capita accelerates sharply from the early 2000s, gains in health and education progress more gradually. This informs the project's core policy question of whether income growth alone is sufficient to deliver broad-based human development.To investigate this, I next examine whether individual states have successfully converted rising incomes into human development in Chart 2.</p>
         </div>
 
         <div class="viz">
           <h4>Chart 2: State HDI trajectories</h4>
           <figure id="PC2"></figure>
-          <p class="caption">Animating state trajectories (1990–2022) reveals parallel progress along a common income–HDI gradient. While all states improve, absolute gaps persist. Only Goa, Delhi, and Chandigarh enter the “High Income–High HDI” quadrant. Kerala achieves high HDI without high income; conversely, Gujarat and Rajasthan remain in the lower-left, suggesting growth alone hasn't closed the development divide. To quantify this link, I strip away the time dimension and model the structural income–HDI relationship in Chart 3.</p>
+          <p class="caption">Animating state trajectories (1990–2022) using the year slider reveals parallel progress along a common income–HDI gradient. While all states improve, absolute gaps persist. Only Goa, Delhi, and Chandigarh enter the “High Income–High HDI” quadrant. Kerala achieves high HDI without high income; conversely, Gujarat and Rajasthan remain in the lower-left, suggesting growth alone hasn't closed the development divide. To quantify this link, I strip away the time dimension and model the structural income–HDI relationship in Chart 3.</p>
         </div>
 
         <div class="viz">
@@ -150,8 +150,10 @@
 
   <p class="caption">
     Higher per-capita social sector spending is positively associated with income-adjusted HDI (<em>p</em> &#8776; 0.05), yet it explains only 12.6% of cross-state variation. The contrast between Assam and Gujarat, with similar spending levels (&#8377;11,600–&#8377;11,800) but divergent human development outcomes, suggests that fiscal effort alone does not guarantee human development. If fiscal effort is insufficient, does the quality of state governance explain the gap? 
-  <a href="https://colab.research.google.com/drive/1K7vWYjHyK8VDA8YjJhdHZflhTbTiYvSK?usp=sharing"> View Google Colab Notebook</a>
   </p>
+          <p class="small-text">
+  <a href="https://colab.research.google.com/drive/1K7vWYjHyK8VDA8YjJhdHZflhTbTiYvSK?usp=sharing" target="_blank" rel="noopener">View Google Colab notebook for Chart 5 (data cleaning + model)</a>
+</p>
 </div>
 <div class="viz">
   <h4>Chart 6: Do better-run states naturally convert income more effectively into human development outcomes?</h4>
@@ -159,8 +161,10 @@
 
   <p class="caption">
     Using standardized NITI Aayog Health and Education Indices as proxies for state capacity yields little explanatory power (<em>R</em><sup>2</sup> &lt; 0.10). High-capacity states do not systematically outperform their income benchmarks, nor do low-capacity states consistently underperform. This "capacity paradox" suggests that aggregate bureaucratic indices may capture formal inputs and compliance rather than implementation quality or last-mile effectiveness.
-   <a href="https://colab.research.google.com/drive/1gGJfxo5EulC_d6L1pr6YKrU9ZZRQsYv5?usp=sharing"> View Google Colab Notebook</a>
   </p>
+   <p class="small-text">
+  <a href="https://colab.research.google.com/drive/1gGJfxo5EulC_d6L1pr6YKrU9ZZRQsYv5?usp=sharing" target="_blank" rel="noopener">View Google Colab notebook for Chart 6 (data cleaning + model)</a>
+</p>
 </div>
 <div class="viz">
   <h4>Chart 7: Does workforce participation explain income-adjusted HDI?</h4>
@@ -168,15 +172,19 @@
 
   <p class="caption">
     Since state capaicty offers limited insight, does the labor market hold the answer? Chart 7 ranks states by their WPR, with bars representing their development efficiency (residual HDI). If higher employment drove development, positive residuals (green bar) would concentrate among high-WPR states. Instead, the distribution is near-random. High-employment states like Himachal Pradesh (77%) and Chhattisgarh (73%) show sharply divergent outcomes. With a negligible <strong>R<sup>2</sup> &approx; 0.01</strong>, the evidence suggests employment quantity matters far less than its quality.
-  <a href="https://colab.research.google.com/drive/1ZS-PbL5KMhytC6fcKIKjF0w9eDOIdh0S?usp=sharing"> View Google Colab Notebook</a>
   </p>
+  <p class="small-text">
+  <a href="https://colab.research.google.com/drive/1ZS-PbL5KMhytC6fcKIKjF0w9eDOIdh0S?usp=sharing" target="_blank" rel="noopener">View Google Colab notebook for Chart 7 (data cleaning + model)</a>
+</p>
 </div>
         <div class="viz">
           <h4>Chart 8: Do social structure and historical disadvantage shape income-adjusted HDI?</h4>
           <figure id="PC8"></figure>
            <p class="caption">Finally, if economic factors fall short, do deep-seated social hierarchies constrain development? A statistically significant negative association (<i>p</i> &lt; 0.05) is observed between SC population share and income-adjusted HDI (see left panel), indicating that caste-based disadvantage function as a structural drag on human development. No comparable relationship is observed for ST shares.
-            <a href="https://colab.research.google.com/drive/1UJuXmvjzwM4CA662_xngteJsy2y7rFz6?usp=sharing"> View Google Colab Notebook</a>
            </p>
+          <p class="small-text">
+  <a href="https://colab.research.google.com/drive/1UJuXmvjzwM4CA662_xngteJsy2y7rFz6?usp=sharing" target="_blank" rel="noopener">View Google Colab notebook for Chart 8 (data cleaning + model)</a>
+</p>
         </div>
       </div>
     </section>
