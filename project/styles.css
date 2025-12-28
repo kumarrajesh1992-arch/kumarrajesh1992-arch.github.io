@@ -205,7 +205,12 @@ main {
   margin-right: 0;     
 }
 
-
+.viz .small-text {
+  font-size: 12px;
+  line-height: 1.3;
+  color: #6b7280;
+  font-style: italic;
+}
 
 .viz figure {
   display: flex;
