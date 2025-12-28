@@ -206,11 +206,9 @@ main {
 }
 
 .viz .small-text {
-  font-size: 12px;
-  line-height: 1.3;
-  color: #6b7280;
-  font-style: italic;
-  text-align: right;
+  font-size: 12.5px;
+  line-height: 1.35;
+  opacity: 0.8;
 }
 
 .viz figure {
