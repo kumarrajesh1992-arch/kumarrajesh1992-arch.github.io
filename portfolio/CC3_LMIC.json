@@ -8,7 +8,7 @@
     "subtitleFontSize": 12
   },
   "data": {
-    "url": "https://raw.githubusercontent.com/kumarrajesh1992-arch/kumarrajesh1992-arch.github.io/refs/heads/main/IND_LMIC_Data.csv",
+    "url": "https://raw.githubusercontent.com/kumarrajesh1992-arch/kumarrajesh1992-arch.github.io/refs/heads/main/portfolio/IND_LMIC_Data.csv",
     "format": {"type": "csv"}
   },
   "mark": "line",
