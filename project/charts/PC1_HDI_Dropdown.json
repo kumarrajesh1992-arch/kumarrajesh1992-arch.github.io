@@ -9,7 +9,7 @@
   },
   "data": {
     "url": "https://raw.githubusercontent.com/kumarrajesh1992-arch/kumarrajesh1992-arch.github.io/refs/heads/main/project/data/PC1_Data.csv",
-    "format": { "type": "csv" }
+    "format": {"type": "csv"}
   },
   "params": [
     {
@@ -37,6 +37,11 @@
   ],
   "transform": [
     {
+      "comment": "Fix for commas in GNI data. Ensure 'GNI_per_capita' matches your CSV header exactly.",
+      "calculate": "toNumber(replace('' + datum.GNI_per_capita, ',', ''))",
+      "as": "GNI_per_capita"
+    },
+    {
       "fold": [
         "HDI",
         "Life_expectancy",
@@ -46,13 +51,13 @@
       ],
       "as": ["Indicator", "Value"]
     },
-    { "filter": "datum.Indicator == indicator_sel" }
+    {"filter": "datum.Indicator == indicator_sel"}
   ],
   "layer": [
     {
       "mark": {
         "type": "line",
-        "point": { "filled": true, "size": 60 },
+        "point": {"filled": true, "size": 60},
         "strokeWidth": 2
       },
       "encoding": {
@@ -60,7 +65,7 @@
           "field": "Year",
           "type": "quantitative",
           "title": "Year",
-          "axis": { "format": "d", "tickMinStep": 1, "labelAngle": 0 }
+          "axis": {"format": "d", "tickMinStep": 1, "labelAngle": 0}
         },
         "y": {
           "field": "Value",
@@ -73,34 +78,29 @@
           }
         },
         "tooltip": [
-          { "field": "Year", "type": "quantitative", "title": "Year", "format": "d" },
-          { "field": "Indicator", "type": "nominal", "title": "Indicator" },
-          { "field": "Value", "type": "quantitative", "title": "Value", "format": ".3f" }
+          {
+            "field": "Year",
+            "type": "quantitative",
+            "title": "Year",
+            "format": "d"
+          },
+          {"field": "Indicator", "type": "nominal", "title": "Indicator"},
+          {
+            "field": "Value",
+            "type": "quantitative",
+            "title": "Value",
+            "format": ",.0f" 
+          }
         ]
       }
     },
-
     {
-      "transform": [
-        { "filter": "indicator_sel == 'GNI_per_capita'" }
-      ],
-      "mark": {
-        "type": "rule",
-        "strokeDash": [6, 4],
-        "strokeWidth": 1
-      },
-      "encoding": {
-        "x": {
-          "datum": 2003,
-          "type": "quantitative"
-        }
-      }
+      "transform": [{"filter": "indicator_sel == 'GNI_per_capita'"}],
+      "mark": {"type": "rule", "strokeDash": [6, 4], "strokeWidth": 1},
+      "encoding": {"x": {"datum": 2003, "type": "quantitative"}}
     },
-
     {
-      "transform": [
-        { "filter": "indicator_sel == 'GNI_per_capita'" }
-      ],
+      "transform": [{"filter": "indicator_sel == 'GNI_per_capita'"}],
       "data": {
         "values": [
           {
@@ -118,15 +118,15 @@
         "fontSize": 11
       },
       "encoding": {
-        "x": { "field": "Year", "type": "quantitative" },
-        "y": { "value": 10 },
-        "text": { "field": "Label" }
+        "x": {"field": "Year", "type": "quantitative"},
+        "y": {"value": 10},
+        "text": {"field": "Label"}
       }
     }
   ],
   "width": 700,
   "height": 400,
-  "padding": { "left": 60, "top": 20, "right": 20, "bottom": 40 },
+  "padding": {"left": 60, "top": 20, "right": 20, "bottom": 40},
   "config": {
     "axis": {
       "grid": true,
@@ -134,6 +134,6 @@
       "labelFontSize": 11,
       "titleFontSize": 12
     },
-    "view": { "stroke": "transparent" }
+    "view": {"stroke": "transparent"}
   }
 }
