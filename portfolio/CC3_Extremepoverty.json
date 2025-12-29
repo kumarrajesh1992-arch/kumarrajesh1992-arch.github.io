@@ -8,7 +8,7 @@
     "subtitleFontSize": 12
   },
   "data": {
-    "url": "https://raw.githubusercontent.com/kumarrajesh1992-arch/kumarrajesh1992-arch.github.io/refs/heads/main/IND_PovertyRate_20250930_2021_01_02_PROD_2025-12-03.csv",
+    "url": "https://raw.githubusercontent.com/kumarrajesh1992-arch/kumarrajesh1992-arch.github.io/refs/heads/main/portfolio/IND_PovertyRate_20250930_2021_01_02_PROD_2025-12-03.csv",
     "format": {"type": "csv"}
   },
   "mark": "line",
