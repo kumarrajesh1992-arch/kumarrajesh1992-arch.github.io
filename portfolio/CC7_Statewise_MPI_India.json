@@ -10,7 +10,7 @@
   "width": 600,
   "height": 450,
   "data": {
-    "url": "https://raw.githubusercontent.com/kumarrajesh1992-arch/kumarrajesh1992-arch.github.io/refs/heads/main/portfolio/CC7_Indiastate.json",
+    "url": "https://raw.githubusercontent.com/kumarrajesh1992-arch/kumarrajesh1992-arch.github.io/refs/heads/main/portfolio/CC7_India_state.json",
     "format": {"type": "json", "property": "features"}
   },
   "transform": [
