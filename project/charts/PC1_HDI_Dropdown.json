@@ -89,7 +89,7 @@
             "field": "Value",
             "type": "quantitative",
             "title": "Value",
-            "format": ",.0f" 
+            "format": ",.3f" 
           }
         ]
       }
