@@ -1,7 +1,6 @@
 # Kumar Rajesh – GitHub Pages
 
-This repository hosts my academic and data visualisation portfolio,
-including coursework for PP434 (LSE MPP, 2025–26).
+This repository hosts my portfolio and project work the data science course PP434 I completed as a part of my MPP (2025-26) at SPP, LSE taught by Professor Richard Davies and team. 
 
 - Portfolio: /portfolio/
 - Main project: /project/
