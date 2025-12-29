@@ -1,4 +1,4 @@
-Year,Expected_years_schooling,HDI,Life_expectancy,Log_GNI_per_capita,Mean_years_schooling
+Year,Expected_years_schooling,HDI,Life_expectancy,GNI_per_capita,Mean_years_schooling
 1990,8.20444394,0.446,58.618,2167.222109,2.780574365
 1991,8.216523603,0.448,59.032,2143.711946,2.88390652
 1992,8.228621051,0.453,59.445,2215.913758,2.987238675
