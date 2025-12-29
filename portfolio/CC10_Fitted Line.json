@@ -17,7 +17,7 @@
           "field": "log_GNI_pc",
           "type": "quantitative",
           "title": "log GNI per capita ($)",
-          "scale": {"domain": [8.0, 10], "clamp": true}
+          "scale": {"domain": [8.2, 10], "clamp": true}
         },
         "y": {
           "field": "HDI",
@@ -45,7 +45,7 @@
         "x": {
           "field": "log_GNI_pc",
           "type": "quantitative",
-          "scale": {"domain": [8.0, 10], "clamp": true}
+          "scale": {"domain": [8.2, 10], "clamp": true}
         },
         "y": {
           "field": "HDI_pred",
