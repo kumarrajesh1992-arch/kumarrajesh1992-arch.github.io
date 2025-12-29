@@ -13,7 +13,7 @@
   "layer": [
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/kumarrajesh1992-arch/kumarrajesh1992-arch.github.io/main/india.geojson",
+        "url": "https://raw.githubusercontent.com/kumarrajesh1992-arch/kumarrajesh1992-arch.github.io/main/portfolio/india.geojson",
         "format": {"type": "json", "property": "features"}
       },
       "mark": {
@@ -25,7 +25,7 @@
     },
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/kumarrajesh1992-arch/kumarrajesh1992-arch.github.io/refs/heads/main/CC7_Top_50_MPI_Districts.csv",
+        "url": "https://raw.githubusercontent.com/kumarrajesh1992-arch/kumarrajesh1992-arch.github.io/refs/heads/main/portfolio/CC7_Top_50_MPI_Districts.csv",
         "format": {"type": "csv"}
       },
       "transform": [
