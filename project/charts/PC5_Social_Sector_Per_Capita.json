@@ -8,7 +8,7 @@
     "subtitleFontSize": 11
   },
   "data": {
-    "url": "https://raw.githubusercontent.com/kumarrajesh1992-arch/kumarrajesh1992-arch.github.io/refs/heads/main/project/PC5_Percapita_social_Sector.csv",
+    "url": "https://raw.githubusercontent.com/kumarrajesh1992-arch/kumarrajesh1992-arch.github.io/refs/heads/main/project/data/PC5_Percapita_social_Sector.csv",
     "format": {
       "type": "csv",
       "parse": {"Per_Capita_Exp": "number", "residual_HDI": "number"}
