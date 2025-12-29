@@ -6,7 +6,7 @@
     "anchor": "start"
   },
   "data": {
-    "url": "https://raw.githubusercontent.com/kumarrajesh1992-arch/kumarrajesh1992-arch.github.io/refs/heads/main/data_scarping_india_hdi_states_tidy.csv",
+    "url": "https://raw.githubusercontent.com/kumarrajesh1992-arch/kumarrajesh1992-arch.github.io/refs/heads/main/portfolio/data_scarping_india_hdi_states_tidy.csv",
     "format": {"type": "csv"}
   },
   "mark": "bar",
