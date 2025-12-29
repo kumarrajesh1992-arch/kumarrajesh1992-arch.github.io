@@ -8,7 +8,7 @@
     "subtitleFontSize": 11
   },
   "data": {
-    "url": "https://raw.githubusercontent.com/kumarrajesh1992-arch/kumarrajesh1992-arch.github.io/refs/heads/main/Kumar%20Main%20Project.csv",
+    "url": "https://raw.githubusercontent.com/kumarrajesh1992-arch/kumarrajesh1992-arch.github.io/refs/heads/main/portfolio/Kumar%20Main%20Project.csv",
     "format": {
       "type": "csv",
       "parse": {"Year": "number", "SHDI": "number", "LGNIC": "number"}
