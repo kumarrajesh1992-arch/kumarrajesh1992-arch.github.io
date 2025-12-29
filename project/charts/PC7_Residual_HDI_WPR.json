@@ -10,7 +10,7 @@
   "width": 600,
   "height": {"step": 20},
   "data": {
-    "url": "https://raw.githubusercontent.com/kumarrajesh1992-arch/kumarrajesh1992-arch.github.io/refs/heads/main/project/PC7_Data.csv"
+    "url": "https://raw.githubusercontent.com/kumarrajesh1992-arch/kumarrajesh1992-arch.github.io/refs/heads/main/project/data/PC7_Data.csv"
   },
   "transform": [
     {
