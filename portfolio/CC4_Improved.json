@@ -45,7 +45,7 @@
         "align": "center",
         "baseline": "bottom",
         "dy": -4,
-        "fontSize": 12,
+        "fontSize": 14,
         "color": "#000000"
       },
       "encoding": {
@@ -60,8 +60,8 @@
         "align": "center",
         "baseline": "top",
         "dy": 12,
-        "fontSize": 11,
-        "color": "#444444"
+        "fontSize": 13,
+        "color": "#f6f6f6"
       },
       "encoding": {
         "text": {"field": "pct"},
