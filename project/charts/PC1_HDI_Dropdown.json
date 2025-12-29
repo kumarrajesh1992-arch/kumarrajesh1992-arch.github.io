@@ -8,7 +8,7 @@
     "subtitleFontSize": 11
   },
   "data": {
-    "url": "https://raw.githubusercontent.com/kumarrajesh1992-arch/kumarrajesh1992-arch.github.io/refs/heads/main/CC9_India_HDI_tidy.csv",
+    "url": "https://raw.githubusercontent.com/kumarrajesh1992-arch/kumarrajesh1992-arch.github.io/refs/heads/main/project/data/PC1_Data.csv",
     "format": { "type": "csv" }
   },
   "params": [
