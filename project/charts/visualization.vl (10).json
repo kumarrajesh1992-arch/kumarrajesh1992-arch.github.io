@@ -1,0 +1,183 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Vision 2047: Two Paths for Very High Human Development in India",
+    "subtitle": "Scenario A: Entry Level 'Very High Human Development' Status | Scenario B: 'Convergence' with Very High Human Development Nations Average HDI Score in 2023",
+    "anchor": "middle",
+    "fontSize": 14,
+    "subtitleFontSize": 11
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/kumarrajesh1992-arch/kumarrajesh1992-arch.github.io/refs/heads/main/project/data/PC8_HDI_Projected_Scenarios.csv"
+  },
+  "params": [
+    {
+      "name": "Indicator_Select",
+      "value": "HDI (0–1)",
+      "bind": {
+        "input": "select",
+        "options": [
+          "HDI (0–1)",
+          "Life expectancy (years)",
+          "Mean years of schooling (years)",
+          "Expected years of schooling (years)",
+          "GNI per capita (2021 PPP$)"
+        ],
+        "name": "Select Indicator: "
+      }
+    }
+  ],
+  "transform": [
+    {
+      "comment": "--- RENAME SCENARIOS TO MATCH SUBTITLE ---",
+      "calculate": "datum.Scenario == 'Observed' ? 'Observed (1990–2023)' : datum.Scenario == 'Scenario A (Entry)' ? 'Scenario A: Entry Level Very High HDI Status' : 'Scenario B: Convergence with Very High HDI Nations Avg'",
+      "as": "Scenario_Label"
+    },
+    {
+      "calculate": "datum.Indicator == 'GNI_per_capita' ? 'GNI per capita (2021 PPP$)' : datum.Indicator == 'Life_expectancy' ? 'Life expectancy (years)' : datum.Indicator == 'Mean_years_schooling' ? 'Mean years of schooling (years)' : datum.Indicator == 'Expected_years_schooling' ? 'Expected years of schooling (years)' : datum.Indicator == 'HDI' ? 'HDI (0–1)' : datum.Indicator",
+      "as": "Indicator_label"
+    },
+    {
+      "calculate": "datum.Indicator == 'GNI_per_capita' ? format(datum.Value, '$,.0f') : format(datum.Value, '.2f')",
+      "as": "Value_Label"
+    },
+    {"filter": "datum.Indicator_label == Indicator_Select"},
+    {
+      "calculate": "datum.Indicator == 'HDI' ? 0.4 : datum.Indicator == 'Life_expectancy' ? 55 : datum.Indicator == 'Mean_years_schooling' ? 0 : datum.Indicator == 'Expected_years_schooling' ? 6 : datum.Indicator == 'GNI_per_capita' ? 0 : 0",
+      "as": "y_min"
+    },
+    {
+      "calculate": "datum.Indicator == 'HDI' ? 1.0 : datum.Indicator == 'Life_expectancy' ? 85 : datum.Indicator == 'Mean_years_schooling' ? 14 : datum.Indicator == 'Expected_years_schooling' ? 18 : datum.Indicator == 'GNI_per_capita' ? 60000 : 0",
+      "as": "y_max"
+    }
+  ],
+  "width": 900,
+  "height": 400,
+  "layer": [
+    {
+      "mark": {"type": "line", "strokeWidth": 3},
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "quantitative",
+          "title": "Year",
+          "axis": {"format": "d", "tickMinStep": 5}
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "title": {"signal": "Indicator_Select"},
+          "scale": {"zero": false},
+          "axis": {"minExtent": 60, "titlePadding": 10}
+        },
+        "color": {
+          "field": "Scenario_Label",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Observed (1990–2023)",
+              "Scenario A: Entry Level Very High HDI Status",
+              "Scenario B: Convergence with Very High HDI Nations Avg"
+            ],
+            "range": ["#333333", "#1f77b4", "#d62728"]
+          },
+          "legend": {
+            "orient": "bottom",
+            "title": null,
+            "labelFontSize": 12,
+            "symbolSize": 300,
+            "symbolType": "stroke",
+            "labelLimit": 500,
+            "direction": "horizontal"
+          }
+        },
+        "strokeDash": {
+          "field": "Scenario_Label",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Observed (1990–2023)",
+              "Scenario A: Entry Level Very High HDI Status",
+              "Scenario B: Convergence with Very High HDI Nations Avg"
+            ],
+            "range": [[1, 0], [4, 4], [2, 2]]
+          },
+          "legend": {
+            "orient": "bottom",
+            "title": null,
+            "labelLimit": 500,
+            "direction": "horizontal"
+          }
+        },
+        "tooltip": [
+          {"field": "Year", "type": "quantitative", "format": "d"},
+          {"field": "Scenario_Label", "type": "nominal", "title": "Scenario"},
+          {"field": "Value", "type": "quantitative", "format": ",.2f"}
+        ]
+      }
+    },
+    {
+      "transform": [{"filter": "datum.Year == 2047"}],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 8,
+        "dy": 0,
+        "fontSize": 12,
+        "fontWeight": "normal",
+        "clip": false
+      },
+      "encoding": {
+        "x": {"field": "Year", "type": "quantitative"},
+        "y": {"field": "Value", "type": "quantitative"},
+        "text": {"field": "Value_Label", "type": "nominal"},
+        "color": {"field": "Scenario_Label", "type": "nominal"}
+      }
+    },
+    {
+      "transform": [
+        {"filter": "datum.Year == 2023"},
+        {"filter": "datum.Scenario == 'Observed'"}
+      ],
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "dx": -8,
+        "dy": 0,
+        "fontSize": 12,
+        "fontWeight": "normal",
+        "color": "#333333"
+      },
+      "encoding": {
+        "x": {"field": "Year", "type": "quantitative"},
+        "y": {"field": "Value", "type": "quantitative"},
+        "text": {"field": "Value_Label", "type": "nominal"}
+      }
+    },
+    {
+      "transform": [{"filter": "datum.Year == 2023"}],
+      "mark": {
+        "type": "rule",
+        "strokeWidth": 1,
+        "color": "gray",
+        "strokeDash": [3, 3]
+      },
+      "encoding": {"x": {"field": "Year", "type": "quantitative"}}
+    },
+    {
+      "mark": {"type": "point", "opacity": 0},
+      "encoding": {
+        "x": {"field": "Year", "type": "quantitative"},
+        "y": {"field": "y_min", "type": "quantitative"}
+      }
+    },
+    {
+      "mark": {"type": "point", "opacity": 0},
+      "encoding": {
+        "x": {"field": "Year", "type": "quantitative"},
+        "y": {"field": "y_max", "type": "quantitative"}
+      }
+    }
+  ],
+  "config": {"axis": {"labelFontSize": 11, "titleFontSize": 11}}
+}
