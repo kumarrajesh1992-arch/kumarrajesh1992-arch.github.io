@@ -64,7 +64,7 @@
         <strong>Per-Capita Social Sector Spending:</strong> Estimated by dividing state-level social sector expenditure from <a href="https://rbidocs.rbi.org.in/rdocs/Publications/PDFs/0STATEFINANCES202324E45F66372EEC4743AE4E9BED92EB85FF.PDF" target="_blank" rel="noopener">RBI State Finances: A Study of Budgets</a> by state population figures from the <a href="https://mohfw.gov.in/sites/default/files/Population%20Projection%20Report%202011-2036%20-%20upload_compressed_0.pdf" target="_blank" rel="noopener">MoHFW</a>.
       </li>
       <li>
-        <strong>Expenditure Efficiency (2020):</strong> Technical efficiency scores for health and education expenditure were sourced from the World Bank's <a href="https://thedocs.worldbank.org/en/doc/400139d320ead96a0ec624d3608d9b56-0310012025/original/India-Country-Economic-Memorandum-2024-0227c.pdf">World Bank 2024 Country Economic Memorandum</a>India Country Economic Memorandum (2024), see page 130-131, which estimates state-level spending efficiency using a Variable Returns to Scale Data Envelopment Analysis model. 
+        <strong>Expenditure Efficiency:</strong> Technical efficiency scores for health and education expenditure (2020) were sourced from the World Bank's <a href="https://thedocs.worldbank.org/en/doc/400139d320ead96a0ec624d3608d9b56-0310012025/original/India-Country-Economic-Memorandum-2024-0227c.pdf">World Bank 2024 India Economic Memorandum</a>, which estimates state-level spending efficiency (see page 130-131) using a Variable Returns to Scale Data Envelopment Analysis model. 
       </li>
       <li>
         <strong>Workers–Population Ratio:</strong> Sourced from the <a href="https://www.mospi.gov.in/sites/default/files/publication_reports/AR_PLFS_2022_23N.pdf">Periodic Labour Force Survey 2022-23.</a>
@@ -156,14 +156,18 @@
 </p>
 </div>
 <div class="viz">
-  <h4>Chart 6: Does technical efficiency in spending drive income-adjusted HDI?</h4>
+  <h4>Chart 6: Does technical efficiency in social-sector spending drive income-adjusted HDI?</h4>
   <figure id="PC6"></figure>
-
-  <p class="caption">
-    Using standardized NITI Aayog Health and Education Indices as proxies for state capacity yields little explanatory power (<em>R</em><sup>2</sup> &lt; 0.10). High-capacity states do not systematically outperform their income benchmarks, nor do low-capacity states consistently underperform. This "capacity paradox" suggests that aggregate bureaucratic indices may capture formal inputs and compliance rather than implementation quality or last-mile effectiveness.
-  </p>
+<p class="caption">
+  Regression analysis reveals a sharp sector-specific divergence: health spending efficiency is a 
+  statistically significant driver (<i>&beta;</i> = 1.30, <i>p</i> = 0.03) of HDI overperformance, 
+  whereas education efficiency shows no immediate correlation, likely due to gestation lags. 
+  However, with an <i>R</i><sup>2</sup> of 0.229, technical efficiency explains only 23% of the 
+  variation. This confirms that while competent governance is essential, it is not sufficient—leaving 
+  over three-quarters of the efficiency gap to be explained by deeper structural constraints.
+</p>
    <p class="small-text">
-  <a href="https://colab.research.google.com/drive/1gGJfxo5EulC_d6L1pr6YKrU9ZZRQsYv5?usp=sharing" target="_blank" rel="noopener">View Google Colab notebook for Chart 6 (data cleaning + model)</a>
+  <a href="https://colab.research.google.com/drive/1NvfdjJ5SQzQghDpZRDfCilIQ4O8si4Li?usp=sharing">View Google Colab notebook for Chart 6 (data cleaning + model)</a>
 </p>
 </div>
 <div class="viz">
