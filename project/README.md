@@ -50,7 +50,7 @@ All data processing and analysis are conducted in Python, using:
     * Residuals from income–HDI regressions used to rank states by income-adjusted performance.
 
 4.  **Structural Correlates of Residual HDI**
-    * Analysis of Social sector spending, State capacity proxies (health and education indices), Worker–population ratio, and Social structure (SC/ST population shares).
+    * Analysis of Social sector spending, Spending Efficiency (DEA scores), Worker–population ratio, and Social structure (SC/ST population shares).
     * All independent variables are standardised (z-scores) to enable coefficient comparability.
 
 ---
