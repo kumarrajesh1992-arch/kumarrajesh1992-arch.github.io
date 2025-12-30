@@ -41,7 +41,7 @@
         <h3>Aim</h3>
         <p style="margin-bottom: 15px;">
         <p>
-         This project examines India’s human development trajectory, using Human Development Index (HDI) score, in the context of the Government of India’s ambition to achieve high-income status by 2047 under the Vision 2047 agenda. 
+         This project examines India’s human development trajectory, using the Human Development Index (HDI) score, in the context of the Government of India’s ambition to achieve high-income status by 2047 under the Vision 2047 agenda. 
         </p>
 
         <p>
@@ -68,7 +68,7 @@
   expenditure (2020) were sourced from the World Bank's 
   <a href="https://thedocs.worldbank.org/en/doc/400139d320ead96a0ec624d3608d9b56-0310012025/original/India-Country-Economic-Memorandum-2024-0227c.pdf" target="_blank" rel="noopener">
   India Country Economic Memorandum (2024)</a>. Estimated using a Variable Returns to Scale Data Envelopment Analysis model, this metric defines technical efficiency as the ability 
-  of a state to maximize health and education outputs for a given level of per capita expenditure.
+  of a state to maximise health and education outputs for a given level of per capita expenditure.
 </li>
       <li>
         <strong>Social Structure Data:</strong> Scheduled Caste and Scheduled Tribe population shares from <a href="https://www.data.gov.in/catalog/state-and-district-wise-scheduled-caste-and-schedule-tribe-population-each-caste-and-tribe?title&file_short_format" target="_blank" rel="noopener">Census of India 2011</a>.
@@ -96,8 +96,8 @@
   In addition, a policy back-casting exercise projects India’s HDI components to 2047 under alternative benchmark scenarios, using UNDP goalposts and standard HDI aggregation methods.
 </p>
     <p>
-  A limitation is the temporal lag between the World Bank’s Expenditure Efficiency estimates (2020) and the reference HDI year (2022). This is addressed by conceptualizing spending efficiency as a structural, slow-moving characteristic of state governance.
-  Union Territories were excluded from spending models due to missing budget data. Social structure data is from Census 2011 as census 2021 has not been conducted yet. All findings
+  A limitation is the temporal lag between the World Bank’s Expenditure Efficiency estimates (2020) and the reference HDI year (2022). This is addressed by conceptualising spending efficiency as a structural, slow-moving characteristic of state governance.
+  Union Territories were excluded from spending models due to missing budget data. Social structure data are drawn from the Census of India 2011, as the 2021 census has not yet been conducted. All findings
   are cross-sectional and descriptive, with no causal claims; endogeneity may remain. 
 </p>
 
@@ -117,13 +117,13 @@
         <div class="viz">
           <h4>Chart 1: India’s HDI trajectory since 1990</h4>
           <figure id="PC1"></figure>
-          <p class="caption">This interactive time-series visualisation shows that India’s national HDI has improved steadily since 1990, but disaggregating its components (through the dropdown menu) reveals a structural divergence. While log GNI per capita accelerates sharply from the early 2000s, gains in health and education progress more gradually. This informs the project's core policy question of whether income growth alone is sufficient to deliver broad-based human development.To investigate this, I next examine whether individual states have successfully converted rising incomes into human development in Chart 2.</p>
+          <p class="caption">This interactive time-series visualisation shows that India’s national HDI has improved steadily since 1990, but disaggregating its components (through the dropdown menu) reveals a structural divergence. While log GNI per capita accelerates sharply from the early 2000s, gains in health and education progress more gradually. This informs the project's core policy question of whether income growth alone is sufficient to deliver broad-based human development. To investigate this, I next examine whether individual states have successfully converted rising incomes into human development in Chart 2.</p>
         </div>
 
         <div class="viz">
           <h4>Chart 2: State HDI trajectories</h4>
           <figure id="PC2"></figure>
-          <p class="caption">Animating state trajectories (1990–2022) using the year slider reveals parallel progress along a common income-HDI gradient. While all states improve, absolute gaps persist. Only Goa, Delhi, and Chandigarh enter the “High Income-High HDI” quadrant. Kerala achieves high HDI without high income; conversely, Gujarat and Rajasthan remain in the lower-left, suggesting growth alone hasn't closed the development divide. To quantify this link, I strip away the time dimension and model the structural income-HDI relationship in Chart 3.</p>
+          <p class="caption">Animating state trajectories (1990–2022) using the year slider reveals parallel progress along a common income-HDI gradient. While all states improve, absolute gaps persist. Only Goa, Delhi, and Chandigarh enter the “High Income-High HDI” quadrant. Kerala achieves high HDI without high income; conversely, Gujarat and Rajasthan remain in the lower-left, suggesting growth alone has not closed the development divide. To quantify this link, I strip away the time dimension and model the structural income-HDI relationship in Chart 3.</p>
         </div>
 
         <div class="viz">
@@ -140,7 +140,7 @@
         <div class="viz">
           <h4>Chart 4: The Efficiency Ranking-Residual HDI (actual − predicted) by state</h4>
           <figure id="PC4"></figure>
-          <p class="caption">To assess relative performance, I construct income-adjusted HDI residuals as a measure of efficiency. Kerala, Sikkim, and Manipur consistently register positive residuals, while Gujarat and Andhra Pradesh show large negative deviations. This reframes the question from whether income matters to why states differ in converting income into human development. One plausible explanation is variation in social-sector expenditure, which I explore in Chart 5.
+          <p class="caption">To assess relative performance, I construct income-adjusted HDI residuals as a measure of efficiency. Kerala, Sikkim, and Manipur consistently register positive residuals, while Gujarat and Andhra Pradesh show large negative deviations. This reframes the question from whether income matters to why states differ in converting income into human development outcomes. One plausible explanation is variation in social-sector expenditure, which I explore in Chart 5.
           </p>
           <p class="small-text">
   <a href="https://colab.research.google.com/drive/1rdr_s0hrhpL9d3XxLFC4hnvcwvFsvrVg?usp=sharing" target="_blank" rel="noopener">View Google Colab notebook for Chart 4 (data cleaning + model)</a>
@@ -176,7 +176,7 @@
 <div class="viz">
           <h4>Chart 7: Do social structure and historical disadvantage shape income-adjusted HDI?</h4>
           <figure id="PC7"></figure>
-           <p class="caption">Do deep-seated social hierarchies constrain development? A marginally significant negative association (<i>p</i> &lt; 0.07) is observed between SC population share and income-adjusted HDI (see left panel). While the statistical signal is not definitive, the direction of the trend suggests that caste-based disadvantage may function as a structural drag on human development, imposing an efficiency penalty that persists even after accounting for income. No comparable relationship is observed for ST shares.
+           <p class="caption">Do deep-seated social hierarchies constrain development? A marginally significant negative association (<i>p</i> &lt; 0.07) is observed between Scheduled Caste (SC) population share and income-adjusted HDI (see left panel). While the statistical signal is not definitive, the direction of the trend suggests that caste-based disadvantage may function as a structural drag on human development, imposing an efficiency penalty that persists even after accounting for income. No comparable relationship is observed for Scheduled Tribe (ST) shares.
            </p>
           <p class="small-text">
   <a href="https://colab.research.google.com/drive/1lLtcGfDC61OpBjjAQX-wkMoqRQHWOucQ?usp=sharing" target="_blank" rel="noopener">View Google Colab notebook for Chart 8 (data cleaning + model)</a>
@@ -200,7 +200,7 @@
   <p class="caption">
     <strong>Scenario A (Entry)</strong> benchmarks India against the minimum threshold for very high human development (HDI &ge; 0.800), broadly aligned with the World Bank’s high-income cutoff (≈ $23,215, 2021 PPP). This trajectory requires sustained but feasible acceleration: roughly 4% annual GNI per-capita growth and moderate improvements in schooling and life expectancy relative to historical trends.</p>
    <p class="caption">
-          <strong>Scenario B (Convergence)</strong> exposes a much steeper ambition gap. Matching the 2023 average of very-high-HDI countries (HDI &approx; 0.925) by 2047 would require near-frontier performance which is around 7.7% annual income growth, rapid health gains, and a 1.9× acceleration in mean years of schooling. The divergence confirms that business-as-usual growth secures income thresholds but not convergence in lived development outcomes.
+          <strong>Scenario B (Convergence)</strong> exposes a much steeper ambition gap. Matching the 2023 average of very-high-HDI countries (HDI &approx; 0.925) by 2047 would require near-frontier performance,approximately 7.7% annual income growth, rapid health gains, and a 1.9× acceleration in mean years of schooling. The divergence confirms that business-as-usual growth secures income thresholds but not convergence in lived development outcomes.
   </p>
 
   <p class="small-text">
@@ -222,7 +222,7 @@
       This project shows that India’s binding development constraint is not income generation but the uneven translation of growth into human development. While income explains much of cross-state HDI variation, persistent income-adjusted gaps reflect structural, institutional, and social constraints that fiscal effort and technical efficiency only partially address. The Vision 2047 back-cast indicates that high-income status is achievable under plausible trajectories, but convergence with advanced human-development standards is not. Consistent with the
       <a href="https://thedocs.worldbank.org/en/doc/400139d320ead96a0ec624d3608d9b56-0310012025/original/India-Country-Economic-Memorandum-2024-0227c.pdf"
          target="_blank" rel="noopener">
-        World Bank’s 2024 Country Economic Memorandum for India
+        World Bank’s India Country Economic Memorandum(2024),
       </a>,
       achieving this requires outcome-oriented health and education systems, institutional strengthening, and targeted interventions beyond growth-led strategies alone.
     </p>
