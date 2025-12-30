@@ -12,7 +12,7 @@ India’s Vision 2047 agenda aims to achieve high-income status alongside high h
 This project asks three linked questions:
 1. **Trends:** How has India’s national and state-level HDI evolved alongside income growth since 1990?
 2. **Conversion:** Do Indian states differ systematically in their ability to convert income into human development?
-3. **Drivers:** Which structural factors—fiscal effort, state capacity, labour markets, or social structure—help explain these differences?
+3. **Drivers:** Which structural factors—fiscal effort, spending efficiency, labour markets, or social structure—help explain these differences?
 
 ---
 
