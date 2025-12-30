@@ -1,0 +1,411 @@
+Year,Indicator,Value,Scenario
+1990,HDI,0.446,Observed
+1990,Life_expectancy,58.618,Observed
+1990,Expected_years_schooling,8.20444394,Observed
+1990,Mean_years_schooling,2.780574365,Observed
+1990,GNI_per_capita,2167.222109,Observed
+1991,HDI,0.448,Observed
+1991,Life_expectancy,59.032,Observed
+1991,Expected_years_schooling,8.216523603,Observed
+1991,Mean_years_schooling,2.88390652,Observed
+1991,GNI_per_capita,2143.711946,Observed
+1992,HDI,0.453,Observed
+1992,Life_expectancy,59.445,Observed
+1992,Expected_years_schooling,8.228621051,Observed
+1992,Mean_years_schooling,2.987238675,Observed
+1992,GNI_per_capita,2215.913758,Observed
+1993,HDI,0.458,Observed
+1993,Life_expectancy,59.823,Observed
+1993,Expected_years_schooling,8.240736311,Observed
+1993,Mean_years_schooling,3.090570831,Observed
+1993,GNI_per_capita,2277.498432,Observed
+1994,HDI,0.463,Observed
+1994,Life_expectancy,60.237,Observed
+1994,Expected_years_schooling,8.252869409,Observed
+1994,Mean_years_schooling,3.193902986,Observed
+1994,GNI_per_capita,2381.704988,Observed
+1995,HDI,0.469,Observed
+1995,Life_expectancy,60.63,Observed
+1995,Expected_years_schooling,8.26502037,Observed
+1995,Mean_years_schooling,3.297235142,Observed
+1995,GNI_per_capita,2511.581876,Observed
+1996,HDI,0.476,Observed
+1996,Life_expectancy,61.027,Observed
+1996,Expected_years_schooling,8.266550064,Observed
+1996,Mean_years_schooling,3.466324123,Observed
+1996,GNI_per_capita,2651.649036,Observed
+1997,HDI,0.482,Observed
+1997,Life_expectancy,61.439,Observed
+1997,Expected_years_schooling,8.289759636,Observed
+1997,Mean_years_schooling,3.635413105,Observed
+1997,GNI_per_capita,2711.415799,Observed
+1998,HDI,0.488,Observed
+1998,Life_expectancy,61.852,Observed
+1998,Expected_years_schooling,8.301849683,Observed
+1998,Mean_years_schooling,3.804502087,Observed
+1998,GNI_per_capita,2825.255524,Observed
+1999,HDI,0.496,Observed
+1999,Life_expectancy,62.284,Observed
+1999,Expected_years_schooling,8.31393973,Observed
+1999,Mean_years_schooling,3.973591068,Observed
+1999,GNI_per_capita,3018.348782,Observed
+2000,HDI,0.501,Observed
+2000,Life_expectancy,62.749,Observed
+2000,Expected_years_schooling,8.326029778,Observed
+2000,Mean_years_schooling,4.14268005,Observed
+2000,GNI_per_capita,3069.545308,Observed
+2001,HDI,0.511,Observed
+2001,Life_expectancy,63.158,Observed
+2001,Expected_years_schooling,8.807609558,Observed
+2001,Mean_years_schooling,4.219709475,Observed
+2001,GNI_per_capita,3164.162422,Observed
+2002,HDI,0.516,Observed
+2002,Life_expectancy,63.649,Observed
+2002,Expected_years_schooling,8.872280121,Observed
+2002,Mean_years_schooling,4.2967389,Observed
+2002,GNI_per_capita,3230.410192,Observed
+2003,HDI,0.529,Observed
+2003,Life_expectancy,64.086,Observed
+2003,Expected_years_schooling,9.489009857,Observed
+2003,Mean_years_schooling,4.373768325,Observed
+2003,GNI_per_capita,3424.492756,Observed
+2004,HDI,0.538,Observed
+2004,Life_expectancy,64.484,Observed
+2004,Expected_years_schooling,9.759057283,Observed
+2004,Mean_years_schooling,4.45079775,Observed
+2004,GNI_per_capita,3634.455914,Observed
+2005,HDI,0.547,Observed
+2005,Life_expectancy,64.939,Observed
+2005,Expected_years_schooling,10.02910471,Observed
+2005,Mean_years_schooling,4.527827175,Observed
+2005,GNI_per_capita,3859.176262,Observed
+2006,HDI,0.557,Observed
+2006,Life_expectancy,65.373,Observed
+2006,Expected_years_schooling,10.29915214,Observed
+2006,Mean_years_schooling,4.634916863,Observed
+2006,GNI_per_capita,4104.613146,Observed
+2007,HDI,0.566,Observed
+2007,Life_expectancy,65.803,Observed
+2007,Expected_years_schooling,10.56919956,Observed
+2007,Mean_years_schooling,4.742006551,Observed
+2007,GNI_per_capita,4370.339973,Observed
+2008,HDI,0.574,Observed
+2008,Life_expectancy,66.247,Observed
+2008,Expected_years_schooling,10.86855984,Observed
+2008,Mean_years_schooling,4.84909624,Observed
+2008,GNI_per_capita,4434.020468,Observed
+2009,HDI,0.579,Observed
+2009,Life_expectancy,66.7,Observed
+2009,Expected_years_schooling,10.78787994,Observed
+2009,Mean_years_schooling,4.956185928,Observed
+2009,GNI_per_capita,4716.353012,Observed
+2010,HDI,0.59,Observed
+2010,Life_expectancy,67.162,Observed
+2010,Expected_years_schooling,11.10916996,Observed
+2010,Mean_years_schooling,5.063275616,Observed
+2010,GNI_per_capita,5022.132083,Observed
+2011,HDI,0.603,Observed
+2011,Life_expectancy,67.623,Observed
+2011,Expected_years_schooling,11.69287014,Observed
+2011,Mean_years_schooling,5.300000191,Observed
+2011,GNI_per_capita,5224.30683,Observed
+2012,HDI,0.609,Observed
+2012,Life_expectancy,68.076,Observed
+2012,Expected_years_schooling,11.76546955,Observed
+2012,Mean_years_schooling,5.397578144,Observed
+2012,GNI_per_capita,5420.181423,Observed
+2013,HDI,0.615,Observed
+2013,Life_expectancy,68.499,Observed
+2013,Expected_years_schooling,11.80904961,Observed
+2013,Mean_years_schooling,5.495156097,Observed
+2013,GNI_per_capita,5687.828662,Observed
+2014,HDI,0.625,Observed
+2014,Life_expectancy,68.932,Observed
+2014,Expected_years_schooling,12.16592026,Observed
+2014,Mean_years_schooling,5.592734051,Observed
+2014,GNI_per_capita,6037.901703,Observed
+2015,HDI,0.633,Observed
+2015,Life_expectancy,69.326,Observed
+2015,Expected_years_schooling,12.26624012,Observed
+2015,Mean_years_schooling,5.690312004,Observed
+2015,GNI_per_capita,6443.561001,Observed
+2016,HDI,0.644,Observed
+2016,Life_expectancy,69.709,Observed
+2016,Expected_years_schooling,12.67975998,Observed
+2016,Mean_years_schooling,5.787889957,Observed
+2016,GNI_per_capita,6894.228147,Observed
+2017,HDI,0.649,Observed
+2017,Life_expectancy,70.068,Observed
+2017,Expected_years_schooling,12.50761032,Observed
+2017,Mean_years_schooling,6.013944864,Observed
+2017,GNI_per_capita,7282.890554,Observed
+2018,HDI,0.648,Observed
+2018,Life_expectancy,70.415,Observed
+2018,Expected_years_schooling,11.81653976,Observed
+2018,Mean_years_schooling,6.239999771,Observed
+2018,GNI_per_capita,7670.645786,Observed
+2019,HDI,0.651,Observed
+2019,Life_expectancy,70.746,Observed
+2019,Expected_years_schooling,11.75397968,Observed
+2019,Mean_years_schooling,6.281380177,Observed
+2019,GNI_per_capita,7895.441397,Observed
+2020,HDI,0.652,Observed
+2020,Life_expectancy,70.156,Observed
+2020,Expected_years_schooling,12.1291399,Observed
+2020,Mean_years_schooling,6.489999771,Observed
+2020,GNI_per_capita,7331.951385,Observed
+2021,HDI,0.647,Observed
+2021,Life_expectancy,67.282,Observed
+2021,Expected_years_schooling,12.40237045,Observed
+2021,Mean_years_schooling,6.529999971,Observed
+2021,GNI_per_capita,7992.775136,Observed
+2022,HDI,0.676,Observed
+2022,Life_expectancy,71.698,Observed
+2022,Expected_years_schooling,12.95646,Observed
+2022,Mean_years_schooling,6.570000172,Observed
+2022,GNI_per_capita,8475.67988,Observed
+2023,HDI,0.685,Observed
+2023,Life_expectancy,72.003,Observed
+2023,Expected_years_schooling,12.95454025,Observed
+2023,Mean_years_schooling,6.880000114,Observed
+2023,GNI_per_capita,9046.756336,Observed
+2024,Life_expectancy,72.16954166666666,Scenario A (Entry)
+2024,Expected_years_schooling,12.998101072916668,Scenario A (Entry)
+2024,Mean_years_schooling,7.010000109250001,Scenario A (Entry)
+2024,GNI_per_capita,9409.055957300803,Scenario A (Entry)
+2024,HDI,0.68940328504302,Scenario A (Entry)
+2025,Life_expectancy,72.33608333333333,Scenario A (Entry)
+2025,Expected_years_schooling,13.041661895833334,Scenario A (Entry)
+2025,Mean_years_schooling,7.1400001045,Scenario A (Entry)
+2025,GNI_per_capita,9785.86475854629,Scenario A (Entry)
+2025,HDI,0.6942619329297532,Scenario A (Entry)
+2026,Life_expectancy,72.502625,Scenario A (Entry)
+2026,Expected_years_schooling,13.08522271875,Scenario A (Entry)
+2026,Mean_years_schooling,7.270000099750001,Scenario A (Entry)
+2026,GNI_per_capita,10177.763795554043,Scenario A (Entry)
+2026,HDI,0.6991154835600648,Scenario A (Entry)
+2027,Life_expectancy,72.66916666666667,Scenario A (Entry)
+2027,Expected_years_schooling,13.128783541666667,Scenario A (Entry)
+2027,Mean_years_schooling,7.400000095,Scenario A (Entry)
+2027,GNI_per_capita,10585.357393951836,Scenario A (Entry)
+2027,HDI,0.7039640241755385,Scenario A (Entry)
+2028,Life_expectancy,72.83570833333333,Scenario A (Entry)
+2028,Expected_years_schooling,13.172344364583335,Scenario A (Entry)
+2028,Mean_years_schooling,7.530000090250001,Scenario A (Entry)
+2028,GNI_per_capita,11009.274081074425,Scenario A (Entry)
+2028,HDI,0.7088076399129459,Scenario A (Entry)
+2029,Life_expectancy,73.00225,Scenario A (Entry)
+2029,Expected_years_schooling,13.2159051875,Scenario A (Entry)
+2029,Mean_years_schooling,7.6600000855,Scenario A (Entry)
+2029,GNI_per_capita,11450.167555180482,Scenario A (Entry)
+2029,HDI,0.7136464138708276,Scenario A (Entry)
+2030,Life_expectancy,73.16879166666666,Scenario A (Entry)
+2030,Expected_years_schooling,13.259466010416666,Scenario A (Entry)
+2030,Mean_years_schooling,7.7900000807500005,Scenario A (Entry)
+2030,GNI_per_capita,11908.71769348418,Scenario A (Entry)
+2030,HDI,0.7184804271734451,Scenario A (Entry)
+2031,Life_expectancy,73.33533333333334,Scenario A (Entry)
+2031,Expected_years_schooling,13.303026833333334,Scenario A (Entry)
+2031,Mean_years_schooling,7.920000076,Scenario A (Entry)
+2031,GNI_per_capita,12385.631600555887,Scenario A (Entry)
+2031,HDI,0.72330975903223,Scenario A (Entry)
+2032,Life_expectancy,73.501875,Scenario A (Entry)
+2032,Expected_years_schooling,13.346587656250001,Scenario A (Entry)
+2032,Mean_years_schooling,8.05000007125,Scenario A (Entry)
+2032,GNI_per_capita,12881.64469870867,Scenario A (Entry)
+2032,HDI,0.7281344868048469,Scenario A (Entry)
+2033,Life_expectancy,73.66841666666667,Scenario A (Entry)
+2033,Expected_years_schooling,13.390148479166667,Scenario A (Entry)
+2033,Mean_years_schooling,8.1800000665,Scenario A (Entry)
+2033,GNI_per_capita,13397.521862051964,Scenario A (Entry)
+2033,HDI,0.7329546860519839,Scenario A (Entry)
+2034,Life_expectancy,73.83495833333333,Scenario A (Entry)
+2034,Expected_years_schooling,13.433709302083333,Scenario A (Entry)
+2034,Mean_years_schooling,8.31000006175,Scenario A (Entry)
+2034,GNI_per_capita,13934.05859596126,Scenario A (Entry)
+2034,HDI,0.7377704305919728,Scenario A (Entry)
+2035,Life_expectancy,74.0015,Scenario A (Entry)
+2035,Expected_years_schooling,13.477270125,Scenario A (Entry)
+2035,Mean_years_schooling,8.440000057,Scenario A (Entry)
+2035,GNI_per_capita,14492.082263782524,Scenario A (Entry)
+2035,HDI,0.742581792553341,Scenario A (Entry)
+2036,Life_expectancy,74.16804166666667,Scenario A (Entry)
+2036,Expected_years_schooling,13.520830947916668,Scenario A (Entry)
+2036,Mean_years_schooling,8.57000005225,Scenario A (Entry)
+2036,GNI_per_capita,15072.453362663031,Scenario A (Entry)
+2036,HDI,0.7473888424253889,Scenario A (Entry)
+2037,Life_expectancy,74.33458333333333,Scenario A (Entry)
+2037,Expected_years_schooling,13.564391770833334,Scenario A (Entry)
+2037,Mean_years_schooling,8.7000000475,Scenario A (Entry)
+2037,GNI_per_capita,15676.06685047598,Scenario A (Entry)
+2037,HDI,0.7521916491068809,Scenario A (Entry)
+2038,Life_expectancy,74.501125,Scenario A (Entry)
+2038,Expected_years_schooling,13.60795259375,Scenario A (Entry)
+2038,Mean_years_schooling,8.830000042750001,Scenario A (Entry)
+2038,GNI_per_capita,16303.853525885066,Scenario A (Entry)
+2038,HDI,0.7569902799529356,Scenario A (Entry)
+2039,Life_expectancy,74.66766666666666,Scenario A (Entry)
+2039,Expected_years_schooling,13.651513416666667,Scenario A (Entry)
+2039,Mean_years_schooling,8.960000038,Scenario A (Entry)
+2039,GNI_per_capita,16956.781463677147,Scenario A (Entry)
+2039,HDI,0.7617848008201957,Scenario A (Entry)
+2040,Life_expectancy,74.83420833333334,Scenario A (Entry)
+2040,Expected_years_schooling,13.695074239583334,Scenario A (Entry)
+2040,Mean_years_schooling,9.09000003325,Scenario A (Entry)
+2040,GNI_per_capita,17635.85750757633,Scenario A (Entry)
+2040,HDI,0.7665752761103517,Scenario A (Entry)
+2041,Life_expectancy,75.00075,Scenario A (Entry)
+2041,Expected_years_schooling,13.7386350625,Scenario A (Entry)
+2041,Mean_years_schooling,9.2200000285,Scenario A (Entry)
+2041,GNI_per_capita,18342.128822841456,Scenario A (Entry)
+2041,HDI,0.7713617688120925,Scenario A (Entry)
+2042,Life_expectancy,75.16729166666667,Scenario A (Entry)
+2042,Expected_years_schooling,13.782195885416666,Scenario A (Entry)
+2042,Mean_years_schooling,9.350000023749999,Scenario A (Entry)
+2042,GNI_per_capita,19076.684511041214,Scenario A (Entry)
+2042,HDI,0.7761443405415528,Scenario A (Entry)
+2043,Life_expectancy,75.33383333333333,Scenario A (Entry)
+2043,Expected_years_schooling,13.825756708333333,Scenario A (Entry)
+2043,Mean_years_schooling,9.480000019,Scenario A (Entry)
+2043,GNI_per_capita,19840.657289496867,Scenario A (Entry)
+2043,HDI,0.7809230515813185,Scenario A (Entry)
+2044,Life_expectancy,75.500375,Scenario A (Entry)
+2044,Expected_years_schooling,13.869317531250001,Scenario A (Entry)
+2044,Mean_years_schooling,9.61000001425,Scenario A (Entry)
+2044,GNI_per_capita,20635.225237982366,Scenario A (Entry)
+2044,HDI,0.7856979609180545,Scenario A (Entry)
+2045,Life_expectancy,75.66691666666667,Scenario A (Entry)
+2045,Expected_years_schooling,13.912878354166667,Scenario A (Entry)
+2045,Mean_years_schooling,9.740000009500001,Scenario A (Entry)
+2045,GNI_per_capita,21461.613615375467,Scenario A (Entry)
+2045,HDI,0.7904691262788135,Scenario A (Entry)
+2046,Life_expectancy,75.83345833333334,Scenario A (Entry)
+2046,Expected_years_schooling,13.956439177083332,Scenario A (Entry)
+2046,Mean_years_schooling,9.87000000475,Scenario A (Entry)
+2046,GNI_per_capita,22321.096749061002,Scenario A (Entry)
+2046,HDI,0.7952366041660786,Scenario A (Entry)
+2047,Life_expectancy,76.0,Scenario A (Entry)
+2047,Expected_years_schooling,14.0,Scenario A (Entry)
+2047,Mean_years_schooling,10.0,Scenario A (Entry)
+2047,GNI_per_capita,23215.0,Scenario A (Entry)
+2047,HDI,0.800000449891596,Scenario A (Entry)
+2024,Life_expectancy,72.41954166666666,Scenario B (Convergence)
+2024,Expected_years_schooling,13.102267739583334,Scenario B (Convergence)
+2024,Mean_years_schooling,7.114166775916667,Scenario B (Convergence)
+2024,GNI_per_capita,9738.42289282856,Scenario B (Convergence)
+2024,HDI,0.694702152593297,Scenario B (Convergence)
+2025,Life_expectancy,72.83608333333333,Scenario B (Convergence)
+2025,Expected_years_schooling,13.249995229166668,Scenario B (Convergence)
+2025,Mean_years_schooling,7.348333437833333,Scenario B (Convergence)
+2025,GNI_per_capita,10482.970571693239,Scenario B (Convergence)
+2025,HDI,0.704847793756168,Scenario B (Convergence)
+2026,Life_expectancy,73.252625,Scenario B (Convergence)
+2026,Expected_years_schooling,13.39772271875,Scenario B (Convergence)
+2026,Mean_years_schooling,7.582500099750001,Scenario B (Convergence)
+2026,GNI_per_capita,11284.442380081091,Scenario B (Convergence)
+2026,HDI,0.7149770326693085,Scenario B (Convergence)
+2027,Life_expectancy,73.66916666666667,Scenario B (Convergence)
+2027,Expected_years_schooling,13.545450208333333,Scenario B (Convergence)
+2027,Mean_years_schooling,7.816666761666667,Scenario B (Convergence)
+2027,GNI_per_capita,12147.190432187015,Scenario B (Convergence)
+2027,HDI,0.7250904927237598,Scenario B (Convergence)
+2028,Life_expectancy,74.08570833333333,Scenario B (Convergence)
+2028,Expected_years_schooling,13.693177697916667,Scenario B (Convergence)
+2028,Mean_years_schooling,8.050833423583335,Scenario B (Convergence)
+2028,GNI_per_capita,13075.899581557831,Scenario B (Convergence)
+2028,HDI,0.7351887644530749,Scenario B (Convergence)
+2029,Life_expectancy,74.50225,Scenario B (Convergence)
+2029,Expected_years_schooling,13.8409051875,Scenario B (Convergence)
+2029,Mean_years_schooling,8.2850000855,Scenario B (Convergence)
+2029,GNI_per_capita,14075.612860561756,Scenario B (Convergence)
+2029,HDI,0.7452724077721046,Scenario B (Convergence)
+2030,Life_expectancy,74.91879166666666,Scenario B (Convergence)
+2030,Expected_years_schooling,13.988632677083334,Scenario B (Convergence)
+2030,Mean_years_schooling,8.519166747416667,Scenario B (Convergence)
+2030,GNI_per_capita,15151.758864823558,Scenario B (Convergence)
+2030,HDI,0.7553419540278068,Scenario B (Convergence)
+2031,Life_expectancy,75.33533333333334,Scenario B (Convergence)
+2031,Expected_years_schooling,14.136360166666668,Scenario B (Convergence)
+2031,Mean_years_schooling,8.753333409333333,Scenario B (Convergence)
+2031,GNI_per_capita,16310.181231326995,Scenario B (Convergence)
+2031,HDI,0.7653979078808549,Scenario B (Convergence)
+2032,Life_expectancy,75.751875,Scenario B (Convergence)
+2032,Expected_years_schooling,14.284087656250001,Scenario B (Convergence)
+2032,Mean_years_schooling,8.98750007125,Scenario B (Convergence)
+2032,GNI_per_capita,17557.17037025518,Scenario B (Convergence)
+2032,HDI,0.7754407490346428,Scenario B (Convergence)
+2033,Life_expectancy,76.16841666666667,Scenario B (Convergence)
+2033,Expected_years_schooling,14.431815145833333,Scenario B (Convergence)
+2033,Mean_years_schooling,9.221666733166668,Scenario B (Convergence)
+2033,GNI_per_capita,18899.497622877534,Scenario B (Convergence)
+2033,HDI,0.7854709338264062,Scenario B (Convergence)
+2034,Life_expectancy,76.58495833333333,Scenario B (Convergence)
+2034,Expected_years_schooling,14.579542635416667,Scenario B (Convergence)
+2034,Mean_years_schooling,9.455833395083333,Scenario B (Convergence)
+2034,GNI_per_capita,20344.452030965975,Scenario B (Convergence)
+2034,HDI,0.7954888966935346,Scenario B (Convergence)
+2035,Life_expectancy,77.0015,Scenario B (Convergence)
+2035,Expected_years_schooling,14.727270125,Scenario B (Convergence)
+2035,Mean_years_schooling,9.690000057,Scenario B (Convergence)
+2035,GNI_per_capita,21899.87991740375,Scenario B (Convergence)
+2035,HDI,0.805495051526711,Scenario B (Convergence)
+2036,Life_expectancy,77.41804166666667,Scenario B (Convergence)
+2036,Expected_years_schooling,14.874997614583334,Scenario B (Convergence)
+2036,Mean_years_schooling,9.924166718916666,Scenario B (Convergence)
+2036,GNI_per_capita,23574.22749291576,Scenario B (Convergence)
+2036,HDI,0.815489792920262,Scenario B (Convergence)
+2037,Life_expectancy,77.83458333333333,Scenario B (Convergence)
+2037,Expected_years_schooling,15.022725104166668,Scenario B (Convergence)
+2037,Mean_years_schooling,10.158333380833334,Scenario B (Convergence)
+2037,GNI_per_capita,25376.586720281404,Scenario B (Convergence)
+2037,HDI,0.8254734973289988,Scenario B (Convergence)
+2038,Life_expectancy,78.251125,Scenario B (Convergence)
+2038,Expected_years_schooling,15.17045259375,Scenario B (Convergence)
+2038,Mean_years_schooling,10.392500042750001,Scenario B (Convergence)
+2038,GNI_per_capita,27316.744685079535,Scenario B (Convergence)
+2038,HDI,0.8354465241398575,Scenario B (Convergence)
+2039,Life_expectancy,78.66766666666666,Scenario B (Convergence)
+2039,Expected_years_schooling,15.318180083333333,Scenario B (Convergence)
+2039,Mean_years_schooling,10.626666704666667,Scenario B (Convergence)
+2039,GNI_per_capita,29405.23674105633,Scenario B (Convergence)
+2039,HDI,0.845409216665794,Scenario B (Convergence)
+2040,Life_expectancy,79.08420833333334,Scenario B (Convergence)
+2040,Expected_years_schooling,15.465907572916667,Scenario B (Convergence)
+2040,Mean_years_schooling,10.860833366583334,Scenario B (Convergence)
+2040,GNI_per_capita,31653.40371870346,Scenario B (Convergence)
+2040,HDI,0.8553619030686347,Scenario B (Convergence)
+2041,Life_expectancy,79.50075,Scenario B (Convergence)
+2041,Expected_years_schooling,15.6136350625,Scenario B (Convergence)
+2041,Mean_years_schooling,11.0950000285,Scenario B (Convergence)
+2041,GNI_per_capita,34073.453507697785,Scenario B (Convergence)
+2041,HDI,0.8653048972169088,Scenario B (Convergence)
+2042,Life_expectancy,79.91729166666667,Scenario B (Convergence)
+2042,Expected_years_schooling,15.761362552083334,Scenario B (Convergence)
+2042,Mean_years_schooling,11.329166690416667,Scenario B (Convergence)
+2042,GNI_per_capita,36678.52734760487,Scenario B (Convergence)
+2042,HDI,0.8752384994841093,Scenario B (Convergence)
+2043,Life_expectancy,80.33383333333333,Scenario B (Convergence)
+2043,Expected_years_schooling,15.909090041666667,Scenario B (Convergence)
+2043,Mean_years_schooling,11.563333352333334,Scenario B (Convergence)
+2043,GNI_per_capita,39482.77118681465,Scenario B (Convergence)
+2043,HDI,0.8851629974922844,Scenario B (Convergence)
+2044,Life_expectancy,80.750375,Scenario B (Convergence)
+2044,Expected_years_schooling,16.05681753125,Scenario B (Convergence)
+2044,Mean_years_schooling,11.79750001425,Scenario B (Convergence)
+2044,GNI_per_capita,42501.41249719932,Scenario B (Convergence)
+2044,HDI,0.8950786668054124,Scenario B (Convergence)
+2045,Life_expectancy,81.16691666666667,Scenario B (Convergence)
+2045,Expected_years_schooling,16.204545020833333,Scenario B (Convergence)
+2045,Mean_years_schooling,12.031666676166665,Scenario B (Convergence)
+2045,GNI_per_capita,45750.84296160882,Scenario B (Convergence)
+2045,HDI,0.9049857715765757,Scenario B (Convergence)
+2046,Life_expectancy,81.58345833333334,Scenario B (Convergence)
+2046,Expected_years_schooling,16.352272510416668,Scenario B (Convergence)
+2046,Mean_years_schooling,12.265833338083333,Scenario B (Convergence)
+2046,GNI_per_capita,49248.70748320945,Scenario B (Convergence)
+2046,HDI,0.9148845651525934,Scenario B (Convergence)
+2047,Life_expectancy,82.0,Scenario B (Convergence)
+2047,Expected_years_schooling,16.5,Scenario B (Convergence)
+2047,Mean_years_schooling,12.5,Scenario B (Convergence)
+2047,GNI_per_capita,53014.0,Scenario B (Convergence)
+2047,HDI,0.9247752906394244,Scenario B (Convergence)
