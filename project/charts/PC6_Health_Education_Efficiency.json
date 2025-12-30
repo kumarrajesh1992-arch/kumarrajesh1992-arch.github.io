@@ -1,0 +1,111 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Technical Efficiency and Income-Adjusted HDI",
+    "subtitle": "Faceted comparison: health vs education technical efficiency across Indian states",
+    "anchor": "middle",
+    "fontSize": 14,
+    "subtitleFontSize": 11
+  },
+  "data": {
+    "url": "https://kumarrajesh1992-arch.github.io/project/data/CC6_Health_Education_Efficiency.csv"
+  },
+  "columns": 2,
+  "facet": {
+    "field": "Efficiency_Type",
+    "type": "nominal",
+    "title": null,
+    "header": {"labelFontSize": 13, "labelFontWeight": "bold"}
+  },
+  "spec": {
+    "width": 420,
+    "height": 380,
+    "layer": [
+      {
+        "mark": {"type": "point", "filled": true, "size": 140},
+        "encoding": {
+          "x": {
+            "field": "Efficiency_z",
+            "type": "quantitative",
+            "title": "Technical Efficiency (z-score)"
+          },
+          "y": {
+            "field": "HDI_residual_z",
+            "type": "quantitative",
+            "title": "HDI Residual (z-score)"
+          },
+          "color": {
+            "field": "Efficiency_Type",
+            "type": "nominal",
+            "legend": null,
+            "scale": {
+              "domain": ["Health_TE_z", "Edu_TE_z"],
+              "range": ["#1b9e77", "#377eb8"]
+            }
+          },
+          "tooltip": [
+            {"field": "State", "type": "nominal", "title": "State"},
+            {"field": "Efficiency_Type", "type": "nominal", "title": "Measure"},
+            {
+              "field": "Efficiency_z",
+              "type": "quantitative",
+              "title": "Efficiency (z)",
+              "format": ".2f"
+            },
+            {
+              "field": "HDI_residual_z",
+              "type": "quantitative",
+              "title": "HDI residual (z)",
+              "format": ".2f"
+            }
+          ]
+        }
+      },
+      {
+        "transform": [
+          {
+            "filter": "datum.Efficiency_Type == 'Health_TE_z' && (datum.State == 'Kerala' || datum.State == 'Manipur' || datum.State == 'Nagaland' || datum.State == 'Sikkim' || datum.State == 'Gujarat' || datum.State == 'Andhra Pradesh')"
+          }
+        ],
+        "mark": {
+          "type": "text",
+          "align": "center",
+          "baseline": "top",
+          "dy": 8,
+          "fontSize": 9,
+          "fontWeight": "normal"
+        },
+        "encoding": {
+          "x": {"field": "Efficiency_z", "type": "quantitative"},
+          "y": {"field": "HDI_residual_z", "type": "quantitative"},
+          "text": {"field": "State", "type": "nominal"}
+        }
+      },
+      {
+        "transform": [
+          {
+            "regression": "HDI_residual_z",
+            "on": "Efficiency_z",
+            "groupby": ["Efficiency_Type"]
+          }
+        ],
+        "mark": {"type": "line", "strokeWidth": 2},
+        "encoding": {
+          "x": {"field": "Efficiency_z", "type": "quantitative"},
+          "y": {"field": "HDI_residual_z", "type": "quantitative"},
+          "color": {
+            "field": "Efficiency_Type",
+            "type": "nominal",
+            "legend": null,
+            "scale": {
+              "domain": ["Health_TE_z", "Edu_TE_z"],
+              "range": ["#1b9e77", "#377eb8"]
+            }
+          }
+        }
+      }
+    ]
+  },
+  "resolve": {"scale": {"x": "shared", "y": "shared"}},
+  "config": {"axis": {"labelFontSize": 12, "titleFontSize": 13}}
+}
