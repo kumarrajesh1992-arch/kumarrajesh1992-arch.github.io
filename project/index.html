@@ -172,25 +172,27 @@
 </p>
 </div>
 <div class="viz">
-  <h4>Chart 7: Does workforce participation explain income-adjusted HDI?</h4>
-  <figure id="PC7"></figure>
-
-  <p class="caption">
-    Since state capaicty offers limited insight, does the labor market hold the answer? Chart 7 ranks states by their WPR, with bars representing their development efficiency (residual HDI). If higher employment drove development, positive residuals (green bar) would concentrate among high-WPR states. Instead, the distribution is near-random. High-employment states like Himachal Pradesh (77%) and Chhattisgarh (73%) show sharply divergent outcomes. With a negligible <strong>R<sup>2</sup> &approx; 0.01</strong>, the evidence suggests employment quantity matters far less than its quality.
-  </p>
-  <p class="small-text">
-  <a href="https://colab.research.google.com/drive/1ZS-PbL5KMhytC6fcKIKjF0w9eDOIdh0S?usp=sharing" target="_blank" rel="noopener">View Google Colab notebook for Chart 7 (data cleaning + model)</a>
-</p>
-</div>
-        <div class="viz">
-          <h4>Chart 8: Do social structure and historical disadvantage shape income-adjusted HDI?</h4>
-          <figure id="PC8"></figure>
+          <h4>Chart 7: Do social structure and historical disadvantage shape income-adjusted HDI?</h4>
+          <figure id="PC7"></figure>
            <p class="caption">Finally, if economic factors fall short, do deep-seated social hierarchies constrain development? A marginally significant negative association (<i>p</i> &lt; 0.07) is observed between SC population share and income-adjusted HDI (see left panel). While the statistical signal is not definitive, the direction of the trend suggests that caste-based disadvantage may function as a structural drag on human development, imposing an efficiency penalty that persists even after accounting for income. No comparable relationship is observed for ST shares.
            </p>
           <p class="small-text">
   <a href="https://colab.research.google.com/drive/1lLtcGfDC61OpBjjAQX-wkMoqRQHWOucQ?usp=sharing" target="_blank" rel="noopener">View Google Colab notebook for Chart 8 (data cleaning + model)</a>
 </p>
         </div>
+      </div>
+<div class="viz">
+  <h4>Chart 8: Vision 2047 for a Very High Human Development Status for India</h4>
+  <figure id="PC8"></figure>
+
+  <p class="caption">
+    This projection stress-tests Vision 2047 against two distinct development frontiers. <strong>Scenario A (Entry)</strong>, aligned with the World Bank’s high-income threshold (~$23,215), represents a feasible trajectory to statistically qualify as "Very High Human Development" (HDI &ge; 0.800), requiring manageable 4% annual income growth. However, <strong>Scenario B (Convergence)</strong> reveals a profound ambition gap. For India to match the 2023 average HDI score (HDI &approx; 0.925) of very high human development country even in 2047 demands a non-linear acceleration: <strong>7.7% annual growth in GNI per capita (2021 PPP$) </strong> and a <strong>1.9x acceleration</strong> in mean years of schooling. The divergence confirms that while "business-as-usual" growth can secure high-income status, it will not deliver the substantive quality of life of a developed nation without deep structural transformation.
+  </p>
+  <p class="small-text">
+    <a href="https://colab.research.google.com/drive/1ZS-PbL5KMhytC6fcKIKjF0w9eDOIdh0S?usp=sharing" target="_blank" rel="noopener">View Google Colab notebook for Chart 8 (data cleaning + model)</a>
+  </p>
+</div>
+
       </div>
     </section>
 
@@ -219,8 +221,8 @@
       PC4: "/project/charts/PC4_State_Income_Residuals.json",
       PC5: "/project/charts/PC5_Social_Sector_Per_Capita.json",
       PC6: "/project/charts/PC6_Health_Education_Efficiency.json",
-      PC7: "/project/charts/PC7_Residual_HDI_WPR.json",
-      PC8: "/project/charts/PC8_SC_ST_Share.json"
+      PC7: "/project/charts/PC7_SC_ST_Share.json",
+      PC8: "/project/charts/PC8_Vision_2047_Scenarios.json"
     };
 
     Object.entries(specs).forEach(([id, spec]) => {
