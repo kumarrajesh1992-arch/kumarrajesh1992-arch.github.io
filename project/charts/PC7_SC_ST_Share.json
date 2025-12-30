@@ -8,7 +8,7 @@
     "subtitleFontSize": 11
   },
   "data": {
-    "url": "https://raw.githubusercontent.com/kumarrajesh1992-arch/kumarrajesh1992-arch.github.io/refs/heads/main/project/data/PC8_SC_ST_ResidualHDI_StateLevel.csv",
+    "url": "https://raw.githubusercontent.com/kumarrajesh1992-arch/kumarrajesh1992-arch.github.io/refs/heads/main/project/data/PC7_SC_ST_ResidualHDI_StateLevel.csv",
     "format": {"type": "csv"}
   },
   "transform": [
