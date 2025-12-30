@@ -23,8 +23,8 @@ This project asks three linked questions:
 * **Income:** Log GNI per capita (2021 PPP$)
 * **Social Sector Spending:** RBI *State Finances: A Study of Budgets* (per capita)
 * **Technical Efficiency in Expenditure:** Technical efficiency scores for health and education expenditure (2020) were sourced from the World Bank's World Bank 2024 India Economic Memorandum, which estimates state-level spending efficiency (see page 130-131) using a Variable Returns to Scale Data Envelopment Analysis model.
-* **Labour Market:** Worker–Population Ratio (PLFS 2022–23)
 * **Social Structure:** SC/ST population shares (Census of India 2011)
+* **Vision 2047 Benchmarks (Chart 8):** Very High Human Development thresholds and income benchmarks derived from UNDP HDRO group averages and World Bank high-income classifications; projections are illustrative policy scenarios, not forecasts.
 
 ---
 
@@ -53,6 +53,9 @@ All data processing and analysis are conducted in Python, using:
     * Analysis of Social sector spending, Spending Efficiency (DEA scores), Worker–population ratio, and Social structure (SC/ST population shares).
     * All independent variables are standardised (z-scores) to enable coefficient comparability.
 
+5.  **Vision 2047 Back-cast (Chart 8)**
+    * A policy back-cast projecting alternative development trajectories (2023–2047) using UNDP HDI goalposts and World Bank benchmarks, comparing a minimum-entry scenario to a convergence scenario for very high human development.
+
 ---
 
 ## Visualisations
@@ -65,8 +68,8 @@ The project includes eight interactive Vega-Lite charts covering:
 4.  Income-adjusted HDI residual rankings
 5.  Social sector spending vs residual HDI
 6.  Social sector spending efficiency vs residual HDI
-7.  Workforce participation vs residual HDI
-8.  Social structure and residual HDI
+7.  Social structure and residual HDI
+8.  Vision 2047: Policy Scenarios for Very High Human Development for India
 
 *Charts 3–8 are linked to reproducible Google Colab notebooks.*
 
