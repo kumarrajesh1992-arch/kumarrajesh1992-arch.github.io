@@ -22,13 +22,9 @@ This project asks three linked questions:
 * **State HDI (1990–2023):** Global Data Lab, Radboud University
 * **Income:** Log GNI per capita (2021 PPP$)
 * **Social Sector Spending:** RBI *State Finances: A Study of Budgets* (per capita)
-* **State Capacity Proxies:**
-    * NITI Aayog Health Index (2021, Inputs & Processes domain)
-    * NITI Aayog School Education Quality Index (2019, Governance & Processes domain)
+* **Technical Efficiency in Expenditure:** Technical efficiency scores for health and education expenditure (2020) were sourced from the World Bank's World Bank 2024 India Economic Memorandum, which estimates state-level spending efficiency (see page 130-131) using a Variable Returns to Scale Data Envelopment Analysis model.
 * **Labour Market:** Worker–Population Ratio (PLFS 2022–23)
 * **Social Structure:** SC/ST population shares (Census of India 2011)
-
-*Note: Due to non-aligned years across sources, capacity indices are treated as slow-moving structural proxies suitable for cross-state comparison.*
 
 ---
 
@@ -68,7 +64,7 @@ The project includes eight interactive Vega-Lite charts covering:
 3.  Income–HDI gradients
 4.  Income-adjusted HDI residual rankings
 5.  Social sector spending vs residual HDI
-6.  State capacity indices vs residual HDI
+6.  Social sector spending efficiency vs residual HDI
 7.  Workforce participation vs residual HDI
 8.  Social structure and residual HDI
 
@@ -101,8 +97,6 @@ project/
 * Descriptive Nature: All analyses are cross-sectional and descriptive; no causal claims are made.
 
 * Endogeneity: Endogeneity may remain despite residualisation strategies.
-
-* Proxy Limits: Capacity indices may capture formal inputs and compliance rather than implementation quality.
 
 * Data Lag: Social structure data relies on Census 2011 due to the absence of a more recent census.
 
