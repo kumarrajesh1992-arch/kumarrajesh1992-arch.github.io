@@ -58,7 +58,7 @@
         <strong>National HDI (1990–2023):</strong> Sourced from the <a href="https://hdr.undp.org/data-center/specific-country-data#/countries/IND" target="_blank" rel="noopener">UNDP HDRO Data Centre</a>.
       </li>
       <li>
-        <strong>State HDI (1990–2023):</strong> Compiled from the <a href="https://globaldatalab.org/shdi/download/2022/shdi+lgnic/IND/?levels=4" target="_blank" rel="noopener">Global Data Lab</a> at Radboud University.
+        <strong>State HDI (1990–2022):</strong> Compiled from the <a href="https://globaldatalab.org/shdi/download/2022/shdi+lgnic/IND/?levels=4" target="_blank" rel="noopener">Global Data Lab</a> at Radboud University.
       </li>
       <li>
         <strong>Per-Capita Social Sector Spending:</strong> Estimated by dividing state-level social sector expenditure from <a href="https://rbidocs.rbi.org.in/rdocs/Publications/PDFs/0STATEFINANCES202324E45F66372EEC4743AE4E9BED92EB85FF.PDF" target="_blank" rel="noopener">RBI State Finances: A Study of Budgets</a> by state population figures from the <a href="https://mohfw.gov.in/sites/default/files/Population%20Projection%20Report%202011-2036%20-%20upload_compressed_0.pdf" target="_blank" rel="noopener">MoHFW</a>.
@@ -85,7 +85,7 @@
   <em>pandas</em>, <em>NumPy</em>, <em>scikit-learn</em>, and <em>statsmodels</em>.
   National and state-level HDI series were reshaped into tidy time-series and
   cross-sectional formats. Income-adjusted HDI performance was estimated using
-  linear regression models of HDI on log GNI per capita, implemented in
+  linear regression models of state HDI on log GNI per capita, implemented in
   <em>statsmodels</em> for statistical inference and <em>scikit-learn</em> for
   prediction and residual construction. Independent variables were standardised
   (z-scores) using <em>scikit-learn</em> to enable coefficient comparability
@@ -96,7 +96,7 @@
   In addition, a policy back-casting exercise projects India’s HDI components to 2047 under alternative benchmark scenarios, using UNDP goalposts and standard HDI aggregation methods.
 </p>
     <p>
-  A limitation is the temporal lag between the World Bank’s Expenditure Efficiency estimates (2020) and the reference HDI year (2022). This is addressed by conceptualising spending efficiency as a structural, slow-moving characteristic of state governance.
+  A limitation is the temporal lag between the World Bank’s Expenditure Efficiency estimates (2020) and the reference state HDI year (2022). This is addressed by conceptualising spending efficiency as a structural, slow-moving characteristic of state governance.
   Union Territories were excluded from spending models due to missing budget data. Social structure data are drawn from the Census of India 2011, as the 2021 census has not yet been conducted. All findings
   are cross-sectional and descriptive; no causal claims are made; and endogeneity may remain. 
 </p>
@@ -130,7 +130,7 @@
   <h4>Chart 3: The Income Gradient-HDI vs log GNI per capita</h4>
   <figure id="PC3"></figure>
   <p class="caption">
-   A cross-sectional regression of HDI on log GNI per capita shows a strong positive association (<span class="stat">R<sup>2</sup> ≈ 0.85</span>), confirming that income explains a substantial share of variation in HDI across states. However, the dispersion around the fitted line is policy-relevant. Kerala and Manipur outperform income-predicted benchmarks, while Gujarat and Andhra Pradesh underperform, indicating that income is a necessary but insufficient condition for human development.
+   A cross-sectional regression of state HDI on log GNI per capita for 2022 shows a strong positive association (<span class="stat">R<sup>2</sup> ≈ 0.85</span>), confirming that income explains a substantial share of variation in HDI across states. However, the dispersion around the fitted line is policy-relevant. Kerala and Manipur outperform income-predicted benchmarks, while Gujarat and Andhra Pradesh underperform, indicating that income is a necessary but insufficient condition for human development.
   </p>
   <p class="small-text">
   <a href="https://colab.research.google.com/drive/1rdr_s0hrhpL9d3XxLFC4hnvcwvFsvrVg?usp=sharing" target="_blank" rel="noopener">View Google Colab notebook for Chart 3 (data cleaning + model)</a>
@@ -140,7 +140,7 @@
         <div class="viz">
           <h4>Chart 4: The Efficiency Ranking-Residual HDI (actual − predicted) by state</h4>
           <figure id="PC4"></figure>
-          <p class="caption">To assess relative performance, I construct income-adjusted HDI residuals as a measure of efficiency. Kerala, Sikkim, and Manipur consistently register positive residuals, while Gujarat and Andhra Pradesh show large negative deviations. This reframes the question from whether income matters to why states differ in converting income into human development outcomes. One plausible explanation is variation in social-sector expenditure, which I explore in Chart 5.
+          <p class="caption">To assess relative performance of states, I construct income-adjusted HDI residuals as a measure of efficiency. Kerala, Sikkim, and Manipur consistently register positive residuals, while Gujarat and Andhra Pradesh show large negative deviations. This reframes the question from whether income matters to why states differ in converting income into human development outcomes. One plausible explanation is variation in social-sector expenditure, which I explore in Chart 5.
           </p>
           <p class="small-text">
   <a href="https://colab.research.google.com/drive/1rdr_s0hrhpL9d3XxLFC4hnvcwvFsvrVg?usp=sharing" target="_blank" rel="noopener">View Google Colab notebook for Chart 4 (data cleaning + model)</a>
@@ -148,7 +148,7 @@
         </div>
 
         <div class="viz">
-  <h4>Chart 5: Do social-sector spending priorities explain residual HDI?</h4>
+  <h4>Chart 5: Do social-sector spending priorities explain residual HDI at the state level?</h4>
   <figure id="PC5"></figure>
 
   <p class="caption">
@@ -159,7 +159,7 @@
 </p>
 </div>
 <div class="viz">
-  <h4>Chart 6: Does technical efficiency in social-sector spending drive income-adjusted HDI?</h4>
+  <h4>Chart 6: Does efficiency in social-sector spending drive income-adjusted HDI?</h4>
   <figure id="PC6"></figure>
 <p class="caption">
   Regression analysis reveals a sharp sector-specific divergence: health spending efficiency is a 
@@ -217,6 +217,7 @@
 
     <p class="caption">
       This project shows that India’s binding development constraint is not income generation but the uneven translation of growth into human development. State-level analysis reveals persistent and systematic divergence in income-adjusted HDI performance, with some states consistently outperforming income benchmarks while others remain structurally constrained.
+      At the state level, these findings imply that convergence in human development will depend less on uniform income growth and more on differentiated strategies that address persistent governance, social, and institutional bottlenecks in underperforming states.
     </p>
     <p class="caption">
       While income explains much of cross-state HDI variation, persistent income-adjusted gaps reflect structural, institutional, and social constraints that fiscal effort and technical efficiency only partially address. The Vision 2047 back-cast indicates that high-income status is achievable under plausible trajectories, but convergence with advanced human-development standards is not. Consistent with the
