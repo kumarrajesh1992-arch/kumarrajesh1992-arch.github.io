@@ -9,96 +9,102 @@
   },
   "data": {
     "url": "https://raw.githubusercontent.com/kumarrajesh1992-arch/kumarrajesh1992-arch.github.io/refs/heads/main/project/data/PC7_SC_ST_ResidualHDI_StateLevel.csv",
-    "format": {"type": "csv"}
+    "format": { "type": "csv" }
   },
   "transform": [
     {
       "calculate": "datum.residual_HDI >= 0 ? 'Positive residual' : 'Negative residual'",
       "as": "ResidualSign"
     },
-    {"fold": ["SC_share_z", "ST_share_z"], "as": ["Channel", "Channel_z"]},
+    { "fold": ["SC_share_z", "ST_share_z"], "as": ["Channel", "Channel_z"] },
     {
       "calculate": "datum.Channel == 'SC_share_z' ? 'Scheduled Caste share (z)' : 'Scheduled Tribe share (z)'",
       "as": "ChannelLabel"
+    },
+    {
+      "calculate": "datum.Channel == 'SC_share_z' ? 'β = -0.0066 | R² = 0.131' : 'β = 0.0038 | R² = 0.043'",
+      "as": "ModelStats"
     }
   ],
   "facet": {
     "field": "ChannelLabel",
     "type": "nominal",
-    "header": {"title": null, "labelFontSize": 13, "labelFontWeight": 700}
+    "header": { "title": null, "labelFontSize": 13, "labelFontWeight": 700 }
   },
   "spec": {
     "width": 400,
     "height": 280,
     "layer": [
       {
-        "mark": {"type": "point", "filled": true, "size": 90, "opacity": 0.85},
+        "mark": { "type": "point", "filled": true, "size": 90, "opacity": 0.85 },
         "encoding": {
           "x": {
             "field": "Channel_z",
             "type": "quantitative",
             "title": "Social composition (standardized z-score)",
-            "axis": {"format": ".1f"}
+            "axis": { "format": ".1f" }
           },
           "y": {
             "field": "residual_HDI",
             "type": "quantitative",
             "title": "Residual HDI (actual − income-predicted)",
-            "axis": {"format": ".3f"}
+            "axis": { "format": ".3f" }
           },
           "color": {
             "field": "ResidualSign",
             "type": "nominal",
             "title": "Income-adjusted performance",
-            "legend": {"orient": "bottom", "direction": "horizontal"}
+            "legend": { "orient": "bottom", "direction": "horizontal" }
           },
           "tooltip": [
-            {"field": "State", "type": "nominal", "title": "State"},
-            {
-              "field": "residual_HDI",
-              "type": "quantitative",
-              "title": "Residual HDI",
-              "format": ".3f"
-            },
-            {
-              "field": "SC_share",
-              "type": "quantitative",
-              "title": "SC share",
-              "format": ".2f"
-            },
-            {
-              "field": "ST_share",
-              "type": "quantitative",
-              "title": "ST share",
-              "format": ".2f"
-            }
+            { "field": "State", "type": "nominal", "title": "State" },
+            { "field": "residual_HDI", "type": "quantitative", "title": "Residual HDI", "format": ".3f" },
+            { "field": "SC_share", "type": "quantitative", "title": "SC share", "format": ".2f" },
+            { "field": "ST_share", "type": "quantitative", "title": "ST share", "format": ".2f" }
           ]
         }
       },
       {
         "transform": [
-          {"regression": "residual_HDI", "on": "Channel_z", "method": "linear"}
+          { "regression": "residual_HDI", "on": "Channel_z", "method": "linear" }
         ],
-        "mark": {"type": "line", "strokeWidth": 2, "opacity": 0.9},
+        "mark": { "type": "line", "strokeWidth": 2, "opacity": 0.9 },
         "encoding": {
-          "x": {"field": "Channel_z", "type": "quantitative"},
-          "y": {"field": "residual_HDI", "type": "quantitative"}
+          "x": { "field": "Channel_z", "type": "quantitative" },
+          "y": { "field": "residual_HDI", "type": "quantitative" }
         }
       },
       {
-        "mark": {"type": "rule", "strokeDash": [6, 6], "opacity": 0.6},
-        "encoding": {"y": {"datum": 0}}
+        "mark": { "type": "rule", "strokeDash": [6, 6], "opacity": 0.6 },
+        "encoding": { "y": { "datum": 0 } }
       },
       {
-        "mark": {"type": "rule", "strokeDash": [6, 6], "opacity": 0.4},
-        "encoding": {"x": {"datum": 0}}
+        "mark": { "type": "rule", "strokeDash": [6, 6], "opacity": 0.4 },
+        "encoding": { "x": { "datum": 0 } }
+      },
+      {
+        "mark": {
+          "type": "text",
+          "align": "left",
+          "baseline": "top",
+          "dx": 6,
+          "dy": 6,
+          "fontSize": 10,
+          "fontWeight": "normal",
+          "color": "#747272"
+        },
+        "encoding": {
+          "x": { "value": 0 },
+          "y": { "value": 0 },
+          "text": { "field": "ModelStats" }
+        }
       }
     ]
   },
-  "resolve": {"scale": {"x": "independent", "y": "shared"}},
+  "resolve": { "scale": { "x": "independent", "y": "shared" } },
   "config": {
-    "axis": {"grid": true, "labelFontSize": 11, "titleFontSize": 12},
-    "legend": {"labelFontSize": 11, "titleFontSize": 12},
-    "view": {"stroke": "transparent"}
+    "axis": { "grid": true, "labelFontSize": 11, "titleFontSize": 12 },
+    "legend": { "labelFontSize": 11, "titleFontSize": 12 },
+    "view": { "stroke": "transparent" }
   }
 }
