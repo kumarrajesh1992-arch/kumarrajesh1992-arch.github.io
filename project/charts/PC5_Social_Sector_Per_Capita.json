@@ -104,9 +104,9 @@
         "type": "text",
         "align": "left",
         "baseline": "top",
-        "fontSize": 11,
+        "fontSize": 10,
         "fontWeight": "normal",
-        "color": "#333"
+        "color": "#6e6d6d"
       },
       "encoding": {
         "x": { "value": 12 },
