@@ -10,19 +10,29 @@
   "data": {
     "url": "https://raw.githubusercontent.com/kumarrajesh1992-arch/kumarrajesh1992-arch.github.io/refs/heads/main/project/data/PC6_Health_Education_Efficiency.csv"
   },
+  "transform": [
+    {
+      "calculate": "datum.Efficiency_Type == 'Health_TE_z' ? 'Health technical efficiency (z)' : 'Education technical efficiency (z)'",
+      "as": "FacetLabel"
+    },
+    {
+      "calculate": "datum.Efficiency_Type == 'Health_TE_z' ? 'β = 0.7620 | Model R² = 0.229' : 'β = -0.5092 | Model R² = 0.229'",
+      "as": "ModelStats"
+    }
+  ],
   "columns": 2,
   "facet": {
-    "field": "Efficiency_Type",
+    "field": "FacetLabel",
     "type": "nominal",
     "title": null,
-    "header": {"labelFontSize": 13, "labelFontWeight": "bold"}
+    "header": { "labelFontSize": 13, "labelFontWeight": "bold" }
   },
   "spec": {
     "width": 420,
     "height": 380,
     "layer": [
       {
-        "mark": {"type": "point", "filled": true, "size": 140},
+        "mark": { "type": "point", "filled": true, "size": 140, "opacity": 0.85 },
         "encoding": {
           "x": {
             "field": "Efficiency_z",
@@ -37,15 +47,11 @@
           "color": {
             "field": "Efficiency_Type",
             "type": "nominal",
-            "legend": null,
-            "scale": {
-              "domain": ["Health_TE_z", "Edu_TE_z"],
-              "range": ["#1b9e77", "#377eb8"]
-            }
+            "legend": null
           },
           "tooltip": [
-            {"field": "State", "type": "nominal", "title": "State"},
-            {"field": "Efficiency_Type", "type": "nominal", "title": "Measure"},
+            { "field": "State", "type": "nominal", "title": "State" },
+            { "field": "FacetLabel", "type": "nominal", "title": "Measure" },
             {
               "field": "Efficiency_z",
               "type": "quantitative",
@@ -76,9 +82,9 @@
           "fontWeight": "normal"
         },
         "encoding": {
-          "x": {"field": "Efficiency_z", "type": "quantitative"},
-          "y": {"field": "HDI_residual_z", "type": "quantitative"},
-          "text": {"field": "State", "type": "nominal"}
+          "x": { "field": "Efficiency_z", "type": "quantitative" },
+          "y": { "field": "HDI_residual_z", "type": "quantitative" },
+          "text": { "field": "State", "type": "nominal" }
         }
       },
       {
@@ -89,23 +95,32 @@
             "groupby": ["Efficiency_Type"]
           }
         ],
-        "mark": {"type": "line", "strokeWidth": 2},
+        "mark": { "type": "line", "strokeWidth": 2, "opacity": 0.9 },
         "encoding": {
-          "x": {"field": "Efficiency_z", "type": "quantitative"},
-          "y": {"field": "HDI_residual_z", "type": "quantitative"},
-          "color": {
-            "field": "Efficiency_Type",
-            "type": "nominal",
-            "legend": null,
-            "scale": {
-              "domain": ["Health_TE_z", "Edu_TE_z"],
-              "range": ["#1b9e77", "#377eb8"]
-            }
-          }
+          "x": { "field": "Efficiency_z", "type": "quantitative" },
+          "y": { "field": "HDI_residual_z", "type": "quantitative" },
+          "color": { "field": "Efficiency_Type", "type": "nominal", "legend": null }
+        }
+      },
+      {
+        "mark": {
+          "type": "text",
+          "align": "left",
+          "baseline": "top",
+          "dx": 6,
+          "dy": 6,
+          "fontSize": 10,
+          "fontWeight": "normal",
+          "color": "#6e6c6c"
+        },
+        "encoding": {
+          "x": { "value": 0 },
+          "y": { "value": 0 },
+          "text": { "field": "ModelStats" }
         }
       }
     ]
   },
-  "resolve": {"scale": {"x": "shared", "y": "shared"}},
-  "config": {"axis": {"labelFontSize": 12, "titleFontSize": 13}}
+  "resolve": { "scale": { "x": "shared", "y": "shared" } },
+  "config": { "axis": { "labelFontSize": 12, "titleFontSize": 13 } }
 }
