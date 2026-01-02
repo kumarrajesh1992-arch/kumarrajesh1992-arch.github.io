@@ -11,7 +11,7 @@
     "url": "https://raw.githubusercontent.com/kumarrajesh1992-arch/kumarrajesh1992-arch.github.io/refs/heads/main/project/data/PC5_Percapita_social_Sector.csv",
     "format": {
       "type": "csv",
-      "parse": {"Per_Capita_Exp": "number", "residual_HDI": "number"}
+      "parse": { "Per_Capita_Exp": "number", "residual_HDI": "number" }
     }
   },
   "transform": [
@@ -22,19 +22,19 @@
   ],
   "layer": [
     {
-      "mark": {"type": "circle", "size": 120, "opacity": 0.85, "clip": true},
+      "mark": { "type": "circle", "size": 120, "opacity": 0.85, "clip": true },
       "encoding": {
         "x": {
           "field": "Per_Capita_Exp",
           "type": "quantitative",
           "title": "Per-capita social sector expenditure (INR per person)",
-          "axis": {"format": ",.0f"}
+          "axis": { "format": ",.0f" }
         },
         "y": {
           "field": "residual_HDI",
           "type": "quantitative",
           "title": "Residual HDI (actual − income-predicted)",
-          "axis": {"format": ".3f"}
+          "axis": { "format": ".3f" }
         },
         "color": {
           "field": "ResidualSign",
@@ -42,7 +42,7 @@
           "title": "Income-adjusted performance"
         },
         "tooltip": [
-          {"field": "State", "type": "nominal", "title": "State"},
+          { "field": "State", "type": "nominal", "title": "State" },
           {
             "field": "Per_Capita_Exp",
             "type": "quantitative",
@@ -72,25 +72,18 @@
           "method": "linear"
         }
       ],
-      "mark": {"type": "line", "strokeWidth": 2, "clip": true},
+      "mark": { "type": "line", "strokeWidth": 2, "clip": true },
       "encoding": {
-        "x": {"field": "Per_Capita_Exp", "type": "quantitative"},
-        "y": {"field": "residual_HDI", "type": "quantitative"}
+        "x": { "field": "Per_Capita_Exp", "type": "quantitative" },
+        "y": { "field": "residual_HDI", "type": "quantitative" }
       }
     },
     {
-      "mark": {"type": "rule", "strokeDash": [6, 6], "opacity": 0.7},
-      "encoding": {"y": {"datum": 0}}
+      "mark": { "type": "rule", "strokeDash": [6, 6], "opacity": 0.7 },
+      "encoding": { "y": { "datum": 0 } }
     },
     {
-      "transform": [
-        {
-          "filter": {
-            "field": "State",
-            "oneOf": ["Assam", "Gujarat"]
-          }
-        }
-      ],
+      "transform": [{ "filter": { "field": "State", "oneOf": ["Assam", "Gujarat"] } }],
       "mark": {
         "type": "text",
         "align": "left",
@@ -101,15 +94,32 @@
         "color": "black"
       },
       "encoding": {
-        "x": {"field": "Per_Capita_Exp", "type": "quantitative"},
-        "y": {"field": "residual_HDI", "type": "quantitative"},
-        "text": {"field": "State", "type": "nominal"}
+        "x": { "field": "Per_Capita_Exp", "type": "quantitative" },
+        "y": { "field": "residual_HDI", "type": "quantitative" },
+        "text": { "field": "State", "type": "nominal" }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "top",
+        "fontSize": 11,
+        "fontWeight": "normal",
+        "color": "#333"
+      },
+      "encoding": {
+        "x": { "value": 12 },
+        "y": { "value": 12 },
+        "text": {
+          "value": "β = 0.0069 | R² = 0.1269"
+        }
       }
     }
   ],
   "width": 650,
   "height": 400,
-  "padding": {"left": 70, "right": 20, "top": 15, "bottom": 50},
+  "padding": { "left": 70, "right": 20, "top": 15, "bottom": 50 },
   "config": {
     "axis": {
       "grid": true,
@@ -117,7 +127,7 @@
       "labelFontSize": 11,
       "titleFontSize": 12
     },
-    "view": {"stroke": "transparent"},
-    "legend": {"labelFontSize": 11, "titleFontSize": 12}
+    "view": { "stroke": "transparent" },
+    "legend": { "labelFontSize": 11, "titleFontSize": 12 }
   }
 }
