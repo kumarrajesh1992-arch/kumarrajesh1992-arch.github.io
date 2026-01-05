@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
-    "text": "HDI Residuals after Accounting for Income (2023)",
+    "text": "HDI Residuals after Accounting for Income (2022)",
     "subtitle": "Positive values indicate HDI overperformance relative to income | Data Source: Global Data Lab",
     "anchor": "middle"
   },
