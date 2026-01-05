@@ -278,22 +278,8 @@ footer {
   nav { margin-top: 16px; }
   .section .card { padding: 24px; } 
 }
-.postscript-card{
-  border: 1px dashed #cfcfcf;
-  background: #fafafa;
-  padding-top: 18px;
-}
-
-.postscript-title{
-  font-size: 1.05rem;
-  font-weight: 600;
-  opacity: 0.85;
-  margin-bottom: 8px;
-}
-
-.postscript-text{
-  font-size: 0.95rem;
-  line-height: 1.6;
-  opacity: 0.85;
-  margin: 0;
+.postscript-note{
+  margin-top: 18px;
+  font-size: 0.9rem;
+  opacity: 0.7;
 }
