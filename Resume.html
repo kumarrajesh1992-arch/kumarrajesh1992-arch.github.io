@@ -4,155 +4,148 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kumar Rajesh - CV</title>
+<!-- ONLY MAKE THESE CSS CHANGES IN YOUR EXISTING FILE -->
 <style>
+
 @page {
   size: A4;
-  margin: 20mm 22mm 20mm 22mm;
+  margin: 16mm 18mm 16mm 18mm;   /* reduced margins */
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
-body {
+body{
   font-family: Calibri, 'Segoe UI', Arial, Helvetica, sans-serif;
   font-size: 12.5px;
-  line-height: 1.5;
-  color: #222;
-  max-width: 210mm;
-  margin: 0 auto;
-  padding: 20mm 22mm;
-  background: #fff;
-  -webkit-print-color-adjust: exact;
-  print-color-adjust: exact;
+  line-height: 1.34;             /* tighter */
+  color:#222;
+  max-width:210mm;
+  margin:0 auto;
+  padding:16mm 18mm;            /* reduced */
+  background:#fff;
 }
 
-@media print {
-  body { padding: 0; margin: 0; }
-  .no-print { display: none; }
-  .page-break { page-break-before: always; }
+/* HEADER */
+.header{
+  text-align:center;
+  margin-bottom:10px;           /* reduced */
+  border-bottom:2px solid #0d1b2a;
+  padding-bottom:8px;           /* reduced */
 }
 
-/* Download button - only visible on screen */
-.download-btn {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  background: #0d1b2a;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  font-size: 14px;
-  font-family: Calibri, Arial, sans-serif;
-  cursor: pointer;
-  border-radius: 4px;
-  z-index: 999;
-}
-.download-btn:hover { background: #1b3a5c; }
-
-/* Header */
-.header {
-  text-align: center;
-  margin-bottom: 16px;
-  border-bottom: 2.5px solid #0d1b2a;
-  padding-bottom: 12px;
-}
-.header h1 {
-  font-size: 26px;
-  color: #0d1b2a;
-  margin-bottom: 4px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-}
-.header .tagline {
-  font-size: 12.5px;
-  color: #555;
-  margin-bottom: 3px;
-  letter-spacing: 0.3px;
-}
-.header .chevening {
-  font-size: 12.5px;
-  color: #0d1b2a;
-  font-weight: bold;
-  margin-bottom: 3px;
-}
-.header .contact {
-  font-size: 11.5px;
-  color: #666;
+.header h1{
+  font-size:26px;
+  margin-bottom:2px;
+  letter-spacing:1px;
 }
 
-/* Section headers */
-h2 {
-  font-size: 13.5px;
-  color: #0d1b2a;
-  text-transform: uppercase;
-  letter-spacing: 1.2px;
-  border-bottom: 1.5px solid #ccc;
-  padding-bottom: 3px;
-  margin-top: 16px;
-  margin-bottom: 8px;
+.header .tagline,
+.header .chevening{
+  font-size:12.5px;
+  margin-bottom:1px;
 }
 
-/* Organisation and role */
-.org {
-  font-size: 13.5px;
-  font-weight: bold;
-  color: #0d1b2a;
-  margin-top: 12px;
-  margin-bottom: 2px;
-}
-.role {
-  font-size: 12px;
-  color: #333;
-  margin-bottom: 4px;
+.header .contact{
+  font-size:11.5px;
 }
 
-/* Bullet points */
-ul {
-  padding-left: 18px;
-  margin-top: 4px;
-  margin-bottom: 8px;
-}
-li {
-  font-size: 12px;
-  margin-bottom: 4px;
-  line-height: 1.5;
-}
-
-/* Summary and skills */
-.summary {
-  font-size: 12px;
-  color: #333;
-  margin-bottom: 8px;
-  line-height: 1.55;
-}
-.skills {
-  font-size: 12px;
-  color: #333;
-  line-height: 1.65;
-  margin-bottom: 8px;
+/* SECTION HEADINGS */
+h2{
+  font-size:13.5px;
+  color:#0d1b2a;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  border-bottom:1px solid #ccc;
+  padding-bottom:2px;
+  margin-top:10px;              /* reduced */
+  margin-bottom:5px;            /* reduced */
 }
 
-/* Education */
-.edu-item {
-  font-size: 12px;
-  margin-bottom: 5px;
+/* JOB TITLES */
+.org{
+  font-size:13px;
+  font-weight:bold;
+  color:#0d1b2a;
+  margin-top:8px;               /* reduced */
+  margin-bottom:1px;
 }
-.edu-item strong { color: #0d1b2a; }
-.edu-item em { font-size: 11px; color: #555; }
 
-/* Publications */
-.pub-heading {
-  font-size: 11.5px;
-  font-weight: bold;
-  color: #444;
-  margin-top: 8px;
-  margin-bottom: 3px;
+.role{
+  font-size:12px;
+  margin-bottom:2px;
 }
-.pub-list { padding-left: 18px; }
-.pub-list li {
-  font-size: 11px;
-  margin-bottom: 3px;
-  line-height: 1.4;
+
+/* TEXT BLOCKS */
+.summary,
+.skills{
+  font-size:12px;
+  line-height:1.38;
+  margin-bottom:5px;
 }
+
+/* BULLETS */
+ul{
+  padding-left:16px;
+  margin-top:2px;
+  margin-bottom:5px;
+}
+
+li{
+  font-size:12px;
+  margin-bottom:2px;            /* reduced */
+  line-height:1.32;            /* tighter */
+}
+
+/* EDUCATION */
+.edu-item{
+  font-size:12px;
+  margin-bottom:3px;
+}
+
+.edu-item em{
+  font-size:11px;
+}
+
+/* PUBLICATIONS */
+.pub-heading{
+  font-size:11.5px;
+  font-weight:bold;
+  margin-top:5px;
+  margin-bottom:2px;
+}
+
+.pub-list{
+  padding-left:16px;
+}
+
+.pub-list li{
+  font-size:11px;
+  margin-bottom:1px;
+  line-height:1.22;
+}
+
+/* PRINT */
+@media print{
+  body{
+    padding:0;
+    margin:0;
+  }
+
+  .no-print{
+    display:none;
+  }
+
+  .page-break{
+    page-break-before:auto !important;   /* removes forced page 4 */
+  }
+
+  h2,h3,.org,.role{
+    page-break-after:avoid;
+  }
+
+  ul,ol{
+    page-break-inside:avoid;
+  }
+}
+
 </style>
 </head>
 <body>
