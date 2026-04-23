@@ -2,27 +2,143 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<title>Kumar Rajesh Resume</title>
+
 <style>
-@page { margin: 2.5cm; }
-body { font-family: Calibri, Arial, sans-serif; font-size: 10.5pt; line-height: 1.5; color: #1a1a1a; max-width: 800px; margin: 0 auto; padding: 40px; }
+@page {
+    size: A4;
+    margin: 2.5cm;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background: white;
+}
+
+body {
+    font-family: Calibri, Arial, sans-serif;
+    font-size: 10.5pt;
+    line-height: 1.5;
+    color: #1a1a1a;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px;
+    box-sizing: border-box;
+}
+
 h1 { font-size: 20pt; margin-bottom: 0px; color: #0d1b2a; }
 .subtitle { font-size: 10.5pt; color: #444; margin-bottom: 2px; letter-spacing: 0.5px; }
 .contact { font-size: 10pt; color: #555; margin-bottom: 20px; }
-h2 { font-size: 12pt; color: #0d1b2a; border-bottom: 1.5px solid #0d1b2a; padding-bottom: 3px; margin-top: 20px; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px; }
-h3 { font-size: 11pt; color: #1a1a1a; margin-bottom: 1px; margin-top: 14px; }
+
+h2 {
+    font-size: 12pt;
+    color: #0d1b2a;
+    border-bottom: 1.5px solid #0d1b2a;
+    padding-bottom: 3px;
+    margin-top: 20px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    page-break-after: avoid;
+}
+
+h3 {
+    font-size: 11pt;
+    color: #1a1a1a;
+    margin-bottom: 1px;
+    margin-top: 14px;
+    page-break-after: avoid;
+}
+
 .role-line { font-size: 10pt; color: #333; margin-bottom: 2px; }
 .promoted { font-weight: bold; color: #0d1b2a; }
-ul { margin-top: 3px; margin-bottom: 6px; padding-left: 20px; }
-li { margin-bottom: 4px; font-size: 10pt; }
+
+ul {
+    margin-top: 3px;
+    margin-bottom: 6px;
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 4px;
+    font-size: 10pt;
+}
+
 .summary { font-size: 10pt; color: #333; margin-bottom: 8px; }
-.skills-box { font-size: 10pt; color: #333; margin-bottom: 10px; line-height: 1.6; }
+
+.skills-box {
+    font-size: 10pt;
+    color: #333;
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
 .pub-list { font-size: 9.5pt; }
 .pub-list li { margin-bottom: 3px; }
-.pub-section { font-size: 9.5pt; font-weight: bold; color: #444; margin-top: 6px; margin-bottom: 3px; }
+
+.pub-section {
+    font-size: 9.5pt;
+    font-weight: bold;
+    color: #444;
+    margin-top: 6px;
+    margin-bottom: 3px;
+}
+
+/* Prevent awkward page breaks */
+h2, h3, .role-line, .pub-section {
+    break-after: avoid;
+    page-break-after: avoid;
+}
+
+ul, ol, p {
+    break-inside: avoid;
+    page-break-inside: avoid;
+}
+
+/* Hide download button while printing */
+@media print {
+    #downloadBtn {
+        display: none;
+    }
+
+    body {
+        padding: 0;
+        max-width: 100%;
+    }
+}
+
+/* Download Button */
+#downloadBtn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #0d1b2a;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    font-size: 10pt;
+    cursor: pointer;
+    border-radius: 6px;
+    z-index: 999;
+}
+
+#downloadBtn:hover {
+    opacity: 0.9;
+}
 </style>
 </head>
+
 <body>
 
+<button id="downloadBtn" onclick="downloadPDF()">Download PDF</button>
+
+<script>
+function downloadPDF() {
+    window.print();
+}
+</script>
 <h1 style="text-align: center;">Kumar Rajesh</h1>
 <div class="subtitle" style="text-align: center;">Applied Economics &nbsp;|&nbsp; Strategy &nbsp;|&nbsp; Policy Analysis &nbsp;|&nbsp; Development Impact</div>
 <div class="subtitle" style="text-align: center; margin-bottom: 2px;">Chevening Scholar &nbsp;|&nbsp; MPP Candidate (2025–26), London School of Economics</div>
